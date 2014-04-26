@@ -1,0 +1,6 @@
+@mixin front() { @include transform(rotateY( 0deg ) translateZ( 100px )); }
+@mixin left() { @include transform(rotateY( -90deg ) translateZ( 100px )); }
+@mixin back() { @include transform(rotateX( 180deg ) translateZ( 100px )); }
+@mixin right() { @include transform(rotateY(  90deg ) translateZ( 100px )); }
+@mixin top() { @include transform(rotateX(  90deg ) translateZ( 100px )); }
+@mixin bottom() { @include transform(rotateX( -90deg ) translateZ( 100px )); }
