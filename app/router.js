@@ -3,7 +3,6 @@ var Router = Ember.Router.extend({
   location: 'auto'
 });
 
-Router.map(function() {
-});
+Router.map(function() {});
 
 export default Router;

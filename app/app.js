@@ -2,7 +2,7 @@ import Resolver from 'ember/resolver';
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
-var App = Ember.Application.extend({
+var Rubiks = Ember.Application.extend({
   LOG_ACTIVE_GENERATION: true,
   LOG_MODULE_RESOLVER: true,
   // LOG_TRANSITIONS: true,
@@ -12,4 +12,4 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-export default App;
+export default Rubiks;
