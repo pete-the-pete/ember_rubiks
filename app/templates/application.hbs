@@ -1,12 +1,6 @@
 {{outlet}}
 
-<section class="container">
-  <div id="cube">
-    <figure class="front yellow">1</figure>
-    <figure class="left orange">2</figure>
-    <figure class="back green">3</figure>
-    <figure class="right red">4</figure>
-    <figure class="top white">5</figure>
-    <figure class="bottom blue">6</figure>
-  </div>
-</section>
+{{cube}}
+{{#each cube in cubes}}
+  <h5>{{cube.id}}</h5>
+{{/each}}

@@ -1,0 +1,17 @@
+
+{{#each}}
+  {{#each section in sections}}
+    <section class="container">
+    {{#each cubie in section.cubies}}
+      <div id="cube">
+      {{#each face in cubie.faces}}
+        <figure {{bind-attr class="face.side face.color"}}>
+          {{face.id}}
+        </figure>
+      {{/each}}
+      </div>
+    {{/each}}
+    </section>
+  {{/each}}
+
+{{/each}}
