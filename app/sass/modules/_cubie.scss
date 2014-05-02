@@ -1,6 +1,11 @@
 $cubie_dimension: 98px;
 
 .cubie {
+
+  &[class*=" row"]:first-of-type {
+    left: -100px;
+  }
+
   //the sides of a cubie
   figure {
     width: $cubie_dimension;
@@ -13,14 +18,14 @@ $cubie_dimension: 98px;
     font-weight: bold;
     color: white;
     text-align: center;
-    opacity: 0.25;
+    opacity: 0.75;
 
     /* background-color */
     &.orange { background-color: $orange; }
     &.green { background-color: $green; }
     &.red { background-color: $red; }
     &.yellow { background-color: $yellow; }
-    &.white { background-color: $white; }
+    &.white { background-color: $white; color: #000; }
     &.blue { background-color: $blue; }
 
     /* placement */
