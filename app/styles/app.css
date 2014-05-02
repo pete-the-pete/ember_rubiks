@@ -63,15 +63,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 1, ../sass/modules/_cubie.scss */
-#cube figure {
-  width: 196px;
-  height: 196px;
+/* line 5, ../sass/modules/_cubie.scss */
+.cubie figure {
+  width: 98px;
+  height: 98px;
   display: block;
   position: absolute;
   border: 2px solid black;
-  line-height: 196px;
-  font-size: 120px;
+  line-height: 98px;
+  font-size: 65.33333px;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -79,77 +79,77 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* background-color */
   /* placement */
 }
-/* line 15, ../sass/modules/_cubie.scss */
-#cube figure.orange {
+/* line 19, ../sass/modules/_cubie.scss */
+.cubie figure.orange {
   background-color: orange;
 }
-/* line 16, ../sass/modules/_cubie.scss */
-#cube figure.green {
+/* line 20, ../sass/modules/_cubie.scss */
+.cubie figure.green {
   background-color: green;
 }
-/* line 17, ../sass/modules/_cubie.scss */
-#cube figure.red {
+/* line 21, ../sass/modules/_cubie.scss */
+.cubie figure.red {
   background-color: red;
 }
-/* line 18, ../sass/modules/_cubie.scss */
-#cube figure.yellow {
+/* line 22, ../sass/modules/_cubie.scss */
+.cubie figure.yellow {
   background-color: yellow;
 }
-/* line 19, ../sass/modules/_cubie.scss */
-#cube figure.white {
+/* line 23, ../sass/modules/_cubie.scss */
+.cubie figure.white {
   background-color: white;
 }
-/* line 20, ../sass/modules/_cubie.scss */
-#cube figure.blue {
+/* line 24, ../sass/modules/_cubie.scss */
+.cubie figure.blue {
   background-color: blue;
 }
-/* line 23, ../sass/modules/_cubie.scss */
-#cube figure.front {
-  -webkit-transform: rotateY(0deg) translateZ(100px);
-  -moz-transform: rotateY(0deg) translateZ(100px);
-  -ms-transform: rotateY(0deg) translateZ(100px);
-  -o-transform: rotateY(0deg) translateZ(100px);
-  transform: rotateY(0deg) translateZ(100px);
-}
-/* line 24, ../sass/modules/_cubie.scss */
-#cube figure.left {
-  -webkit-transform: rotateY(-90deg) translateZ(100px);
-  -moz-transform: rotateY(-90deg) translateZ(100px);
-  -ms-transform: rotateY(-90deg) translateZ(100px);
-  -o-transform: rotateY(-90deg) translateZ(100px);
-  transform: rotateY(-90deg) translateZ(100px);
-}
-/* line 25, ../sass/modules/_cubie.scss */
-#cube figure.back {
-  -webkit-transform: rotateX(180deg) translateZ(100px);
-  -moz-transform: rotateX(180deg) translateZ(100px);
-  -ms-transform: rotateX(180deg) translateZ(100px);
-  -o-transform: rotateX(180deg) translateZ(100px);
-  transform: rotateX(180deg) translateZ(100px);
-}
-/* line 26, ../sass/modules/_cubie.scss */
-#cube figure.right {
-  -webkit-transform: rotateY(90deg) translateZ(100px);
-  -moz-transform: rotateY(90deg) translateZ(100px);
-  -ms-transform: rotateY(90deg) translateZ(100px);
-  -o-transform: rotateY(90deg) translateZ(100px);
-  transform: rotateY(90deg) translateZ(100px);
-}
 /* line 27, ../sass/modules/_cubie.scss */
-#cube figure.top {
-  -webkit-transform: rotateX(90deg) translateZ(100px);
-  -moz-transform: rotateX(90deg) translateZ(100px);
-  -ms-transform: rotateX(90deg) translateZ(100px);
-  -o-transform: rotateX(90deg) translateZ(100px);
-  transform: rotateX(90deg) translateZ(100px);
+.cubie figure.front {
+  -webkit-transform: rotateY(0deg) translateZ(50px);
+  -moz-transform: rotateY(0deg) translateZ(50px);
+  -ms-transform: rotateY(0deg) translateZ(50px);
+  -o-transform: rotateY(0deg) translateZ(50px);
+  transform: rotateY(0deg) translateZ(50px);
 }
 /* line 28, ../sass/modules/_cubie.scss */
-#cube figure.bottom {
-  -webkit-transform: rotateX(-90deg) translateZ(100px);
-  -moz-transform: rotateX(-90deg) translateZ(100px);
-  -ms-transform: rotateX(-90deg) translateZ(100px);
-  -o-transform: rotateX(-90deg) translateZ(100px);
-  transform: rotateX(-90deg) translateZ(100px);
+.cubie figure.left {
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+  -moz-transform: rotateY(-90deg) translateZ(50px);
+  -ms-transform: rotateY(-90deg) translateZ(50px);
+  -o-transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(50px);
+}
+/* line 29, ../sass/modules/_cubie.scss */
+.cubie figure.back {
+  -webkit-transform: rotateX(180deg) translateZ(50px);
+  -moz-transform: rotateX(180deg) translateZ(50px);
+  -ms-transform: rotateX(180deg) translateZ(50px);
+  -o-transform: rotateX(180deg) translateZ(50px);
+  transform: rotateX(180deg) translateZ(50px);
+}
+/* line 30, ../sass/modules/_cubie.scss */
+.cubie figure.right {
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+  -moz-transform: rotateY(90deg) translateZ(50px);
+  -ms-transform: rotateY(90deg) translateZ(50px);
+  -o-transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(50px);
+}
+/* line 31, ../sass/modules/_cubie.scss */
+.cubie figure.top {
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+  -moz-transform: rotateX(90deg) translateZ(50px);
+  -ms-transform: rotateX(90deg) translateZ(50px);
+  -o-transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(50px);
+}
+/* line 32, ../sass/modules/_cubie.scss */
+.cubie figure.bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+  -moz-transform: rotateX(-90deg) translateZ(50px);
+  -ms-transform: rotateX(-90deg) translateZ(50px);
+  -o-transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(50px);
 }
 
 /* line 9, ../sass/app.scss */
@@ -173,8 +173,8 @@ body {
 
 /* line 23, ../sass/app.scss */
 .container {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: relative;
   margin: 50px auto;
   -webkit-perspective: 1000;
@@ -194,9 +194,9 @@ body {
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transform: translateZ(-100px);
-  -moz-transform: translateZ(-100px);
-  -ms-transform: translateZ(-100px);
-  -o-transform: translateZ(-100px);
-  transform: translateZ(-100px);
+  -webkit-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
+  -moz-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
+  -ms-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
+  -o-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
+  transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
 }

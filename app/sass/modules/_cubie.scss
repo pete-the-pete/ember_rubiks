@@ -1,29 +1,34 @@
-#cube figure {
-  width: 196px;
-  height: 196px;
-  display: block;
-  position: absolute;
-  border: 2px solid black;
-  line-height: 196px;
-  font-size: 120px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  opacity: 0.25;
+$cubie_dimension: 98px;
 
-  /* background-color */
-  &.orange { background-color: $orange; }
-  &.green { background-color: $green; }
-  &.red { background-color: $red; }
-  &.yellow { background-color: $yellow; }
-  &.white { background-color: $white; }
-  &.blue { background-color: $blue; }
+.cubie {
+  //the sides of a cubie
+  figure {
+    width: $cubie_dimension;
+    height: $cubie_dimension;
+    display: block;
+    position: absolute;
+    border: 2px solid black;
+    line-height: $cubie_dimension;
+    font-size: $cubie_dimension * 2/3;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    opacity: 0.25;
 
-  /* placement */
-  &.front  { @include front(); }
-  &.left   { @include left(); }
-  &.back   { @include back(); }
-  &.right  { @include right(); }
-  &.top    { @include top(); }
-  &.bottom { @include bottom(); }
+    /* background-color */
+    &.orange { background-color: $orange; }
+    &.green { background-color: $green; }
+    &.red { background-color: $red; }
+    &.yellow { background-color: $yellow; }
+    &.white { background-color: $white; }
+    &.blue { background-color: $blue; }
+
+    /* placement */
+    &.front  { @include front(); }
+    &.left   { @include left(); }
+    &.back   { @include back(); }
+    &.right  { @include right(); }
+    &.top    { @include top(); }
+    &.bottom { @include bottom(); }
+  }
 }

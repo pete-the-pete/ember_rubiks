@@ -21,8 +21,8 @@ body {
 }
 
 .container {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: relative;
   margin: 50px auto;
   @include perspective(1000);
@@ -33,5 +33,5 @@ body {
   height: 100%;
   position: absolute;
   @include transform-style();
-  @include translateZ(-100px);
+  @include transform(rotateY( -15deg ) rotateX(-15deg) translateZ( -100px ));
 }
