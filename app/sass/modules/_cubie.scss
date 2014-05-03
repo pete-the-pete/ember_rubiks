@@ -1,24 +1,38 @@
-$cubie_dimension: 98px;
+//n x n x n
+@for $section from 1 through $N {
+  div[class*=" section-#{$section}"] {
+    .cubie {
+      @for $row from 1 through $N {
+        &[class*=" row-#{$row}"] {
+          //cols
+          @for $col from 1 through $N {
+            &[class*=" col-#{$col}"] {
+              @include transform(
+                  translateX(nth($cubie_positions, $col))
+                  translateY(nth($cubie_positions, $section))
+                  translateZ(nth($cubie_positions, $row)));
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .cubie {
-
-  &[class*=" row"]:first-of-type {
-    left: -100px;
-  }
-
   //the sides of a cubie
-  figure {
+  .figure {
     width: $cubie_dimension;
     height: $cubie_dimension;
     display: block;
     position: absolute;
-    border: 2px solid black;
+    border: 1px solid black;
     line-height: $cubie_dimension;
     font-size: $cubie_dimension * 2/3;
     font-weight: bold;
     color: white;
     text-align: center;
-    opacity: 0.75;
+    opacity: 0.80;
 
     /* background-color */
     &.orange { background-color: $orange; }

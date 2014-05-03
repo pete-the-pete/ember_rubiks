@@ -1,19 +1,11 @@
 
 {{#each}}
+  <section class="container">
+  <div id="cube">
   {{#each section in sections}}
-    <section class="container">
-    <div id="cube">
-    {{#each cubie in section.cubies}}
-      <div {{bind-attr class=":cubie cubie.row cubie.col"}}>
-      {{#each face in cubie.faces}}
-        <figure {{bind-attr class="face.side face.color"}}>
-          {{face.id}}
-        </figure>
-      {{/each}}
-      </div>
-    {{/each}}
-    </div>
-    </section>
+    {{cube-section section=section}}
   {{/each}}
+  </div>
+  </section>
 
 {{/each}}

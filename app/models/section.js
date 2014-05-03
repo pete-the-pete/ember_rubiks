@@ -8,8 +8,8 @@ Section.reopenClass({
     {
       id: 1,
       cube: 1,
-      cubies: [1,2,3]//,4,5,6,7,8,9]
-    }/*,
+      cubies: [1,2,3,4,5,6,7,8,9]
+    },
     {
       id: 2,
       cube: 1,
@@ -19,7 +19,7 @@ Section.reopenClass({
       id: 3,
       cube: 1,
       cubies: [19,20,21,22,23,24,25,26,27]
-    },*/
+    }
 
   ]
 });

@@ -1,6 +1,7 @@
 @import "compass";
 @import "compass/reset";
 
+@import "primitives/measurements";
 @import "primitives/colors";
 @import "primitives/sides";
 
@@ -28,10 +29,15 @@ body {
   @include perspective(1000);
 }
 
+#cube,
+.cubie {
+  @include transform-style();
+}
+
 #cube {
   width: 100%;
   height: 100%;
   position: absolute;
-  @include transform-style();
+  top: 300px;
   @include transform(rotateY( -15deg ) rotateX(-15deg) translateZ( -100px ));
 }
