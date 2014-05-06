@@ -63,112 +63,238 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 3, ../sass/modules/_cubie.scss */
+div[class*=" section-1"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+}
+/* line 2, ../sass/partials/_rotations.scss */
+div[class*=" section-1"].show-front {
+  -webkit-transform: translateZ(-24.5px) rotateY(0deg);
+  -moz-transform: translateZ(-24.5px) rotateY(0deg);
+  -ms-transform: translateZ(-24.5px) rotateY(0deg);
+  -o-transform: translateZ(-24.5px) rotateY(0deg);
+  transform: translateZ(-24.5px) rotateY(0deg);
+}
+/* line 5, ../sass/partials/_rotations.scss */
+div[class*=" section-1"].show-back {
+  -webkit-transform: translateZ(-24.5px) rotateX(-180deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-180deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-180deg);
+  -o-transform: translateZ(-24.5px) rotateX(-180deg);
+  transform: translateZ(-24.5px) rotateX(-180deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div[class*=" section-1"].show-right {
+  -webkit-transform: translateZ(-24.5px) rotateY(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(-90deg);
+  -o-transform: translateZ(-24.5px) rotateY(-90deg);
+  transform: translateZ(-24.5px) rotateY(-90deg);
+}
+/* line 11, ../sass/partials/_rotations.scss */
+div[class*=" section-1"].show-left {
+  -webkit-transform: translateZ(-24.5px) rotateY(90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(90deg);
+  -o-transform: translateZ(-24.5px) rotateY(90deg);
+  transform: translateZ(-24.5px) rotateY(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div[class*=" section-1"].show-top {
+  -webkit-transform: translateZ(-24.5px) rotateX(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-90deg);
+  -o-transform: translateZ(-24.5px) rotateX(-90deg);
+  transform: translateZ(-24.5px) rotateX(-90deg);
+}
+/* line 17, ../sass/partials/_rotations.scss */
+div[class*=" section-1"].show-bottom {
+  -webkit-transform: translateZ(-24.5px) rotateX(90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(90deg);
+  -o-transform: translateZ(-24.5px) rotateX(90deg);
+  transform: translateZ(-24.5px) rotateX(90deg);
+}
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-1"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(-24.5px) translateZ(-24.5px);
-  -moz-transform: translateX(-24.5px) translateY(-24.5px) translateZ(-24.5px);
-  -ms-transform: translateX(-24.5px) translateY(-24.5px) translateZ(-24.5px);
-  -o-transform: translateX(-24.5px) translateY(-24.5px) translateZ(-24.5px);
-  transform: translateX(-24.5px) translateY(-24.5px) translateZ(-24.5px);
+  -webkit-transform: translateX(-49px) translateY(-49px) translateZ(-49px);
+  -moz-transform: translateX(-49px) translateY(-49px) translateZ(-49px);
+  -ms-transform: translateX(-49px) translateY(-49px) translateZ(-49px);
+  -o-transform: translateX(-49px) translateY(-49px) translateZ(-49px);
+  transform: translateX(-49px) translateY(-49px) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-1"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(-24.5px) translateZ(-24.5px);
-  -moz-transform: translateX(0) translateY(-24.5px) translateZ(-24.5px);
-  -ms-transform: translateX(0) translateY(-24.5px) translateZ(-24.5px);
-  -o-transform: translateX(0) translateY(-24.5px) translateZ(-24.5px);
-  transform: translateX(0) translateY(-24.5px) translateZ(-24.5px);
+  -webkit-transform: translateX(0) translateY(-49px) translateZ(-49px);
+  -moz-transform: translateX(0) translateY(-49px) translateZ(-49px);
+  -ms-transform: translateX(0) translateY(-49px) translateZ(-49px);
+  -o-transform: translateX(0) translateY(-49px) translateZ(-49px);
+  transform: translateX(0) translateY(-49px) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-1"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(-24.5px) translateZ(-24.5px);
-  -moz-transform: translateX(24.5px) translateY(-24.5px) translateZ(-24.5px);
-  -ms-transform: translateX(24.5px) translateY(-24.5px) translateZ(-24.5px);
-  -o-transform: translateX(24.5px) translateY(-24.5px) translateZ(-24.5px);
-  transform: translateX(24.5px) translateY(-24.5px) translateZ(-24.5px);
+  -webkit-transform: translateX(49px) translateY(-49px) translateZ(-49px);
+  -moz-transform: translateX(49px) translateY(-49px) translateZ(-49px);
+  -ms-transform: translateX(49px) translateY(-49px) translateZ(-49px);
+  -o-transform: translateX(49px) translateY(-49px) translateZ(-49px);
+  transform: translateX(49px) translateY(-49px) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-2"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(-24.5px) translateZ(0);
-  -moz-transform: translateX(-24.5px) translateY(-24.5px) translateZ(0);
-  -ms-transform: translateX(-24.5px) translateY(-24.5px) translateZ(0);
-  -o-transform: translateX(-24.5px) translateY(-24.5px) translateZ(0);
-  transform: translateX(-24.5px) translateY(-24.5px) translateZ(0);
+  -webkit-transform: translateX(-49px) translateY(-49px) translateZ(0);
+  -moz-transform: translateX(-49px) translateY(-49px) translateZ(0);
+  -ms-transform: translateX(-49px) translateY(-49px) translateZ(0);
+  -o-transform: translateX(-49px) translateY(-49px) translateZ(0);
+  transform: translateX(-49px) translateY(-49px) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-2"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(-24.5px) translateZ(0);
-  -moz-transform: translateX(0) translateY(-24.5px) translateZ(0);
-  -ms-transform: translateX(0) translateY(-24.5px) translateZ(0);
-  -o-transform: translateX(0) translateY(-24.5px) translateZ(0);
-  transform: translateX(0) translateY(-24.5px) translateZ(0);
+  -webkit-transform: translateX(0) translateY(-49px) translateZ(0);
+  -moz-transform: translateX(0) translateY(-49px) translateZ(0);
+  -ms-transform: translateX(0) translateY(-49px) translateZ(0);
+  -o-transform: translateX(0) translateY(-49px) translateZ(0);
+  transform: translateX(0) translateY(-49px) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-2"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(-24.5px) translateZ(0);
-  -moz-transform: translateX(24.5px) translateY(-24.5px) translateZ(0);
-  -ms-transform: translateX(24.5px) translateY(-24.5px) translateZ(0);
-  -o-transform: translateX(24.5px) translateY(-24.5px) translateZ(0);
-  transform: translateX(24.5px) translateY(-24.5px) translateZ(0);
+  -webkit-transform: translateX(49px) translateY(-49px) translateZ(0);
+  -moz-transform: translateX(49px) translateY(-49px) translateZ(0);
+  -ms-transform: translateX(49px) translateY(-49px) translateZ(0);
+  -o-transform: translateX(49px) translateY(-49px) translateZ(0);
+  transform: translateX(49px) translateY(-49px) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-3"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(-24.5px) translateZ(24.5px);
-  -moz-transform: translateX(-24.5px) translateY(-24.5px) translateZ(24.5px);
-  -ms-transform: translateX(-24.5px) translateY(-24.5px) translateZ(24.5px);
-  -o-transform: translateX(-24.5px) translateY(-24.5px) translateZ(24.5px);
-  transform: translateX(-24.5px) translateY(-24.5px) translateZ(24.5px);
+  -webkit-transform: translateX(-49px) translateY(-49px) translateZ(49px);
+  -moz-transform: translateX(-49px) translateY(-49px) translateZ(49px);
+  -ms-transform: translateX(-49px) translateY(-49px) translateZ(49px);
+  -o-transform: translateX(-49px) translateY(-49px) translateZ(49px);
+  transform: translateX(-49px) translateY(-49px) translateZ(49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-3"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(-24.5px) translateZ(24.5px);
-  -moz-transform: translateX(0) translateY(-24.5px) translateZ(24.5px);
-  -ms-transform: translateX(0) translateY(-24.5px) translateZ(24.5px);
-  -o-transform: translateX(0) translateY(-24.5px) translateZ(24.5px);
-  transform: translateX(0) translateY(-24.5px) translateZ(24.5px);
+  -webkit-transform: translateX(0) translateY(-49px) translateZ(49px);
+  -moz-transform: translateX(0) translateY(-49px) translateZ(49px);
+  -ms-transform: translateX(0) translateY(-49px) translateZ(49px);
+  -o-transform: translateX(0) translateY(-49px) translateZ(49px);
+  transform: translateX(0) translateY(-49px) translateZ(49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-1"] .cubie[class*=" row-3"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(-24.5px) translateZ(24.5px);
-  -moz-transform: translateX(24.5px) translateY(-24.5px) translateZ(24.5px);
-  -ms-transform: translateX(24.5px) translateY(-24.5px) translateZ(24.5px);
-  -o-transform: translateX(24.5px) translateY(-24.5px) translateZ(24.5px);
-  transform: translateX(24.5px) translateY(-24.5px) translateZ(24.5px);
+  -webkit-transform: translateX(49px) translateY(-49px) translateZ(49px);
+  -moz-transform: translateX(49px) translateY(-49px) translateZ(49px);
+  -ms-transform: translateX(49px) translateY(-49px) translateZ(49px);
+  -o-transform: translateX(49px) translateY(-49px) translateZ(49px);
+  transform: translateX(49px) translateY(-49px) translateZ(49px);
 }
 
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 3, ../sass/modules/_cubie.scss */
+div[class*=" section-2"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+}
+/* line 2, ../sass/partials/_rotations.scss */
+div[class*=" section-2"].show-front {
+  -webkit-transform: translateZ(-24.5px) rotateY(0deg);
+  -moz-transform: translateZ(-24.5px) rotateY(0deg);
+  -ms-transform: translateZ(-24.5px) rotateY(0deg);
+  -o-transform: translateZ(-24.5px) rotateY(0deg);
+  transform: translateZ(-24.5px) rotateY(0deg);
+}
+/* line 5, ../sass/partials/_rotations.scss */
+div[class*=" section-2"].show-back {
+  -webkit-transform: translateZ(-24.5px) rotateX(-180deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-180deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-180deg);
+  -o-transform: translateZ(-24.5px) rotateX(-180deg);
+  transform: translateZ(-24.5px) rotateX(-180deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div[class*=" section-2"].show-right {
+  -webkit-transform: translateZ(-24.5px) rotateY(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(-90deg);
+  -o-transform: translateZ(-24.5px) rotateY(-90deg);
+  transform: translateZ(-24.5px) rotateY(-90deg);
+}
+/* line 11, ../sass/partials/_rotations.scss */
+div[class*=" section-2"].show-left {
+  -webkit-transform: translateZ(-24.5px) rotateY(90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(90deg);
+  -o-transform: translateZ(-24.5px) rotateY(90deg);
+  transform: translateZ(-24.5px) rotateY(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div[class*=" section-2"].show-top {
+  -webkit-transform: translateZ(-24.5px) rotateX(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-90deg);
+  -o-transform: translateZ(-24.5px) rotateX(-90deg);
+  transform: translateZ(-24.5px) rotateX(-90deg);
+}
+/* line 17, ../sass/partials/_rotations.scss */
+div[class*=" section-2"].show-bottom {
+  -webkit-transform: translateZ(-24.5px) rotateX(90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(90deg);
+  -o-transform: translateZ(-24.5px) rotateX(90deg);
+  transform: translateZ(-24.5px) rotateX(90deg);
+}
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-1"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(0) translateZ(-24.5px);
-  -moz-transform: translateX(-24.5px) translateY(0) translateZ(-24.5px);
-  -ms-transform: translateX(-24.5px) translateY(0) translateZ(-24.5px);
-  -o-transform: translateX(-24.5px) translateY(0) translateZ(-24.5px);
-  transform: translateX(-24.5px) translateY(0) translateZ(-24.5px);
+  -webkit-transform: translateX(-49px) translateY(0) translateZ(-49px);
+  -moz-transform: translateX(-49px) translateY(0) translateZ(-49px);
+  -ms-transform: translateX(-49px) translateY(0) translateZ(-49px);
+  -o-transform: translateX(-49px) translateY(0) translateZ(-49px);
+  transform: translateX(-49px) translateY(0) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-1"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(0) translateZ(-24.5px);
-  -moz-transform: translateX(0) translateY(0) translateZ(-24.5px);
-  -ms-transform: translateX(0) translateY(0) translateZ(-24.5px);
-  -o-transform: translateX(0) translateY(0) translateZ(-24.5px);
-  transform: translateX(0) translateY(0) translateZ(-24.5px);
+  -webkit-transform: translateX(0) translateY(0) translateZ(-49px);
+  -moz-transform: translateX(0) translateY(0) translateZ(-49px);
+  -ms-transform: translateX(0) translateY(0) translateZ(-49px);
+  -o-transform: translateX(0) translateY(0) translateZ(-49px);
+  transform: translateX(0) translateY(0) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-1"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(0) translateZ(-24.5px);
-  -moz-transform: translateX(24.5px) translateY(0) translateZ(-24.5px);
-  -ms-transform: translateX(24.5px) translateY(0) translateZ(-24.5px);
-  -o-transform: translateX(24.5px) translateY(0) translateZ(-24.5px);
-  transform: translateX(24.5px) translateY(0) translateZ(-24.5px);
+  -webkit-transform: translateX(49px) translateY(0) translateZ(-49px);
+  -moz-transform: translateX(49px) translateY(0) translateZ(-49px);
+  -ms-transform: translateX(49px) translateY(0) translateZ(-49px);
+  -o-transform: translateX(49px) translateY(0) translateZ(-49px);
+  transform: translateX(49px) translateY(0) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-2"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(0) translateZ(0);
-  -moz-transform: translateX(-24.5px) translateY(0) translateZ(0);
-  -ms-transform: translateX(-24.5px) translateY(0) translateZ(0);
-  -o-transform: translateX(-24.5px) translateY(0) translateZ(0);
-  transform: translateX(-24.5px) translateY(0) translateZ(0);
+  -webkit-transform: translateX(-49px) translateY(0) translateZ(0);
+  -moz-transform: translateX(-49px) translateY(0) translateZ(0);
+  -ms-transform: translateX(-49px) translateY(0) translateZ(0);
+  -o-transform: translateX(-49px) translateY(0) translateZ(0);
+  transform: translateX(-49px) translateY(0) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-2"][class*=" col-2"] {
   -webkit-transform: translateX(0) translateY(0) translateZ(0);
   -moz-transform: translateX(0) translateY(0) translateZ(0);
@@ -176,121 +302,195 @@ div[class*=" section-2"] .cubie[class*=" row-2"][class*=" col-2"] {
   -o-transform: translateX(0) translateY(0) translateZ(0);
   transform: translateX(0) translateY(0) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-2"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(0) translateZ(0);
-  -moz-transform: translateX(24.5px) translateY(0) translateZ(0);
-  -ms-transform: translateX(24.5px) translateY(0) translateZ(0);
-  -o-transform: translateX(24.5px) translateY(0) translateZ(0);
-  transform: translateX(24.5px) translateY(0) translateZ(0);
+  -webkit-transform: translateX(49px) translateY(0) translateZ(0);
+  -moz-transform: translateX(49px) translateY(0) translateZ(0);
+  -ms-transform: translateX(49px) translateY(0) translateZ(0);
+  -o-transform: translateX(49px) translateY(0) translateZ(0);
+  transform: translateX(49px) translateY(0) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-3"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(0) translateZ(24.5px);
-  -moz-transform: translateX(-24.5px) translateY(0) translateZ(24.5px);
-  -ms-transform: translateX(-24.5px) translateY(0) translateZ(24.5px);
-  -o-transform: translateX(-24.5px) translateY(0) translateZ(24.5px);
-  transform: translateX(-24.5px) translateY(0) translateZ(24.5px);
+  -webkit-transform: translateX(-49px) translateY(0) translateZ(49px);
+  -moz-transform: translateX(-49px) translateY(0) translateZ(49px);
+  -ms-transform: translateX(-49px) translateY(0) translateZ(49px);
+  -o-transform: translateX(-49px) translateY(0) translateZ(49px);
+  transform: translateX(-49px) translateY(0) translateZ(49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-3"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(0) translateZ(24.5px);
-  -moz-transform: translateX(0) translateY(0) translateZ(24.5px);
-  -ms-transform: translateX(0) translateY(0) translateZ(24.5px);
-  -o-transform: translateX(0) translateY(0) translateZ(24.5px);
-  transform: translateX(0) translateY(0) translateZ(24.5px);
+  -webkit-transform: translateX(0) translateY(0) translateZ(49px);
+  -moz-transform: translateX(0) translateY(0) translateZ(49px);
+  -ms-transform: translateX(0) translateY(0) translateZ(49px);
+  -o-transform: translateX(0) translateY(0) translateZ(49px);
+  transform: translateX(0) translateY(0) translateZ(49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-2"] .cubie[class*=" row-3"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(0) translateZ(24.5px);
-  -moz-transform: translateX(24.5px) translateY(0) translateZ(24.5px);
-  -ms-transform: translateX(24.5px) translateY(0) translateZ(24.5px);
-  -o-transform: translateX(24.5px) translateY(0) translateZ(24.5px);
-  transform: translateX(24.5px) translateY(0) translateZ(24.5px);
+  -webkit-transform: translateX(49px) translateY(0) translateZ(49px);
+  -moz-transform: translateX(49px) translateY(0) translateZ(49px);
+  -ms-transform: translateX(49px) translateY(0) translateZ(49px);
+  -o-transform: translateX(49px) translateY(0) translateZ(49px);
+  transform: translateX(49px) translateY(0) translateZ(49px);
 }
 
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 3, ../sass/modules/_cubie.scss */
+div[class*=" section-3"] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+}
+/* line 2, ../sass/partials/_rotations.scss */
+div[class*=" section-3"].show-front {
+  -webkit-transform: translateZ(-24.5px) rotateY(0deg);
+  -moz-transform: translateZ(-24.5px) rotateY(0deg);
+  -ms-transform: translateZ(-24.5px) rotateY(0deg);
+  -o-transform: translateZ(-24.5px) rotateY(0deg);
+  transform: translateZ(-24.5px) rotateY(0deg);
+}
+/* line 5, ../sass/partials/_rotations.scss */
+div[class*=" section-3"].show-back {
+  -webkit-transform: translateZ(-24.5px) rotateX(-180deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-180deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-180deg);
+  -o-transform: translateZ(-24.5px) rotateX(-180deg);
+  transform: translateZ(-24.5px) rotateX(-180deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div[class*=" section-3"].show-right {
+  -webkit-transform: translateZ(-24.5px) rotateY(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(-90deg);
+  -o-transform: translateZ(-24.5px) rotateY(-90deg);
+  transform: translateZ(-24.5px) rotateY(-90deg);
+}
+/* line 11, ../sass/partials/_rotations.scss */
+div[class*=" section-3"].show-left {
+  -webkit-transform: translateZ(-24.5px) rotateY(90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(90deg);
+  -o-transform: translateZ(-24.5px) rotateY(90deg);
+  transform: translateZ(-24.5px) rotateY(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div[class*=" section-3"].show-top {
+  -webkit-transform: translateZ(-24.5px) rotateX(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-90deg);
+  -o-transform: translateZ(-24.5px) rotateX(-90deg);
+  transform: translateZ(-24.5px) rotateX(-90deg);
+}
+/* line 17, ../sass/partials/_rotations.scss */
+div[class*=" section-3"].show-bottom {
+  -webkit-transform: translateZ(-24.5px) rotateX(90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(90deg);
+  -o-transform: translateZ(-24.5px) rotateX(90deg);
+  transform: translateZ(-24.5px) rotateX(90deg);
+}
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-1"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(24.5px) translateZ(-24.5px);
-  -moz-transform: translateX(-24.5px) translateY(24.5px) translateZ(-24.5px);
-  -ms-transform: translateX(-24.5px) translateY(24.5px) translateZ(-24.5px);
-  -o-transform: translateX(-24.5px) translateY(24.5px) translateZ(-24.5px);
-  transform: translateX(-24.5px) translateY(24.5px) translateZ(-24.5px);
+  -webkit-transform: translateX(-49px) translateY(49px) translateZ(-49px);
+  -moz-transform: translateX(-49px) translateY(49px) translateZ(-49px);
+  -ms-transform: translateX(-49px) translateY(49px) translateZ(-49px);
+  -o-transform: translateX(-49px) translateY(49px) translateZ(-49px);
+  transform: translateX(-49px) translateY(49px) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-1"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(24.5px) translateZ(-24.5px);
-  -moz-transform: translateX(0) translateY(24.5px) translateZ(-24.5px);
-  -ms-transform: translateX(0) translateY(24.5px) translateZ(-24.5px);
-  -o-transform: translateX(0) translateY(24.5px) translateZ(-24.5px);
-  transform: translateX(0) translateY(24.5px) translateZ(-24.5px);
+  -webkit-transform: translateX(0) translateY(49px) translateZ(-49px);
+  -moz-transform: translateX(0) translateY(49px) translateZ(-49px);
+  -ms-transform: translateX(0) translateY(49px) translateZ(-49px);
+  -o-transform: translateX(0) translateY(49px) translateZ(-49px);
+  transform: translateX(0) translateY(49px) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-1"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(24.5px) translateZ(-24.5px);
-  -moz-transform: translateX(24.5px) translateY(24.5px) translateZ(-24.5px);
-  -ms-transform: translateX(24.5px) translateY(24.5px) translateZ(-24.5px);
-  -o-transform: translateX(24.5px) translateY(24.5px) translateZ(-24.5px);
-  transform: translateX(24.5px) translateY(24.5px) translateZ(-24.5px);
+  -webkit-transform: translateX(49px) translateY(49px) translateZ(-49px);
+  -moz-transform: translateX(49px) translateY(49px) translateZ(-49px);
+  -ms-transform: translateX(49px) translateY(49px) translateZ(-49px);
+  -o-transform: translateX(49px) translateY(49px) translateZ(-49px);
+  transform: translateX(49px) translateY(49px) translateZ(-49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-2"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(24.5px) translateZ(0);
-  -moz-transform: translateX(-24.5px) translateY(24.5px) translateZ(0);
-  -ms-transform: translateX(-24.5px) translateY(24.5px) translateZ(0);
-  -o-transform: translateX(-24.5px) translateY(24.5px) translateZ(0);
-  transform: translateX(-24.5px) translateY(24.5px) translateZ(0);
+  -webkit-transform: translateX(-49px) translateY(49px) translateZ(0);
+  -moz-transform: translateX(-49px) translateY(49px) translateZ(0);
+  -ms-transform: translateX(-49px) translateY(49px) translateZ(0);
+  -o-transform: translateX(-49px) translateY(49px) translateZ(0);
+  transform: translateX(-49px) translateY(49px) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-2"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(24.5px) translateZ(0);
-  -moz-transform: translateX(0) translateY(24.5px) translateZ(0);
-  -ms-transform: translateX(0) translateY(24.5px) translateZ(0);
-  -o-transform: translateX(0) translateY(24.5px) translateZ(0);
-  transform: translateX(0) translateY(24.5px) translateZ(0);
+  -webkit-transform: translateX(0) translateY(49px) translateZ(0);
+  -moz-transform: translateX(0) translateY(49px) translateZ(0);
+  -ms-transform: translateX(0) translateY(49px) translateZ(0);
+  -o-transform: translateX(0) translateY(49px) translateZ(0);
+  transform: translateX(0) translateY(49px) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-2"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(24.5px) translateZ(0);
-  -moz-transform: translateX(24.5px) translateY(24.5px) translateZ(0);
-  -ms-transform: translateX(24.5px) translateY(24.5px) translateZ(0);
-  -o-transform: translateX(24.5px) translateY(24.5px) translateZ(0);
-  transform: translateX(24.5px) translateY(24.5px) translateZ(0);
+  -webkit-transform: translateX(49px) translateY(49px) translateZ(0);
+  -moz-transform: translateX(49px) translateY(49px) translateZ(0);
+  -ms-transform: translateX(49px) translateY(49px) translateZ(0);
+  -o-transform: translateX(49px) translateY(49px) translateZ(0);
+  transform: translateX(49px) translateY(49px) translateZ(0);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-3"][class*=" col-1"] {
-  -webkit-transform: translateX(-24.5px) translateY(24.5px) translateZ(24.5px);
-  -moz-transform: translateX(-24.5px) translateY(24.5px) translateZ(24.5px);
-  -ms-transform: translateX(-24.5px) translateY(24.5px) translateZ(24.5px);
-  -o-transform: translateX(-24.5px) translateY(24.5px) translateZ(24.5px);
-  transform: translateX(-24.5px) translateY(24.5px) translateZ(24.5px);
+  -webkit-transform: translateX(-49px) translateY(49px) translateZ(49px);
+  -moz-transform: translateX(-49px) translateY(49px) translateZ(49px);
+  -ms-transform: translateX(-49px) translateY(49px) translateZ(49px);
+  -o-transform: translateX(-49px) translateY(49px) translateZ(49px);
+  transform: translateX(-49px) translateY(49px) translateZ(49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-3"][class*=" col-2"] {
-  -webkit-transform: translateX(0) translateY(24.5px) translateZ(24.5px);
-  -moz-transform: translateX(0) translateY(24.5px) translateZ(24.5px);
-  -ms-transform: translateX(0) translateY(24.5px) translateZ(24.5px);
-  -o-transform: translateX(0) translateY(24.5px) translateZ(24.5px);
-  transform: translateX(0) translateY(24.5px) translateZ(24.5px);
+  -webkit-transform: translateX(0) translateY(49px) translateZ(49px);
+  -moz-transform: translateX(0) translateY(49px) translateZ(49px);
+  -ms-transform: translateX(0) translateY(49px) translateZ(49px);
+  -o-transform: translateX(0) translateY(49px) translateZ(49px);
+  transform: translateX(0) translateY(49px) translateZ(49px);
 }
-/* line 9, ../sass/modules/_cubie.scss */
+/* line 16, ../sass/modules/_cubie.scss */
 div[class*=" section-3"] .cubie[class*=" row-3"][class*=" col-3"] {
-  -webkit-transform: translateX(24.5px) translateY(24.5px) translateZ(24.5px);
-  -moz-transform: translateX(24.5px) translateY(24.5px) translateZ(24.5px);
-  -ms-transform: translateX(24.5px) translateY(24.5px) translateZ(24.5px);
-  -o-transform: translateX(24.5px) translateY(24.5px) translateZ(24.5px);
-  transform: translateX(24.5px) translateY(24.5px) translateZ(24.5px);
+  -webkit-transform: translateX(49px) translateY(49px) translateZ(49px);
+  -moz-transform: translateX(49px) translateY(49px) translateZ(49px);
+  -ms-transform: translateX(49px) translateY(49px) translateZ(49px);
+  -o-transform: translateX(49px) translateY(49px) translateZ(49px);
+  transform: translateX(49px) translateY(49px) translateZ(49px);
 }
 
-/* line 24, ../sass/modules/_cubie.scss */
+/* line 29, ../sass/modules/_cubie.scss */
+.cubie {
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 35, ../sass/modules/_cubie.scss */
 .cubie .figure {
-  width: 24.5px;
-  height: 24.5px;
+  width: 49px;
+  height: 49px;
   display: block;
   position: absolute;
   border: 1px solid black;
-  line-height: 24.5px;
-  font-size: 16.33333px;
+  line-height: 49px;
+  font-size: 32.66667px;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -298,86 +498,86 @@ div[class*=" section-3"] .cubie[class*=" row-3"][class*=" col-3"] {
   /* background-color */
   /* placement */
 }
-/* line 38, ../sass/modules/_cubie.scss */
+/* line 49, ../sass/modules/_cubie.scss */
 .cubie .figure.orange {
   background-color: orange;
 }
-/* line 39, ../sass/modules/_cubie.scss */
+/* line 50, ../sass/modules/_cubie.scss */
 .cubie .figure.green {
   background-color: green;
 }
-/* line 40, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 .cubie .figure.red {
   background-color: red;
 }
-/* line 41, ../sass/modules/_cubie.scss */
+/* line 52, ../sass/modules/_cubie.scss */
 .cubie .figure.yellow {
   background-color: yellow;
 }
-/* line 42, ../sass/modules/_cubie.scss */
+/* line 53, ../sass/modules/_cubie.scss */
 .cubie .figure.white {
   background-color: white;
   color: #000;
 }
-/* line 43, ../sass/modules/_cubie.scss */
+/* line 54, ../sass/modules/_cubie.scss */
 .cubie .figure.blue {
   background-color: blue;
 }
-/* line 46, ../sass/modules/_cubie.scss */
+/* line 57, ../sass/modules/_cubie.scss */
 .cubie .figure.front {
-  -webkit-transform: rotateY(0deg) translateZ(12.25px);
-  -moz-transform: rotateY(0deg) translateZ(12.25px);
-  -ms-transform: rotateY(0deg) translateZ(12.25px);
-  -o-transform: rotateY(0deg) translateZ(12.25px);
-  transform: rotateY(0deg) translateZ(12.25px);
+  -webkit-transform: rotateY(0deg) translateZ(24.5px);
+  -moz-transform: rotateY(0deg) translateZ(24.5px);
+  -ms-transform: rotateY(0deg) translateZ(24.5px);
+  -o-transform: rotateY(0deg) translateZ(24.5px);
+  transform: rotateY(0deg) translateZ(24.5px);
 }
-/* line 47, ../sass/modules/_cubie.scss */
+/* line 58, ../sass/modules/_cubie.scss */
 .cubie .figure.left {
-  -webkit-transform: rotateY(-90deg) translateZ(12.25px);
-  -moz-transform: rotateY(-90deg) translateZ(12.25px);
-  -ms-transform: rotateY(-90deg) translateZ(12.25px);
-  -o-transform: rotateY(-90deg) translateZ(12.25px);
-  transform: rotateY(-90deg) translateZ(12.25px);
+  -webkit-transform: rotateY(-90deg) translateZ(24.5px);
+  -moz-transform: rotateY(-90deg) translateZ(24.5px);
+  -ms-transform: rotateY(-90deg) translateZ(24.5px);
+  -o-transform: rotateY(-90deg) translateZ(24.5px);
+  transform: rotateY(-90deg) translateZ(24.5px);
 }
-/* line 48, ../sass/modules/_cubie.scss */
+/* line 59, ../sass/modules/_cubie.scss */
 .cubie .figure.back {
-  -webkit-transform: rotateX(180deg) translateZ(12.25px);
-  -moz-transform: rotateX(180deg) translateZ(12.25px);
-  -ms-transform: rotateX(180deg) translateZ(12.25px);
-  -o-transform: rotateX(180deg) translateZ(12.25px);
-  transform: rotateX(180deg) translateZ(12.25px);
+  -webkit-transform: rotateX(180deg) translateZ(24.5px);
+  -moz-transform: rotateX(180deg) translateZ(24.5px);
+  -ms-transform: rotateX(180deg) translateZ(24.5px);
+  -o-transform: rotateX(180deg) translateZ(24.5px);
+  transform: rotateX(180deg) translateZ(24.5px);
 }
-/* line 49, ../sass/modules/_cubie.scss */
+/* line 60, ../sass/modules/_cubie.scss */
 .cubie .figure.right {
-  -webkit-transform: rotateY(90deg) translateZ(12.25px);
-  -moz-transform: rotateY(90deg) translateZ(12.25px);
-  -ms-transform: rotateY(90deg) translateZ(12.25px);
-  -o-transform: rotateY(90deg) translateZ(12.25px);
-  transform: rotateY(90deg) translateZ(12.25px);
+  -webkit-transform: rotateY(90deg) translateZ(24.5px);
+  -moz-transform: rotateY(90deg) translateZ(24.5px);
+  -ms-transform: rotateY(90deg) translateZ(24.5px);
+  -o-transform: rotateY(90deg) translateZ(24.5px);
+  transform: rotateY(90deg) translateZ(24.5px);
 }
-/* line 50, ../sass/modules/_cubie.scss */
+/* line 61, ../sass/modules/_cubie.scss */
 .cubie .figure.top {
-  -webkit-transform: rotateX(90deg) translateZ(12.25px);
-  -moz-transform: rotateX(90deg) translateZ(12.25px);
-  -ms-transform: rotateX(90deg) translateZ(12.25px);
-  -o-transform: rotateX(90deg) translateZ(12.25px);
-  transform: rotateX(90deg) translateZ(12.25px);
+  -webkit-transform: rotateX(90deg) translateZ(24.5px);
+  -moz-transform: rotateX(90deg) translateZ(24.5px);
+  -ms-transform: rotateX(90deg) translateZ(24.5px);
+  -o-transform: rotateX(90deg) translateZ(24.5px);
+  transform: rotateX(90deg) translateZ(24.5px);
 }
-/* line 51, ../sass/modules/_cubie.scss */
+/* line 62, ../sass/modules/_cubie.scss */
 .cubie .figure.bottom {
-  -webkit-transform: rotateX(-90deg) translateZ(12.25px);
-  -moz-transform: rotateX(-90deg) translateZ(12.25px);
-  -ms-transform: rotateX(-90deg) translateZ(12.25px);
-  -o-transform: rotateX(-90deg) translateZ(12.25px);
-  transform: rotateX(-90deg) translateZ(12.25px);
+  -webkit-transform: rotateX(-90deg) translateZ(24.5px);
+  -moz-transform: rotateX(-90deg) translateZ(24.5px);
+  -ms-transform: rotateX(-90deg) translateZ(24.5px);
+  -o-transform: rotateX(-90deg) translateZ(24.5px);
+  transform: rotateX(-90deg) translateZ(24.5px);
 }
 
-/* line 10, ../sass/app.scss */
+/* line 12, ../sass/app.scss */
 html {
   height: 100%;
 }
 
-/* line 14, ../sass/app.scss */
+/* line 16, ../sass/app.scss */
 body {
   height: 100%;
   margin: 0;
@@ -391,38 +591,85 @@ body {
   font-size: 275%;
 }
 
-/* line 24, ../sass/app.scss */
+/* line 26, ../sass/app.scss */
 .container {
-  width: 100px;
-  height: 100px;
+  width: 147px;
+  height: 147px;
   position: relative;
   margin: 50px auto;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
+  top: 200px;
+  -webkit-perspective: 2000;
+  -moz-perspective: 2000;
+  -ms-perspective: 2000;
+  -o-perspective: 2000;
+  perspective: 2000;
 }
 
-/* line 33, ../sass/app.scss */
-#cube,
-.cubie {
+/* line 35, ../sass/app.scss */
+#cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform: translateZ(-24.5px);
+  -moz-transform: translateZ(-24.5px);
+  -ms-transform: translateZ(-24.5px);
+  -o-transform: translateZ(-24.5px);
+  transform: translateZ(-24.5px);
 }
-
-/* line 37, ../sass/app.scss */
-#cube {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 300px;
-  -webkit-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
-  -moz-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
-  -ms-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
-  -o-transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
-  transform: rotateY(-15deg) rotateX(-15deg) translateZ(-100px);
+/* line 2, ../sass/partials/_rotations.scss */
+#cube.show-front {
+  -webkit-transform: translateZ(-24.5px) rotateY(0deg);
+  -moz-transform: translateZ(-24.5px) rotateY(0deg);
+  -ms-transform: translateZ(-24.5px) rotateY(0deg);
+  -o-transform: translateZ(-24.5px) rotateY(0deg);
+  transform: translateZ(-24.5px) rotateY(0deg);
+}
+/* line 5, ../sass/partials/_rotations.scss */
+#cube.show-back {
+  -webkit-transform: translateZ(-24.5px) rotateX(-180deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-180deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-180deg);
+  -o-transform: translateZ(-24.5px) rotateX(-180deg);
+  transform: translateZ(-24.5px) rotateX(-180deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+#cube.show-right {
+  -webkit-transform: translateZ(-24.5px) rotateY(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(-90deg);
+  -o-transform: translateZ(-24.5px) rotateY(-90deg);
+  transform: translateZ(-24.5px) rotateY(-90deg);
+}
+/* line 11, ../sass/partials/_rotations.scss */
+#cube.show-left {
+  -webkit-transform: translateZ(-24.5px) rotateY(90deg);
+  -moz-transform: translateZ(-24.5px) rotateY(90deg);
+  -ms-transform: translateZ(-24.5px) rotateY(90deg);
+  -o-transform: translateZ(-24.5px) rotateY(90deg);
+  transform: translateZ(-24.5px) rotateY(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+#cube.show-top {
+  -webkit-transform: translateZ(-24.5px) rotateX(-90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(-90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(-90deg);
+  -o-transform: translateZ(-24.5px) rotateX(-90deg);
+  transform: translateZ(-24.5px) rotateX(-90deg);
+}
+/* line 17, ../sass/partials/_rotations.scss */
+#cube.show-bottom {
+  -webkit-transform: translateZ(-24.5px) rotateX(90deg);
+  -moz-transform: translateZ(-24.5px) rotateX(90deg);
+  -ms-transform: translateZ(-24.5px) rotateX(90deg);
+  -o-transform: translateZ(-24.5px) rotateX(90deg);
+  transform: translateZ(-24.5px) rotateX(90deg);
 }
