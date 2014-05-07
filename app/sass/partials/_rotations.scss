@@ -1,0 +1,20 @@
+@mixin rotations {
+  &.show-front {
+    @include transform(translateZ(-$translation) rotateY(0deg));
+  }
+  &.show-back {
+    @include transform(translateZ(-$translation) rotateX(-180deg));
+  }
+  &.show-right {
+    @include transform(translateZ(-$translation) rotateY(-90deg));
+  }
+  &.show-left {
+    @include transform(translateZ(-$translation) rotateY(90deg));
+  }
+  &.show-top {
+    @include transform(translateZ(-$translation) rotateX(-90deg));
+  }
+  &.show-bottom {
+    @include transform(translateZ(-$translation) rotateX(90deg));
+  }
+}
