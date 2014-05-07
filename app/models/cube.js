@@ -10,7 +10,7 @@ Cube.reopenClass({
         id: 1,
         title: 'i am a wild pig',
         isSolved: false,
-        sections: [1,2,3]
+        sections: [1]//,2,3]
       }
     ]
   });

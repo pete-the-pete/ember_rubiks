@@ -5,8 +5,11 @@
     height: 100%;
     position: absolute;
     @include transform-style();
+    @include transform-origin();
     @include transition(transform 1s);
-    @include rotations();
+    @include transform(translateZ($section_translation));
+    @include rotations($section_translation);
+    border: solid 1px blue;
 
     .cubie {
       @for $row from 1 through $N {

@@ -38,6 +38,6 @@ body {
   position: absolute;
   @include transform-style();
   @include transition(transform 1s);
-  @include transform(translateZ( -$translation ));
-  @include rotations();
+  @include transform(translateZ( -$cube_translation ));
+  @include rotations($cube_translation);
 }

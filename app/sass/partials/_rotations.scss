@@ -1,20 +1,21 @@
-@mixin rotations {
+@mixin rotations($rot_trans) {
   &.show-front {
-    @include transform(translateZ(-$translation) rotateY(0deg));
+    @include transform(translateZ(-$rot_trans) rotateY(0deg));
   }
   &.show-back {
-    @include transform(translateZ(-$translation) rotateX(-180deg));
+    @include transform(translateZ(-$rot_trans) rotateX(-180deg));
   }
   &.show-right {
-    @include transform(translateZ(-$translation) rotateY(-90deg));
+    //@include transform(translateZ(-$rot_trans) rotateY(-90deg));
+    @include transform(translateZ(-$rot_trans) rotateY(-90deg));
   }
   &.show-left {
-    @include transform(translateZ(-$translation) rotateY(90deg));
+    @include transform(translateZ(-$rot_trans) rotateY(90deg));
   }
   &.show-top {
-    @include transform(translateZ(-$translation) rotateX(-90deg));
+    @include transform(translateZ(-$rot_trans) rotateX(-90deg));
   }
   &.show-bottom {
-    @include transform(translateZ(-$translation) rotateX(90deg));
+    @include transform(translateZ(-$rot_trans) rotateX(90deg));
   }
 }
