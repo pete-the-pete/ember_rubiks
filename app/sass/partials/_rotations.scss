@@ -3,10 +3,9 @@
     @include transform(translateZ(-$rot_trans) rotateY(0deg));
   }
   &.show-back {
-    @include transform(translateZ(-$rot_trans) rotateX(-180deg));
+    @include transform(translateZ(-$rot_trans) rotateY(-180deg));
   }
   &.show-right {
-    //@include transform(translateZ(-$rot_trans) rotateY(-90deg));
     @include transform(translateZ(-$rot_trans) rotateY(-90deg));
   }
   &.show-left {

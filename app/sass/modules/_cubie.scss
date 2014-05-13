@@ -2,14 +2,13 @@
 @for $section from 1 through $N {
   div[class*=" section-#{$section}"] {
     width: 100%;
-    height: 100%;
+    height: $cubie_dimension;
     position: absolute;
     @include transform-style();
-    @include transform-origin();
+    @include transform-origin(1.5*$cubie_dimension 0 $cubie_dimension);//1.5*$cubie_dimension 0 1.5*$cubie_dimension);
     @include transition(transform 1s);
-    @include transform(translateZ($section_translation));
-    @include rotations($section_translation);
-    border: solid 1px blue;
+    @include transform(translateZ($side_translation));
+    @include rotations(-$side_translation);
 
     .cubie {
       @for $row from 1 through $N {
@@ -46,7 +45,7 @@
     font-weight: bold;
     color: white;
     text-align: center;
-    opacity: 0.80;
+    //opacity: 0.80;
 
     /* background-color */
     &.orange { background-color: $orange; }

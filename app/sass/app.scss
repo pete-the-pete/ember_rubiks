@@ -28,7 +28,7 @@ body {
   height: ($N * $cubie_dimension);
   position: relative;
   margin: 50px auto;
-  top: 200px;
+  top: 100px;
   @include perspective(2000);
 }
 
@@ -38,6 +38,7 @@ body {
   position: absolute;
   @include transform-style();
   @include transition(transform 1s);
+  @include transform-origin(1.5*$cubie_dimension 1.5*$cubie_dimension 1.5*$cubie_dimension);
   @include transform(translateZ( -$cube_translation ));
   @include rotations($cube_translation);
 }
