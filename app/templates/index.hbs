@@ -1,11 +1,18 @@
-
 {{#each}}
-  <section class="container">
-  <div id="cube">
-  {{#each section in sections}}
-    {{cube-section section=section}}
+<section class="container">
+  <table id="cube">
+  <col />
+  <col />
+  <col />
+  {{#each layer in layers}}
+    <tr>
+    {{#each section in layer.sections}}
+      <td>
+      {{cube-section section=section}}
+      </td>
+    {{/each}}
+    </tr>
   {{/each}}
-  </div>
-  </section>
-
+  </table>
+</section>
 {{/each}}

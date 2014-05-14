@@ -1,9 +1,9 @@
 var CubeSection = Ember.Component.extend({
-  classNameBindings: ['className'],
+ /* classNameBindings: ['className'],
   className: function() {
     "use strict";
     return 'section-' + this.section.get('id');
-  }.property()
+  }.property()*/
 });
 
 export default CubeSection;

@@ -1,6 +1,6 @@
 var Cube = DS.Model.extend({
   title: DS.attr('string'),
-  sections: DS.hasMany('section', {async: true}),
+  layers: DS.hasMany('layer', {async: true}),
   isSolved: DS.attr('boolean', {defaultValue: false})
 });
 
@@ -10,7 +10,7 @@ Cube.reopenClass({
         id: 1,
         title: 'i am a wild pig',
         isSolved: false,
-        sections: [1,2,3]
+        layers: [1]//,2,3]
       }
     ]
   });
