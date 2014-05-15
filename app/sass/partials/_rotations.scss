@@ -1,20 +1,52 @@
-@mixin rotations($rot_trans) {
-  &.show-front {
-    @include transform(translateZ(-$rot_trans) rotateY(0deg));
+@mixin rotate($initial_trans, $type, $direction) {
+  $steps: 4;
+  $multiplier: 1;
+  @if($direction == 'anticlockwise') {
+    $multiplier: -1;
   }
-  &.show-back {
-    @include transform(translateZ(-$rot_trans) rotateY(-180deg));
+
+  @for $step from 1 through $steps {
+    $rotation: ($multiplier * (($step % 4) * 90)) + 'deg';
+    &.#{'rotate'+$type} {
+      &.#{$direction} {
+        &.#{'step-'+$step} {
+          @if($type == X) {
+            @include transform($initial_trans rotateX(#{$rotation}));
+          } @else if($type == Y) {
+            @include transform($initial_trans rotateY(#{$rotation}));
+          } @else if($type == Z) {
+            @include transform($initial_trans rotateZ(#{$rotation}));
+          }
+        }
+      }
+    }
   }
-  &.show-right {
-    @include transform(translateZ(-$rot_trans) rotateY(-90deg));
-  }
-  &.show-left {
-    @include transform(translateZ(-$rot_trans) rotateY(90deg));
-  }
-  &.show-top {
-    @include transform(translateZ(-$rot_trans) rotateX(-90deg));
-  }
-  &.show-bottom {
-    @include transform(translateZ(-$rot_trans) rotateX(90deg));
-  }
+}
+
+@mixin rotateClockwise($initial_trans, $rotation) {
+  @include rotate($initial_trans, $rotation, 'clockwise');
+}
+@mixin rotateAntiClockwise($initial_trans, $rotation) {
+  @include rotate($initial_trans, $rotation, 'anticlockwise');
+}
+
+@mixin rotations($initial_trans) {
+  @include rotationsX($initial_trans);
+  @include rotationsY($initial_trans);
+  @include rotationsZ($initial_trans);
+}
+
+@mixin rotationsX($initial_trans) {
+  @include rotateClockwise($initial_trans, 'X');
+  @include rotateAntiClockwise($initial_trans, 'X');
+}
+
+@mixin rotationsY($initial_trans) {
+  @include rotateClockwise($initial_trans, 'Y');
+  @include rotateAntiClockwise($initial_trans, 'Y');
+}
+
+@mixin rotationsZ($initial_trans) {
+  @include rotateClockwise($initial_trans, 'Z');
+  @include rotateAntiClockwise($initial_trans, 'Z');
 }

@@ -1,26 +1,27 @@
 //n x n x n
-@for $section from 1 through $N {
-  div[class*=" section-#{$section}"] {
+@for $layer from 1 through $N {
+  div.layer:nth-of-type(#{$layer}) {
     width: 100%;
     height: $cubie_dimension;
     position: absolute;
-    @include transform-style();
     @include transform-origin(1.5*$cubie_dimension 0 $cubie_dimension);
     @include transition(transform 1s);
-    @include transform(translateZ($side_translation));
-    @include rotations(-$side_translation);
+    @include transform(
+      translateY(nth($cubie_positions, $layer))
+      translateZ($side_translation)
+    );
+    @include rotationsY(
+      translateY(nth($cubie_positions, $layer))
+      translateZ($side_translation)
+    );
 
-    .cubie {
-      @for $row from 1 through $N {
-        &[class*=" row-#{$row}"] {
-          //cols
-          @for $col from 1 through $N {
-            &[class*=" col-#{$col}"] {
-              @include transform(
-                  translateX(nth($cubie_positions, $col))
-                  translateY(nth($cubie_positions, $section))
-                  translateZ(nth($cubie_positions, $row)));
-            }
+    @for $section from 1 through $N {
+      div.section:nth-of-type(#{$section}) {
+        @include transform(translateZ(nth($cubie_positions, $section)));
+
+        @for $cubie from 1 through $N {
+          div.cubie:nth-of-type(#{$cubie}) {
+            @include transform(translateX(nth($cubie_positions, $cubie)));
           }
         }
       }
@@ -28,18 +29,18 @@
   }
 }
 
+
 .cubie {
   width: $cubie_dimension;
   height: $cubie_dimension;
   position: absolute;
-  @include transform-style();
   //the sides of a cubie
   .figure {
-    width: $cubie_dimension;
-    height: $cubie_dimension;
+    width: $cubie_sides;
+    height: $cubie_sides;
     display: block;
     position: absolute;
-    border: 1px solid black;
+    border: $cubie_border solid black;
     line-height: $cubie_dimension;
     font-size: $cubie_dimension * 2/3;
     font-weight: bold;
@@ -51,7 +52,7 @@
     &.orange { background-color: $orange; }
     &.green { background-color: $green; }
     &.red { background-color: $red; }
-    &.yellow { background-color: $yellow; }
+    &.yellow { background-color: $yellow; color: #000; }
     &.white { background-color: $white; color: #000; }
     &.blue { background-color: $blue; }
 

@@ -9,17 +9,17 @@ Layer.reopenClass({
       id: 1,
       cube: 1,
       sections: [1,2,3]
-    }/*,
+    },
     {
       id: 2,
       cube: 1,
-      sections: [10,11,12,13,14,15,16,17,18]
+      sections: [4,5,6]
     },
     {
       id: 3,
       cube: 1,
-      sections: [19,20,21,22,23,24,25,26,27]
-    }*/
+      sections: [7,8,9]
+    }
   ]
 });
 
