@@ -4,7 +4,7 @@
     width: 100%;
     height: $cubie_dimension;
     position: absolute;
-    @include backface-visibility('hidden');
+    @include backface-visibility(hidden);
     @include transform-origin(1.5*$cubie_dimension 0 $cubie_dimension);
     @include transition(transform 1s);
     @include transform(
@@ -47,7 +47,7 @@
     font-weight: bold;
     color: white;
     text-align: center;
-    @include backface-visibility('hidden');
+    @include backface-visibility(hidden);
     //opacity: 0.80;
 
     /* background-color */

@@ -45,7 +45,7 @@ body {
   position: absolute;
   @include transform-style();
   @include transition(transform 1s);
-  @include backface-visibility('hidden');
+  @include backface-visibility(hidden);
   @include transform-origin(1.5*$cubie_dimension 1.5*$cubie_dimension 1.5*$cubie_dimension);
   @include transform(
     translateZ( -$cube_translation )
