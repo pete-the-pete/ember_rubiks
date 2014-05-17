@@ -205,6 +205,6 @@ Cubie.reopenClass({
       faces:[RIGHT, FRONT, BOTTOM]
     }
   ]
-})
+});
 
 export default Cubie;

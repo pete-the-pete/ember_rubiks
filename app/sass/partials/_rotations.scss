@@ -6,7 +6,7 @@
   }
 
   @for $step from 1 through $steps {
-    $rotation: ($multiplier * (($step % 4) * 90)) + 'deg';
+    $rotation: ($multiplier * (($step) * 90)) + 'deg';
     &.#{'rotate'+$type} {
       &.#{$direction} {
         &.#{'step-'+$step} {

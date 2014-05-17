@@ -36,6 +36,6 @@ Face.reopenClass({
       color:'blue'
     }
   ]
-})
+});
 
 export default Face;
