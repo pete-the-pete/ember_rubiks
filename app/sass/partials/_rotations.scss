@@ -5,9 +5,11 @@
     $multiplier: -1;
   }
 
-  @for $step from 1 through $steps {
-    $rotation: ($multiplier * (($step) * 90)) + 'deg';
-    &.#{'rotate'+$type} {
+ &.#{'rotate'+$type} {
+    //to handle dynamic transform-origin
+    @content;
+    @for $step from 1 through $steps {
+      $rotation: ($multiplier * (($step) * 90)) + 'deg';
       &.#{$direction} {
         &.#{'step-'+$step} {
           @if($type == X) {
@@ -24,29 +26,29 @@
 }
 
 @mixin rotateClockwise($initial_trans, $rotation) {
-  @include rotate($initial_trans, $rotation, 'clockwise');
+  @include rotate($initial_trans, $rotation, 'clockwise') { @content; }
 }
 @mixin rotateAntiClockwise($initial_trans, $rotation) {
-  @include rotate($initial_trans, $rotation, 'anticlockwise');
+  @include rotate($initial_trans, $rotation, 'anticlockwise') { @content; }
 }
 
 @mixin rotations($initial_trans) {
-  @include rotationsX($initial_trans);
-  @include rotationsY($initial_trans);
-  @include rotationsZ($initial_trans);
+  @include rotationsX($initial_trans) { @content; }
+  @include rotationsY($initial_trans) { @content; }
+  @include rotationsZ($initial_trans) { @content; }
 }
 
 @mixin rotationsX($initial_trans) {
-  @include rotateClockwise($initial_trans, 'X');
-  @include rotateAntiClockwise($initial_trans, 'X');
+  @include rotateClockwise($initial_trans, 'X') { @content; }
+  @include rotateAntiClockwise($initial_trans, 'X') { @content; }
 }
 
 @mixin rotationsY($initial_trans) {
-  @include rotateClockwise($initial_trans, 'Y');
-  @include rotateAntiClockwise($initial_trans, 'Y');
+  @include rotateClockwise($initial_trans, 'Y') { @content; };
+  @include rotateAntiClockwise($initial_trans, 'Y') { @content; };
 }
 
 @mixin rotationsZ($initial_trans) {
-  @include rotateClockwise($initial_trans, 'Z');
-  @include rotateAntiClockwise($initial_trans, 'Z');
+  @include rotateClockwise($initial_trans, 'Z') { @content; }
+  @include rotateAntiClockwise($initial_trans, 'Z') { @content; }
 }

@@ -1,4 +1,5 @@
 //n x n x n
+$center: 2;
 @for $layer from 1 through $N {
   div.layer:nth-of-type(#{$layer}) {
     width: 100%;
@@ -6,7 +7,7 @@
     position: absolute;
     @include backface-visibility(hidden);
     @include transform-origin(1.5*$cubie_dimension 0 $cubie_dimension);
-    @include transition(transform 1s);
+    @include transition(transform 15s);
     @include transform(
       translateY(nth($cubie_positions, $layer))
       translateZ($side_translation)
@@ -21,8 +22,22 @@
         @include transform(translateZ(nth($cubie_positions, $section)));
 
         @for $cubie from 1 through $N {
-          div.cubie:nth-of-type(#{$cubie}) {
-            @include transform(translateX(nth($cubie_positions, $cubie)));
+          div.cubie:nth-of-type(#{$cubie}) {            
+            @include transform(
+              translateX(nth($cubie_positions, $cubie))
+            );
+            //front face rotations
+            @if $section == $N {
+              @include rotationsZ(
+                translateX(nth($cubie_positions, $cubie))
+              );
+              @include transform-origin(
+                (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
+                (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
+                nth($cubie_positions, $section)
+              );
+            }
+
           }
         }
       }
@@ -35,6 +50,7 @@
   width: $cubie_dimension;
   height: $cubie_dimension;
   position: absolute;
+  @include transition(transform 1s);
   //the sides of a cubie
   .figure {
     width: $cubie_sides;

@@ -1,7 +1,7 @@
 $N: 3;
 $cubie_sides: 48px;
 $cubie_border: 1px;
-$cubie_dimension: $cubie_sides + 2 * $cubie_border;
+$cubie_dimension: $cubie_sides + (2 * $cubie_border);
 $cubie_positions: (0, $cubie_dimension, 2*$cubie_dimension);
 $side_translation: $cubie_dimension/2;
 $section_translation: 3*$cubie_dimension;
