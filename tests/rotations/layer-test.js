@@ -1,6 +1,8 @@
 import startApp from '../helpers/start-app';
 
-var App, $layers;
+var App, 
+  $layers,
+  delay = 250;
 
 module('Rotations - Layers', {
   setup: function(){
@@ -14,7 +16,7 @@ module('Rotations - Layers', {
 function resetLayer() {
   return new Promise(function(resolve) {
     $layers.attr('class','layer');
-    Ember.run.later(App, resolve, 1000);
+    Ember.run.later(App, resolve, delay);
   });
 }
 
@@ -25,7 +27,7 @@ function performVisualConfirmation(rotation, direction) {
         .addClass(rotation)
         .addClass(direction)
         .addClass('step-2');
-      Ember.run.later(App, resolve, 1000);
+      Ember.run.later(App, resolve, delay);
     });
   };
 }
@@ -41,5 +43,6 @@ asyncTest('layers can rotate', function() {
       .then(resetLayer)
       .then(performVisualConfirmation('rotateY', 'clockwise'))
       .then(resetLayer)
+      .then(start);
     });
 });

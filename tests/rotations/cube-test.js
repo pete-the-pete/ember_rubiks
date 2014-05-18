@@ -1,6 +1,7 @@
 import startApp from '../helpers/start-app';
 
-var App;
+var App,
+  delay = 250;
 
 /* 
 TODO: maybe use this, or something like it, later to programmatically verify the rotations occured
@@ -29,7 +30,7 @@ module('Rotations - Cube', {
 function resetCube() {
   return new Promise(function(resolve) {
     $('#cube').attr('class',"");
-    Ember.run.later(App, resolve, 1000);
+    Ember.run.later(App, resolve, delay);
   });
 }
 
@@ -40,7 +41,7 @@ function performVisualConfirmation(rotation, direction) {
         .addClass(rotation)
         .addClass(direction)
         .addClass('step-2');
-      Ember.run.later(App, resolve, 1000);
+      Ember.run.later(App, resolve, delay);
     });
   };
 }
@@ -62,4 +63,5 @@ asyncTest('cube can rotate', function() {
     .then(resetCube)
     .then(performVisualConfirmation('rotateZ', 'clockwise'))
     .then(resetCube)
+    .then(start);
 });

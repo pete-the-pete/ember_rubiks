@@ -59,7 +59,7 @@ asyncTest('faces can rotate', function() {
       .then(performVisualConfirmation('rotateZ', 'anticlockwise'))
       .then(resetCubies)
       .then(function() {
-        console.debug('it happened');
+        //LEFT FACE
         callCount = 0;
         $sectionCubies = $('div.section div.cubie:first-of-type');
         //wind up
@@ -71,7 +71,24 @@ asyncTest('faces can rotate', function() {
         .then(performVisualConfirmation('rotateX', 'anticlockwise'))
         .then(performVisualConfirmation('rotateX', 'anticlockwise'))
         .then(performVisualConfirmation('rotateX', 'anticlockwise'))
-        .then(performVisualConfirmation('rotateX', 'anticlockwise'));
+        .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+        .then(resetCubies)
+        .then(function() {
+          //RIGHT FACE
+          callCount = 0;
+          $sectionCubies = $('div.section div.cubie:last-of-type');
+          //wind up
+          performVisualConfirmation('rotateX', 'anticlockwise')()
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          //unwind
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          .then(performVisualConfirmation('rotateX', 'anticlockwise'))
+          .then(start);
+        });
       });
     });
 });
