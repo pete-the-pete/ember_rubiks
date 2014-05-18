@@ -4,6 +4,7 @@
 @import "primitives/measurements";
 @import "primitives/colors";
 @import "primitives/sides";
+@import "primitives/delays";
 
 @import "partials/rotations";
 
@@ -44,7 +45,7 @@ body {
   height: 100%;
   position: absolute;
   @include transform-style();
-  @include transition(transform 1s);
+  @include transition(transform $rotation_delay);
   @include backface-visibility(hidden);
   @include transform-origin(1.5*$cubie_dimension 1.5*$cubie_dimension 1.5*$cubie_dimension);
   @include transform(

@@ -63,7 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 4, ../sass/modules/_cubie.scss */
+/* line 30, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) {
   width: 100%;
   height: 50px;
@@ -78,10 +78,10 @@ div.layer:nth-of-type(1) {
   -ms-transform-origin: 75px 0 50px 50%;
   -o-transform-origin: 75px 0 50px 50%;
   transform-origin: 75px 0 50px 50%;
-  -webkit-transition: -webkit-transform 15s;
-  -moz-transition: -moz-transform 15s;
-  -o-transition: -o-transform 15s;
-  transition: transform 15s;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  transition: transform 0.25s;
   -webkit-transform: translateY(0) translateZ(25px);
   -moz-transform: translateY(0) translateZ(25px);
   -ms-transform: translateY(0) translateZ(25px);
@@ -152,7 +152,7 @@ div.layer:nth-of-type(1).rotateY.anticlockwise.step-4 {
   -o-transform: translateY(0) translateZ(25px) rotateY(-360deg);
   transform: translateY(0) translateZ(25px) rotateY(-360deg);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(1) {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -160,7 +160,7 @@ div.layer:nth-of-type(1) div.section:nth-of-type(1) {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -168,7 +168,167 @@ div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1) {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 75px 50px;
+  -moz-transform-origin: 0 75px 50px;
+  -ms-transform-origin: 0 75px 50px;
+  -o-transform-origin: 0 75px 50px;
+  transform-origin: 0 75px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 75px 50px;
+  -moz-transform-origin: 0 75px 50px;
+  -ms-transform-origin: 0 75px 50px;
+  -o-transform-origin: 0 75px 50px;
+  transform-origin: 0 75px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px 75px 0;
+  -moz-transform-origin: 75px 75px 0;
+  -ms-transform-origin: 75px 75px 0;
+  -o-transform-origin: 75px 75px 0;
+  transform-origin: 75px 75px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateZ(90deg);
+  -moz-transform: translateX(0) rotateZ(90deg);
+  -ms-transform: translateX(0) rotateZ(90deg);
+  -o-transform: translateX(0) rotateZ(90deg);
+  transform: translateX(0) rotateZ(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateZ(180deg);
+  -moz-transform: translateX(0) rotateZ(180deg);
+  -ms-transform: translateX(0) rotateZ(180deg);
+  -o-transform: translateX(0) rotateZ(180deg);
+  transform: translateX(0) rotateZ(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateZ(270deg);
+  -moz-transform: translateX(0) rotateZ(270deg);
+  -ms-transform: translateX(0) rotateZ(270deg);
+  -o-transform: translateX(0) rotateZ(270deg);
+  transform: translateX(0) rotateZ(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateZ(360deg);
+  -moz-transform: translateX(0) rotateZ(360deg);
+  -ms-transform: translateX(0) rotateZ(360deg);
+  -o-transform: translateX(0) rotateZ(360deg);
+  transform: translateX(0) rotateZ(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px 75px 0;
+  -moz-transform-origin: 75px 75px 0;
+  -ms-transform-origin: 75px 75px 0;
+  -o-transform-origin: 75px 75px 0;
+  transform-origin: 75px 75px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateZ(-90deg);
+  -moz-transform: translateX(0) rotateZ(-90deg);
+  -ms-transform: translateX(0) rotateZ(-90deg);
+  -o-transform: translateX(0) rotateZ(-90deg);
+  transform: translateX(0) rotateZ(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateZ(-180deg);
+  -moz-transform: translateX(0) rotateZ(-180deg);
+  -ms-transform: translateX(0) rotateZ(-180deg);
+  -o-transform: translateX(0) rotateZ(-180deg);
+  transform: translateX(0) rotateZ(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateZ(-270deg);
+  -moz-transform: translateX(0) rotateZ(-270deg);
+  -ms-transform: translateX(0) rotateZ(-270deg);
+  -o-transform: translateX(0) rotateZ(-270deg);
+  transform: translateX(0) rotateZ(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateZ(-360deg);
+  -moz-transform: translateX(0) rotateZ(-360deg);
+  -ms-transform: translateX(0) rotateZ(-360deg);
+  -o-transform: translateX(0) rotateZ(-360deg);
+  transform: translateX(0) rotateZ(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
@@ -176,7 +336,87 @@ div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2) {
   -o-transform: translateX(50px);
   transform: translateX(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 75px 50px;
+  -moz-transform-origin: 50px 75px 50px;
+  -ms-transform-origin: 50px 75px 50px;
+  -o-transform-origin: 50px 75px 50px;
+  transform-origin: 50px 75px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(90deg);
+  -moz-transform: translateX(50px) rotateX(90deg);
+  -ms-transform: translateX(50px) rotateX(90deg);
+  -o-transform: translateX(50px) rotateX(90deg);
+  transform: translateX(50px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(180deg);
+  -moz-transform: translateX(50px) rotateX(180deg);
+  -ms-transform: translateX(50px) rotateX(180deg);
+  -o-transform: translateX(50px) rotateX(180deg);
+  transform: translateX(50px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(270deg);
+  -moz-transform: translateX(50px) rotateX(270deg);
+  -ms-transform: translateX(50px) rotateX(270deg);
+  -o-transform: translateX(50px) rotateX(270deg);
+  transform: translateX(50px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(360deg);
+  -moz-transform: translateX(50px) rotateX(360deg);
+  -ms-transform: translateX(50px) rotateX(360deg);
+  -o-transform: translateX(50px) rotateX(360deg);
+  transform: translateX(50px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 75px 50px;
+  -moz-transform-origin: 50px 75px 50px;
+  -ms-transform-origin: 50px 75px 50px;
+  -o-transform-origin: 50px 75px 50px;
+  transform-origin: 50px 75px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(-90deg);
+  -moz-transform: translateX(50px) rotateX(-90deg);
+  -ms-transform: translateX(50px) rotateX(-90deg);
+  -o-transform: translateX(50px) rotateX(-90deg);
+  transform: translateX(50px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(-180deg);
+  -moz-transform: translateX(50px) rotateX(-180deg);
+  -ms-transform: translateX(50px) rotateX(-180deg);
+  -o-transform: translateX(50px) rotateX(-180deg);
+  transform: translateX(50px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(-270deg);
+  -moz-transform: translateX(50px) rotateX(-270deg);
+  -ms-transform: translateX(50px) rotateX(-270deg);
+  -o-transform: translateX(50px) rotateX(-270deg);
+  transform: translateX(50px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(-360deg);
+  -moz-transform: translateX(50px) rotateX(-360deg);
+  -ms-transform: translateX(50px) rotateX(-360deg);
+  -o-transform: translateX(50px) rotateX(-360deg);
+  transform: translateX(50px) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -184,7 +424,167 @@ div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -o-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 75px 50px;
+  -moz-transform-origin: 100px 75px 50px;
+  -ms-transform-origin: 100px 75px 50px;
+  -o-transform-origin: 100px 75px 50px;
+  transform-origin: 100px 75px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 75px 50px;
+  -moz-transform-origin: 100px 75px 50px;
+  -ms-transform-origin: 100px 75px 50px;
+  -o-transform-origin: 100px 75px 50px;
+  transform-origin: 100px 75px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px 75px 0;
+  -moz-transform-origin: -25px 75px 0;
+  -ms-transform-origin: -25px 75px 0;
+  -o-transform-origin: -25px 75px 0;
+  transform-origin: -25px 75px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateZ(90deg);
+  -moz-transform: translateX(100px) rotateZ(90deg);
+  -ms-transform: translateX(100px) rotateZ(90deg);
+  -o-transform: translateX(100px) rotateZ(90deg);
+  transform: translateX(100px) rotateZ(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateZ(180deg);
+  -moz-transform: translateX(100px) rotateZ(180deg);
+  -ms-transform: translateX(100px) rotateZ(180deg);
+  -o-transform: translateX(100px) rotateZ(180deg);
+  transform: translateX(100px) rotateZ(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateZ(270deg);
+  -moz-transform: translateX(100px) rotateZ(270deg);
+  -ms-transform: translateX(100px) rotateZ(270deg);
+  -o-transform: translateX(100px) rotateZ(270deg);
+  transform: translateX(100px) rotateZ(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateZ(360deg);
+  -moz-transform: translateX(100px) rotateZ(360deg);
+  -ms-transform: translateX(100px) rotateZ(360deg);
+  -o-transform: translateX(100px) rotateZ(360deg);
+  transform: translateX(100px) rotateZ(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px 75px 0;
+  -moz-transform-origin: -25px 75px 0;
+  -ms-transform-origin: -25px 75px 0;
+  -o-transform-origin: -25px 75px 0;
+  transform-origin: -25px 75px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateZ(-90deg);
+  -moz-transform: translateX(100px) rotateZ(-90deg);
+  -ms-transform: translateX(100px) rotateZ(-90deg);
+  -o-transform: translateX(100px) rotateZ(-90deg);
+  transform: translateX(100px) rotateZ(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateZ(-180deg);
+  -moz-transform: translateX(100px) rotateZ(-180deg);
+  -ms-transform: translateX(100px) rotateZ(-180deg);
+  -o-transform: translateX(100px) rotateZ(-180deg);
+  transform: translateX(100px) rotateZ(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateZ(-270deg);
+  -moz-transform: translateX(100px) rotateZ(-270deg);
+  -ms-transform: translateX(100px) rotateZ(-270deg);
+  -o-transform: translateX(100px) rotateZ(-270deg);
+  transform: translateX(100px) rotateZ(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateZ(-360deg);
+  -moz-transform: translateX(100px) rotateZ(-360deg);
+  -ms-transform: translateX(100px) rotateZ(-360deg);
+  -o-transform: translateX(100px) rotateZ(-360deg);
+  transform: translateX(100px) rotateZ(-360deg);
+}
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(2) {
   -webkit-transform: translateZ(50px);
   -moz-transform: translateZ(50px);
@@ -192,7 +592,7 @@ div.layer:nth-of-type(1) div.section:nth-of-type(2) {
   -o-transform: translateZ(50px);
   transform: translateZ(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -200,7 +600,87 @@ div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1) {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 75px 0px;
+  -moz-transform-origin: 0 75px 0px;
+  -ms-transform-origin: 0 75px 0px;
+  -o-transform-origin: 0 75px 0px;
+  transform-origin: 0 75px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 75px 0px;
+  -moz-transform-origin: 0 75px 0px;
+  -ms-transform-origin: 0 75px 0px;
+  -o-transform-origin: 0 75px 0px;
+  transform-origin: 0 75px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
@@ -208,7 +688,87 @@ div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -o-transform: translateX(50px);
   transform: translateX(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 75px 0px;
+  -moz-transform-origin: 50px 75px 0px;
+  -ms-transform-origin: 50px 75px 0px;
+  -o-transform-origin: 50px 75px 0px;
+  transform-origin: 50px 75px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(90deg);
+  -moz-transform: translateX(50px) rotateX(90deg);
+  -ms-transform: translateX(50px) rotateX(90deg);
+  -o-transform: translateX(50px) rotateX(90deg);
+  transform: translateX(50px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(180deg);
+  -moz-transform: translateX(50px) rotateX(180deg);
+  -ms-transform: translateX(50px) rotateX(180deg);
+  -o-transform: translateX(50px) rotateX(180deg);
+  transform: translateX(50px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(270deg);
+  -moz-transform: translateX(50px) rotateX(270deg);
+  -ms-transform: translateX(50px) rotateX(270deg);
+  -o-transform: translateX(50px) rotateX(270deg);
+  transform: translateX(50px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(360deg);
+  -moz-transform: translateX(50px) rotateX(360deg);
+  -ms-transform: translateX(50px) rotateX(360deg);
+  -o-transform: translateX(50px) rotateX(360deg);
+  transform: translateX(50px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 75px 0px;
+  -moz-transform-origin: 50px 75px 0px;
+  -ms-transform-origin: 50px 75px 0px;
+  -o-transform-origin: 50px 75px 0px;
+  transform-origin: 50px 75px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(-90deg);
+  -moz-transform: translateX(50px) rotateX(-90deg);
+  -ms-transform: translateX(50px) rotateX(-90deg);
+  -o-transform: translateX(50px) rotateX(-90deg);
+  transform: translateX(50px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(-180deg);
+  -moz-transform: translateX(50px) rotateX(-180deg);
+  -ms-transform: translateX(50px) rotateX(-180deg);
+  -o-transform: translateX(50px) rotateX(-180deg);
+  transform: translateX(50px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(-270deg);
+  -moz-transform: translateX(50px) rotateX(-270deg);
+  -ms-transform: translateX(50px) rotateX(-270deg);
+  -o-transform: translateX(50px) rotateX(-270deg);
+  transform: translateX(50px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(-360deg);
+  -moz-transform: translateX(50px) rotateX(-360deg);
+  -ms-transform: translateX(50px) rotateX(-360deg);
+  -o-transform: translateX(50px) rotateX(-360deg);
+  transform: translateX(50px) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -216,7 +776,87 @@ div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -o-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 75px 0px;
+  -moz-transform-origin: 100px 75px 0px;
+  -ms-transform-origin: 100px 75px 0px;
+  -o-transform-origin: 100px 75px 0px;
+  transform-origin: 100px 75px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 75px 0px;
+  -moz-transform-origin: 100px 75px 0px;
+  -ms-transform-origin: 100px 75px 0px;
+  -o-transform-origin: 100px 75px 0px;
+  transform-origin: 100px 75px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) {
   -webkit-transform: translateZ(100px);
   -moz-transform: translateZ(100px);
@@ -224,13 +864,96 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) {
   -o-transform: translateZ(100px);
   transform: translateZ(100px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 75px -50px;
+  -moz-transform-origin: 0 75px -50px;
+  -ms-transform-origin: 0 75px -50px;
+  -o-transform-origin: 0 75px -50px;
+  transform-origin: 0 75px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 75px -50px;
+  -moz-transform-origin: 0 75px -50px;
+  -ms-transform-origin: 0 75px -50px;
+  -o-transform-origin: 0 75px -50px;
+  transform-origin: 0 75px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ {
   -webkit-transform-origin: 75px 75px 100px;
   -moz-transform-origin: 75px 75px 100px;
   -ms-transform-origin: 75px 75px 100px;
@@ -269,6 +992,14 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rot
   -o-transform: translateX(0) rotateZ(360deg);
   transform: translateX(0) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px 75px 100px;
+  -moz-transform-origin: 75px 75px 100px;
+  -ms-transform-origin: 75px 75px 100px;
+  -o-transform-origin: 75px 75px 100px;
+  transform-origin: 75px 75px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(0) rotateZ(-90deg);
@@ -301,13 +1032,16 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rot
   -o-transform: translateX(0) rotateZ(-360deg);
   transform: translateX(0) rotateZ(-360deg);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
   -ms-transform: translateX(50px);
   -o-transform: translateX(50px);
   transform: translateX(50px);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
   -webkit-transform-origin: 25px 75px 100px;
   -moz-transform-origin: 25px 75px 100px;
   -ms-transform-origin: 25px 75px 100px;
@@ -346,6 +1080,14 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rot
   -o-transform: translateX(50px) rotateZ(360deg);
   transform: translateX(50px) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 25px 75px 100px;
+  -moz-transform-origin: 25px 75px 100px;
+  -ms-transform-origin: 25px 75px 100px;
+  -o-transform-origin: 25px 75px 100px;
+  transform-origin: 25px 75px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(50px) rotateZ(-90deg);
@@ -378,13 +1120,96 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rot
   -o-transform: translateX(50px) rotateZ(-360deg);
   transform: translateX(50px) rotateZ(-360deg);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
   -ms-transform: translateX(100px);
   -o-transform: translateX(100px);
   transform: translateX(100px);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 75px -50px;
+  -moz-transform-origin: 100px 75px -50px;
+  -ms-transform-origin: 100px 75px -50px;
+  -o-transform-origin: 100px 75px -50px;
+  transform-origin: 100px 75px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 75px -50px;
+  -moz-transform-origin: 100px 75px -50px;
+  -ms-transform-origin: 100px 75px -50px;
+  -o-transform-origin: 100px 75px -50px;
+  transform-origin: 100px 75px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ {
   -webkit-transform-origin: -25px 75px 100px;
   -moz-transform-origin: -25px 75px 100px;
   -ms-transform-origin: -25px 75px 100px;
@@ -423,6 +1248,14 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: translateX(100px) rotateZ(360deg);
   transform: translateX(100px) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px 75px 100px;
+  -moz-transform-origin: -25px 75px 100px;
+  -ms-transform-origin: -25px 75px 100px;
+  -o-transform-origin: -25px 75px 100px;
+  transform-origin: -25px 75px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(100px) rotateZ(-90deg);
@@ -456,7 +1289,7 @@ div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   transform: translateX(100px) rotateZ(-360deg);
 }
 
-/* line 4, ../sass/modules/_cubie.scss */
+/* line 30, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) {
   width: 100%;
   height: 50px;
@@ -471,10 +1304,10 @@ div.layer:nth-of-type(2) {
   -ms-transform-origin: 75px 0 50px 50%;
   -o-transform-origin: 75px 0 50px 50%;
   transform-origin: 75px 0 50px 50%;
-  -webkit-transition: -webkit-transform 15s;
-  -moz-transition: -moz-transform 15s;
-  -o-transition: -o-transform 15s;
-  transition: transform 15s;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  transition: transform 0.25s;
   -webkit-transform: translateY(50px) translateZ(25px);
   -moz-transform: translateY(50px) translateZ(25px);
   -ms-transform: translateY(50px) translateZ(25px);
@@ -545,7 +1378,7 @@ div.layer:nth-of-type(2).rotateY.anticlockwise.step-4 {
   -o-transform: translateY(50px) translateZ(25px) rotateY(-360deg);
   transform: translateY(50px) translateZ(25px) rotateY(-360deg);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(1) {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -553,7 +1386,7 @@ div.layer:nth-of-type(2) div.section:nth-of-type(1) {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -561,7 +1394,167 @@ div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1) {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 25px 50px;
+  -moz-transform-origin: 0 25px 50px;
+  -ms-transform-origin: 0 25px 50px;
+  -o-transform-origin: 0 25px 50px;
+  transform-origin: 0 25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 25px 50px;
+  -moz-transform-origin: 0 25px 50px;
+  -ms-transform-origin: 0 25px 50px;
+  -o-transform-origin: 0 25px 50px;
+  transform-origin: 0 25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px 25px 0;
+  -moz-transform-origin: 75px 25px 0;
+  -ms-transform-origin: 75px 25px 0;
+  -o-transform-origin: 75px 25px 0;
+  transform-origin: 75px 25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateZ(90deg);
+  -moz-transform: translateX(0) rotateZ(90deg);
+  -ms-transform: translateX(0) rotateZ(90deg);
+  -o-transform: translateX(0) rotateZ(90deg);
+  transform: translateX(0) rotateZ(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateZ(180deg);
+  -moz-transform: translateX(0) rotateZ(180deg);
+  -ms-transform: translateX(0) rotateZ(180deg);
+  -o-transform: translateX(0) rotateZ(180deg);
+  transform: translateX(0) rotateZ(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateZ(270deg);
+  -moz-transform: translateX(0) rotateZ(270deg);
+  -ms-transform: translateX(0) rotateZ(270deg);
+  -o-transform: translateX(0) rotateZ(270deg);
+  transform: translateX(0) rotateZ(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateZ(360deg);
+  -moz-transform: translateX(0) rotateZ(360deg);
+  -ms-transform: translateX(0) rotateZ(360deg);
+  -o-transform: translateX(0) rotateZ(360deg);
+  transform: translateX(0) rotateZ(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px 25px 0;
+  -moz-transform-origin: 75px 25px 0;
+  -ms-transform-origin: 75px 25px 0;
+  -o-transform-origin: 75px 25px 0;
+  transform-origin: 75px 25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateZ(-90deg);
+  -moz-transform: translateX(0) rotateZ(-90deg);
+  -ms-transform: translateX(0) rotateZ(-90deg);
+  -o-transform: translateX(0) rotateZ(-90deg);
+  transform: translateX(0) rotateZ(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateZ(-180deg);
+  -moz-transform: translateX(0) rotateZ(-180deg);
+  -ms-transform: translateX(0) rotateZ(-180deg);
+  -o-transform: translateX(0) rotateZ(-180deg);
+  transform: translateX(0) rotateZ(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateZ(-270deg);
+  -moz-transform: translateX(0) rotateZ(-270deg);
+  -ms-transform: translateX(0) rotateZ(-270deg);
+  -o-transform: translateX(0) rotateZ(-270deg);
+  transform: translateX(0) rotateZ(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateZ(-360deg);
+  -moz-transform: translateX(0) rotateZ(-360deg);
+  -ms-transform: translateX(0) rotateZ(-360deg);
+  -o-transform: translateX(0) rotateZ(-360deg);
+  transform: translateX(0) rotateZ(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
@@ -569,7 +1562,87 @@ div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2) {
   -o-transform: translateX(50px);
   transform: translateX(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 25px 50px;
+  -moz-transform-origin: 50px 25px 50px;
+  -ms-transform-origin: 50px 25px 50px;
+  -o-transform-origin: 50px 25px 50px;
+  transform-origin: 50px 25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(90deg);
+  -moz-transform: translateX(50px) rotateX(90deg);
+  -ms-transform: translateX(50px) rotateX(90deg);
+  -o-transform: translateX(50px) rotateX(90deg);
+  transform: translateX(50px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(180deg);
+  -moz-transform: translateX(50px) rotateX(180deg);
+  -ms-transform: translateX(50px) rotateX(180deg);
+  -o-transform: translateX(50px) rotateX(180deg);
+  transform: translateX(50px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(270deg);
+  -moz-transform: translateX(50px) rotateX(270deg);
+  -ms-transform: translateX(50px) rotateX(270deg);
+  -o-transform: translateX(50px) rotateX(270deg);
+  transform: translateX(50px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(360deg);
+  -moz-transform: translateX(50px) rotateX(360deg);
+  -ms-transform: translateX(50px) rotateX(360deg);
+  -o-transform: translateX(50px) rotateX(360deg);
+  transform: translateX(50px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 25px 50px;
+  -moz-transform-origin: 50px 25px 50px;
+  -ms-transform-origin: 50px 25px 50px;
+  -o-transform-origin: 50px 25px 50px;
+  transform-origin: 50px 25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(-90deg);
+  -moz-transform: translateX(50px) rotateX(-90deg);
+  -ms-transform: translateX(50px) rotateX(-90deg);
+  -o-transform: translateX(50px) rotateX(-90deg);
+  transform: translateX(50px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(-180deg);
+  -moz-transform: translateX(50px) rotateX(-180deg);
+  -ms-transform: translateX(50px) rotateX(-180deg);
+  -o-transform: translateX(50px) rotateX(-180deg);
+  transform: translateX(50px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(-270deg);
+  -moz-transform: translateX(50px) rotateX(-270deg);
+  -ms-transform: translateX(50px) rotateX(-270deg);
+  -o-transform: translateX(50px) rotateX(-270deg);
+  transform: translateX(50px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(-360deg);
+  -moz-transform: translateX(50px) rotateX(-360deg);
+  -ms-transform: translateX(50px) rotateX(-360deg);
+  -o-transform: translateX(50px) rotateX(-360deg);
+  transform: translateX(50px) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -577,7 +1650,167 @@ div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -o-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 25px 50px;
+  -moz-transform-origin: 100px 25px 50px;
+  -ms-transform-origin: 100px 25px 50px;
+  -o-transform-origin: 100px 25px 50px;
+  transform-origin: 100px 25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 25px 50px;
+  -moz-transform-origin: 100px 25px 50px;
+  -ms-transform-origin: 100px 25px 50px;
+  -o-transform-origin: 100px 25px 50px;
+  transform-origin: 100px 25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px 25px 0;
+  -moz-transform-origin: -25px 25px 0;
+  -ms-transform-origin: -25px 25px 0;
+  -o-transform-origin: -25px 25px 0;
+  transform-origin: -25px 25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateZ(90deg);
+  -moz-transform: translateX(100px) rotateZ(90deg);
+  -ms-transform: translateX(100px) rotateZ(90deg);
+  -o-transform: translateX(100px) rotateZ(90deg);
+  transform: translateX(100px) rotateZ(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateZ(180deg);
+  -moz-transform: translateX(100px) rotateZ(180deg);
+  -ms-transform: translateX(100px) rotateZ(180deg);
+  -o-transform: translateX(100px) rotateZ(180deg);
+  transform: translateX(100px) rotateZ(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateZ(270deg);
+  -moz-transform: translateX(100px) rotateZ(270deg);
+  -ms-transform: translateX(100px) rotateZ(270deg);
+  -o-transform: translateX(100px) rotateZ(270deg);
+  transform: translateX(100px) rotateZ(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateZ(360deg);
+  -moz-transform: translateX(100px) rotateZ(360deg);
+  -ms-transform: translateX(100px) rotateZ(360deg);
+  -o-transform: translateX(100px) rotateZ(360deg);
+  transform: translateX(100px) rotateZ(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px 25px 0;
+  -moz-transform-origin: -25px 25px 0;
+  -ms-transform-origin: -25px 25px 0;
+  -o-transform-origin: -25px 25px 0;
+  transform-origin: -25px 25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateZ(-90deg);
+  -moz-transform: translateX(100px) rotateZ(-90deg);
+  -ms-transform: translateX(100px) rotateZ(-90deg);
+  -o-transform: translateX(100px) rotateZ(-90deg);
+  transform: translateX(100px) rotateZ(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateZ(-180deg);
+  -moz-transform: translateX(100px) rotateZ(-180deg);
+  -ms-transform: translateX(100px) rotateZ(-180deg);
+  -o-transform: translateX(100px) rotateZ(-180deg);
+  transform: translateX(100px) rotateZ(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateZ(-270deg);
+  -moz-transform: translateX(100px) rotateZ(-270deg);
+  -ms-transform: translateX(100px) rotateZ(-270deg);
+  -o-transform: translateX(100px) rotateZ(-270deg);
+  transform: translateX(100px) rotateZ(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateZ(-360deg);
+  -moz-transform: translateX(100px) rotateZ(-360deg);
+  -ms-transform: translateX(100px) rotateZ(-360deg);
+  -o-transform: translateX(100px) rotateZ(-360deg);
+  transform: translateX(100px) rotateZ(-360deg);
+}
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(2) {
   -webkit-transform: translateZ(50px);
   -moz-transform: translateZ(50px);
@@ -585,7 +1818,7 @@ div.layer:nth-of-type(2) div.section:nth-of-type(2) {
   -o-transform: translateZ(50px);
   transform: translateZ(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -593,7 +1826,87 @@ div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1) {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 25px 0px;
+  -moz-transform-origin: 0 25px 0px;
+  -ms-transform-origin: 0 25px 0px;
+  -o-transform-origin: 0 25px 0px;
+  transform-origin: 0 25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 25px 0px;
+  -moz-transform-origin: 0 25px 0px;
+  -ms-transform-origin: 0 25px 0px;
+  -o-transform-origin: 0 25px 0px;
+  transform-origin: 0 25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
@@ -601,7 +1914,87 @@ div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -o-transform: translateX(50px);
   transform: translateX(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 25px 0px;
+  -moz-transform-origin: 50px 25px 0px;
+  -ms-transform-origin: 50px 25px 0px;
+  -o-transform-origin: 50px 25px 0px;
+  transform-origin: 50px 25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(90deg);
+  -moz-transform: translateX(50px) rotateX(90deg);
+  -ms-transform: translateX(50px) rotateX(90deg);
+  -o-transform: translateX(50px) rotateX(90deg);
+  transform: translateX(50px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(180deg);
+  -moz-transform: translateX(50px) rotateX(180deg);
+  -ms-transform: translateX(50px) rotateX(180deg);
+  -o-transform: translateX(50px) rotateX(180deg);
+  transform: translateX(50px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(270deg);
+  -moz-transform: translateX(50px) rotateX(270deg);
+  -ms-transform: translateX(50px) rotateX(270deg);
+  -o-transform: translateX(50px) rotateX(270deg);
+  transform: translateX(50px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(360deg);
+  -moz-transform: translateX(50px) rotateX(360deg);
+  -ms-transform: translateX(50px) rotateX(360deg);
+  -o-transform: translateX(50px) rotateX(360deg);
+  transform: translateX(50px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px 25px 0px;
+  -moz-transform-origin: 50px 25px 0px;
+  -ms-transform-origin: 50px 25px 0px;
+  -o-transform-origin: 50px 25px 0px;
+  transform-origin: 50px 25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(-90deg);
+  -moz-transform: translateX(50px) rotateX(-90deg);
+  -ms-transform: translateX(50px) rotateX(-90deg);
+  -o-transform: translateX(50px) rotateX(-90deg);
+  transform: translateX(50px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(-180deg);
+  -moz-transform: translateX(50px) rotateX(-180deg);
+  -ms-transform: translateX(50px) rotateX(-180deg);
+  -o-transform: translateX(50px) rotateX(-180deg);
+  transform: translateX(50px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(-270deg);
+  -moz-transform: translateX(50px) rotateX(-270deg);
+  -ms-transform: translateX(50px) rotateX(-270deg);
+  -o-transform: translateX(50px) rotateX(-270deg);
+  transform: translateX(50px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(-360deg);
+  -moz-transform: translateX(50px) rotateX(-360deg);
+  -ms-transform: translateX(50px) rotateX(-360deg);
+  -o-transform: translateX(50px) rotateX(-360deg);
+  transform: translateX(50px) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -609,7 +2002,87 @@ div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -o-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 25px 0px;
+  -moz-transform-origin: 100px 25px 0px;
+  -ms-transform-origin: 100px 25px 0px;
+  -o-transform-origin: 100px 25px 0px;
+  transform-origin: 100px 25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 25px 0px;
+  -moz-transform-origin: 100px 25px 0px;
+  -ms-transform-origin: 100px 25px 0px;
+  -o-transform-origin: 100px 25px 0px;
+  transform-origin: 100px 25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) {
   -webkit-transform: translateZ(100px);
   -moz-transform: translateZ(100px);
@@ -617,13 +2090,96 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) {
   -o-transform: translateZ(100px);
   transform: translateZ(100px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 25px -50px;
+  -moz-transform-origin: 0 25px -50px;
+  -ms-transform-origin: 0 25px -50px;
+  -o-transform-origin: 0 25px -50px;
+  transform-origin: 0 25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 25px -50px;
+  -moz-transform-origin: 0 25px -50px;
+  -ms-transform-origin: 0 25px -50px;
+  -o-transform-origin: 0 25px -50px;
+  transform-origin: 0 25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ {
   -webkit-transform-origin: 75px 25px 100px;
   -moz-transform-origin: 75px 25px 100px;
   -ms-transform-origin: 75px 25px 100px;
@@ -662,6 +2218,14 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rot
   -o-transform: translateX(0) rotateZ(360deg);
   transform: translateX(0) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px 25px 100px;
+  -moz-transform-origin: 75px 25px 100px;
+  -ms-transform-origin: 75px 25px 100px;
+  -o-transform-origin: 75px 25px 100px;
+  transform-origin: 75px 25px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(0) rotateZ(-90deg);
@@ -694,13 +2258,16 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rot
   -o-transform: translateX(0) rotateZ(-360deg);
   transform: translateX(0) rotateZ(-360deg);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
   -ms-transform: translateX(50px);
   -o-transform: translateX(50px);
   transform: translateX(50px);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
   -webkit-transform-origin: 25px 25px 100px;
   -moz-transform-origin: 25px 25px 100px;
   -ms-transform-origin: 25px 25px 100px;
@@ -739,6 +2306,14 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rot
   -o-transform: translateX(50px) rotateZ(360deg);
   transform: translateX(50px) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 25px 25px 100px;
+  -moz-transform-origin: 25px 25px 100px;
+  -ms-transform-origin: 25px 25px 100px;
+  -o-transform-origin: 25px 25px 100px;
+  transform-origin: 25px 25px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(50px) rotateZ(-90deg);
@@ -771,13 +2346,96 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rot
   -o-transform: translateX(50px) rotateZ(-360deg);
   transform: translateX(50px) rotateZ(-360deg);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
   -ms-transform: translateX(100px);
   -o-transform: translateX(100px);
   transform: translateX(100px);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 25px -50px;
+  -moz-transform-origin: 100px 25px -50px;
+  -ms-transform-origin: 100px 25px -50px;
+  -o-transform-origin: 100px 25px -50px;
+  transform-origin: 100px 25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px 25px -50px;
+  -moz-transform-origin: 100px 25px -50px;
+  -ms-transform-origin: 100px 25px -50px;
+  -o-transform-origin: 100px 25px -50px;
+  transform-origin: 100px 25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ {
   -webkit-transform-origin: -25px 25px 100px;
   -moz-transform-origin: -25px 25px 100px;
   -ms-transform-origin: -25px 25px 100px;
@@ -816,6 +2474,14 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: translateX(100px) rotateZ(360deg);
   transform: translateX(100px) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px 25px 100px;
+  -moz-transform-origin: -25px 25px 100px;
+  -ms-transform-origin: -25px 25px 100px;
+  -o-transform-origin: -25px 25px 100px;
+  transform-origin: -25px 25px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(100px) rotateZ(-90deg);
@@ -849,7 +2515,7 @@ div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   transform: translateX(100px) rotateZ(-360deg);
 }
 
-/* line 4, ../sass/modules/_cubie.scss */
+/* line 30, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) {
   width: 100%;
   height: 50px;
@@ -864,10 +2530,10 @@ div.layer:nth-of-type(3) {
   -ms-transform-origin: 75px 0 50px 50%;
   -o-transform-origin: 75px 0 50px 50%;
   transform-origin: 75px 0 50px 50%;
-  -webkit-transition: -webkit-transform 15s;
-  -moz-transition: -moz-transform 15s;
-  -o-transition: -o-transform 15s;
-  transition: transform 15s;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  transition: transform 0.25s;
   -webkit-transform: translateY(100px) translateZ(25px);
   -moz-transform: translateY(100px) translateZ(25px);
   -ms-transform: translateY(100px) translateZ(25px);
@@ -938,7 +2604,7 @@ div.layer:nth-of-type(3).rotateY.anticlockwise.step-4 {
   -o-transform: translateY(100px) translateZ(25px) rotateY(-360deg);
   transform: translateY(100px) translateZ(25px) rotateY(-360deg);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(1) {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -946,7 +2612,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(1) {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -954,7 +2620,167 @@ div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1) {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 -25px 50px;
+  -moz-transform-origin: 0 -25px 50px;
+  -ms-transform-origin: 0 -25px 50px;
+  -o-transform-origin: 0 -25px 50px;
+  transform-origin: 0 -25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 -25px 50px;
+  -moz-transform-origin: 0 -25px 50px;
+  -ms-transform-origin: 0 -25px 50px;
+  -o-transform-origin: 0 -25px 50px;
+  transform-origin: 0 -25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px -25px 0;
+  -moz-transform-origin: 75px -25px 0;
+  -ms-transform-origin: 75px -25px 0;
+  -o-transform-origin: 75px -25px 0;
+  transform-origin: 75px -25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateZ(90deg);
+  -moz-transform: translateX(0) rotateZ(90deg);
+  -ms-transform: translateX(0) rotateZ(90deg);
+  -o-transform: translateX(0) rotateZ(90deg);
+  transform: translateX(0) rotateZ(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateZ(180deg);
+  -moz-transform: translateX(0) rotateZ(180deg);
+  -ms-transform: translateX(0) rotateZ(180deg);
+  -o-transform: translateX(0) rotateZ(180deg);
+  transform: translateX(0) rotateZ(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateZ(270deg);
+  -moz-transform: translateX(0) rotateZ(270deg);
+  -ms-transform: translateX(0) rotateZ(270deg);
+  -o-transform: translateX(0) rotateZ(270deg);
+  transform: translateX(0) rotateZ(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateZ(360deg);
+  -moz-transform: translateX(0) rotateZ(360deg);
+  -ms-transform: translateX(0) rotateZ(360deg);
+  -o-transform: translateX(0) rotateZ(360deg);
+  transform: translateX(0) rotateZ(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px -25px 0;
+  -moz-transform-origin: 75px -25px 0;
+  -ms-transform-origin: 75px -25px 0;
+  -o-transform-origin: 75px -25px 0;
+  transform-origin: 75px -25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateZ(-90deg);
+  -moz-transform: translateX(0) rotateZ(-90deg);
+  -ms-transform: translateX(0) rotateZ(-90deg);
+  -o-transform: translateX(0) rotateZ(-90deg);
+  transform: translateX(0) rotateZ(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateZ(-180deg);
+  -moz-transform: translateX(0) rotateZ(-180deg);
+  -ms-transform: translateX(0) rotateZ(-180deg);
+  -o-transform: translateX(0) rotateZ(-180deg);
+  transform: translateX(0) rotateZ(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateZ(-270deg);
+  -moz-transform: translateX(0) rotateZ(-270deg);
+  -ms-transform: translateX(0) rotateZ(-270deg);
+  -o-transform: translateX(0) rotateZ(-270deg);
+  transform: translateX(0) rotateZ(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateZ(-360deg);
+  -moz-transform: translateX(0) rotateZ(-360deg);
+  -ms-transform: translateX(0) rotateZ(-360deg);
+  -o-transform: translateX(0) rotateZ(-360deg);
+  transform: translateX(0) rotateZ(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
@@ -962,7 +2788,87 @@ div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2) {
   -o-transform: translateX(50px);
   transform: translateX(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px -25px 50px;
+  -moz-transform-origin: 50px -25px 50px;
+  -ms-transform-origin: 50px -25px 50px;
+  -o-transform-origin: 50px -25px 50px;
+  transform-origin: 50px -25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(90deg);
+  -moz-transform: translateX(50px) rotateX(90deg);
+  -ms-transform: translateX(50px) rotateX(90deg);
+  -o-transform: translateX(50px) rotateX(90deg);
+  transform: translateX(50px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(180deg);
+  -moz-transform: translateX(50px) rotateX(180deg);
+  -ms-transform: translateX(50px) rotateX(180deg);
+  -o-transform: translateX(50px) rotateX(180deg);
+  transform: translateX(50px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(270deg);
+  -moz-transform: translateX(50px) rotateX(270deg);
+  -ms-transform: translateX(50px) rotateX(270deg);
+  -o-transform: translateX(50px) rotateX(270deg);
+  transform: translateX(50px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(360deg);
+  -moz-transform: translateX(50px) rotateX(360deg);
+  -ms-transform: translateX(50px) rotateX(360deg);
+  -o-transform: translateX(50px) rotateX(360deg);
+  transform: translateX(50px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px -25px 50px;
+  -moz-transform-origin: 50px -25px 50px;
+  -ms-transform-origin: 50px -25px 50px;
+  -o-transform-origin: 50px -25px 50px;
+  transform-origin: 50px -25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(-90deg);
+  -moz-transform: translateX(50px) rotateX(-90deg);
+  -ms-transform: translateX(50px) rotateX(-90deg);
+  -o-transform: translateX(50px) rotateX(-90deg);
+  transform: translateX(50px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(-180deg);
+  -moz-transform: translateX(50px) rotateX(-180deg);
+  -ms-transform: translateX(50px) rotateX(-180deg);
+  -o-transform: translateX(50px) rotateX(-180deg);
+  transform: translateX(50px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(-270deg);
+  -moz-transform: translateX(50px) rotateX(-270deg);
+  -ms-transform: translateX(50px) rotateX(-270deg);
+  -o-transform: translateX(50px) rotateX(-270deg);
+  transform: translateX(50px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(-360deg);
+  -moz-transform: translateX(50px) rotateX(-360deg);
+  -ms-transform: translateX(50px) rotateX(-360deg);
+  -o-transform: translateX(50px) rotateX(-360deg);
+  transform: translateX(50px) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -970,7 +2876,167 @@ div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -o-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px -25px 50px;
+  -moz-transform-origin: 100px -25px 50px;
+  -ms-transform-origin: 100px -25px 50px;
+  -o-transform-origin: 100px -25px 50px;
+  transform-origin: 100px -25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px -25px 50px;
+  -moz-transform-origin: 100px -25px 50px;
+  -ms-transform-origin: 100px -25px 50px;
+  -o-transform-origin: 100px -25px 50px;
+  transform-origin: 100px -25px 50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px -25px 0;
+  -moz-transform-origin: -25px -25px 0;
+  -ms-transform-origin: -25px -25px 0;
+  -o-transform-origin: -25px -25px 0;
+  transform-origin: -25px -25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateZ(90deg);
+  -moz-transform: translateX(100px) rotateZ(90deg);
+  -ms-transform: translateX(100px) rotateZ(90deg);
+  -o-transform: translateX(100px) rotateZ(90deg);
+  transform: translateX(100px) rotateZ(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateZ(180deg);
+  -moz-transform: translateX(100px) rotateZ(180deg);
+  -ms-transform: translateX(100px) rotateZ(180deg);
+  -o-transform: translateX(100px) rotateZ(180deg);
+  transform: translateX(100px) rotateZ(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateZ(270deg);
+  -moz-transform: translateX(100px) rotateZ(270deg);
+  -ms-transform: translateX(100px) rotateZ(270deg);
+  -o-transform: translateX(100px) rotateZ(270deg);
+  transform: translateX(100px) rotateZ(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateZ(360deg);
+  -moz-transform: translateX(100px) rotateZ(360deg);
+  -ms-transform: translateX(100px) rotateZ(360deg);
+  -o-transform: translateX(100px) rotateZ(360deg);
+  transform: translateX(100px) rotateZ(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px -25px 0;
+  -moz-transform-origin: -25px -25px 0;
+  -ms-transform-origin: -25px -25px 0;
+  -o-transform-origin: -25px -25px 0;
+  transform-origin: -25px -25px 0;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateZ(-90deg);
+  -moz-transform: translateX(100px) rotateZ(-90deg);
+  -ms-transform: translateX(100px) rotateZ(-90deg);
+  -o-transform: translateX(100px) rotateZ(-90deg);
+  transform: translateX(100px) rotateZ(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateZ(-180deg);
+  -moz-transform: translateX(100px) rotateZ(-180deg);
+  -ms-transform: translateX(100px) rotateZ(-180deg);
+  -o-transform: translateX(100px) rotateZ(-180deg);
+  transform: translateX(100px) rotateZ(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateZ(-270deg);
+  -moz-transform: translateX(100px) rotateZ(-270deg);
+  -ms-transform: translateX(100px) rotateZ(-270deg);
+  -o-transform: translateX(100px) rotateZ(-270deg);
+  transform: translateX(100px) rotateZ(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateZ(-360deg);
+  -moz-transform: translateX(100px) rotateZ(-360deg);
+  -ms-transform: translateX(100px) rotateZ(-360deg);
+  -o-transform: translateX(100px) rotateZ(-360deg);
+  transform: translateX(100px) rotateZ(-360deg);
+}
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(2) {
   -webkit-transform: translateZ(50px);
   -moz-transform: translateZ(50px);
@@ -978,7 +3044,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(2) {
   -o-transform: translateZ(50px);
   transform: translateZ(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -986,7 +3052,87 @@ div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1) {
   -o-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 -25px 0px;
+  -moz-transform-origin: 0 -25px 0px;
+  -ms-transform-origin: 0 -25px 0px;
+  -o-transform-origin: 0 -25px 0px;
+  transform-origin: 0 -25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 -25px 0px;
+  -moz-transform-origin: 0 -25px 0px;
+  -ms-transform-origin: 0 -25px 0px;
+  -o-transform-origin: 0 -25px 0px;
+  transform-origin: 0 -25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
@@ -994,7 +3140,87 @@ div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -o-transform: translateX(50px);
   transform: translateX(50px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px -25px 0px;
+  -moz-transform-origin: 50px -25px 0px;
+  -ms-transform-origin: 50px -25px 0px;
+  -o-transform-origin: 50px -25px 0px;
+  transform-origin: 50px -25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(90deg);
+  -moz-transform: translateX(50px) rotateX(90deg);
+  -ms-transform: translateX(50px) rotateX(90deg);
+  -o-transform: translateX(50px) rotateX(90deg);
+  transform: translateX(50px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(180deg);
+  -moz-transform: translateX(50px) rotateX(180deg);
+  -ms-transform: translateX(50px) rotateX(180deg);
+  -o-transform: translateX(50px) rotateX(180deg);
+  transform: translateX(50px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(270deg);
+  -moz-transform: translateX(50px) rotateX(270deg);
+  -ms-transform: translateX(50px) rotateX(270deg);
+  -o-transform: translateX(50px) rotateX(270deg);
+  transform: translateX(50px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(360deg);
+  -moz-transform: translateX(50px) rotateX(360deg);
+  -ms-transform: translateX(50px) rotateX(360deg);
+  -o-transform: translateX(50px) rotateX(360deg);
+  transform: translateX(50px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 50px -25px 0px;
+  -moz-transform-origin: 50px -25px 0px;
+  -ms-transform-origin: 50px -25px 0px;
+  -o-transform-origin: 50px -25px 0px;
+  transform-origin: 50px -25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(50px) rotateX(-90deg);
+  -moz-transform: translateX(50px) rotateX(-90deg);
+  -ms-transform: translateX(50px) rotateX(-90deg);
+  -o-transform: translateX(50px) rotateX(-90deg);
+  transform: translateX(50px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(50px) rotateX(-180deg);
+  -moz-transform: translateX(50px) rotateX(-180deg);
+  -ms-transform: translateX(50px) rotateX(-180deg);
+  -o-transform: translateX(50px) rotateX(-180deg);
+  transform: translateX(50px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(50px) rotateX(-270deg);
+  -moz-transform: translateX(50px) rotateX(-270deg);
+  -ms-transform: translateX(50px) rotateX(-270deg);
+  -o-transform: translateX(50px) rotateX(-270deg);
+  transform: translateX(50px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(50px) rotateX(-360deg);
+  -moz-transform: translateX(50px) rotateX(-360deg);
+  -ms-transform: translateX(50px) rotateX(-360deg);
+  -o-transform: translateX(50px) rotateX(-360deg);
+  transform: translateX(50px) rotateX(-360deg);
+}
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
@@ -1002,7 +3228,87 @@ div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -o-transform: translateX(100px);
   transform: translateX(100px);
 }
-/* line 21, ../sass/modules/_cubie.scss */
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px -25px 0px;
+  -moz-transform-origin: 100px -25px 0px;
+  -ms-transform-origin: 100px -25px 0px;
+  -o-transform-origin: 100px -25px 0px;
+  transform-origin: 100px -25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px -25px 0px;
+  -moz-transform-origin: 100px -25px 0px;
+  -ms-transform-origin: 100px -25px 0px;
+  -o-transform-origin: 100px -25px 0px;
+  transform-origin: 100px -25px 0px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 47, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) {
   -webkit-transform: translateZ(100px);
   -moz-transform: translateZ(100px);
@@ -1010,13 +3316,96 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) {
   -o-transform: translateZ(100px);
   transform: translateZ(100px);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1) {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 -25px -50px;
+  -moz-transform-origin: 0 -25px -50px;
+  -ms-transform-origin: 0 -25px -50px;
+  -o-transform-origin: 0 -25px -50px;
+  transform-origin: 0 -25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(90deg);
+  -moz-transform: translateX(0) rotateX(90deg);
+  -ms-transform: translateX(0) rotateX(90deg);
+  -o-transform: translateX(0) rotateX(90deg);
+  transform: translateX(0) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(180deg);
+  -moz-transform: translateX(0) rotateX(180deg);
+  -ms-transform: translateX(0) rotateX(180deg);
+  -o-transform: translateX(0) rotateX(180deg);
+  transform: translateX(0) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(270deg);
+  -moz-transform: translateX(0) rotateX(270deg);
+  -ms-transform: translateX(0) rotateX(270deg);
+  -o-transform: translateX(0) rotateX(270deg);
+  transform: translateX(0) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(360deg);
+  -moz-transform: translateX(0) rotateX(360deg);
+  -ms-transform: translateX(0) rotateX(360deg);
+  -o-transform: translateX(0) rotateX(360deg);
+  transform: translateX(0) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
+  -webkit-transform-origin: 0 -25px -50px;
+  -moz-transform-origin: 0 -25px -50px;
+  -ms-transform-origin: 0 -25px -50px;
+  -o-transform-origin: 0 -25px -50px;
+  transform-origin: 0 -25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ {
   -webkit-transform-origin: 75px -25px 100px;
   -moz-transform-origin: 75px -25px 100px;
   -ms-transform-origin: 75px -25px 100px;
@@ -1055,6 +3444,14 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rot
   -o-transform: translateX(0) rotateZ(360deg);
   transform: translateX(0) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 75px -25px 100px;
+  -moz-transform-origin: 75px -25px 100px;
+  -ms-transform-origin: 75px -25px 100px;
+  -o-transform-origin: 75px -25px 100px;
+  transform-origin: 75px -25px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(0) rotateZ(-90deg);
@@ -1087,13 +3484,16 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rot
   -o-transform: translateX(0) rotateZ(-360deg);
   transform: translateX(0) rotateZ(-360deg);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(50px);
   -moz-transform: translateX(50px);
   -ms-transform: translateX(50px);
   -o-transform: translateX(50px);
   transform: translateX(50px);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
   -webkit-transform-origin: 25px -25px 100px;
   -moz-transform-origin: 25px -25px 100px;
   -ms-transform-origin: 25px -25px 100px;
@@ -1132,6 +3532,14 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rot
   -o-transform: translateX(50px) rotateZ(360deg);
   transform: translateX(50px) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 25px -25px 100px;
+  -moz-transform-origin: 25px -25px 100px;
+  -ms-transform-origin: 25px -25px 100px;
+  -o-transform-origin: 25px -25px 100px;
+  transform-origin: 25px -25px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(50px) rotateZ(-90deg);
@@ -1164,13 +3572,96 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rot
   -o-transform: translateX(50px) rotateZ(-360deg);
   transform: translateX(50px) rotateZ(-360deg);
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 51, ../sass/modules/_cubie.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(100px);
   -moz-transform: translateX(100px);
   -ms-transform: translateX(100px);
   -o-transform: translateX(100px);
   transform: translateX(100px);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px -25px -50px;
+  -moz-transform-origin: 100px -25px -50px;
+  -ms-transform-origin: 100px -25px -50px;
+  -o-transform-origin: 100px -25px -50px;
+  transform-origin: 100px -25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(90deg);
+  -moz-transform: translateX(100px) rotateX(90deg);
+  -ms-transform: translateX(100px) rotateX(90deg);
+  -o-transform: translateX(100px) rotateX(90deg);
+  transform: translateX(100px) rotateX(90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(180deg);
+  -moz-transform: translateX(100px) rotateX(180deg);
+  -ms-transform: translateX(100px) rotateX(180deg);
+  -o-transform: translateX(100px) rotateX(180deg);
+  transform: translateX(100px) rotateX(180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(270deg);
+  -moz-transform: translateX(100px) rotateX(270deg);
+  -ms-transform: translateX(100px) rotateX(270deg);
+  -o-transform: translateX(100px) rotateX(270deg);
+  transform: translateX(100px) rotateX(270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(360deg);
+  -moz-transform: translateX(100px) rotateX(360deg);
+  -ms-transform: translateX(100px) rotateX(360deg);
+  -o-transform: translateX(100px) rotateX(360deg);
+  transform: translateX(100px) rotateX(360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
+  -webkit-transform-origin: 100px -25px -50px;
+  -moz-transform-origin: 100px -25px -50px;
+  -ms-transform-origin: 100px -25px -50px;
+  -o-transform-origin: 100px -25px -50px;
+  transform-origin: 100px -25px -50px;
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-1 {
+  -webkit-transform: translateX(100px) rotateX(-90deg);
+  -moz-transform: translateX(100px) rotateX(-90deg);
+  -ms-transform: translateX(100px) rotateX(-90deg);
+  -o-transform: translateX(100px) rotateX(-90deg);
+  transform: translateX(100px) rotateX(-90deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-2 {
+  -webkit-transform: translateX(100px) rotateX(-180deg);
+  -moz-transform: translateX(100px) rotateX(-180deg);
+  -ms-transform: translateX(100px) rotateX(-180deg);
+  -o-transform: translateX(100px) rotateX(-180deg);
+  transform: translateX(100px) rotateX(-180deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-3 {
+  -webkit-transform: translateX(100px) rotateX(-270deg);
+  -moz-transform: translateX(100px) rotateX(-270deg);
+  -ms-transform: translateX(100px) rotateX(-270deg);
+  -o-transform: translateX(100px) rotateX(-270deg);
+  transform: translateX(100px) rotateX(-270deg);
+}
+/* line 14, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.anticlockwise.step-4 {
+  -webkit-transform: translateX(100px) rotateX(-360deg);
+  -moz-transform: translateX(100px) rotateX(-360deg);
+  -ms-transform: translateX(100px) rotateX(-360deg);
+  -o-transform: translateX(100px) rotateX(-360deg);
+  transform: translateX(100px) rotateX(-360deg);
+}
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ {
   -webkit-transform-origin: -25px -25px 100px;
   -moz-transform-origin: -25px -25px 100px;
   -ms-transform-origin: -25px -25px 100px;
@@ -1209,6 +3700,14 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: translateX(100px) rotateZ(360deg);
   transform: translateX(100px) rotateZ(360deg);
 }
+/* line 8, ../sass/partials/_rotations.scss */
+div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -25px -25px 100px;
+  -moz-transform-origin: -25px -25px 100px;
+  -ms-transform-origin: -25px -25px 100px;
+  -o-transform-origin: -25px -25px 100px;
+  transform-origin: -25px -25px 100px;
+}
 /* line 14, ../sass/partials/_rotations.scss */
 div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step-1 {
   -webkit-transform: translateX(100px) rotateZ(-90deg);
@@ -1242,17 +3741,17 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   transform: translateX(100px) rotateZ(-360deg);
 }
 
-/* line 49, ../sass/modules/_cubie.scss */
+/* line 78, ../sass/modules/_cubie.scss */
 .cubie {
   width: 50px;
   height: 50px;
   position: absolute;
-  -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
-  -o-transition: -o-transform 1s;
-  transition: transform 1s;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  transition: transform 0.25s;
 }
-/* line 55, ../sass/modules/_cubie.scss */
+/* line 84, ../sass/modules/_cubie.scss */
 .cubie .figure {
   width: 48px;
   height: 48px;
@@ -1272,33 +3771,33 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   /* background-color */
   /* placement */
 }
-/* line 70, ../sass/modules/_cubie.scss */
+/* line 99, ../sass/modules/_cubie.scss */
 .cubie .figure.orange {
   background-color: orange;
 }
-/* line 71, ../sass/modules/_cubie.scss */
+/* line 100, ../sass/modules/_cubie.scss */
 .cubie .figure.green {
   background-color: green;
 }
-/* line 72, ../sass/modules/_cubie.scss */
+/* line 101, ../sass/modules/_cubie.scss */
 .cubie .figure.red {
   background-color: red;
 }
-/* line 73, ../sass/modules/_cubie.scss */
+/* line 102, ../sass/modules/_cubie.scss */
 .cubie .figure.yellow {
   background-color: yellow;
   color: #000;
 }
-/* line 74, ../sass/modules/_cubie.scss */
+/* line 103, ../sass/modules/_cubie.scss */
 .cubie .figure.white {
   background-color: white;
   color: #000;
 }
-/* line 75, ../sass/modules/_cubie.scss */
+/* line 104, ../sass/modules/_cubie.scss */
 .cubie .figure.blue {
   background-color: blue;
 }
-/* line 78, ../sass/modules/_cubie.scss */
+/* line 107, ../sass/modules/_cubie.scss */
 .cubie .figure.front {
   -webkit-transform: rotateY(0deg) translateZ(25px);
   -moz-transform: rotateY(0deg) translateZ(25px);
@@ -1306,7 +3805,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: rotateY(0deg) translateZ(25px);
   transform: rotateY(0deg) translateZ(25px);
 }
-/* line 79, ../sass/modules/_cubie.scss */
+/* line 108, ../sass/modules/_cubie.scss */
 .cubie .figure.left {
   -webkit-transform: rotateY(-90deg) translateZ(25px);
   -moz-transform: rotateY(-90deg) translateZ(25px);
@@ -1314,7 +3813,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: rotateY(-90deg) translateZ(25px);
   transform: rotateY(-90deg) translateZ(25px);
 }
-/* line 80, ../sass/modules/_cubie.scss */
+/* line 109, ../sass/modules/_cubie.scss */
 .cubie .figure.back {
   -webkit-transform: rotateX(180deg) translateZ(25px);
   -moz-transform: rotateX(180deg) translateZ(25px);
@@ -1322,7 +3821,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: rotateX(180deg) translateZ(25px);
   transform: rotateX(180deg) translateZ(25px);
 }
-/* line 81, ../sass/modules/_cubie.scss */
+/* line 110, ../sass/modules/_cubie.scss */
 .cubie .figure.right {
   -webkit-transform: rotateY(90deg) translateZ(25px);
   -moz-transform: rotateY(90deg) translateZ(25px);
@@ -1330,7 +3829,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: rotateY(90deg) translateZ(25px);
   transform: rotateY(90deg) translateZ(25px);
 }
-/* line 82, ../sass/modules/_cubie.scss */
+/* line 111, ../sass/modules/_cubie.scss */
 .cubie .figure.top {
   -webkit-transform: rotateX(90deg) translateZ(25px);
   -moz-transform: rotateX(90deg) translateZ(25px);
@@ -1338,7 +3837,7 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   -o-transform: rotateX(90deg) translateZ(25px);
   transform: rotateX(90deg) translateZ(25px);
 }
-/* line 83, ../sass/modules/_cubie.scss */
+/* line 112, ../sass/modules/_cubie.scss */
 .cubie .figure.bottom {
   -webkit-transform: rotateX(-90deg) translateZ(25px);
   -moz-transform: rotateX(-90deg) translateZ(25px);
@@ -1347,12 +3846,12 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   transform: rotateX(-90deg) translateZ(25px);
 }
 
-/* line 12, ../sass/app.scss */
+/* line 13, ../sass/app.scss */
 html {
   height: 100%;
 }
 
-/* line 16, ../sass/app.scss */
+/* line 17, ../sass/app.scss */
 body {
   height: 100%;
   margin: 0;
@@ -1366,7 +3865,7 @@ body {
   font-size: 275%;
 }
 
-/* line 26, ../sass/app.scss */
+/* line 27, ../sass/app.scss */
 .container {
   width: 150px;
   height: 150px;
@@ -1380,7 +3879,7 @@ body {
   perspective: 2000;
 }
 
-/* line 38, ../sass/app.scss */
+/* line 39, ../sass/app.scss */
 #cube,
 .layer,
 .section,
@@ -1392,7 +3891,7 @@ body {
   transform-style: preserve-3d;
 }
 
-/* line 42, ../sass/app.scss */
+/* line 43, ../sass/app.scss */
 #cube {
   width: 100%;
   height: 100%;
@@ -1402,10 +3901,10 @@ body {
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
-  -o-transition: -o-transform 1s;
-  transition: transform 1s;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  transition: transform 0.25s;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;

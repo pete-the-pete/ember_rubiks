@@ -1,5 +1,31 @@
+@mixin cubie-rotationZ($layer, $section, $cubie) {
+  @include rotationsZ(
+      translateX(nth($cubie_positions, $cubie))
+  ) {
+    @include transform-origin(
+      (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
+      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
+      nth($cubie_positions, $section)
+    );
+  };
+}
+@mixin cubie-rotationX($layer, $section, $cubie) {
+  @include rotationsX(
+      translateX(nth($cubie_positions, $cubie))
+  ) {
+    @include transform-origin(
+      nth($cubie_positions, $cubie),
+      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
+      $cubie_dimension  - nth($cubie_positions, $section)
+    );
+  };
+}
+@mixin corner-cubie-rotations($layer, $section, $cubie) {
+  @include cubie-rotationX($layer, $section, $cubie);
+  @include cubie-rotationZ($layer, $section, $cubie);
+}
+
 //n x n x n
-$center: 2;
 @for $layer from 1 through $N {
   div.layer:nth-of-type(#{$layer}) {
     width: 100%;
@@ -7,7 +33,7 @@ $center: 2;
     position: absolute;
     @include backface-visibility(hidden);
     @include transform-origin(1.5*$cubie_dimension 0 $cubie_dimension);
-    @include transition(transform 15s);
+    @include transition(transform $rotation_delay);
     @include transform(
       translateY(nth($cubie_positions, $layer))
       translateZ($side_translation)
@@ -26,18 +52,21 @@ $center: 2;
             @include transform(
               translateX(nth($cubie_positions, $cubie))
             );
-            //front face rotations
-            @if $section == $N {
-              @include rotationsZ(
-                translateX(nth($cubie_positions, $cubie))
-              );
-              @include transform-origin(
-                (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
-                (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-                nth($cubie_positions, $section)
-              );
-            }
 
+            //face rotations
+            //left, right
+            @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+              //corner cubie
+              //need to include both Z and X rotations for the corner pieces,
+              //add define the transform-origin
+              @include corner-cubie-rotations($layer, $section, $cubie);
+            } @else if($section == $N) {
+              //front face rotations
+              @include cubie-rotationZ($layer, $section, $cubie);
+            } @else {
+              //side face rotations
+              @include cubie-rotationX($layer, $section, $cubie);
+            }
           }
         }
       }
@@ -50,7 +79,7 @@ $center: 2;
   width: $cubie_dimension;
   height: $cubie_dimension;
   position: absolute;
-  @include transition(transform 1s);
+  @include transition(transform $rotation_delay);
   //the sides of a cubie
   .figure {
     width: $cubie_sides;

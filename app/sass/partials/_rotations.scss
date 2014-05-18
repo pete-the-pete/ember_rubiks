@@ -44,8 +44,8 @@
 }
 
 @mixin rotationsY($initial_trans) {
-  @include rotateClockwise($initial_trans, 'Y') { @content; };
-  @include rotateAntiClockwise($initial_trans, 'Y') { @content; };
+  @include rotateClockwise($initial_trans, 'Y') { @content; }
+  @include rotateAntiClockwise($initial_trans, 'Y') { @content; }
 }
 
 @mixin rotationsZ($initial_trans) {
