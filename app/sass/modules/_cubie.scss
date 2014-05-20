@@ -81,27 +81,15 @@
   position: absolute;
   @include transition(transform $rotation_delay);
   //the sides of a cubie
-  .figure {
-    width: $cubie_sides;
-    height: $cubie_sides;
+  .side {
+    width: $cubie_dimension;
+    height: $cubie_dimension;
+    background-color: $black;
     display: block;
     position: absolute;
     border: $cubie_border solid black;
-    line-height: $cubie_dimension;
-    font-size: $cubie_dimension * 2/3;
-    font-weight: bold;
-    color: white;
-    text-align: center;
     @include backface-visibility(hidden);
     //opacity: 0.80;
-
-    /* background-color */
-    &.orange { background-color: $orange; }
-    &.green { background-color: $green; }
-    &.red { background-color: $red; }
-    &.yellow { background-color: $yellow; color: #000; }
-    &.white { background-color: $white; color: #000; }
-    &.blue { background-color: $blue; }
 
     /* placement */
     &.front  { @include front(); }
@@ -110,5 +98,25 @@
     &.right  { @include right(); }
     &.top    { @include top(); }
     &.bottom { @include bottom(); }
+
+    .sticker {
+      width: $cubie_sides;
+      height: $cubie_sides;
+      margin: auto;
+      @include border-radius(5px);
+      line-height: $cubie_dimension;
+      font-size: $cubie_dimension * 2/3;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      /* background-color */
+      &.orange { background-color: $orange; }
+      &.green { background-color: $green; }
+      &.red { background-color: $red; }
+      &.yellow { background-color: $yellow; color: #000; }
+      &.white { background-color: $white; color: #000; }
+      &.blue { background-color: $blue; }
+      &.blue { background-color: $black; }
+    }
   }
 }
