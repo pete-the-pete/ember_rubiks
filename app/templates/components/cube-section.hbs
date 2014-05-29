@@ -1,11 +1,5 @@
 {{#each cubie in section.cubies}}
   <div class="cubie">
-    {{#each face in cubie.faces}}
-      <div {{bind-attr class=":side face.side"}}>
-        <div {{bind-attr class=":sticker face.color"}}>
-          {{face.id}}
-        </div>
-      </div>
-    {{/each}}
+    {{cubie-component cubie=cubie}}
   </div>
 {{/each}}

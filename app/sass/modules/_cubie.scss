@@ -48,7 +48,7 @@
         @include transform(translateZ(nth($cubie_positions, $section)));
 
         @for $cubie from 1 through $N {
-          div.cubie:nth-of-type(#{$cubie}) {            
+          div.cubie:nth-of-type(#{$cubie}) {
             @include transform(
               translateX(nth($cubie_positions, $cubie))
             );
@@ -89,7 +89,7 @@
     position: absolute;
     border: $cubie_border solid black;
     @include backface-visibility(hidden);
-    //opacity: 0.80;
+    opacity: 0.99;
 
     /* placement */
     &.front  { @include front(); }
@@ -98,6 +98,19 @@
     &.right  { @include right(); }
     &.top    { @include top(); }
     &.bottom { @include bottom(); }
+
+    &:not(.internal) {
+    }
+
+    &.internal {
+      .sticker {
+        background-color: $black !important;
+      }
+      &.left,
+      &.right {
+        display: none;
+      }
+    }
 
     .sticker {
       width: $cubie_sides;

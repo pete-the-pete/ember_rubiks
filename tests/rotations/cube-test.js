@@ -1,7 +1,7 @@
 import startApp from '../helpers/start-app';
 
 var App,
-  delay = 250;
+  delay = 2500;
 
 /* 
 TODO: maybe use this, or something like it, later to programmatically verify the rotations occured

@@ -1,0 +1,7 @@
+{{#each face in displayFaces}}
+  <div {{bind-attr class=":side face.side face.facing"}}>
+    <div {{bind-attr class=":sticker face.color"}}>
+      {{face.id}}
+    </div>
+  </div>
+{{/each}}

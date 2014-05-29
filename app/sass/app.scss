@@ -38,6 +38,7 @@ body {
 .section,
 .cubie {
   @include transform-style();
+  @include backface-visibility(hidden);
 }
 
 #cube {
