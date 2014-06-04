@@ -1,0 +1,11 @@
+@-webkit-keyframes highlight { from { opacity: 1; } to { opacity: .5; }  }
+   @-moz-keyframes highlight { from { opacity: 1; } to { opacity: .5; }  }
+     @-o-keyframes highlight { from { opacity: 1; } to { opacity: .5; }  }
+        @keyframes highlight { from { opacity: 1; } to { opacity: .5; }  }
+
+.highlight .side.external .sticker {
+  -webkit-animation: highlight 1s linear 0s infinite alternate;
+     -moz-animation: highlight 1s linear 0s infinite alternate;
+       -o-animation: highlight 1s linear 0s infinite alternate;
+          animation: highlight 1s linear 0s infinite alternate;
+}

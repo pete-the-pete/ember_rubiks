@@ -37,4 +37,28 @@ var faces = [
   }
 ];
 
+var keys = {
+  LEFT: 37,
+  DOWN: 38,
+  RIGHT: 39,
+  UP: 40
+};
+
+var rotations = {
+  X: {
+    CLOCKWISE: 'rotateX clockwise',
+    ANTICLOCKWISE: 'rotateX anticlockwise'
+  },
+  Y: {
+    CLOCKWISE: 'rotateY clockwise',
+    ANTICLOCKWISE: 'rotateY anticlockwise'
+  },
+  Z: {
+    CLOCKWISE: 'rotateZ clockwise',
+    ANTICLOCKWISE: 'rotateZ anticlockwise'
+  }
+};
+
 export var FACES = faces;
+export var KEYS = keys;
+export var ROTATIONS = rotations;

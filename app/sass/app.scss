@@ -7,6 +7,7 @@
 @import "primitives/delays";
 
 @import "partials/rotations";
+@import "partials/animations";
 
 @import "modules/cubie";
 
@@ -29,7 +30,7 @@ body {
   height: ($N * $cubie_dimension);
   position: relative;
   margin: 50px auto;
-  top: 100px;
+  top: 50px;
   @include perspective(2000);
 }
 

@@ -1,6 +1,6 @@
 {{#each}}
 <section class="container">
-  <div id="cube">
+  <div id="cube" {{action 'changeSelection' this}}>
   {{#each layer in layers}}
     <div class="layer">
     {{#each section in layer.sections}}
