@@ -105,6 +105,9 @@
     &.internal {
       .sticker {
         background-color: $black !important;
+        p {
+          display: none;
+        }
       }
       &.left,
       &.right {
@@ -120,16 +123,20 @@
       line-height: $cubie_dimension;
       font-size: $cubie_dimension * 2/3;
       font-weight: bold;
-      color: white;
       text-align: center;
+      overflow: hidden;
       /* background-color */
       &.orange { background-color: $orange; }
       &.green { background-color: $green; }
       &.red { background-color: $red; }
-      &.yellow { background-color: $yellow; color: #000; }
-      &.white { background-color: $white; color: #000; }
+      &.yellow { background-color: $yellow; }
+      &.white { background-color: $white; }
       &.blue { background-color: $blue; }
       &.blue { background-color: $black; }
+
+      p {
+        color: transparent;
+      }
     }
   }
 }

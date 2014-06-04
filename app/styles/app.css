@@ -3875,11 +3875,15 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
 .cubie .side.internal .sticker {
   background-color: black !important;
 }
-/* line 110, ../sass/modules/_cubie.scss */
+/* line 108, ../sass/modules/_cubie.scss */
+.cubie .side.internal .sticker p {
+  display: none;
+}
+/* line 113, ../sass/modules/_cubie.scss */
 .cubie .side.internal.left, .cubie .side.internal.right {
   display: none;
 }
-/* line 115, ../sass/modules/_cubie.scss */
+/* line 118, ../sass/modules/_cubie.scss */
 .cubie .side .sticker {
   width: 148px;
   height: 148px;
@@ -3892,39 +3896,41 @@ div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rot
   line-height: 150px;
   font-size: 100px;
   font-weight: bold;
-  color: white;
   text-align: center;
+  overflow: hidden;
   /* background-color */
 }
-/* line 126, ../sass/modules/_cubie.scss */
+/* line 129, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.orange {
   background-color: orange;
 }
-/* line 127, ../sass/modules/_cubie.scss */
+/* line 130, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.green {
   background-color: green;
 }
-/* line 128, ../sass/modules/_cubie.scss */
+/* line 131, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.red {
   background-color: red;
 }
-/* line 129, ../sass/modules/_cubie.scss */
+/* line 132, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.yellow {
   background-color: yellow;
-  color: #000;
 }
-/* line 130, ../sass/modules/_cubie.scss */
+/* line 133, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.white {
   background-color: white;
-  color: #000;
 }
-/* line 131, ../sass/modules/_cubie.scss */
+/* line 134, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: blue;
 }
-/* line 132, ../sass/modules/_cubie.scss */
+/* line 135, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: black;
+}
+/* line 137, ../sass/modules/_cubie.scss */
+.cubie .side .sticker p {
+  color: transparent;
 }
 
 /* line 14, ../sass/app.scss */
