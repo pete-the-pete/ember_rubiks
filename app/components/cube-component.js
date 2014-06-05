@@ -1,8 +1,10 @@
+import { FACES } from '../constants';
 
-export default Ember.View.extend({
+export default Ember.Component.extend({
   didInsertElement: function() {
       // brings the view into focus in order to capture keyUps.
       // there are a few ways to handle this, this is just one.
+      console.debug('i still get called?');
       return this.$().attr({ tabindex: 1 }), this.$().focus();
   },
   keyDown: function(e) {
