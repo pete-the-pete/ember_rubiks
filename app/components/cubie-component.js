@@ -12,7 +12,11 @@ var CubieComponent = Ember.Component.extend({
       Ember.set(f_copy, 'facing','external');
     }
     return f_copy;
-  })
+  }),
+  classNameBindings: ['isActive'],
+  isActive: function() {
+    return this.cubie.get('data').isActive;
+  }.property('cubie.isActive')
 });
 
 export default CubieComponent;

@@ -112,7 +112,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 6, ../sass/partials/_animations.scss */
-.highlight .side.external .sticker {
+.is-active .side.external .sticker {
   -webkit-animation: highlight 1s linear 0s infinite alternate;
   -moz-animation: highlight 1s linear 0s infinite alternate;
   -o-animation: highlight 1s linear 0s infinite alternate;

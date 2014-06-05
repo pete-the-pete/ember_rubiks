@@ -16,7 +16,7 @@
     @include transform-origin(
       nth($cubie_positions, $cubie),
       (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-      $cubie_dimension  - nth($cubie_positions, $section)
+      $cubie_dimension - nth($cubie_positions, $section)
     );
   };
 }
