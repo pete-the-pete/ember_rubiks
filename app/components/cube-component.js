@@ -1,11 +1,22 @@
 import { FACES } from '../constants';
 
 export default Ember.Component.extend({
+  activeRow: 1,
+  activeCol: 1,
+  layers: function() {
+    return this.get('cube.layers.content.content');
+  }.property('cube.@each.layers'),
+  sections: function() {
+    return this.get('cube.layers.sections.content.content');
+  }.property('cube.@each.layers.@each.sections'),
+  init: function() {
+    this._super();
+  },
+
   didInsertElement: function() {
-      // brings the view into focus in order to capture keyUps.
-      // there are a few ways to handle this, this is just one.
-      console.debug('i still get called?');
-      return this.$().attr({ tabindex: 1 }), this.$().focus();
+    return this.$().attr({ tabindex: 1 }), this.$().focus();
+  },
+  highlightActiveSections: function() {
   },
   keyDown: function(e) {
       var dir;

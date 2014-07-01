@@ -1,6 +1,7 @@
 var Section = DS.Model.extend({
   cubies: DS.hasMany('cubie', {async: true}),
-  layer: DS.belongsTo('layer')
+  layer: DS.belongsTo('layer'),
+  title: DS.attr('string')
 });
 
 Section.reopenClass({
@@ -8,6 +9,7 @@ Section.reopenClass({
     {
       id: 1,
       layer: 1,
+      title: 'where are you waldo?',
       cubies: [1,2,3]
     },
     {

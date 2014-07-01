@@ -1,6 +1,7 @@
 var Layer = DS.Model.extend({
   sections: DS.hasMany('section', {async: true}),
-  cube: DS.belongsTo('cube')
+  cube: DS.belongsTo('cube'),
+  title: DS.attr('string')
 });
 
 Layer.reopenClass({
@@ -8,11 +9,13 @@ Layer.reopenClass({
     {
       id: 1,
       cube: 1,
+      title: 'Back that ass up',
       sections: [1,2,3]
     },
     {
       id: 2,
       cube: 1,
+      title: 'Slow down.',
       sections: [4,5,6]
     },
     {
