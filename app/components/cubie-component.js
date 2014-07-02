@@ -15,7 +15,7 @@ var CubieComponent = Ember.Component.extend({
   }),
   classNameBindings: ['isActive'],
   isActive: function() {
-    return this.cubie.get('data').isActive;
+    return this.cubie.get('isActive');
   }.property('cubie.isActive')
 });
 

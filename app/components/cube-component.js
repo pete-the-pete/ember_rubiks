@@ -1,26 +1,38 @@
 import { FACES } from '../constants';
+import { KEYS } from '../constants';
 
 export default Ember.Component.extend({
-  activeRow: 1,
-  activeCol: 1,
-  layers: function() {
-    return this.get('cube.layers.content.content');
-  }.property('cube.@each.layers'),
-  sections: function() {
-    return this.get('cube.layers.sections.content.content');
-  }.property('cube.@each.layers.@each.sections'),
-  init: function() {
-    this._super();
-  },
-
+  activeRow: 0,
+  activeCol: 0,
   didInsertElement: function() {
-    return this.$().attr({ tabindex: 1 }), this.$().focus();
+    //hack to highlight it after everything as loaded (hopefully)
+    Ember.run.later(this, this.highlightMoves, 1000);
+    this.$().attr({ tabindex: 1 }), this.$().focus();
   },
-  highlightActiveSections: function() {
+  getActiveLayer: function() {
+    return this.get('cube.layers').objectAt(this.get('activeRow'));
+  },
+  highlightMoves: function() {
+    var layer = this.getActiveLayer(),
+      col = this.get('activeCol');
+
+    //highlight the full layer
+    layer.get('sections').forEach(function(section, index, sections) {
+      section.get('cubies').forEach(function(cubie, index, cubies) {
+        cubie.set('isActive', true);
+      });
+    });
+
+    //highlight the column of each layer
+    this.get('cube.layers').forEach(function(layer, index, layers) {
+      layer.get('sections').forEach(function(section, index, sections) {
+        section.get('cubies').objectAt(col).set('isActive', true);
+      })
+    });
   },
   keyDown: function(e) {
       var dir;
-      console.debug(e);
+      this.highlightMoves();
 
       // if(e.shiftKey) {
       //   switch(e.keyCode) {
