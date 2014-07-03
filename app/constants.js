@@ -39,9 +39,9 @@ var faces = [
 
 var keys = {
   LEFT: 37,
-  DOWN: 38,
+  DOWN: 40,
   RIGHT: 39,
-  UP: 40
+  UP: 38
 };
 
 var rotations = {

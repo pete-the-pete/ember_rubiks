@@ -89,7 +89,6 @@
     position: absolute;
     border: $cubie_border solid black;
     @include backface-visibility(hidden);
-    opacity: 0.99;
 
     /* placement */
     &.front  { @include front(); }
@@ -125,6 +124,7 @@
       font-weight: bold;
       text-align: center;
       overflow: hidden;
+      opacity: inherit;
       /* background-color */
       &.orange { background-color: $orange; }
       &.green { background-color: $green; }

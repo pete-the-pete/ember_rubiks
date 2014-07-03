@@ -7,43 +7,83 @@ export default Ember.Component.extend({
   didInsertElement: function() {
     //hack to highlight it after everything as loaded (hopefully)
     Ember.run.later(this, this.highlightMoves, 1000);
-    this.$().attr({ tabindex: 1 }), this.$().focus();
+    this.$().attr({ tabindex: 1 });
+    this.$().focus();
   },
-  getActiveLayer: function() {
-    return this.get('cube.layers').objectAt(this.get('activeRow'));
-  },
-  highlightMoves: function() {
+  setActiveCubes: function(isActive) {
     var layer = this.getActiveLayer(),
-      col = this.get('activeCol');
+      sectionCubies = this.getActiveSectionCubies();
 
     //highlight the full layer
     layer.get('sections').forEach(function(section, index, sections) {
       section.get('cubies').forEach(function(cubie, index, cubies) {
-        cubie.set('isActive', true);
+        cubie.set('isActive', isActive);
       });
     });
 
     //highlight the column of each layer
-    this.get('cube.layers').forEach(function(layer, index, layers) {
-      layer.get('sections').forEach(function(section, index, sections) {
-        section.get('cubies').objectAt(col).set('isActive', true);
-      })
+    sectionCubies.forEach(function(cubie, index, cubies) {
+      cubie.set('isActive', isActive);
     });
   },
+  getActiveLayer: function() {
+    return this.get('cube.layers').objectAt(this.get('activeRow'));
+  },
+  getActiveSectionCubies: function() {
+    var col = this.get('activeCol');
+    return this.get('cube.layers').reduce(function(all_cubies, layer, index, layers) {
+      return all_cubies.concat(layer.get('sections').reduce(function(section_cubies, section, index, sections) {
+        section_cubies.push(section.get('cubies').objectAt(col));
+        return section_cubies;
+      }, []));
+    }, []);
+  },
+  highlightMoves: function() {
+    this.setActiveCubes(true);
+  },
+  clearMoves: function() {
+    this.setActiveCubes(false);
+  },
   keyDown: function(e) {
-      var dir;
-      this.highlightMoves();
+      var activeRow = this.get('activeRow'),
+        activeCol = this.get('activeCol');
 
-      // if(e.shiftKey) {
-      //   switch(e.keyCode) {
-      //     case DOWN:
-      //     default:
-      //     break;
-      //   } === 38) dir = -1;
-      // else if(e.keyCode === 40) dir = 1;
+      if(e.shiftKey) {
+        //moves
+        switch(e.keyCode) {
+          case KEYS.UP:
+          case KEYS.RIGHT:
+          case KEYS.DOWN:
+          case KEYS.LEFT:
+          break;
+        }
+      } else {
+        //changing the selection
+        switch(e.keyCode) {
+          case KEYS.UP:
+            activeRow = (activeRow - 1 >= 0) ? --activeRow : 2;
+            break;
+          case KEYS.DOWN:
+            activeRow = (activeRow + 1 <= 2) ? ++activeRow : 0;
+            break;
+          case KEYS.LEFT:
+            activeCol = (activeCol - 1 >= 0) ? --activeCol : 2;
+            break;
+          case KEYS.RIGHT:
+            activeCol = (activeCol + 1 <= 2) ? ++activeCol : 0;
+            break;
+        }
 
-      // if(dir) {
-      //     this.get('controller').send('rotateCube', { direction: dir });
-      // }
+        //unset the current active moves before updating
+        this.clearMoves();
+        this.set('activeRow', activeRow);
+        this.set('activeCol', activeCol);
+        Ember.run.next(this, this.highlightMoves);
+      }
+
+
+      /*if(dir) {
+          this.get('controller').send('rotateCube', { direction: dir });
+      }*/
   }
 });
