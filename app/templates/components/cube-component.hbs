@@ -1,15 +1,7 @@
-<div id="cube" {{action 'changeSelection' cube}}>
+<div id="cube">
 {{#each layer in cube.layers}}
   <div class="layer">
-  {{#each section in layer.sections}}
-    <div class="section">
-      {{#each cubie in section.cubies}}
-        <div class="cubie">
-          {{cubie-component cubie=cubie}}
-        </div>
-      {{/each}}
-    </div>
-  {{/each}}
+    {{layer-component layer=layer}}
   </div>
 {{/each}}
 </div>
