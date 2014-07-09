@@ -1,6 +1,7 @@
 @mixin rotate($initial_trans, $type, $direction) {
   $steps: 4;
   $multiplier: 1;
+  $steps_class: 'step';
   @if($direction == 'anticlockwise') {
     $multiplier: -1;
   }
@@ -11,7 +12,7 @@
     @for $step from 1 through $steps {
       $rotation: ($multiplier * (($step) * 90)) + 'deg';
       &.#{$direction} {
-        &.#{'step-'+$step} {
+        &.#{$steps_class} {
           @if($type == X) {
             @include transform($initial_trans rotateX(#{$rotation}));
           } @else if($type == Y) {
@@ -21,6 +22,7 @@
           }
         }
       }
+      $steps_class: $steps_class + 'step';
     }
   }
 }

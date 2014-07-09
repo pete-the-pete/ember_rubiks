@@ -27,7 +27,7 @@
 
 //n x n x n
 @for $layer from 1 through $N {
-  div.layer:nth-of-type(#{$layer}) {
+  div#cube div.ember-view:nth-of-type(#{$layer}) div.layer {
     width: 100%;
     height: $cubie_dimension;
     position: absolute;

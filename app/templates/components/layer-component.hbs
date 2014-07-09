@@ -1,5 +1,7 @@
-{{#each section in layer.sections}}
-  <div class="section">
-    {{section-component section=section}}
-  </div>
-{{/each}}
+<div {{bind-attr class=":layer :rotateY rotationDirection rotationSteps"}}>
+  {{#each section in layer.sections}}
+    <div class="section">
+      {{section-component section=section}}
+    </div>
+  {{/each}}
+</div>

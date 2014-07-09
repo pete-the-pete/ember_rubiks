@@ -1,6 +1,6 @@
 import startApp from '../helpers/start-app';
 
-var App, 
+var App,
   $layers,
   delay = 250;
 
