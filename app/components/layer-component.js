@@ -22,29 +22,40 @@ export default Ember.Component.extend({
     return x;
   }.property('steps.[]'),
 
-  //NOTE: this isn't going to work and/or will be unnecessary
-  //once it goes from 4 -> 1, it unwinds the animation
-  //if the model update/rerender is too slow, it might work
-  //by using key rames
-  rotateLeft: function() {
-    var currStep = this.get('steps').length,
-      nextStep = ++currStep;
+  resetRotations: function() {
+    var steps = this.get('steps').length;
+    if(steps % 4 === 0) {
+      Ember.run.next(this, function() {
+        this.set('direction', null);
+        this.set('steps',[]);
+      });
+    }
+  },
 
+  //NOTE: updating the model might make this simpler, and
+  //get rid of the need to know more than one step
+  //if the model update/rerender is too slow, this will need to work
+  rotateLeft: function() {
     if(this.$().hasClass('anticlockwise')) {
       //we were going the other way, so we should
       //unwinde that direction by one
       this.get('steps').popObject();
     } else {
       this.set('direction', 'clockwise');
-      if(nextStep > 4) {
-        this.set('steps',[]);
-      }
       this.get('steps').pushObject('step');
     }
   },
 
   rotateRight: function() {
+    if(this.$().hasClass('clockwise')) {
+      //we were going the other way, so we should
+      //unwinde that direction by one
+      this.get('steps').popObject();
+    } else {
+      this.set('direction', 'anticlockwise');
+      this.get('steps').pushObject('step');
 
+    }
   },
 
   //handle rotation events, and rebroadcast them
@@ -59,6 +70,7 @@ export default Ember.Component.extend({
           this.rotateRight();
           break;
       }
+      this.resetRotations();
     }
   }
 });
