@@ -1,4 +1,4 @@
-import { KEYS } from '../constants';
+import { KEYS, ROTATION_DIRECTIONS } from '../constants';
 
 export default Ember.Component.extend({
   //how many times has the layr been rotated in a direction
@@ -17,14 +17,23 @@ export default Ember.Component.extend({
   }.property('direction'),
 
   rotationSteps: function() {
-    var x = this.get('steps').join('');
-    console.log(x);
-    return x;
+    return '';//this.get('steps').join('');
   }.property('steps.[]'),
 
+  /**
+  Actually have the move count towards the game
+  */
+  sendMove: function() {
+    this.get('cube').send('move', {
+      layer: this.layer,
+      cube: this.get('cube'),
+      direction: this.get('direction'),
+      axis: 'Y',
+    });
+  },
+
   resetRotations: function() {
-    var steps = this.get('steps').length;
-    if(steps % 4 === 0) {
+    if(this.get('steps').length % 4 === 0) {
       Ember.run.next(this, function() {
         this.set('direction', null);
         this.set('steps',[]);
@@ -36,25 +45,24 @@ export default Ember.Component.extend({
   //get rid of the need to know more than one step
   //if the model update/rerender is too slow, this will need to work
   rotateLeft: function() {
-    if(this.$().hasClass('anticlockwise')) {
+    if(this.$().hasClass(ROTATION_DIRECTIONS.CLOCKWISE)) {
       //we were going the other way, so we should
       //unwinde that direction by one
       this.get('steps').popObject();
     } else {
-      this.set('direction', 'clockwise');
+      this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
       this.get('steps').pushObject('step');
     }
   },
 
   rotateRight: function() {
-    if(this.$().hasClass('clockwise')) {
+    if(this.$().hasClass(ROTATION_DIRECTIONS.ANTICLOCKWISE)) {
       //we were going the other way, so we should
       //unwinde that direction by one
       this.get('steps').popObject();
     } else {
-      this.set('direction', 'anticlockwise');
+      this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
       this.get('steps').pushObject('step');
-
     }
   },
 
@@ -64,10 +72,12 @@ export default Ember.Component.extend({
       //moves; layers can only rotate along the Y axis
       switch(e.keyCode) {
         case KEYS.LEFT:
-          this.rotateLeft();
+          this.rotateRight();
+          this.sendMove();
           break;
         case KEYS.RIGHT:
-          this.rotateRight();
+          this.rotateLeft();
+          this.sendMove();
           break;
       }
       this.resetRotations();

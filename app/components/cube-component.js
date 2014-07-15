@@ -58,6 +58,12 @@ export default Ember.Component.extend({
     this.set('activeCubie', this.get('activeSection').get('cubies').objectAt(index));
   },
 
+  actions: {
+    move: function(data) {
+      this.sendAction('move', data);
+    }
+  }
+
 
   /*setActiveCubies: function(isActive) {
     var layer = this.getActiveLayer(),
