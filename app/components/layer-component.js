@@ -45,25 +45,25 @@ export default Ember.Component.extend({
   //get rid of the need to know more than one step
   //if the model update/rerender is too slow, this will need to work
   rotateLeft: function() {
-    if(this.$().hasClass(ROTATION_DIRECTIONS.CLOCKWISE)) {
+    if(this.get('direction') === ROTATION_DIRECTIONS.CLOCKWISE) {
       //we were going the other way, so we should
       //unwinde that direction by one
       this.get('steps').popObject();
     } else {
-      this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
       this.get('steps').pushObject('step');
     }
+    this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
   },
 
   rotateRight: function() {
-    if(this.$().hasClass(ROTATION_DIRECTIONS.ANTICLOCKWISE)) {
+    if(this.get('direction') === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
       //we were going the other way, so we should
       //unwinde that direction by one
       this.get('steps').popObject();
     } else {
-      this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
       this.get('steps').pushObject('step');
     }
+    this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
   },
 
   //handle rotation events, and rebroadcast them
