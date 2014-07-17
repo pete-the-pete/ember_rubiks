@@ -1,5 +1,5 @@
-{{#each face in displayFaces}}
-  <div {{bind-attr class=":side face.side face.facing"}}>
+{{#each face in allFaces}}
+  <div {{bind-attr class=":side face.side"}}>
     <div {{bind-attr class=":sticker face.color"}}>
       <p>{{cubie.id}}</p>
     </div>

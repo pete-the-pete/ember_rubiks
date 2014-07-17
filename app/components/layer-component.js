@@ -12,16 +12,17 @@ export default Ember.Component.extend({
 
   cube: Ember.computed.alias('parentView'),
 
-  /*init: function() {
+  init: function() {
     Ember.run.later(this, function() {
       try {
-        this.rerender()
+        this.rerender();
+        console.debug('rerendered');
       } catch (e) {
         console.debug(e);
       }
     }, 2000);
     this._super();
-  },*/
+  },
 
 /*  sectionInserted: function() {
     this.incrementProperty('insertedSections');
