@@ -3,36 +3,12 @@ import { KEYS, ROTATION_DIRECTIONS } from '../constants';
 var INITIALIZED = false;
 
 export default Ember.Component.extend({
-  totalSections: 3, //hardcode for now
-  insertedSections: 0,
   //how many times has the layr been rotated in a direction
   steps: [],
   direction: '',
   classNameBindings: ['rotationDirection','rotationSteps'],
 
   cube: Ember.computed.alias('parentView'),
-
-  init: function() {
-    Ember.run.later(this, function() {
-      try {
-        this.rerender();
-        console.debug('rerendered');
-      } catch (e) {
-        console.debug(e);
-      }
-    }, 2000);
-    this._super();
-  },
-
-/*  sectionInserted: function() {
-    this.incrementProperty('insertedSections');
-    if(this.get('insertedSections') === this.get('totalSections')) {
-      this.set('insertedSections', 0);
-      if(INITIALIZED) {
-        //this.resetRotations();
-      }
-    }
-  },*/
 
   active: function() {
     return this.get('cube.activeLayer') === this;

@@ -14,45 +14,31 @@ var CubieComponent = Ember.Component.extend({
   //the secion
   section: computed.alias('parentView'),
 
-  /*
-  Go through all the possible faces, and set the facing
-  property based on the set of faces associated with a
-  particular cubie.
-  */
   allFaces: FACES,
- /* displayFaces: computed.map('allFaces', function(f) {
-    var f_copy = Ember.copy(f, true);
-    var faces = this.cubie.get('data').faces;
-    var found = faces.find(function(item) {
-      return parseInt(item.id, 10) === parseInt(f_copy.id, 10);
-    });
-    if(found) {
-      Ember.set(f_copy, 'facing','external');
-    }
-    return f_copy;
-  }),*/
 
   /*
   Set the class based on the active state.
   */
-/*  isActive: function() {
+  isActive: function() {
     return this.get('active');
-  }.property('active'),*/
+  }.property('active'),
 
 
   /**
   A single cubie can be active at a time, so this checks
   its parent to see if it is the active cubie.
   */
-/*  active: function() {
+  active: function() {
     if(this.get('cube.activeCubie') === this.cubie) {
-      this.$().attr({ tabindex: 1 });
-      this.$().focus();
+      Ember.run.schedule('afterRender', this, function() {
+        this.$().attr({ tabindex: 1 });
+        this.$().focus();
+      });
       return true;
     } else {
       return false;
     }
-  }.property('cube.activeCubie'),*/
+  }.property('cube.activeCubie'),
 
   /**
   Adjacent cubies show the moves.
@@ -68,9 +54,9 @@ var CubieComponent = Ember.Component.extend({
     this.get('section').cubieInserted();
   },*/
 
-  /*index: function() {
+  index: function() {
     return this.get('section.cubies').indexOf(this.cubie);
-  }.property('section.cubies.@each')*/
+  }.property('section.cubies.@each')
 
 });
 

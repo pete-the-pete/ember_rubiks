@@ -82,9 +82,7 @@ export default Ember.ArrayController.extend({
 
         var index = data.cube.get('data').layers.indexOf(data.layer);
         data.cube.get('data').layers.removeAt(index);
-        Ember.run.next(this, function() {
-          data.cube.get('data').layers.insertAt(index, data.layer);
-        })
+        data.cube.get('data').layers.insertAt(index, data.layer);
       }
     },
     handleRotation: function(data) {
