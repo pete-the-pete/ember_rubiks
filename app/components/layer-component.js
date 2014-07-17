@@ -27,6 +27,7 @@ export default Ember.Component.extend({
   */
   sendMove: function() {
     this.get('cube').send('move', {
+      layerView: this,
       layer: this.layer,
       cube: this.get('cube').cube,
       direction: this.get('direction'),
@@ -42,15 +43,13 @@ export default Ember.Component.extend({
     }
   },
 
-  resetRotations: function() {
-    console.debug('reset the rotations');
-    //if(this.get('steps').length % 4 === 0) {
-      //Ember.run.scheduleOnce('render', this, function() {
-        //this.set('direction', null);
-        //this.set('steps',[]);
-        console.debug(this);
-      //});
-    //}
+  willInsertElement: function() {
+    this.set('direction', null);
+    this.set('steps',[]);
+  },
+
+  scheduleRerender: function() {
+    this.rerender();
   },
 
   //NOTE: updating the model might make this simpler, and
@@ -95,6 +94,7 @@ export default Ember.Component.extend({
         INITIALIZED = true;
         this.get('steps').pushObject('step');
         Ember.run.later(this, this.sendMove, 250);
+        //Ember.run.later(this, this.rerender, 251);
       }
     }
   }

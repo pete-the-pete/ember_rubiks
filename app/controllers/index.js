@@ -81,8 +81,11 @@ export default Ember.ArrayController.extend({
         }.bind(this));
 
         var index = data.cube.get('data').layers.indexOf(data.layer);
-        data.cube.get('data').layers.removeAt(index);
-        data.cube.get('data').layers.insertAt(index, data.layer);
+        data.layerView.scheduleRerender();
+        //data.cube.get('data').layers.removeAt(index);
+        // Ember.run.next(this, function() {
+        //   data.cube.get('data').layers.replace(index, 1, data.layer);
+        // });
       }
     },
     handleRotation: function(data) {
