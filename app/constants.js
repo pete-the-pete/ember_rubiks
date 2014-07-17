@@ -47,7 +47,7 @@ var keys = {
 var rotation_directions = {
   CLOCKWISE: 'clockwise',
   ANTICLOCKWISE: 'anticlockwise'
-}
+};
 
 export var FACES = faces;
 export var KEYS = keys;

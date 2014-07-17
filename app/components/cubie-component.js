@@ -64,6 +64,10 @@ var CubieComponent = Ember.Component.extend({
   }.property('section.adjacentCubies.@each'),
   */
 
+  /*didInsertElement: function() {
+    this.get('section').cubieInserted();
+  },*/
+
   index: function() {
     return this.get('section.cubies').indexOf(this.cubie);
   }.property('section.cubies.@each')

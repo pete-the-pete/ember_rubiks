@@ -1,12 +1,37 @@
 import { KEYS, ROTATION_DIRECTIONS } from '../constants';
 
+var INITIALIZED = false;
+
 export default Ember.Component.extend({
+  totalSections: 3, //hardcode for now
+  insertedSections: 0,
   //how many times has the layr been rotated in a direction
   steps: [],
   direction: '',
   classNameBindings: ['rotationDirection','rotationSteps'],
 
   cube: Ember.computed.alias('parentView'),
+
+  /*init: function() {
+    Ember.run.later(this, function() {
+      try {
+        this.rerender()
+      } catch (e) {
+        console.debug(e);
+      }
+    }, 2000);
+    this._super();
+  },*/
+
+/*  sectionInserted: function() {
+    this.incrementProperty('insertedSections');
+    if(this.get('insertedSections') === this.get('totalSections')) {
+      this.set('insertedSections', 0);
+      if(INITIALIZED) {
+        //this.resetRotations();
+      }
+    }
+  },*/
 
   active: function() {
     return this.get('cube.activeLayer') === this;
@@ -17,7 +42,7 @@ export default Ember.Component.extend({
   }.property('direction'),
 
   rotationSteps: function() {
-    return '';//this.get('steps').join('');
+    return this.get('steps').join('');
   }.property('steps.[]'),
 
   /**
@@ -26,19 +51,29 @@ export default Ember.Component.extend({
   sendMove: function() {
     this.get('cube').send('move', {
       layer: this.layer,
-      cube: this.get('cube'),
+      cube: this.get('cube').cube,
       direction: this.get('direction'),
       axis: 'Y',
     });
   },
 
-  resetRotations: function() {
-    if(this.get('steps').length % 4 === 0) {
-      Ember.run.next(this, function() {
-        this.set('direction', null);
-        this.set('steps',[]);
-      });
+  rotate: function() {
+    if(this.get('direction') === ROTATION_DIRECTIONS.CLOCKWISE) {
+      this.rotateRight();
+    } else if(this.get('direction') === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
+      this.rotateLeft();
     }
+  },
+
+  resetRotations: function() {
+    console.debug('reset the rotations');
+    //if(this.get('steps').length % 4 === 0) {
+      //Ember.run.scheduleOnce('render', this, function() {
+        //this.set('direction', null);
+        //this.set('steps',[]);
+        console.debug(this);
+      //});
+    //}
   },
 
   //NOTE: updating the model might make this simpler, and
@@ -52,7 +87,6 @@ export default Ember.Component.extend({
     } else {
       this.get('steps').pushObject('step');
     }
-    this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
   },
 
   rotateRight: function() {
@@ -63,24 +97,28 @@ export default Ember.Component.extend({
     } else {
       this.get('steps').pushObject('step');
     }
-    this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
   },
 
   //handle rotation events, and rebroadcast them
   keyDown: function(e) {
+    var move = false;
     if(e.shiftKey) {
       //moves; layers can only rotate along the Y axis
       switch(e.keyCode) {
         case KEYS.LEFT:
-          this.rotateRight();
-          this.sendMove();
+          move = true;
+          this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
           break;
         case KEYS.RIGHT:
-          this.rotateLeft();
-          this.sendMove();
+          move = true;
+          this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
           break;
       }
-      this.resetRotations();
+      if(move) {
+        INITIALIZED = true;
+        this.get('steps').pushObject('step');
+        Ember.run.later(this, this.sendMove, 250);
+      }
     }
   }
 });
