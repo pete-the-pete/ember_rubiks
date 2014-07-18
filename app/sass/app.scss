@@ -31,7 +31,7 @@ body {
   position: relative;
   margin: 50px auto;
   top: 50px;
-  @include perspective(2000);
+  @include perspective(3000);
 }
 
 #cube,
