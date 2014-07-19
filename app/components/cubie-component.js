@@ -1,5 +1,3 @@
-import { FACES } from '../constants';
-
 var computed = Ember.computed;
 
 var CubieComponent = Ember.Component.extend({
@@ -13,8 +11,6 @@ var CubieComponent = Ember.Component.extend({
 
   //the secion
   section: computed.alias('parentView'),
-
-  allFaces: FACES,
 
   /*
   Set the class based on the active state.

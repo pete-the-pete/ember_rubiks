@@ -1,82 +1,76 @@
+import { FACES } from '../constants';
+
 var Cubie = DS.Model.extend({
   section: DS.belongsTo('section'),
-  faces: DS.hasMany('face', {async: true})
+  faces: DS.attr()
 });
-
-//convenience constants
-var LEFT = 1,
-  BACK = 2,
-  RIGHT = 3,
-  FRONT = 4,
-  TOP = 5,
-  BOTTOM =6;
 
 Cubie.reopenClass({
   FIXTURES: [
     {
       id:1,
       section:1,
-      faces:[LEFT,BACK,TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:2,
       section:1,
-      faces:[BACK, TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:3,
       section:1,
-      faces:[BACK,RIGHT,TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:4,
       section:2,
-      faces:[LEFT,TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:5,
       section:2,
-      faces:[TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:6,
       section:2,
-      faces:[RIGHT, TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:7,
       section:3,
-      faces:[LEFT, FRONT, TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:8,
       section:3,
-      faces:[FRONT, TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:9,
       section:3,
-      faces:[RIGHT, FRONT, TOP]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:10,
       section:4,
-      faces:[LEFT,BACK]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:11,
       section:4,
-      faces:[BACK]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:12,
       section:4,
-      faces:[BACK,RIGHT]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:13,
       section:5,
-      faces:[LEFT]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:14,
@@ -86,67 +80,67 @@ Cubie.reopenClass({
     {
       id:15,
       section:5,
-      faces:[RIGHT]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:16,
       section:6,
-      faces:[LEFT, FRONT]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:17,
       section:6,
-      faces:[FRONT]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:18,
       section:6,
-      faces:[RIGHT, FRONT]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:19,
       section:7,
-      faces:[LEFT, BACK, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:20,
       section:7,
-      faces:[BACK, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:21,
       section:7,
-      faces:[BACK, RIGHT, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:22,
       section:8,
-      faces:[LEFT, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:23,
       section:8,
-      faces:[BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:24,
       section:8,
-      faces:[RIGHT, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:25,
       section:9,
-      faces:[LEFT, FRONT, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:26,
       section:9,
-      faces:[FRONT, BOTTOM]
+      faces: Ember.copy(FACES, true)
     },
     {
       id:27,
       section:9,
-      faces:[RIGHT, FRONT, BOTTOM]
+      faces: Ember.copy(FACES, true)
     }
   ]
 });

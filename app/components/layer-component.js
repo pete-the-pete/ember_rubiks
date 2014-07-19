@@ -1,4 +1,4 @@
-import { KEYS, ROTATION_DIRECTIONS } from '../constants';
+import { KEYS, ROTATION_DIRECTIONS, AXES } from '../constants';
 
 var INITIALIZED = false;
 
@@ -31,7 +31,7 @@ export default Ember.Component.extend({
       layer: this.layer,
       cube: this.get('cube').cube,
       direction: this.get('direction'),
-      axis: 'Y',
+      axis: AXES.Y,
     });
   },
 
