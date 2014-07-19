@@ -19,13 +19,21 @@ var CubieComponent = Ember.Component.extend({
     return this.get('active');
   }.property('active'),
 
+  /**
+  Register the cubie with its parent
+  Thanks ic-tabs! https://github.com/instructure/ic-tabs/blob/master/lib/tab-list.js
+  */
+  registerWithSection: function() {
+    this.get('section').registerCubie(this);
+  }.on('didInsertElement'),
+
 
   /**
   A single cubie can be active at a time, so this checks
   its parent to see if it is the active cubie.
   */
   active: function() {
-    if(this.get('cube.activeCubie') === this.cubie) {
+    if(this.get('cube.activeCubie') === this) {
       Ember.run.schedule('afterRender', this, function() {
         this.$().attr({ tabindex: 1 });
         this.$().focus();
@@ -36,23 +44,23 @@ var CubieComponent = Ember.Component.extend({
     }
   }.property('cube.activeCubie'),
 
-  /**
-  Adjacent cubies show the moves.
-  NOTE: this is wrong, it needs to be updated to know which
-  face is adjacent or active, not just the cubie
-  *
-  adjacent: function() {
-    return this.get('section.adjacentCubies').contains(this);
-  }.property('section.adjacentCubies.@each'),
-  */
-
-  /*didInsertElement: function() {
-    this.get('section').cubieInserted();
-  },*/
-
   index: function() {
-    return this.get('section.cubies').indexOf(this.cubie);
-  }.property('section.cubies.@each')
+    return this.get('section.cubieViews').indexOf(this);
+  }.property('section.cubieViews.@each'),
+
+  /**
+  Let's the user navigate around the cube
+  */
+  keyDown: function(e) {
+    if(!e.shiftKey && !e.ctrlKey) {
+      e.preventDefault();
+      this.get('cube').send('navigate', {
+        cubieView: this,
+        cubie: this.cubie,
+        key: e.keyCode
+      });
+    }
+  }
 
 });
 

@@ -1,6 +1,5 @@
 import { KEYS, ROTATION_DIRECTIONS, AXES } from '../constants';
 
-var INITIALIZED = false;
 
 export default Ember.Component.extend({
   //how many times has the layr been rotated in a direction
@@ -8,11 +7,29 @@ export default Ember.Component.extend({
   direction: '',
   classNameBindings: ['rotationDirection','rotationSteps'],
 
+  sectionViews: null,
+
   cube: Ember.computed.alias('parentView'),
+
+  createSections: function() {
+    this.set('sectionViews', Ember.ArrayProxy.create({content: []}));
+  }.on('init'),
+
+  registerSection: function(section) {
+    this.get('sectionViews').pushObject(section);
+  },
+
+  registerWithCube: function() {
+    this.get('cube').registerLayer(this);
+  }.on('didInsertElement'),
 
   active: function() {
     return this.get('cube.activeLayer') === this;
   }.property('cube.activeLayer'),
+
+  index: function() {
+    return this.get('cube.layerViews').indexOf(this);
+  }.property('cube.layerViews.@each'),
 
   rotationDirection: function() {
     return this.get('direction');
@@ -91,10 +108,8 @@ export default Ember.Component.extend({
           break;
       }
       if(move) {
-        INITIALIZED = true;
         this.get('steps').pushObject('step');
         Ember.run.later(this, this.sendMove, 250);
-        //Ember.run.later(this, this.rerender, 251);
       }
     }
   }
