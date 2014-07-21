@@ -100,10 +100,10 @@ export default Ember.Component.extend({
         //already at the top
         if(activeLayerIndex === 0) {
           if(activeSectionIndex > 0) {
-            --activeSectionIndex;
+            activeSectionIndex--;
           }
         } else {
-          --activeLayerIndex;
+          activeLayerIndex--;
         }
         break;
       case KEYS.DOWN:
@@ -111,15 +111,46 @@ export default Ember.Component.extend({
           if(activeSectionIndex < max) {
             ++activeSectionIndex;
           } else {
-            ++activeLayerIndex;
+            activeLayerIndex++;
           }
         } else if(activeLayerIndex < max) {
-          ++activeLayerIndex;
+          activeLayerIndex++;
         }
         break;
       case KEYS.LEFT:
+        if(activeLayerIndex === 0) {
+          if(activeCubieIndex > 0) {
+            activeCubieIndex--;
+          }
+        } else if (activeSectionIndex === max) {
+          if(activeCubieIndex > 0) {
+            activeCubieIndex--;
+          }
+        } else {
+          if(activeSectionIndex < max) {
+            activeSectionIndex++
+          }
+        }
         break;
       case KEYS.RIGHT:
+        //moving on the top or front, just move right
+        if(activeLayerIndex === 0) {
+          if(activeCubieIndex < max) {
+            activeCubieIndex++;
+          } else {
+            activeLayerIndex++;
+          }
+        } else if(activeSectionIndex === max) {
+          if(activeCubieIndex < max) {
+            activeCubieIndex++;
+          } else {
+            activeSectionIndex--;
+          }
+        } else {
+          if(activeSectionIndex > 0) {
+            activeSectionIndex--;
+          }
+        }
         break;
     }
     this.setActiveLayerAtIndex(activeLayerIndex);
