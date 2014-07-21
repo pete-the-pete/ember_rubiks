@@ -22,7 +22,7 @@ var CubieComponent = Ember.Component.extend({
 
   /**
   A single cubie can be active at a time, so this checks
-  its parent to see if it is the active cubie.
+  the cube to see if it is the active cubie.
   */
   setFocus: function() {
     if(this.get('cube.activeCubie') === this) {

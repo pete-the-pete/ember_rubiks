@@ -85,7 +85,9 @@ export default Ember.Component.extend({
     //save this off for the rerender
     this.set('navigationData', data);
 
-    //if we don't have the data, just highlight the same cube
+    //if we don't have the data, just highlight the same cube, but we
+    //need to reset everything since the childViews have been destroyed
+    //and recreated
     if(!data) {
       this.setActiveLayerAtIndex(this.get('activeLayerIndex'));
       this.setActiveSectionAtIndex(this.get('activeSectionIndex'));
@@ -98,35 +100,31 @@ export default Ember.Component.extend({
         //already at the top
         if(activeLayerIndex === 0) {
           if(activeSectionIndex > 0) {
-            this.setActiveSectionAtIndex(--activeSectionIndex);
+            --activeSectionIndex;
           }
         } else {
-          this.setActiveLayerAtIndex(--activeLayerIndex);
-          this.setActiveSectionAtIndex(activeSectionIndex);
+          --activeLayerIndex;
         }
-        //keep the same active cubie index
-        this.setActiveCubieAtIndex(activeCubieIndex);
         break;
       case KEYS.DOWN:
         if(activeLayerIndex === 0) {
           if(activeSectionIndex < max) {
-            this.setActiveSectionAtIndex(++activeSectionIndex);
+            ++activeSectionIndex;
           } else {
-            this.setActiveLayerAtIndex(++activeLayerIndex);
-            this.setActiveSectionAtIndex(activeSectionIndex);
+            ++activeLayerIndex;
           }
         } else if(activeLayerIndex < max) {
-          this.setActiveLayerAtIndex(++activeLayerIndex);
-          this.setActiveSectionAtIndex(activeSectionIndex);
+          ++activeLayerIndex;
         }
-        //keep the same active cubie index
-        this.setActiveCubieAtIndex(activeCubieIndex);
         break;
       case KEYS.LEFT:
         break;
       case KEYS.RIGHT:
         break;
     }
+    this.setActiveLayerAtIndex(activeLayerIndex);
+    this.setActiveSectionAtIndex(activeSectionIndex);
+    this.setActiveCubieAtIndex(activeCubieIndex);
   },
 
   actions: {
