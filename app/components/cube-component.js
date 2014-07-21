@@ -4,24 +4,21 @@ import { KEYS } from '../constants';
 var INITIALIZED = false;
 
 export default Ember.Component.extend({
-  layerViews: null,
+
+  navigationData: null,
 
   activeLayer: null,
   activeSection: null,
   activeCubie: null,
 
+  activeLayerIndex: null,
+  activeSectionIndex: null,
+  activeCubieIndex: null,
+
+  //TODO: these should come from the model
   initialLayerIndex: 0,
   initialSectionIndex: 1,
   initialCubieIndex: 1,
-
-  createLayers: function() {
-    this.set('layerViews', Ember.ArrayProxy.create({content: []}));
-  }.on('init'),
-
-  registerLayer: function(layer) {
-    this.get('layerViews').pushObject(layer);
-  },
-
 
   didInsertElement: function() {
     //hack to highlight it after everything as loaded (hopefully)
@@ -52,21 +49,24 @@ export default Ember.Component.extend({
   Sects the activeLayer
   */
   setActiveLayerAtIndex: function(index) {
-    this.set('activeLayer', this.get('layerViews').objectAt(index));
+    this.set('activeLayerIndex', index);
+    this.set('activeLayer', this.get('childViews').objectAt(index));
   },
 
   /**
   Sets the active section at the index of the active layer.
   */
   setActiveSectionAtIndex: function(index) {
-    this.set('activeSection', this.get('activeLayer').get('sectionViews').objectAt(index));
+    this.set('activeSectionIndex', index);
+    this.set('activeSection', this.get('activeLayer').get('childViews').objectAt(index));
   },
 
   /**
   Sets the active cubie at the index of the active seciton
   */
   setActiveCubieAtIndex: function(index) {
-    this.set('activeCubie', this.get('activeSection').get('cubieViews').objectAt(index));
+    this.set('activeCubieIndex', index);
+    this.set('activeCubie', this.get('activeSection').get('childViews').objectAt(index));
   },
 
   updateAdjacentFaces: function() {
@@ -77,9 +77,22 @@ export default Ember.Component.extend({
   Navigate around the cube by changing the active cubie, and the adjacent faces
   */
   navigate: function(data) {
-    var activeLayerIndex = this.get('activeLayer').get('index'),
+    var max = this.get('childViews').get('length') - 1,
+      activeLayerIndex = this.get('activeLayer').get('index'),
       activeSectionIndex = this.get('activeSection').get('index'),
       activeCubieIndex = this.get('activeCubie').get('index');
+
+    //save this off for the rerender
+    this.set('navigationData', data);
+
+    //if we don't have the data, just highlight the same cube
+    if(!data) {
+      this.setActiveLayerAtIndex(this.get('activeLayerIndex'));
+      this.setActiveSectionAtIndex(this.get('activeSectionIndex'));
+      this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
+      return;
+    }
+
     switch(data.key) {
       case KEYS.UP:
         //already at the top
@@ -95,15 +108,14 @@ export default Ember.Component.extend({
         this.setActiveCubieAtIndex(activeCubieIndex);
         break;
       case KEYS.DOWN:
-        //debugger;
         if(activeLayerIndex === 0) {
-          if(activeSectionIndex < 2) {
+          if(activeSectionIndex < max) {
             this.setActiveSectionAtIndex(++activeSectionIndex);
           } else {
             this.setActiveLayerAtIndex(++activeLayerIndex);
             this.setActiveSectionAtIndex(activeSectionIndex);
           }
-        } else if(activeLayerIndex < 2) {
+        } else if(activeLayerIndex < max) {
           this.setActiveLayerAtIndex(++activeLayerIndex);
           this.setActiveSectionAtIndex(activeSectionIndex);
         }

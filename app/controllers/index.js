@@ -108,7 +108,10 @@ export default Ember.ArrayController.extend({
             }.bind(this));
           }
         }.bind(this));
-        rotation_data.layerView.scheduleRerender();
+        rotation_data.layerView.rerender();
+        Ember.run.schedule('afterRender', function() {
+          rotation_data.cubeView.navigate();
+        });
       }
     },
     handleRotation: function(data) {

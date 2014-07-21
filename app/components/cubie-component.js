@@ -1,6 +1,7 @@
 var computed = Ember.computed;
 
 var CubieComponent = Ember.Component.extend({
+  classNames: ['cubie'],
   classNameBindings: ['isActive'],
 
   //cube (probably kind of hacky)
@@ -16,37 +17,25 @@ var CubieComponent = Ember.Component.extend({
   Set the class based on the active state.
   */
   isActive: function() {
-    return this.get('active');
-  }.property('active'),
-
-  /**
-  Register the cubie with its parent
-  Thanks ic-tabs! https://github.com/instructure/ic-tabs/blob/master/lib/tab-list.js
-  */
-  registerWithSection: function() {
-    this.get('section').registerCubie(this);
-  }.on('didInsertElement'),
-
+    return this.get('cube.activeCubie') === this;
+  }.property('cube.activeCubie'),
 
   /**
   A single cubie can be active at a time, so this checks
   its parent to see if it is the active cubie.
   */
-  active: function() {
+  setFocus: function() {
     if(this.get('cube.activeCubie') === this) {
       Ember.run.schedule('afterRender', this, function() {
         this.$().attr({ tabindex: 1 });
         this.$().focus();
       });
-      return true;
-    } else {
-      return false;
     }
-  }.property('cube.activeCubie'),
+  }.observes('isActive'),
 
   index: function() {
-    return this.get('section.cubieViews').indexOf(this);
-  }.property('section.cubieViews.@each'),
+    return this.get('section.childViews').indexOf(this);
+  }.property('section.childViews.@each'),
 
   /**
   Let's the user navigate around the cube
