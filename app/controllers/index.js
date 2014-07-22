@@ -18,6 +18,17 @@ export default Ember.ArrayController.extend({
           });
           Ember.set(faces.objectAt(3), 'color', tmp_color);
           break;
+        case AXES.Z:
+          tmp_color = Ember.get(faces.objectAt(0), 'color');
+          //left <- top
+          Ember.set(faces.objectAt(0), 'color', Ember.get(faces.objectAt(4), 'color'));
+          //top <- right
+          Ember.set(faces.objectAt(4), 'color', Ember.get(faces.objectAt(2), 'color'));
+          //right <- bottom
+          Ember.set(faces.objectAt(2), 'color', Ember.get(faces.objectAt(5), 'color'));
+          //bottom <- left
+          Ember.set(faces.objectAt(5), 'color', tmp_color);
+          break;
       }
     }
   },
