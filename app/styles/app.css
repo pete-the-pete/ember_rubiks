@@ -223,20 +223,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -405,20 +391,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -587,20 +559,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -777,20 +735,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -959,20 +903,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -1141,20 +1071,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -1331,20 +1247,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -1513,20 +1415,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
@@ -1695,20 +1583,6 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -1975,20 +1849,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -2157,20 +2017,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -2339,20 +2185,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -2529,20 +2361,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -2711,20 +2529,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -2893,20 +2697,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -3083,20 +2873,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -3265,20 +3041,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
@@ -3447,20 +3209,6 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -3727,20 +3475,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -3909,20 +3643,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -4091,20 +3811,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -4281,20 +3987,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -4463,20 +4155,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -4645,20 +4323,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -4835,20 +4499,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -5017,20 +4667,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
@@ -5199,20 +4835,6 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
-  /* //face rotations
-  //left, right
-  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-    //corner cubie
-    //need to include both Z and X rotations for the corner pieces,
-    //add define the transform-origin
-    @include corner-cubie-rotations($layer, $section, $cubie);
-  } @else if($section == $N) {
-    //front face rotations
-    @include cubie-rotationZ($layer, $section, $cubie);
-  } @else {
-    //side face rotations
-    @include cubie-rotationX($layer, $section, $cubie);
-  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -5375,7 +4997,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   transform: translateX(300px) rotateZ(-360deg);
 }
 
-/* line 80, ../sass/modules/_cubie.scss */
+/* line 64, ../sass/modules/_cubie.scss */
 .cubie {
   width: 150px;
   height: 150px;
@@ -5385,7 +5007,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transition: -o-transform 0.25s;
   transition: transform 0.25s;
 }
-/* line 86, ../sass/modules/_cubie.scss */
+/* line 70, ../sass/modules/_cubie.scss */
 .cubie .side {
   width: 150px;
   height: 150px;
@@ -5400,7 +5022,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   backface-visibility: hidden;
   /* placement */
 }
-/* line 96, ../sass/modules/_cubie.scss */
+/* line 80, ../sass/modules/_cubie.scss */
 .cubie .side.front {
   -webkit-transform: rotateY(0deg) translateZ(75px);
   -moz-transform: rotateY(0deg) translateZ(75px);
@@ -5408,7 +5030,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateY(0deg) translateZ(75px);
   transform: rotateY(0deg) translateZ(75px);
 }
-/* line 97, ../sass/modules/_cubie.scss */
+/* line 81, ../sass/modules/_cubie.scss */
 .cubie .side.left {
   -webkit-transform: rotateY(-90deg) translateZ(75px);
   -moz-transform: rotateY(-90deg) translateZ(75px);
@@ -5416,7 +5038,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateY(-90deg) translateZ(75px);
   transform: rotateY(-90deg) translateZ(75px);
 }
-/* line 98, ../sass/modules/_cubie.scss */
+/* line 82, ../sass/modules/_cubie.scss */
 .cubie .side.back {
   -webkit-transform: rotateX(180deg) translateZ(75px);
   -moz-transform: rotateX(180deg) translateZ(75px);
@@ -5424,7 +5046,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateX(180deg) translateZ(75px);
   transform: rotateX(180deg) translateZ(75px);
 }
-/* line 99, ../sass/modules/_cubie.scss */
+/* line 83, ../sass/modules/_cubie.scss */
 .cubie .side.right {
   -webkit-transform: rotateY(90deg) translateZ(75px);
   -moz-transform: rotateY(90deg) translateZ(75px);
@@ -5432,7 +5054,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateY(90deg) translateZ(75px);
   transform: rotateY(90deg) translateZ(75px);
 }
-/* line 100, ../sass/modules/_cubie.scss */
+/* line 84, ../sass/modules/_cubie.scss */
 .cubie .side.top {
   -webkit-transform: rotateX(90deg) translateZ(75px);
   -moz-transform: rotateX(90deg) translateZ(75px);
@@ -5440,7 +5062,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateX(90deg) translateZ(75px);
   transform: rotateX(90deg) translateZ(75px);
 }
-/* line 101, ../sass/modules/_cubie.scss */
+/* line 85, ../sass/modules/_cubie.scss */
 .cubie .side.bottom {
   -webkit-transform: rotateX(-90deg) translateZ(75px);
   -moz-transform: rotateX(-90deg) translateZ(75px);
@@ -5448,19 +5070,19 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateX(-90deg) translateZ(75px);
   transform: rotateX(-90deg) translateZ(75px);
 }
-/* line 107, ../sass/modules/_cubie.scss */
+/* line 91, ../sass/modules/_cubie.scss */
 .cubie .side.internal .sticker {
   background-color: black !important;
 }
-/* line 109, ../sass/modules/_cubie.scss */
+/* line 93, ../sass/modules/_cubie.scss */
 .cubie .side.internal .sticker p {
   display: none;
 }
-/* line 114, ../sass/modules/_cubie.scss */
+/* line 98, ../sass/modules/_cubie.scss */
 .cubie .side.internal.left, .cubie .side.internal.right {
   display: none;
 }
-/* line 119, ../sass/modules/_cubie.scss */
+/* line 103, ../sass/modules/_cubie.scss */
 .cubie .side .sticker {
   width: 148px;
   height: 148px;
@@ -5478,31 +5100,31 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   opacity: inherit;
   /* background-color */
 }
-/* line 131, ../sass/modules/_cubie.scss */
+/* line 115, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.orange {
   background-color: orange;
 }
-/* line 132, ../sass/modules/_cubie.scss */
+/* line 116, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.green {
   background-color: green;
 }
-/* line 133, ../sass/modules/_cubie.scss */
+/* line 117, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.red {
   background-color: red;
 }
-/* line 134, ../sass/modules/_cubie.scss */
+/* line 118, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.yellow {
   background-color: yellow;
 }
-/* line 135, ../sass/modules/_cubie.scss */
+/* line 119, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.white {
   background-color: white;
 }
-/* line 136, ../sass/modules/_cubie.scss */
+/* line 120, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: blue;
 }
-/* line 137, ../sass/modules/_cubie.scss */
+/* line 121, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: black;
 }
