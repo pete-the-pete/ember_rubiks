@@ -34,6 +34,7 @@ export default Ember.Component.extend({
       layerView: this,
       layer: this.layer,
       cubeView: this.get('cube'),
+      cube: this.get('cube').cube,
       direction: this.get('direction'),
       axis: AXES.Y,
     });
@@ -50,7 +51,7 @@ export default Ember.Component.extend({
   //handle rotation events, and rebroadcast them
   keyDown: function(e) {
     var move = false;
-    if(e.shiftKey) {
+    if(e.shiftKey && !e.ctrlKey) {
       switch(e.keyCode) {
         case KEYS.LEFT:
           move = true;

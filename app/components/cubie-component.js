@@ -38,11 +38,10 @@ var CubieComponent = Ember.Component.extend({
   }.property('section.childViews.@each'),
 
   /**
-  Let's the user navigate around the cube
+  Lets the user navigate around the cube
   */
   keyDown: function(e) {
     if(!e.shiftKey && !e.ctrlKey) {
-      e.preventDefault();
       this.get('cube').send('navigate', {
         cubieView: this,
         cubie: this.cubie,

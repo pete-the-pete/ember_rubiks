@@ -26,9 +26,34 @@ export default Ember.ArrayController.extend({
   * Swap cubies in a section.  The to and from
   * are arrays with the form [section,cubie].
   **/
-  swapCubies: function(rotation_data, sections, from, to) {
+  swapCubies_old: function(rotation_data, sections, from, to) {
     sections.objectAt(to[0]).get('cubies').replace(to[1], 1,
       [sections.objectAt(from[0]).get('cubies').objectAt(from[1])]);
+  },
+
+  swapCubies: function(rotation_data, layer, section, cubie) {
+    var cube = rotation_data.cube,
+      from = null,
+      to = cube.get('data').layers.objectAt(layer.to)
+            .get('data').sections.objectAt(section.to)
+            .get('data').cubies;
+
+      if(cubie.from !== null) {
+        from = cube.get('data').layers.objectAt(layer.from)
+                .get('data').sections.objectAt(section.from)
+                .get('data').cubies;
+
+        //swap the cubie
+        to.replace(cubie.to, 1, [from.objectAt(cubie.from)]);
+      } else {
+        to.replace(cubie.to, 1, [cubie]);
+      }
+      //update its colors
+      this.rotateCubieColors(to.objectAt(cubie.to), rotation_data);
+      //delete the property in case it was from an actual cube
+      delete cubie.to;
+      delete cubie.from;
+
   },
 
   actions: {
@@ -55,17 +80,17 @@ export default Ember.ArrayController.extend({
                   //back right cube goes to back left
                   from = [c_index, sidesLength-s_index-1];
                   to = [s_index, c_index];
-                  this.swapCubies(rotation_data, sections, from, to);
+                  this.swapCubies_old(rotation_data, sections, from, to);
                   this.rotateCubieColors(sections.objectAt(to[0]).get('cubies').objectAt(to[1]), rotation_data);
 
                   from = [sidesLength-s_index-1, sidesLength-c_index-1];
                   to = [c_index, sidesLength-s_index-1];
-                  this.swapCubies(rotation_data, sections, from, to);
+                  this.swapCubies_old(rotation_data, sections, from, to);
                   this.rotateCubieColors(sections.objectAt(to[0]).get('cubies').objectAt(to[1]), rotation_data);
 
                   from = [sidesLength-c_index-1, s_index];
                   to = [sidesLength-s_index-1, sidesLength-c_index-1];
-                  this.swapCubies(rotation_data, sections, from, to);
+                  this.swapCubies_old(rotation_data, sections, from, to);
                   this.rotateCubieColors(sections.objectAt(to[0]).get('cubies').objectAt(to[1]), rotation_data);
 
                   to = [sidesLength-c_index-1, s_index];
@@ -83,17 +108,17 @@ export default Ember.ArrayController.extend({
 
                   from = [sidesLength-c_index-1, s_index];
                   to = [s_index, c_index];
-                  this.swapCubies(rotation_data, sections, from, to);
+                  this.swapCubies_old(rotation_data, sections, from, to);
                   this.rotateCubieColors(sections.objectAt(to[0]).get('cubies').objectAt(to[1]), rotation_data);
 
                   from = [sidesLength-s_index-1, sidesLength-c_index-1];
                   to = [sidesLength-c_index-1, s_index];
-                  this.swapCubies(rotation_data, sections, from, to);
+                  this.swapCubies_old(rotation_data, sections, from, to);
                   this.rotateCubieColors(sections.objectAt(to[0]).get('cubies').objectAt(to[1]), rotation_data);
 
                   from = [c_index, sidesLength-s_index-1];
                   to = [sidesLength-s_index-1, sidesLength-c_index-1];
-                  this.swapCubies(rotation_data, sections, from, to);
+                  this.swapCubies_old(rotation_data, sections, from, to);
                   this.rotateCubieColors(sections.objectAt(to[0]).get('cubies').objectAt(to[1]), rotation_data);
 
                   to = [c_index, sidesLength-s_index-1];
@@ -109,10 +134,60 @@ export default Ember.ArrayController.extend({
           }
         }.bind(this));
         rotation_data.layerView.rerender();
-        Ember.run.schedule('afterRender', function() {
-          rotation_data.cubeView.navigate();
-        });
       }
+
+      if(rotation_data.section) {
+        sidesLength = 2;
+        var rotations = [],
+          layer_moves = {},
+          section_moves = {
+            from: rotation_data.sectionIndex,
+            to: rotation_data.sectionIndex
+          },
+          cubie_moves = {};
+        if(rotation_data.axis === AXES.Z) {
+          rotation_data.cube.get('data').layers.forEach(function(layer, l_index, layers) {
+            if(l_index < sidesLength/2) {
+              rotation_data.section.get('data').cubies.forEach(function(cubie, c_index, cubies) {
+                if(c_index <= l_index && c_index < (sidesLength - l_index)) {
+                  if(rotation_data.direction === ROTATION_DIRECTIONS.CLOCKWISE) {
+                    //pull out the first cubie
+                    tempCubie = cubies.objectAt(c_index);
+
+                    layer_moves = { from: c_index, to: l_index };
+                    cubie_moves = { from: sidesLength-l_index, to: c_index };
+                    rotations.push([ layer_moves, section_moves, cubie_moves ]);
+
+                    layer_moves = { from: sidesLength-l_index, to: c_index };
+                    cubie_moves = { from: sidesLength-c_index, to: sidesLength-l_index };
+                    rotations.push([ layer_moves, section_moves, cubie_moves ]);
+
+                    layer_moves = { from: sidesLength-c_index, to: sidesLength-l_index };
+                    cubie_moves = { from: l_index, to: sidesLength-c_index };
+                    rotations.push([ layer_moves, section_moves, cubie_moves ]);
+
+                    //special case, the temp cubie is passed in directly
+                    tempCubie.from = null;
+                    tempCubie.to = sidesLength-c_index;
+                    layer_moves = { from: null, to: sidesLength-l_index };
+                    rotations.push([ layer_moves, section_moves, tempCubie ]);
+
+                    //perform the moves
+                    rotations.forEach(function(rotation, r_index, rotations) {
+                      this.swapCubies(rotation_data, rotation[0], rotation[1], rotation[2]);
+                    }.bind(this));
+                  }
+                }
+              }.bind(this));
+            }
+          }.bind(this));
+        }
+      }
+
+      //reset the cursor
+      Ember.run.schedule('afterRender', function() {
+        rotation_data.cubeView.navigate();
+      });
     },
     handleRotation: function(data) {
       console.log(data);
