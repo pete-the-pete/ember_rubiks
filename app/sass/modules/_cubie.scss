@@ -20,7 +20,7 @@
     );
   };
 }
-@mixin corner-cubie-rotations($layer, $section, $cubie) {
+@mixin cubie-section-rotations($layer, $section, $cubie) {
   @include cubie-rotationX($layer, $section, $cubie);
   @include cubie-rotationZ($layer, $section, $cubie);
 }
@@ -52,21 +52,7 @@
             @include transform(
               translateX(nth($cubie_positions, $cubie))
             );
-
-            //face rotations
-            //left, right
-            @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
-              //corner cubie
-              //need to include both Z and X rotations for the corner pieces,
-              //add define the transform-origin
-              @include corner-cubie-rotations($layer, $section, $cubie);
-            } @else if($section == $N) {
-              //front face rotations
-              @include cubie-rotationZ($layer, $section, $cubie);
-            } @else {
-              //side face rotations
-              @include cubie-rotationX($layer, $section, $cubie);
-            }
+            @include cubie-section-rotations($layer, $section, $cubie);
           }
         }
       }

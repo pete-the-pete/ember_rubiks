@@ -223,6 +223,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -391,6 +405,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -472,6 +500,86 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -o-transform: translateX(150px) rotateX(-360deg);
   transform: translateX(150px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 225px 0;
+  -moz-transform-origin: 75px 225px 0;
+  -ms-transform-origin: 75px 225px 0;
+  -o-transform-origin: 75px 225px 0;
+  transform-origin: 75px 225px 0;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(90deg);
+  -moz-transform: translateX(150px) rotateZ(90deg);
+  -ms-transform: translateX(150px) rotateZ(90deg);
+  -o-transform: translateX(150px) rotateZ(90deg);
+  transform: translateX(150px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(180deg);
+  -moz-transform: translateX(150px) rotateZ(180deg);
+  -ms-transform: translateX(150px) rotateZ(180deg);
+  -o-transform: translateX(150px) rotateZ(180deg);
+  transform: translateX(150px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(270deg);
+  -moz-transform: translateX(150px) rotateZ(270deg);
+  -ms-transform: translateX(150px) rotateZ(270deg);
+  -o-transform: translateX(150px) rotateZ(270deg);
+  transform: translateX(150px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(360deg);
+  -moz-transform: translateX(150px) rotateZ(360deg);
+  -ms-transform: translateX(150px) rotateZ(360deg);
+  -o-transform: translateX(150px) rotateZ(360deg);
+  transform: translateX(150px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 225px 0;
+  -moz-transform-origin: 75px 225px 0;
+  -ms-transform-origin: 75px 225px 0;
+  -o-transform-origin: 75px 225px 0;
+  transform-origin: 75px 225px 0;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(-90deg);
+  -moz-transform: translateX(150px) rotateZ(-90deg);
+  -ms-transform: translateX(150px) rotateZ(-90deg);
+  -o-transform: translateX(150px) rotateZ(-90deg);
+  transform: translateX(150px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(-180deg);
+  -moz-transform: translateX(150px) rotateZ(-180deg);
+  -ms-transform: translateX(150px) rotateZ(-180deg);
+  -o-transform: translateX(150px) rotateZ(-180deg);
+  transform: translateX(150px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-270deg);
+  -moz-transform: translateX(150px) rotateZ(-270deg);
+  -ms-transform: translateX(150px) rotateZ(-270deg);
+  -o-transform: translateX(150px) rotateZ(-270deg);
+  transform: translateX(150px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-360deg);
+  -moz-transform: translateX(150px) rotateZ(-360deg);
+  -ms-transform: translateX(150px) rotateZ(-360deg);
+  -o-transform: translateX(150px) rotateZ(-360deg);
+  transform: translateX(150px) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(300px);
@@ -479,6 +587,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -655,6 +777,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -736,6 +872,86 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(0) rotateX(-360deg);
   transform: translateX(0) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 225px 225px 150px;
+  -moz-transform-origin: 225px 225px 150px;
+  -ms-transform-origin: 225px 225px 150px;
+  -o-transform-origin: 225px 225px 150px;
+  transform-origin: 225px 225px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.step {
+  -webkit-transform: translateX(0) rotateZ(90deg);
+  -moz-transform: translateX(0) rotateZ(90deg);
+  -ms-transform: translateX(0) rotateZ(90deg);
+  -o-transform: translateX(0) rotateZ(90deg);
+  transform: translateX(0) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(0) rotateZ(180deg);
+  -moz-transform: translateX(0) rotateZ(180deg);
+  -ms-transform: translateX(0) rotateZ(180deg);
+  -o-transform: translateX(0) rotateZ(180deg);
+  transform: translateX(0) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(0) rotateZ(270deg);
+  -moz-transform: translateX(0) rotateZ(270deg);
+  -ms-transform: translateX(0) rotateZ(270deg);
+  -o-transform: translateX(0) rotateZ(270deg);
+  transform: translateX(0) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(0) rotateZ(360deg);
+  -moz-transform: translateX(0) rotateZ(360deg);
+  -ms-transform: translateX(0) rotateZ(360deg);
+  -o-transform: translateX(0) rotateZ(360deg);
+  transform: translateX(0) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 225px 225px 150px;
+  -moz-transform-origin: 225px 225px 150px;
+  -ms-transform-origin: 225px 225px 150px;
+  -o-transform-origin: 225px 225px 150px;
+  transform-origin: 225px 225px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(0) rotateZ(-90deg);
+  -moz-transform: translateX(0) rotateZ(-90deg);
+  -ms-transform: translateX(0) rotateZ(-90deg);
+  -o-transform: translateX(0) rotateZ(-90deg);
+  transform: translateX(0) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(0) rotateZ(-180deg);
+  -moz-transform: translateX(0) rotateZ(-180deg);
+  -ms-transform: translateX(0) rotateZ(-180deg);
+  -o-transform: translateX(0) rotateZ(-180deg);
+  transform: translateX(0) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(0) rotateZ(-270deg);
+  -moz-transform: translateX(0) rotateZ(-270deg);
+  -ms-transform: translateX(0) rotateZ(-270deg);
+  -o-transform: translateX(0) rotateZ(-270deg);
+  transform: translateX(0) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(0) rotateZ(-360deg);
+  -moz-transform: translateX(0) rotateZ(-360deg);
+  -ms-transform: translateX(0) rotateZ(-360deg);
+  -o-transform: translateX(0) rotateZ(-360deg);
+  transform: translateX(0) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(150px);
@@ -743,6 +959,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -824,6 +1054,86 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(150px) rotateX(-360deg);
   transform: translateX(150px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 225px 150px;
+  -moz-transform-origin: 75px 225px 150px;
+  -ms-transform-origin: 75px 225px 150px;
+  -o-transform-origin: 75px 225px 150px;
+  transform-origin: 75px 225px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(90deg);
+  -moz-transform: translateX(150px) rotateZ(90deg);
+  -ms-transform: translateX(150px) rotateZ(90deg);
+  -o-transform: translateX(150px) rotateZ(90deg);
+  transform: translateX(150px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(180deg);
+  -moz-transform: translateX(150px) rotateZ(180deg);
+  -ms-transform: translateX(150px) rotateZ(180deg);
+  -o-transform: translateX(150px) rotateZ(180deg);
+  transform: translateX(150px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(270deg);
+  -moz-transform: translateX(150px) rotateZ(270deg);
+  -ms-transform: translateX(150px) rotateZ(270deg);
+  -o-transform: translateX(150px) rotateZ(270deg);
+  transform: translateX(150px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(360deg);
+  -moz-transform: translateX(150px) rotateZ(360deg);
+  -ms-transform: translateX(150px) rotateZ(360deg);
+  -o-transform: translateX(150px) rotateZ(360deg);
+  transform: translateX(150px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 225px 150px;
+  -moz-transform-origin: 75px 225px 150px;
+  -ms-transform-origin: 75px 225px 150px;
+  -o-transform-origin: 75px 225px 150px;
+  transform-origin: 75px 225px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(-90deg);
+  -moz-transform: translateX(150px) rotateZ(-90deg);
+  -ms-transform: translateX(150px) rotateZ(-90deg);
+  -o-transform: translateX(150px) rotateZ(-90deg);
+  transform: translateX(150px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(-180deg);
+  -moz-transform: translateX(150px) rotateZ(-180deg);
+  -ms-transform: translateX(150px) rotateZ(-180deg);
+  -o-transform: translateX(150px) rotateZ(-180deg);
+  transform: translateX(150px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-270deg);
+  -moz-transform: translateX(150px) rotateZ(-270deg);
+  -ms-transform: translateX(150px) rotateZ(-270deg);
+  -o-transform: translateX(150px) rotateZ(-270deg);
+  transform: translateX(150px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-360deg);
+  -moz-transform: translateX(150px) rotateZ(-360deg);
+  -ms-transform: translateX(150px) rotateZ(-360deg);
+  -o-transform: translateX(150px) rotateZ(-360deg);
+  transform: translateX(150px) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(300px);
@@ -831,6 +1141,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -912,6 +1236,86 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(300px) rotateX(-360deg);
   transform: translateX(300px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -75px 225px 150px;
+  -moz-transform-origin: -75px 225px 150px;
+  -ms-transform-origin: -75px 225px 150px;
+  -o-transform-origin: -75px 225px 150px;
+  transform-origin: -75px 225px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.step {
+  -webkit-transform: translateX(300px) rotateZ(90deg);
+  -moz-transform: translateX(300px) rotateZ(90deg);
+  -ms-transform: translateX(300px) rotateZ(90deg);
+  -o-transform: translateX(300px) rotateZ(90deg);
+  transform: translateX(300px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(300px) rotateZ(180deg);
+  -moz-transform: translateX(300px) rotateZ(180deg);
+  -ms-transform: translateX(300px) rotateZ(180deg);
+  -o-transform: translateX(300px) rotateZ(180deg);
+  transform: translateX(300px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(270deg);
+  -moz-transform: translateX(300px) rotateZ(270deg);
+  -ms-transform: translateX(300px) rotateZ(270deg);
+  -o-transform: translateX(300px) rotateZ(270deg);
+  transform: translateX(300px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(360deg);
+  -moz-transform: translateX(300px) rotateZ(360deg);
+  -ms-transform: translateX(300px) rotateZ(360deg);
+  -o-transform: translateX(300px) rotateZ(360deg);
+  transform: translateX(300px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -75px 225px 150px;
+  -moz-transform-origin: -75px 225px 150px;
+  -ms-transform-origin: -75px 225px 150px;
+  -o-transform-origin: -75px 225px 150px;
+  transform-origin: -75px 225px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(300px) rotateZ(-90deg);
+  -moz-transform: translateX(300px) rotateZ(-90deg);
+  -ms-transform: translateX(300px) rotateZ(-90deg);
+  -o-transform: translateX(300px) rotateZ(-90deg);
+  transform: translateX(300px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(300px) rotateZ(-180deg);
+  -moz-transform: translateX(300px) rotateZ(-180deg);
+  -ms-transform: translateX(300px) rotateZ(-180deg);
+  -o-transform: translateX(300px) rotateZ(-180deg);
+  transform: translateX(300px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(-270deg);
+  -moz-transform: translateX(300px) rotateZ(-270deg);
+  -ms-transform: translateX(300px) rotateZ(-270deg);
+  -o-transform: translateX(300px) rotateZ(-270deg);
+  transform: translateX(300px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(-360deg);
+  -moz-transform: translateX(300px) rotateZ(-360deg);
+  -ms-transform: translateX(300px) rotateZ(-360deg);
+  -o-transform: translateX(300px) rotateZ(-360deg);
+  transform: translateX(300px) rotateZ(-360deg);
+}
 /* line 47, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) {
   -webkit-transform: translateZ(300px);
@@ -927,6 +1331,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -1095,6 +1513,100 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 150px 225px -150px;
+  -moz-transform-origin: 150px 225px -150px;
+  -ms-transform-origin: 150px 225px -150px;
+  -o-transform-origin: 150px 225px -150px;
+  transform-origin: 150px 225px -150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.step {
+  -webkit-transform: translateX(150px) rotateX(90deg);
+  -moz-transform: translateX(150px) rotateX(90deg);
+  -ms-transform: translateX(150px) rotateX(90deg);
+  -o-transform: translateX(150px) rotateX(90deg);
+  transform: translateX(150px) rotateX(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateX(180deg);
+  -moz-transform: translateX(150px) rotateX(180deg);
+  -ms-transform: translateX(150px) rotateX(180deg);
+  -o-transform: translateX(150px) rotateX(180deg);
+  transform: translateX(150px) rotateX(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateX(270deg);
+  -moz-transform: translateX(150px) rotateX(270deg);
+  -ms-transform: translateX(150px) rotateX(270deg);
+  -o-transform: translateX(150px) rotateX(270deg);
+  transform: translateX(150px) rotateX(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateX(360deg);
+  -moz-transform: translateX(150px) rotateX(360deg);
+  -ms-transform: translateX(150px) rotateX(360deg);
+  -o-transform: translateX(150px) rotateX(360deg);
+  transform: translateX(150px) rotateX(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 150px 225px -150px;
+  -moz-transform-origin: 150px 225px -150px;
+  -ms-transform-origin: 150px 225px -150px;
+  -o-transform-origin: 150px 225px -150px;
+  transform-origin: 150px 225px -150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
@@ -1183,6 +1695,20 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -1449,6 +1975,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -1617,6 +2157,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -1698,6 +2252,86 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -o-transform: translateX(150px) rotateX(-360deg);
   transform: translateX(150px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 75px 0;
+  -moz-transform-origin: 75px 75px 0;
+  -ms-transform-origin: 75px 75px 0;
+  -o-transform-origin: 75px 75px 0;
+  transform-origin: 75px 75px 0;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(90deg);
+  -moz-transform: translateX(150px) rotateZ(90deg);
+  -ms-transform: translateX(150px) rotateZ(90deg);
+  -o-transform: translateX(150px) rotateZ(90deg);
+  transform: translateX(150px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(180deg);
+  -moz-transform: translateX(150px) rotateZ(180deg);
+  -ms-transform: translateX(150px) rotateZ(180deg);
+  -o-transform: translateX(150px) rotateZ(180deg);
+  transform: translateX(150px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(270deg);
+  -moz-transform: translateX(150px) rotateZ(270deg);
+  -ms-transform: translateX(150px) rotateZ(270deg);
+  -o-transform: translateX(150px) rotateZ(270deg);
+  transform: translateX(150px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(360deg);
+  -moz-transform: translateX(150px) rotateZ(360deg);
+  -ms-transform: translateX(150px) rotateZ(360deg);
+  -o-transform: translateX(150px) rotateZ(360deg);
+  transform: translateX(150px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 75px 0;
+  -moz-transform-origin: 75px 75px 0;
+  -ms-transform-origin: 75px 75px 0;
+  -o-transform-origin: 75px 75px 0;
+  transform-origin: 75px 75px 0;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(-90deg);
+  -moz-transform: translateX(150px) rotateZ(-90deg);
+  -ms-transform: translateX(150px) rotateZ(-90deg);
+  -o-transform: translateX(150px) rotateZ(-90deg);
+  transform: translateX(150px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(-180deg);
+  -moz-transform: translateX(150px) rotateZ(-180deg);
+  -ms-transform: translateX(150px) rotateZ(-180deg);
+  -o-transform: translateX(150px) rotateZ(-180deg);
+  transform: translateX(150px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-270deg);
+  -moz-transform: translateX(150px) rotateZ(-270deg);
+  -ms-transform: translateX(150px) rotateZ(-270deg);
+  -o-transform: translateX(150px) rotateZ(-270deg);
+  transform: translateX(150px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-360deg);
+  -moz-transform: translateX(150px) rotateZ(-360deg);
+  -ms-transform: translateX(150px) rotateZ(-360deg);
+  -o-transform: translateX(150px) rotateZ(-360deg);
+  transform: translateX(150px) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(300px);
@@ -1705,6 +2339,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -1881,6 +2529,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -1962,6 +2624,86 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(0) rotateX(-360deg);
   transform: translateX(0) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 225px 75px 150px;
+  -moz-transform-origin: 225px 75px 150px;
+  -ms-transform-origin: 225px 75px 150px;
+  -o-transform-origin: 225px 75px 150px;
+  transform-origin: 225px 75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.step {
+  -webkit-transform: translateX(0) rotateZ(90deg);
+  -moz-transform: translateX(0) rotateZ(90deg);
+  -ms-transform: translateX(0) rotateZ(90deg);
+  -o-transform: translateX(0) rotateZ(90deg);
+  transform: translateX(0) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(0) rotateZ(180deg);
+  -moz-transform: translateX(0) rotateZ(180deg);
+  -ms-transform: translateX(0) rotateZ(180deg);
+  -o-transform: translateX(0) rotateZ(180deg);
+  transform: translateX(0) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(0) rotateZ(270deg);
+  -moz-transform: translateX(0) rotateZ(270deg);
+  -ms-transform: translateX(0) rotateZ(270deg);
+  -o-transform: translateX(0) rotateZ(270deg);
+  transform: translateX(0) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(0) rotateZ(360deg);
+  -moz-transform: translateX(0) rotateZ(360deg);
+  -ms-transform: translateX(0) rotateZ(360deg);
+  -o-transform: translateX(0) rotateZ(360deg);
+  transform: translateX(0) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 225px 75px 150px;
+  -moz-transform-origin: 225px 75px 150px;
+  -ms-transform-origin: 225px 75px 150px;
+  -o-transform-origin: 225px 75px 150px;
+  transform-origin: 225px 75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(0) rotateZ(-90deg);
+  -moz-transform: translateX(0) rotateZ(-90deg);
+  -ms-transform: translateX(0) rotateZ(-90deg);
+  -o-transform: translateX(0) rotateZ(-90deg);
+  transform: translateX(0) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(0) rotateZ(-180deg);
+  -moz-transform: translateX(0) rotateZ(-180deg);
+  -ms-transform: translateX(0) rotateZ(-180deg);
+  -o-transform: translateX(0) rotateZ(-180deg);
+  transform: translateX(0) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(0) rotateZ(-270deg);
+  -moz-transform: translateX(0) rotateZ(-270deg);
+  -ms-transform: translateX(0) rotateZ(-270deg);
+  -o-transform: translateX(0) rotateZ(-270deg);
+  transform: translateX(0) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(0) rotateZ(-360deg);
+  -moz-transform: translateX(0) rotateZ(-360deg);
+  -ms-transform: translateX(0) rotateZ(-360deg);
+  -o-transform: translateX(0) rotateZ(-360deg);
+  transform: translateX(0) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(150px);
@@ -1969,6 +2711,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -2050,6 +2806,86 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(150px) rotateX(-360deg);
   transform: translateX(150px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 75px 150px;
+  -moz-transform-origin: 75px 75px 150px;
+  -ms-transform-origin: 75px 75px 150px;
+  -o-transform-origin: 75px 75px 150px;
+  transform-origin: 75px 75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(90deg);
+  -moz-transform: translateX(150px) rotateZ(90deg);
+  -ms-transform: translateX(150px) rotateZ(90deg);
+  -o-transform: translateX(150px) rotateZ(90deg);
+  transform: translateX(150px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(180deg);
+  -moz-transform: translateX(150px) rotateZ(180deg);
+  -ms-transform: translateX(150px) rotateZ(180deg);
+  -o-transform: translateX(150px) rotateZ(180deg);
+  transform: translateX(150px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(270deg);
+  -moz-transform: translateX(150px) rotateZ(270deg);
+  -ms-transform: translateX(150px) rotateZ(270deg);
+  -o-transform: translateX(150px) rotateZ(270deg);
+  transform: translateX(150px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(360deg);
+  -moz-transform: translateX(150px) rotateZ(360deg);
+  -ms-transform: translateX(150px) rotateZ(360deg);
+  -o-transform: translateX(150px) rotateZ(360deg);
+  transform: translateX(150px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px 75px 150px;
+  -moz-transform-origin: 75px 75px 150px;
+  -ms-transform-origin: 75px 75px 150px;
+  -o-transform-origin: 75px 75px 150px;
+  transform-origin: 75px 75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(-90deg);
+  -moz-transform: translateX(150px) rotateZ(-90deg);
+  -ms-transform: translateX(150px) rotateZ(-90deg);
+  -o-transform: translateX(150px) rotateZ(-90deg);
+  transform: translateX(150px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(-180deg);
+  -moz-transform: translateX(150px) rotateZ(-180deg);
+  -ms-transform: translateX(150px) rotateZ(-180deg);
+  -o-transform: translateX(150px) rotateZ(-180deg);
+  transform: translateX(150px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-270deg);
+  -moz-transform: translateX(150px) rotateZ(-270deg);
+  -ms-transform: translateX(150px) rotateZ(-270deg);
+  -o-transform: translateX(150px) rotateZ(-270deg);
+  transform: translateX(150px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-360deg);
+  -moz-transform: translateX(150px) rotateZ(-360deg);
+  -ms-transform: translateX(150px) rotateZ(-360deg);
+  -o-transform: translateX(150px) rotateZ(-360deg);
+  transform: translateX(150px) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(300px);
@@ -2057,6 +2893,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -2138,6 +2988,86 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(300px) rotateX(-360deg);
   transform: translateX(300px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -75px 75px 150px;
+  -moz-transform-origin: -75px 75px 150px;
+  -ms-transform-origin: -75px 75px 150px;
+  -o-transform-origin: -75px 75px 150px;
+  transform-origin: -75px 75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.step {
+  -webkit-transform: translateX(300px) rotateZ(90deg);
+  -moz-transform: translateX(300px) rotateZ(90deg);
+  -ms-transform: translateX(300px) rotateZ(90deg);
+  -o-transform: translateX(300px) rotateZ(90deg);
+  transform: translateX(300px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(300px) rotateZ(180deg);
+  -moz-transform: translateX(300px) rotateZ(180deg);
+  -ms-transform: translateX(300px) rotateZ(180deg);
+  -o-transform: translateX(300px) rotateZ(180deg);
+  transform: translateX(300px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(270deg);
+  -moz-transform: translateX(300px) rotateZ(270deg);
+  -ms-transform: translateX(300px) rotateZ(270deg);
+  -o-transform: translateX(300px) rotateZ(270deg);
+  transform: translateX(300px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(360deg);
+  -moz-transform: translateX(300px) rotateZ(360deg);
+  -ms-transform: translateX(300px) rotateZ(360deg);
+  -o-transform: translateX(300px) rotateZ(360deg);
+  transform: translateX(300px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -75px 75px 150px;
+  -moz-transform-origin: -75px 75px 150px;
+  -ms-transform-origin: -75px 75px 150px;
+  -o-transform-origin: -75px 75px 150px;
+  transform-origin: -75px 75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(300px) rotateZ(-90deg);
+  -moz-transform: translateX(300px) rotateZ(-90deg);
+  -ms-transform: translateX(300px) rotateZ(-90deg);
+  -o-transform: translateX(300px) rotateZ(-90deg);
+  transform: translateX(300px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(300px) rotateZ(-180deg);
+  -moz-transform: translateX(300px) rotateZ(-180deg);
+  -ms-transform: translateX(300px) rotateZ(-180deg);
+  -o-transform: translateX(300px) rotateZ(-180deg);
+  transform: translateX(300px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(-270deg);
+  -moz-transform: translateX(300px) rotateZ(-270deg);
+  -ms-transform: translateX(300px) rotateZ(-270deg);
+  -o-transform: translateX(300px) rotateZ(-270deg);
+  transform: translateX(300px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(-360deg);
+  -moz-transform: translateX(300px) rotateZ(-360deg);
+  -ms-transform: translateX(300px) rotateZ(-360deg);
+  -o-transform: translateX(300px) rotateZ(-360deg);
+  transform: translateX(300px) rotateZ(-360deg);
+}
 /* line 47, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) {
   -webkit-transform: translateZ(300px);
@@ -2153,6 +3083,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -2321,6 +3265,100 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 150px 75px -150px;
+  -moz-transform-origin: 150px 75px -150px;
+  -ms-transform-origin: 150px 75px -150px;
+  -o-transform-origin: 150px 75px -150px;
+  transform-origin: 150px 75px -150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.step {
+  -webkit-transform: translateX(150px) rotateX(90deg);
+  -moz-transform: translateX(150px) rotateX(90deg);
+  -ms-transform: translateX(150px) rotateX(90deg);
+  -o-transform: translateX(150px) rotateX(90deg);
+  transform: translateX(150px) rotateX(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateX(180deg);
+  -moz-transform: translateX(150px) rotateX(180deg);
+  -ms-transform: translateX(150px) rotateX(180deg);
+  -o-transform: translateX(150px) rotateX(180deg);
+  transform: translateX(150px) rotateX(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateX(270deg);
+  -moz-transform: translateX(150px) rotateX(270deg);
+  -ms-transform: translateX(150px) rotateX(270deg);
+  -o-transform: translateX(150px) rotateX(270deg);
+  transform: translateX(150px) rotateX(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateX(360deg);
+  -moz-transform: translateX(150px) rotateX(360deg);
+  -ms-transform: translateX(150px) rotateX(360deg);
+  -o-transform: translateX(150px) rotateX(360deg);
+  transform: translateX(150px) rotateX(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 150px 75px -150px;
+  -moz-transform-origin: 150px 75px -150px;
+  -ms-transform-origin: 150px 75px -150px;
+  -o-transform-origin: 150px 75px -150px;
+  transform-origin: 150px 75px -150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
@@ -2409,6 +3447,20 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -2675,6 +3727,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -2843,6 +3909,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -2924,6 +4004,86 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -o-transform: translateX(150px) rotateX(-360deg);
   transform: translateX(150px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px -75px 0;
+  -moz-transform-origin: 75px -75px 0;
+  -ms-transform-origin: 75px -75px 0;
+  -o-transform-origin: 75px -75px 0;
+  transform-origin: 75px -75px 0;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(90deg);
+  -moz-transform: translateX(150px) rotateZ(90deg);
+  -ms-transform: translateX(150px) rotateZ(90deg);
+  -o-transform: translateX(150px) rotateZ(90deg);
+  transform: translateX(150px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(180deg);
+  -moz-transform: translateX(150px) rotateZ(180deg);
+  -ms-transform: translateX(150px) rotateZ(180deg);
+  -o-transform: translateX(150px) rotateZ(180deg);
+  transform: translateX(150px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(270deg);
+  -moz-transform: translateX(150px) rotateZ(270deg);
+  -ms-transform: translateX(150px) rotateZ(270deg);
+  -o-transform: translateX(150px) rotateZ(270deg);
+  transform: translateX(150px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(360deg);
+  -moz-transform: translateX(150px) rotateZ(360deg);
+  -ms-transform: translateX(150px) rotateZ(360deg);
+  -o-transform: translateX(150px) rotateZ(360deg);
+  transform: translateX(150px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px -75px 0;
+  -moz-transform-origin: 75px -75px 0;
+  -ms-transform-origin: 75px -75px 0;
+  -o-transform-origin: 75px -75px 0;
+  transform-origin: 75px -75px 0;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(-90deg);
+  -moz-transform: translateX(150px) rotateZ(-90deg);
+  -ms-transform: translateX(150px) rotateZ(-90deg);
+  -o-transform: translateX(150px) rotateZ(-90deg);
+  transform: translateX(150px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(-180deg);
+  -moz-transform: translateX(150px) rotateZ(-180deg);
+  -ms-transform: translateX(150px) rotateZ(-180deg);
+  -o-transform: translateX(150px) rotateZ(-180deg);
+  transform: translateX(150px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-270deg);
+  -moz-transform: translateX(150px) rotateZ(-270deg);
+  -ms-transform: translateX(150px) rotateZ(-270deg);
+  -o-transform: translateX(150px) rotateZ(-270deg);
+  transform: translateX(150px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-360deg);
+  -moz-transform: translateX(150px) rotateZ(-360deg);
+  -ms-transform: translateX(150px) rotateZ(-360deg);
+  -o-transform: translateX(150px) rotateZ(-360deg);
+  transform: translateX(150px) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(300px);
@@ -2931,6 +4091,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -3107,6 +4281,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -3188,6 +4376,86 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(0) rotateX(-360deg);
   transform: translateX(0) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 225px -75px 150px;
+  -moz-transform-origin: 225px -75px 150px;
+  -ms-transform-origin: 225px -75px 150px;
+  -o-transform-origin: 225px -75px 150px;
+  transform-origin: 225px -75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.step {
+  -webkit-transform: translateX(0) rotateZ(90deg);
+  -moz-transform: translateX(0) rotateZ(90deg);
+  -ms-transform: translateX(0) rotateZ(90deg);
+  -o-transform: translateX(0) rotateZ(90deg);
+  transform: translateX(0) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(0) rotateZ(180deg);
+  -moz-transform: translateX(0) rotateZ(180deg);
+  -ms-transform: translateX(0) rotateZ(180deg);
+  -o-transform: translateX(0) rotateZ(180deg);
+  transform: translateX(0) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(0) rotateZ(270deg);
+  -moz-transform: translateX(0) rotateZ(270deg);
+  -ms-transform: translateX(0) rotateZ(270deg);
+  -o-transform: translateX(0) rotateZ(270deg);
+  transform: translateX(0) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(0) rotateZ(360deg);
+  -moz-transform: translateX(0) rotateZ(360deg);
+  -ms-transform: translateX(0) rotateZ(360deg);
+  -o-transform: translateX(0) rotateZ(360deg);
+  transform: translateX(0) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ {
+  -webkit-transform-origin: 225px -75px 150px;
+  -moz-transform-origin: 225px -75px 150px;
+  -ms-transform-origin: 225px -75px 150px;
+  -o-transform-origin: 225px -75px 150px;
+  transform-origin: 225px -75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(0) rotateZ(-90deg);
+  -moz-transform: translateX(0) rotateZ(-90deg);
+  -ms-transform: translateX(0) rotateZ(-90deg);
+  -o-transform: translateX(0) rotateZ(-90deg);
+  transform: translateX(0) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(0) rotateZ(-180deg);
+  -moz-transform: translateX(0) rotateZ(-180deg);
+  -ms-transform: translateX(0) rotateZ(-180deg);
+  -o-transform: translateX(0) rotateZ(-180deg);
+  transform: translateX(0) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(0) rotateZ(-270deg);
+  -moz-transform: translateX(0) rotateZ(-270deg);
+  -ms-transform: translateX(0) rotateZ(-270deg);
+  -o-transform: translateX(0) rotateZ(-270deg);
+  transform: translateX(0) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(0) rotateZ(-360deg);
+  -moz-transform: translateX(0) rotateZ(-360deg);
+  -ms-transform: translateX(0) rotateZ(-360deg);
+  -o-transform: translateX(0) rotateZ(-360deg);
+  transform: translateX(0) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2) {
   -webkit-transform: translateX(150px);
@@ -3195,6 +4463,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -3276,6 +4558,86 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(150px) rotateX(-360deg);
   transform: translateX(150px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px -75px 150px;
+  -moz-transform-origin: 75px -75px 150px;
+  -ms-transform-origin: 75px -75px 150px;
+  -o-transform-origin: 75px -75px 150px;
+  transform-origin: 75px -75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(90deg);
+  -moz-transform: translateX(150px) rotateZ(90deg);
+  -ms-transform: translateX(150px) rotateZ(90deg);
+  -o-transform: translateX(150px) rotateZ(90deg);
+  transform: translateX(150px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(180deg);
+  -moz-transform: translateX(150px) rotateZ(180deg);
+  -ms-transform: translateX(150px) rotateZ(180deg);
+  -o-transform: translateX(150px) rotateZ(180deg);
+  transform: translateX(150px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(270deg);
+  -moz-transform: translateX(150px) rotateZ(270deg);
+  -ms-transform: translateX(150px) rotateZ(270deg);
+  -o-transform: translateX(150px) rotateZ(270deg);
+  transform: translateX(150px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(360deg);
+  -moz-transform: translateX(150px) rotateZ(360deg);
+  -ms-transform: translateX(150px) rotateZ(360deg);
+  -o-transform: translateX(150px) rotateZ(360deg);
+  transform: translateX(150px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ {
+  -webkit-transform-origin: 75px -75px 150px;
+  -moz-transform-origin: 75px -75px 150px;
+  -ms-transform-origin: 75px -75px 150px;
+  -o-transform-origin: 75px -75px 150px;
+  transform-origin: 75px -75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateZ(-90deg);
+  -moz-transform: translateX(150px) rotateZ(-90deg);
+  -ms-transform: translateX(150px) rotateZ(-90deg);
+  -o-transform: translateX(150px) rotateZ(-90deg);
+  transform: translateX(150px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateZ(-180deg);
+  -moz-transform: translateX(150px) rotateZ(-180deg);
+  -ms-transform: translateX(150px) rotateZ(-180deg);
+  -o-transform: translateX(150px) rotateZ(-180deg);
+  transform: translateX(150px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-270deg);
+  -moz-transform: translateX(150px) rotateZ(-270deg);
+  -ms-transform: translateX(150px) rotateZ(-270deg);
+  -o-transform: translateX(150px) rotateZ(-270deg);
+  transform: translateX(150px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateZ(-360deg);
+  -moz-transform: translateX(150px) rotateZ(-360deg);
+  -ms-transform: translateX(150px) rotateZ(-360deg);
+  -o-transform: translateX(150px) rotateZ(-360deg);
+  transform: translateX(150px) rotateZ(-360deg);
+}
 /* line 51, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3) {
   -webkit-transform: translateX(300px);
@@ -3283,6 +4645,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -3364,6 +4740,86 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
   -o-transform: translateX(300px) rotateX(-360deg);
   transform: translateX(300px) rotateX(-360deg);
 }
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -75px -75px 150px;
+  -moz-transform-origin: -75px -75px 150px;
+  -ms-transform-origin: -75px -75px 150px;
+  -o-transform-origin: -75px -75px 150px;
+  transform-origin: -75px -75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.step {
+  -webkit-transform: translateX(300px) rotateZ(90deg);
+  -moz-transform: translateX(300px) rotateZ(90deg);
+  -ms-transform: translateX(300px) rotateZ(90deg);
+  -o-transform: translateX(300px) rotateZ(90deg);
+  transform: translateX(300px) rotateZ(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstep {
+  -webkit-transform: translateX(300px) rotateZ(180deg);
+  -moz-transform: translateX(300px) rotateZ(180deg);
+  -ms-transform: translateX(300px) rotateZ(180deg);
+  -o-transform: translateX(300px) rotateZ(180deg);
+  transform: translateX(300px) rotateZ(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(270deg);
+  -moz-transform: translateX(300px) rotateZ(270deg);
+  -ms-transform: translateX(300px) rotateZ(270deg);
+  -o-transform: translateX(300px) rotateZ(270deg);
+  transform: translateX(300px) rotateZ(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(360deg);
+  -moz-transform: translateX(300px) rotateZ(360deg);
+  -ms-transform: translateX(300px) rotateZ(360deg);
+  -o-transform: translateX(300px) rotateZ(360deg);
+  transform: translateX(300px) rotateZ(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ {
+  -webkit-transform-origin: -75px -75px 150px;
+  -moz-transform-origin: -75px -75px 150px;
+  -ms-transform-origin: -75px -75px 150px;
+  -o-transform-origin: -75px -75px 150px;
+  transform-origin: -75px -75px 150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.step {
+  -webkit-transform: translateX(300px) rotateZ(-90deg);
+  -moz-transform: translateX(300px) rotateZ(-90deg);
+  -ms-transform: translateX(300px) rotateZ(-90deg);
+  -o-transform: translateX(300px) rotateZ(-90deg);
+  transform: translateX(300px) rotateZ(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstep {
+  -webkit-transform: translateX(300px) rotateZ(-180deg);
+  -moz-transform: translateX(300px) rotateZ(-180deg);
+  -ms-transform: translateX(300px) rotateZ(-180deg);
+  -o-transform: translateX(300px) rotateZ(-180deg);
+  transform: translateX(300px) rotateZ(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(-270deg);
+  -moz-transform: translateX(300px) rotateZ(-270deg);
+  -ms-transform: translateX(300px) rotateZ(-270deg);
+  -o-transform: translateX(300px) rotateZ(-270deg);
+  transform: translateX(300px) rotateZ(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateZ.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(300px) rotateZ(-360deg);
+  -moz-transform: translateX(300px) rotateZ(-360deg);
+  -ms-transform: translateX(300px) rotateZ(-360deg);
+  -o-transform: translateX(300px) rotateZ(-360deg);
+  transform: translateX(300px) rotateZ(-360deg);
+}
 /* line 47, ../sass/modules/_cubie.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) {
   -webkit-transform: translateZ(300px);
@@ -3379,6 +4835,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   transform: translateX(0);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -3547,6 +5017,100 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(150px);
   -o-transform: translateX(150px);
   transform: translateX(150px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 150px -75px -150px;
+  -moz-transform-origin: 150px -75px -150px;
+  -ms-transform-origin: 150px -75px -150px;
+  -o-transform-origin: 150px -75px -150px;
+  transform-origin: 150px -75px -150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.step {
+  -webkit-transform: translateX(150px) rotateX(90deg);
+  -moz-transform: translateX(150px) rotateX(90deg);
+  -ms-transform: translateX(150px) rotateX(90deg);
+  -o-transform: translateX(150px) rotateX(90deg);
+  transform: translateX(150px) rotateX(90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateX(180deg);
+  -moz-transform: translateX(150px) rotateX(180deg);
+  -ms-transform: translateX(150px) rotateX(180deg);
+  -o-transform: translateX(150px) rotateX(180deg);
+  transform: translateX(150px) rotateX(180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateX(270deg);
+  -moz-transform: translateX(150px) rotateX(270deg);
+  -ms-transform: translateX(150px) rotateX(270deg);
+  -o-transform: translateX(150px) rotateX(270deg);
+  transform: translateX(150px) rotateX(270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateX(360deg);
+  -moz-transform: translateX(150px) rotateX(360deg);
+  -ms-transform: translateX(150px) rotateX(360deg);
+  -o-transform: translateX(150px) rotateX(360deg);
+  transform: translateX(150px) rotateX(360deg);
+}
+/* line 9, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
+  -webkit-transform-origin: 150px -75px -150px;
+  -moz-transform-origin: 150px -75px -150px;
+  -ms-transform-origin: 150px -75px -150px;
+  -o-transform-origin: 150px -75px -150px;
+  transform-origin: 150px -75px -150px;
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.step {
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstep {
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstepstep {
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
+}
+/* line 15, ../sass/partials/_rotations.scss */
+div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.anticlockwise.stepstepstepstep {
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateZ {
@@ -3635,6 +5199,20 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  /* //face rotations
+  //left, right
+  @if(($cubie == 1 or $cubie == $N) and ($section == 1 or $section == $N)) {
+    //corner cubie
+    //need to include both Z and X rotations for the corner pieces,
+    //add define the transform-origin
+    @include corner-cubie-rotations($layer, $section, $cubie);
+  } @else if($section == $N) {
+    //front face rotations
+    @include cubie-rotationZ($layer, $section, $cubie);
+  } @else {
+    //side face rotations
+    @include cubie-rotationX($layer, $section, $cubie);
+  } */
 }
 /* line 9, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -3797,7 +5375,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   transform: translateX(300px) rotateZ(-360deg);
 }
 
-/* line 78, ../sass/modules/_cubie.scss */
+/* line 80, ../sass/modules/_cubie.scss */
 .cubie {
   width: 150px;
   height: 150px;
@@ -3807,7 +5385,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transition: -o-transform 0.25s;
   transition: transform 0.25s;
 }
-/* line 84, ../sass/modules/_cubie.scss */
+/* line 86, ../sass/modules/_cubie.scss */
 .cubie .side {
   width: 150px;
   height: 150px;
@@ -3822,7 +5400,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   backface-visibility: hidden;
   /* placement */
 }
-/* line 94, ../sass/modules/_cubie.scss */
+/* line 96, ../sass/modules/_cubie.scss */
 .cubie .side.front {
   -webkit-transform: rotateY(0deg) translateZ(75px);
   -moz-transform: rotateY(0deg) translateZ(75px);
@@ -3830,7 +5408,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateY(0deg) translateZ(75px);
   transform: rotateY(0deg) translateZ(75px);
 }
-/* line 95, ../sass/modules/_cubie.scss */
+/* line 97, ../sass/modules/_cubie.scss */
 .cubie .side.left {
   -webkit-transform: rotateY(-90deg) translateZ(75px);
   -moz-transform: rotateY(-90deg) translateZ(75px);
@@ -3838,7 +5416,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateY(-90deg) translateZ(75px);
   transform: rotateY(-90deg) translateZ(75px);
 }
-/* line 96, ../sass/modules/_cubie.scss */
+/* line 98, ../sass/modules/_cubie.scss */
 .cubie .side.back {
   -webkit-transform: rotateX(180deg) translateZ(75px);
   -moz-transform: rotateX(180deg) translateZ(75px);
@@ -3846,7 +5424,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateX(180deg) translateZ(75px);
   transform: rotateX(180deg) translateZ(75px);
 }
-/* line 97, ../sass/modules/_cubie.scss */
+/* line 99, ../sass/modules/_cubie.scss */
 .cubie .side.right {
   -webkit-transform: rotateY(90deg) translateZ(75px);
   -moz-transform: rotateY(90deg) translateZ(75px);
@@ -3854,7 +5432,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateY(90deg) translateZ(75px);
   transform: rotateY(90deg) translateZ(75px);
 }
-/* line 98, ../sass/modules/_cubie.scss */
+/* line 100, ../sass/modules/_cubie.scss */
 .cubie .side.top {
   -webkit-transform: rotateX(90deg) translateZ(75px);
   -moz-transform: rotateX(90deg) translateZ(75px);
@@ -3862,7 +5440,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateX(90deg) translateZ(75px);
   transform: rotateX(90deg) translateZ(75px);
 }
-/* line 99, ../sass/modules/_cubie.scss */
+/* line 101, ../sass/modules/_cubie.scss */
 .cubie .side.bottom {
   -webkit-transform: rotateX(-90deg) translateZ(75px);
   -moz-transform: rotateX(-90deg) translateZ(75px);
@@ -3870,19 +5448,19 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   -o-transform: rotateX(-90deg) translateZ(75px);
   transform: rotateX(-90deg) translateZ(75px);
 }
-/* line 105, ../sass/modules/_cubie.scss */
+/* line 107, ../sass/modules/_cubie.scss */
 .cubie .side.internal .sticker {
   background-color: black !important;
 }
-/* line 107, ../sass/modules/_cubie.scss */
+/* line 109, ../sass/modules/_cubie.scss */
 .cubie .side.internal .sticker p {
   display: none;
 }
-/* line 112, ../sass/modules/_cubie.scss */
+/* line 114, ../sass/modules/_cubie.scss */
 .cubie .side.internal.left, .cubie .side.internal.right {
   display: none;
 }
-/* line 117, ../sass/modules/_cubie.scss */
+/* line 119, ../sass/modules/_cubie.scss */
 .cubie .side .sticker {
   width: 148px;
   height: 148px;
@@ -3900,31 +5478,31 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   opacity: inherit;
   /* background-color */
 }
-/* line 129, ../sass/modules/_cubie.scss */
+/* line 131, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.orange {
   background-color: orange;
 }
-/* line 130, ../sass/modules/_cubie.scss */
+/* line 132, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.green {
   background-color: green;
 }
-/* line 131, ../sass/modules/_cubie.scss */
+/* line 133, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.red {
   background-color: red;
 }
-/* line 132, ../sass/modules/_cubie.scss */
+/* line 134, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.yellow {
   background-color: yellow;
 }
-/* line 133, ../sass/modules/_cubie.scss */
+/* line 135, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.white {
   background-color: white;
 }
-/* line 134, ../sass/modules/_cubie.scss */
+/* line 136, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: blue;
 }
-/* line 135, ../sass/modules/_cubie.scss */
+/* line 137, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: black;
 }

@@ -1,8 +1,12 @@
 var computed = Ember.computed;
 
 var CubieComponent = Ember.Component.extend({
+  axis: null,
+  steps: [],
+  direction: null,
+
   classNames: ['cubie'],
-  classNameBindings: ['isActive'],
+  classNameBindings: ['isActive', 'rotationAxis', 'rotationDirection','rotationSteps'],
 
   //cube (probably kind of hacky)
   cube: computed.alias('parentView.parentView.parentView'),
@@ -12,6 +16,18 @@ var CubieComponent = Ember.Component.extend({
 
   //the secion
   section: computed.alias('parentView'),
+
+  rotationAxis: function() {
+    return 'rotate'+this.get('axis');
+  }.property('axis'),
+
+  rotationDirection: function() {
+    return this.get('direction');
+  }.property('direction'),
+
+  rotationSteps: function() {
+    return this.get('steps').join('');
+  }.property('steps.[]'),
 
   /*
   Set the class based on the active state.

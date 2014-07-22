@@ -16,7 +16,7 @@ export default Ember.Component.extend({
   }.property('layer.childViews.@each'),
 
   rotationAxis: function() {
-    return 'rotate'+this.get('axis');
+    return 'rotate' + this.get('axis');
   }.property('axis'),
 
   rotationDirection: function() {
@@ -38,6 +38,14 @@ export default Ember.Component.extend({
       direction: this.get('direction'),
       axis: this.get('axis'),
     });
+  },
+
+  /**
+  Reset the data before inserting the updated layer.
+  */
+  willInsertElement: function() {
+    this.set('direction', null);
+    this.set('steps',[]);
   },
 
   /**
@@ -70,6 +78,13 @@ export default Ember.Component.extend({
       }
       if(move) {
         this.get('steps').pushObject('step');
+        this.get('childViews').forEach(function (cubie, c_index, cubies) {
+          cubie.setProperties({
+            axis: this.get('axis'),
+            steps: this.get('steps'),
+            direction: this.get('direction'),
+          });
+        }.bind(this));
         Ember.run.later(this, this.sendMove, 250);
       }
     }
