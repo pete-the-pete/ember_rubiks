@@ -40,6 +40,15 @@ var faces = [
   }
 ];
 
+var face_index = {
+  LEFT: 0,
+  BACK: 1,
+  RIGHT: 2,
+  FRONT: 3,
+  TOP: 4,
+  BOTTOM: 5
+};
+
 var keys = {
   LEFT: 37,
   DOWN: 40,
@@ -61,6 +70,7 @@ var rotation_axis = {
 }
 
 export var FACES = faces;
+export var FACE_INDEX = face_index;
 export var KEYS = keys;
 export var ROTATION_DIRECTIONS = rotation_directions;
 export var COLORS_MAP = colors;

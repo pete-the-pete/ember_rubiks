@@ -33,6 +33,7 @@ export default Ember.Component.extend({
     this.get('cube').send('move', {
       layerView: this,
       layer: this.layer,
+      layerIndex: this.get('index'),
       cubeView: this.get('cube'),
       cube: this.get('cube').cube,
       direction: this.get('direction'),
