@@ -76,19 +76,21 @@ export default Ember.Component.extend({
           break;
       }
       if(move) {
-        this.get('steps').pushObject('step');
-        //TODO: clean this up
-        this.get('cube').get('childViews').forEach(function(layer, l_index, layers) {
-          layer.get('childViews').objectAt(this.get('index'))
-            .get('childViews').forEach(function (cubie, c_index, cubies) {
-              cubie.setProperties({
-                axis: this.get('axis'),
-                steps: this.get('steps'),
-                direction: this.get('direction'),
-              });
-            }.bind(this));
-        }.bind(this));
-        Ember.run.later(this, this.sendMove, 250);
+        if(this.get('axis') === AXES.Z) {
+          this.get('steps').pushObject('step');
+          //TODO: clean this up
+          this.get('cube').get('childViews').forEach(function(layer, l_index, layers) {
+            layer.get('childViews').objectAt(this.get('index'))
+              .get('childViews').forEach(function (cubie, c_index, cubies) {
+                cubie.setProperties({
+                  axis: this.get('axis'),
+                  steps: this.get('steps'),
+                  direction: this.get('direction'),
+                });
+              }.bind(this));
+          }.bind(this));
+          Ember.run.later(this, this.sendMove, 250);
+        }
       }
     }
   }

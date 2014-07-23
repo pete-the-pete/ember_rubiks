@@ -186,6 +186,30 @@ export default Ember.ArrayController.extend({
           layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: sidesLength-inner_index-1 };
           section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: null, to: sidesLength-inner_index-1 };
           rotations.push([ layer_moves, section_moves, tempCubie ]);
+        } else {
+          tempCubie = this.getTempCubie(rotation_data, outer_index, inner_index);
+
+          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: outer_index };
+          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: sidesLength-inner_index-1, to: outer_index };
+          cubie_moves = { from: outer_index, to: inner_index };
+          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+
+          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+          cubie_moves = { from: sidesLength-inner_index-1, to: outer_index };
+          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+
+          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: inner_index, to: sidesLength-outer_index-1 };
+          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: inner_index, to: sidesLength-outer_index-1 };
+          cubie_moves = { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+
+          //special case, the temp cubie is passed in directly
+          tempCubie.from = null;
+          tempCubie.to = sidesLength-outer_index-1;
+          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: inner_index };
+          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: null, to: inner_index };
+          rotations.push([ layer_moves, section_moves, tempCubie ]);
         }
       }
     }

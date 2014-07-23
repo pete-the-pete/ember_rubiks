@@ -2,9 +2,6 @@
   $steps: 4;
   $multiplier: 1;
   $steps_class: 'step';
-  @if($direction == 'anticlockwise') {
-    $multiplier: -1;
-  }
 
  &.#{'rotate'+$type} {
     //to handle dynamic transform-origin
@@ -14,10 +11,19 @@
       &.#{$direction} {
         &.#{$steps_class} {
           @if($type == X) {
+            $rotation: ($multiplier * (($step) * 90)) + 'deg';
             @include transform($initial_trans rotateX(#{$rotation}));
           } @else if($type == Y) {
+            @if($direction == 'clockwise') {
+              $multiplier: -1;
+            }
+            $rotation: ($multiplier * (($step) * 90)) + 'deg';
             @include transform($initial_trans rotateY(#{$rotation}));
           } @else if($type == Z) {
+            @if($direction == 'anticlockwise') {
+              $multiplier: -1;
+            }
+            $rotation: ($multiplier * (($step) * 90)) + 'deg';
             @include transform($initial_trans rotateZ(#{$rotation}));
           }
         }

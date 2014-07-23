@@ -56,7 +56,7 @@ export default Ember.Component.extend({
       switch(e.keyCode) {
         case KEYS.LEFT:
           move = true;
-          this.set('direction', ROTATION_DIRECTIONS.ANITCLOCKWISE);
+          this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
           break;
         case KEYS.RIGHT:
           move = true;
