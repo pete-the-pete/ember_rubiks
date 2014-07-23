@@ -52,7 +52,7 @@ export default Ember.Component.extend({
   */
   keyDown: function(e) {
     var move = false;
-    if(!e.shiftKey && e.ctrlKey) {
+    if(!e.shiftKey && e.altKey) {
       switch(e.keyCode) {
         case KEYS.LEFT:
           move = true;
