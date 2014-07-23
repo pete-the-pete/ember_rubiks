@@ -57,22 +57,22 @@ export default Ember.Component.extend({
         case KEYS.LEFT:
           move = true;
           this.set('axis', AXES.Z);
-          this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
+          this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
           break;
         case KEYS.RIGHT:
           move = true;
           this.set('axis', AXES.Z);
-          this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
+          this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
           break;
         case KEYS.UP:
           move = true;
           this.set('axis', AXES.X);
-          this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
+          this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
           break;
         case KEYS.DOWN:
           move = true;
           this.set('axis', AXES.X);
-          this.set('direction', ROTATION_DIRECTIONS.ANTICLOCKWISE);
+          this.set('direction', ROTATION_DIRECTIONS.CLOCKWISE);
           break;
       }
       if(move) {

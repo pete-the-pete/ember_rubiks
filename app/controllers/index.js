@@ -161,7 +161,7 @@ export default Ember.ArrayController.extend({
 
     if(outer_index < sidesLength/2) {
       if(inner_index >= outer_index && inner_index < (sidesLength - outer_index - 1)) {
-        if(rotation_data.direction === ROTATION_DIRECTIONS.CLOCKWISE) {
+        if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
           //pull out the first cubie
           tempCubie = this.getTempCubie(rotation_data, outer_index, inner_index);
 
