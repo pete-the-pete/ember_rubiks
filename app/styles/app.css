@@ -5128,6 +5128,10 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
 .cubie .side .sticker.blue {
   background-color: black;
 }
+/* line 123, ../sass/modules/_cubie.scss */
+.cubie .side .sticker p {
+  color: transparent;
+}
 
 /* line 14, ../sass/app.scss */
 html {
