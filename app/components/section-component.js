@@ -32,6 +32,7 @@ export default Ember.Component.extend({
       sectionView: this,
       section: this.section,
       sectionIndex: this.get('index'),
+      cubieIndex: this.get('cube').get('activeCubie').get('index'),
       cubeView: this.get('cube'),
       cube: this.get('cube').cube,
       direction: this.get('direction'),
@@ -76,9 +77,9 @@ export default Ember.Component.extend({
           break;
       }
       if(move) {
+        this.get('steps').pushObject('step');
         if(this.get('axis') === AXES.Z) {
-          this.get('steps').pushObject('step');
-          //TODO: clean this up
+          //TODO: clean these up
           this.get('cube').get('childViews').forEach(function(layer, l_index, layers) {
             layer.get('childViews').objectAt(this.get('index'))
               .get('childViews').forEach(function (cubie, c_index, cubies) {
@@ -89,8 +90,18 @@ export default Ember.Component.extend({
                 });
               }.bind(this));
           }.bind(this));
-          Ember.run.later(this, this.sendMove, 250);
+        } else {
+          this.get('cube').get('childViews').forEach(function(layer, l_index, layers) {
+            layer.get('childViews').forEach(function(section, s_index, sections) {
+              section.get('childViews').objectAt(this.get('cube').get('activeCubie').get('index')).setProperties({
+                  axis: this.get('axis'),
+                  steps: this.get('steps'),
+                  direction: this.get('direction'),
+                });
+              }.bind(this));
+          }.bind(this));
         }
+        Ember.run.later(this, this.sendMove, 250);
       }
     }
   }

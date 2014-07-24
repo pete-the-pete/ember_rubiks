@@ -121,18 +121,20 @@ export default Ember.ArrayController.extend({
       }
       //update its colors
       this.rotateCubieColors(to.objectAt(cubie.to), rotation_data);
-      //delete the property in case it was from an actual cube
-      delete cubie.to;
-      delete cubie.from;
+      //TODO: delete the property in case it was from an actual cube
 
   },
 
   getTempCubie: function(rotation_data, outer_index, inner_index) {
-    if(rotation_data.axis === AXES.Y) {
+    if(rotation_data.axis === AXES.X) {
+      return rotation_data.cube.get('data').layers.objectAt(outer_index)
+                              .get('data').sections.objectAt(inner_index)
+                              .get('data').cubies.objectAt(rotation_data.cubieIndex);
+    } else if(rotation_data.axis === AXIS.Y) {
       return rotation_data.cube.get('data').layers.objectAt(rotation_data.layerIndex)
                               .get('data').sections.objectAt(outer_index)
                               .get('data').cubies.objectAt(inner_index);
-    } else {
+    } else if(rotation_data.axis === AXIS.Z) {
       return rotation_data.cube.get('data').layers.objectAt(outer_index)
                               .get('data').sections.objectAt(rotation_data.sectionIndex)
                               .get('data').cubies.objectAt(inner_index);
@@ -151,6 +153,11 @@ export default Ember.ArrayController.extend({
       layer_moves = {
         from: rotation_data.layerIndex,
         to: rotation_data.layerIndex
+      };
+    } else if(rotation_data.axis === AXES.X) {
+      cubie_moves = {
+        from: rotation_data.cubieIndex,
+        to: rotation_data.cubieIndex
       };
     } else {
       section_moves = {
@@ -190,25 +197,25 @@ export default Ember.ArrayController.extend({
           tempCubie = this.getTempCubie(rotation_data, outer_index, inner_index);
 
           layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: outer_index };
-          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: sidesLength-inner_index-1, to: outer_index };
-          cubie_moves = { from: outer_index, to: inner_index };
+          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: outer_index, to: inner_index } : { from: sidesLength-inner_index-1, to: outer_index };
+          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: outer_index, to: inner_index };
           rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
           layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-          cubie_moves = { from: sidesLength-inner_index-1, to: outer_index };
+          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: sidesLength-inner_index-1, to: outer_index } : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: outer_index };
           rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
           layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: inner_index, to: sidesLength-outer_index-1 };
-          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: inner_index, to: sidesLength-outer_index-1 };
-          cubie_moves = { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 } : { from: inner_index, to: sidesLength-outer_index-1 };
+          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
           rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
           //special case, the temp cubie is passed in directly
-          tempCubie.from = null;
-          tempCubie.to = sidesLength-outer_index-1;
           layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: inner_index };
-          section_moves = (rotation_data.axis !== AXES.Y) ? section_moves : { from: null, to: inner_index };
+          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: null, to: sidesLength-outer_index-1 } : { from: null, to: inner_index };
+          tempCubie.to = (rotation_data.axis === AXES.X) ? cubie_moves.to : sidesLength-outer_index-1;
+          tempCubie.from = null;
           rotations.push([ layer_moves, section_moves, tempCubie ]);
         }
       }
