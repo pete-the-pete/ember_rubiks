@@ -234,35 +234,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -402,35 +402,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -570,35 +570,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -746,35 +746,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -914,35 +914,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -1082,35 +1082,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -1258,35 +1258,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -1426,35 +1426,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
@@ -1594,35 +1594,35 @@ div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(1) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -1860,35 +1860,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -2028,35 +2028,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -2196,35 +2196,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -2372,35 +2372,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -2540,35 +2540,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -2708,35 +2708,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -2884,35 +2884,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -3052,35 +3052,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
@@ -3220,35 +3220,35 @@ div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(2) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -3486,35 +3486,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(1).rotateX {
@@ -3654,35 +3654,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(2).rotateX {
@@ -3822,35 +3822,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(1) div.cubie:nth-of-type(3).rotateX {
@@ -3998,35 +3998,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(1).rotateX {
@@ -4166,35 +4166,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(2).rotateX {
@@ -4334,35 +4334,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(2) div.cubie:nth-of-type(3).rotateX {
@@ -4510,35 +4510,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.step {
-  -webkit-transform: translateX(0) rotateX(90deg);
-  -moz-transform: translateX(0) rotateX(90deg);
-  -ms-transform: translateX(0) rotateX(90deg);
-  -o-transform: translateX(0) rotateX(90deg);
-  transform: translateX(0) rotateX(90deg);
+  -webkit-transform: translateX(0) rotateX(-90deg);
+  -moz-transform: translateX(0) rotateX(-90deg);
+  -ms-transform: translateX(0) rotateX(-90deg);
+  -o-transform: translateX(0) rotateX(-90deg);
+  transform: translateX(0) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(0) rotateX(180deg);
-  -moz-transform: translateX(0) rotateX(180deg);
-  -ms-transform: translateX(0) rotateX(180deg);
-  -o-transform: translateX(0) rotateX(180deg);
-  transform: translateX(0) rotateX(180deg);
+  -webkit-transform: translateX(0) rotateX(-180deg);
+  -moz-transform: translateX(0) rotateX(-180deg);
+  -ms-transform: translateX(0) rotateX(-180deg);
+  -o-transform: translateX(0) rotateX(-180deg);
+  transform: translateX(0) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(0) rotateX(270deg);
-  -moz-transform: translateX(0) rotateX(270deg);
-  -ms-transform: translateX(0) rotateX(270deg);
-  -o-transform: translateX(0) rotateX(270deg);
-  transform: translateX(0) rotateX(270deg);
+  -webkit-transform: translateX(0) rotateX(-270deg);
+  -moz-transform: translateX(0) rotateX(-270deg);
+  -ms-transform: translateX(0) rotateX(-270deg);
+  -o-transform: translateX(0) rotateX(-270deg);
+  transform: translateX(0) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(0) rotateX(360deg);
-  -moz-transform: translateX(0) rotateX(360deg);
-  -ms-transform: translateX(0) rotateX(360deg);
-  -o-transform: translateX(0) rotateX(360deg);
-  transform: translateX(0) rotateX(360deg);
+  -webkit-transform: translateX(0) rotateX(-360deg);
+  -moz-transform: translateX(0) rotateX(-360deg);
+  -ms-transform: translateX(0) rotateX(-360deg);
+  -o-transform: translateX(0) rotateX(-360deg);
+  transform: translateX(0) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(1).rotateX {
@@ -4678,35 +4678,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.step {
-  -webkit-transform: translateX(150px) rotateX(90deg);
-  -moz-transform: translateX(150px) rotateX(90deg);
-  -ms-transform: translateX(150px) rotateX(90deg);
-  -o-transform: translateX(150px) rotateX(90deg);
-  transform: translateX(150px) rotateX(90deg);
+  -webkit-transform: translateX(150px) rotateX(-90deg);
+  -moz-transform: translateX(150px) rotateX(-90deg);
+  -ms-transform: translateX(150px) rotateX(-90deg);
+  -o-transform: translateX(150px) rotateX(-90deg);
+  transform: translateX(150px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(150px) rotateX(180deg);
-  -moz-transform: translateX(150px) rotateX(180deg);
-  -ms-transform: translateX(150px) rotateX(180deg);
-  -o-transform: translateX(150px) rotateX(180deg);
-  transform: translateX(150px) rotateX(180deg);
+  -webkit-transform: translateX(150px) rotateX(-180deg);
+  -moz-transform: translateX(150px) rotateX(-180deg);
+  -ms-transform: translateX(150px) rotateX(-180deg);
+  -o-transform: translateX(150px) rotateX(-180deg);
+  transform: translateX(150px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(150px) rotateX(270deg);
-  -moz-transform: translateX(150px) rotateX(270deg);
-  -ms-transform: translateX(150px) rotateX(270deg);
-  -o-transform: translateX(150px) rotateX(270deg);
-  transform: translateX(150px) rotateX(270deg);
+  -webkit-transform: translateX(150px) rotateX(-270deg);
+  -moz-transform: translateX(150px) rotateX(-270deg);
+  -ms-transform: translateX(150px) rotateX(-270deg);
+  -o-transform: translateX(150px) rotateX(-270deg);
+  transform: translateX(150px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(150px) rotateX(360deg);
-  -moz-transform: translateX(150px) rotateX(360deg);
-  -ms-transform: translateX(150px) rotateX(360deg);
-  -o-transform: translateX(150px) rotateX(360deg);
-  transform: translateX(150px) rotateX(360deg);
+  -webkit-transform: translateX(150px) rotateX(-360deg);
+  -moz-transform: translateX(150px) rotateX(-360deg);
+  -ms-transform: translateX(150px) rotateX(-360deg);
+  -o-transform: translateX(150px) rotateX(-360deg);
+  transform: translateX(150px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(2).rotateX {
@@ -4846,35 +4846,35 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.step {
-  -webkit-transform: translateX(300px) rotateX(90deg);
-  -moz-transform: translateX(300px) rotateX(90deg);
-  -ms-transform: translateX(300px) rotateX(90deg);
-  -o-transform: translateX(300px) rotateX(90deg);
-  transform: translateX(300px) rotateX(90deg);
+  -webkit-transform: translateX(300px) rotateX(-90deg);
+  -moz-transform: translateX(300px) rotateX(-90deg);
+  -ms-transform: translateX(300px) rotateX(-90deg);
+  -o-transform: translateX(300px) rotateX(-90deg);
+  transform: translateX(300px) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstep {
-  -webkit-transform: translateX(300px) rotateX(180deg);
-  -moz-transform: translateX(300px) rotateX(180deg);
-  -ms-transform: translateX(300px) rotateX(180deg);
-  -o-transform: translateX(300px) rotateX(180deg);
-  transform: translateX(300px) rotateX(180deg);
+  -webkit-transform: translateX(300px) rotateX(-180deg);
+  -moz-transform: translateX(300px) rotateX(-180deg);
+  -ms-transform: translateX(300px) rotateX(-180deg);
+  -o-transform: translateX(300px) rotateX(-180deg);
+  transform: translateX(300px) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateX(300px) rotateX(270deg);
-  -moz-transform: translateX(300px) rotateX(270deg);
-  -ms-transform: translateX(300px) rotateX(270deg);
-  -o-transform: translateX(300px) rotateX(270deg);
-  transform: translateX(300px) rotateX(270deg);
+  -webkit-transform: translateX(300px) rotateX(-270deg);
+  -moz-transform: translateX(300px) rotateX(-270deg);
+  -ms-transform: translateX(300px) rotateX(-270deg);
+  -o-transform: translateX(300px) rotateX(-270deg);
+  transform: translateX(300px) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateX(300px) rotateX(360deg);
-  -moz-transform: translateX(300px) rotateX(360deg);
-  -ms-transform: translateX(300px) rotateX(360deg);
-  -o-transform: translateX(300px) rotateX(360deg);
-  transform: translateX(300px) rotateX(360deg);
+  -webkit-transform: translateX(300px) rotateX(-360deg);
+  -moz-transform: translateX(300px) rotateX(-360deg);
+  -ms-transform: translateX(300px) rotateX(-360deg);
+  -o-transform: translateX(300px) rotateX(-360deg);
+  transform: translateX(300px) rotateX(-360deg);
 }
 /* line 6, ../sass/partials/_rotations.scss */
 div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-type(3).rotateX {
@@ -5125,7 +5125,7 @@ div#cube div.layer:nth-of-type(3) div.section:nth-of-type(3) div.cubie:nth-of-ty
   background-color: blue;
 }
 /* line 121, ../sass/modules/_cubie.scss */
-.cubie .side .sticker.blue {
+.cubie .side .sticker.black {
   background-color: black;
 }
 /* line 123, ../sass/modules/_cubie.scss */
@@ -5215,35 +5215,35 @@ body {
 }
 /* line 12, ../sass/partials/_rotations.scss */
 #cube.rotateX.clockwise.step {
-  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(90deg);
-  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(90deg);
-  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(90deg);
-  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(90deg);
-  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(90deg);
+  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-90deg);
+  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-90deg);
+  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-90deg);
+  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-90deg);
+  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-90deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 #cube.rotateX.clockwise.stepstep {
-  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(180deg);
-  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(180deg);
-  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(180deg);
-  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(180deg);
-  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(180deg);
+  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-180deg);
+  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-180deg);
+  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-180deg);
+  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-180deg);
+  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-180deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 #cube.rotateX.clockwise.stepstepstep {
-  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(270deg);
-  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(270deg);
-  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(270deg);
-  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(270deg);
-  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(270deg);
+  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-270deg);
+  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-270deg);
+  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-270deg);
+  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-270deg);
+  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-270deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 #cube.rotateX.clockwise.stepstepstepstep {
-  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(360deg);
-  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(360deg);
-  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(360deg);
-  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(360deg);
-  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(360deg);
+  -webkit-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-360deg);
+  -moz-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-360deg);
+  -ms-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-360deg);
+  -o-transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-360deg);
+  transform: translateZ(-900px) rotateY(-35deg) rotateX(-20deg) rotateZ(15deg) rotateX(-360deg);
 }
 /* line 12, ../sass/partials/_rotations.scss */
 #cube.rotateX.anticlockwise.step {

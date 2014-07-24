@@ -11,6 +11,9 @@
       &.#{$direction} {
         &.#{$steps_class} {
           @if($type == X) {
+            @if($direction == 'clockwise') {
+              $multiplier: -1;
+            }
             $rotation: ($multiplier * (($step) * 90)) + 'deg';
             @include transform($initial_trans rotateX(#{$rotation}));
           } @else if($type == Y) {
