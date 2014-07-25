@@ -9,13 +9,11 @@ Layer.reopenClass({
     {
       id: 1,
       cube: 1,
-      title: 'Back that ass up',
       sections: [1,2,3]
     },
     {
       id: 2,
       cube: 1,
-      title: 'Slow down.',
       sections: [4,5,6]
     },
     {

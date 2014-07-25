@@ -9,7 +9,6 @@ Section.reopenClass({
     {
       id: 1,
       layer: 1,
-      title: 'where are you waldo?',
       cubies: [1,2,3]
     },
     {

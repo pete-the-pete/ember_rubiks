@@ -8,7 +8,6 @@ Cube.reopenClass({
   FIXTURES: [
       {
         id: 1,
-        title: 'i am a wild pig',
         isSolved: false,
         layers: [1,2,3]
       }
