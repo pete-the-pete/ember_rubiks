@@ -3,6 +3,8 @@ import { KEYS } from '../constants';
 
 var INITIALIZED = false;
 
+export default Ember.Component.extend({});
+/*
 export default Ember.Component.extend({
 
   navigationData: null,
@@ -47,7 +49,7 @@ export default Ember.Component.extend({
 
   /**
   Sects the activeLayer
-  */
+  *
   setActiveLayerAtIndex: function(index) {
     this.set('activeLayerIndex', index);
     this.set('activeLayer', this.get('childViews').objectAt(index));
@@ -55,7 +57,7 @@ export default Ember.Component.extend({
 
   /**
   Sets the active section at the index of the active layer.
-  */
+  *
   setActiveSectionAtIndex: function(index) {
     this.set('activeSectionIndex', index);
     this.set('activeSection', this.get('activeLayer').get('childViews').objectAt(index));
@@ -63,7 +65,7 @@ export default Ember.Component.extend({
 
   /**
   Sets the active cubie at the index of the active seciton
-  */
+  *
   setActiveCubieAtIndex: function(index) {
     this.set('activeCubieIndex', index);
     this.set('activeCubie', this.get('activeSection').get('childViews').objectAt(index));
@@ -75,7 +77,7 @@ export default Ember.Component.extend({
 
   /**
   Navigate around the cube by changing the active cubie, and the adjacent faces
-  */
+  *
   navigate: function(data) {
     var max = this.get('childViews').get('length') - 1,
       activeLayerIndex = this.get('activeLayer').get('index'),
@@ -166,4 +168,4 @@ export default Ember.Component.extend({
       this.navigate(data);
     }
   }
-});
+});*/

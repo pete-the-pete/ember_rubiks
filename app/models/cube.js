@@ -1,15 +1,24 @@
 var Cube = DS.Model.extend({
   title: DS.attr('string'),
-  layers: DS.hasMany('layer', {async: true}),
+  cubies: DS.hasMany('cubie', {async: true}),
   isSolved: DS.attr('boolean', {defaultValue: false})
 });
+
+//pre-calc the cubies
+var CUBE_CUBIES = (function() {
+  var cubies = [];
+  for(var i=1;i<=27;i++) {
+    cubies.push(i);
+  }
+  return cubies;
+})();
 
 Cube.reopenClass({
   FIXTURES: [
       {
         id: 1,
         isSolved: false,
-        layers: [1,2,3]
+        cubies: CUBE_CUBIES
       }
     ]
   });

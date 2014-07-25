@@ -1,7 +1,7 @@
 var computed = Ember.computed;
 
-var CubieComponent = Ember.Component.extend({
-  axis: null,
+export default Ember.Component.extend({});
+/*  axis: null,
   steps: [],
   direction: null,
 
@@ -31,7 +31,7 @@ var CubieComponent = Ember.Component.extend({
 
   /*
   Set the class based on the active state.
-  */
+  *
   isActive: function() {
     return this.get('cube.activeCubie') === this;
   }.property('cube.activeCubie'),
@@ -39,7 +39,7 @@ var CubieComponent = Ember.Component.extend({
   /**
   A single cubie can be active at a time, so this checks
   the cube to see if it is the active cubie.
-  */
+  *
   setFocus: function() {
     if(this.get('cube.activeCubie') === this) {
       Ember.run.schedule('afterRender', this, function() {
@@ -55,7 +55,7 @@ var CubieComponent = Ember.Component.extend({
 
   /**
   Lets the user navigate around the cube
-  */
+  *
   keyDown: function(e) {
     if(!e.shiftKey && !e.altKey) {
       this.get('cube').send('navigate', {
@@ -68,4 +68,4 @@ var CubieComponent = Ember.Component.extend({
 
 });
 
-export default CubieComponent;
+export default CubieComponent;*/
