@@ -10,7 +10,7 @@ var CUBIES = (function() {
     cubies.push({
       id: i,
       faces: Ember.copy(FACES, true)
-    })
+    });
   }
   return cubies;
 })();
