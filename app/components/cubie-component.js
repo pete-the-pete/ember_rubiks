@@ -1,6 +1,6 @@
 var computed = Ember.computed;
 
-var LAYER = 1, SECTION = 1;
+var LAYER = 1, SECTION = 1, CUBIE = 0;
 
 export default Ember.Component.extend({
   axis: null,
@@ -10,30 +10,39 @@ export default Ember.Component.extend({
   _sectionIndex: 1,
 
   classNames: ['cubie'],
-  classNameBindings: ['isActive', 'layer', 'section', 'rotationAxis', 'rotationDirection','rotationSteps'],
+  classNameBindings: ['isActive', 'layer', 'section', 'cubieIndex', 'rotationAxis', 'rotationDirection','rotationSteps'],
 
   //cube
   cube: computed.alias('parentView'),
 
   updateClasses: function() {
     var index = this.get('index');
+    ++CUBIE;
     if(index > 0 && index % 9 === 0) {
       LAYER++;
     }
-    this.set('_layerIndex', LAYER);
     if(index > 0 && index % 3 === 0) {
-      SECTION = ((SECTION + 1) % 3) ? ++SECTION : 1;
+      SECTION = ((SECTION + 1) % 4) ? ++SECTION : 1;
     }
+    if(index > 0 && index % 3 === 0) {
+      CUBIE = 1;
+    }
+    this.set('_layerIndex', LAYER);
     this.set('_sectionIndex', SECTION);
+    this.set('_cubieIndex', CUBIE);
   }.on('didInsertElement'),
 
   layer: function() {
-    return 'layer'+this.get('_layerIndex');
+    return 'layer-'+this.get('_layerIndex');
   }.property('_layerIndex'),
 
   section: function() {
-    return 'section'+this.get('_sectionIndex');
+    return 'section-'+this.get('_sectionIndex');
   }.property('_sectionIndex'),
+
+  cubieIndex: function() {
+    return 'cubie-'+this.get('_cubieIndex');
+  }.property('_cubieIndex'),
 
   rotationAxis: function() {
     return 'rotate'+this.get('axis');
