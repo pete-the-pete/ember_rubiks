@@ -83,7 +83,7 @@
       .sticker {
         background-color: $black !important;
         p {
-          display: none;
+          //display: none;
         }
       }
       &.left,
@@ -113,7 +113,7 @@
       &.black { background-color: $black; }
 
       p {
-        color: transparent;
+        //color: transparent;
       }
     }
   }

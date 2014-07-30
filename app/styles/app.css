@@ -439,10 +439,6 @@ div.layer-3.section-3.cubie-3 {
 .cubie .side.internal .sticker {
   background-color: black !important;
 }
-/* line 85, ../sass/modules/_cubie.scss */
-.cubie .side.internal .sticker p {
-  display: none;
-}
 /* line 90, ../sass/modules/_cubie.scss */
 .cubie .side.internal.left, .cubie .side.internal.right {
   display: none;
@@ -492,10 +488,6 @@ div.layer-3.section-3.cubie-3 {
 /* line 113, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.black {
   background-color: black;
-}
-/* line 115, ../sass/modules/_cubie.scss */
-.cubie .side .sticker p {
-  color: transparent;
 }
 
 /* line 14, ../sass/app.scss */

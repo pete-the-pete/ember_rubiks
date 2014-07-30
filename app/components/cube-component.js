@@ -13,16 +13,16 @@ export default Ember.Component.extend({
   activeCubieIndex: null,
 
   //TODO: these should come from the model
-  initialCubieIndex: 1,
+  initialCubieIndex: 4,
 
   didInsertElement: function() {
     //hack to highlight it after everything as loaded (hopefully)
     if(!INITIALIZED) {
       INITIALIZED = true;
-      //Ember.run.later(this, function() {
+      Ember.run.later(this, function() {
         //set the middle cubie as active
-        //this.setActiveCubieAtIndex(this.get('initialCubieIndex'));
-      //}, 5000);
+        this.setActiveCubieAtIndex(this.get('initialCubieIndex'));
+      }, 500);
     }
   },
 
@@ -41,11 +41,8 @@ export default Ember.Component.extend({
   /**
   Navigate around the cube by changing the active cubie, and the adjacent faces
   */
-  navigate: function(data) {}
-  /*navigate: function(data) {
+  navigate: function(data) {
     var max = this.get('childViews').get('length') - 1,
-      activeLayerIndex = this.get('activeLayer').get('index'),
-      activeSectionIndex = this.get('activeSection').get('index'),
       activeCubieIndex = this.get('activeCubie').get('index');
 
     //save this off for the rerender
@@ -55,8 +52,6 @@ export default Ember.Component.extend({
     //need to reset everything since the childViews have been destroyed
     //and recreated
     if(!data) {
-      this.setActiveLayerAtIndex(this.get('activeLayerIndex'));
-      this.setActiveSectionAtIndex(this.get('activeSectionIndex'));
       this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
       return;
     }
@@ -64,23 +59,23 @@ export default Ember.Component.extend({
     switch(data.key) {
       case KEYS.UP:
         //already at the top
-        if(activeLayerIndex === 0) {
-          if(activeSectionIndex > 0) {
-            activeSectionIndex--;
+        if(activeCubieIndex < 8) {
+          if(activeCubieIndex > 2) {
+            activeCubieIndex -= 3;
           }
         } else {
-          activeLayerIndex--;
+          activeCubieIndex -= 9;
         }
         break;
       case KEYS.DOWN:
-        if(activeLayerIndex === 0) {
-          if(activeSectionIndex < max) {
-            ++activeSectionIndex;
+        if(activeCubieIndex < 8) {
+          if(activeCubieIndex < 6) {
+            activeCubieIndex += 3;
           } else {
-            activeLayerIndex++;
+            activeCubieIndex += 9;
           }
-        } else if(activeLayerIndex < max) {
-          activeLayerIndex++;
+        } else if(activeCubieIndex < 19) {
+          activeCubieIndex += 9;
         }
         break;
       case KEYS.LEFT:
@@ -98,7 +93,7 @@ export default Ember.Component.extend({
           }
         }
         break;
-      case KEYS.RIGHT:
+      /*case KEYS.RIGHT:
         //moving on the top or front, just move right
         if(activeLayerIndex === 0) {
           if(activeCubieIndex < max) {
@@ -117,10 +112,9 @@ export default Ember.Component.extend({
             activeSectionIndex--;
           }
         }
-        break;
+        break;*/
     }
-    this.setActiveLayerAtIndex(activeLayerIndex);
-    this.setActiveSectionAtIndex(activeSectionIndex);
+    console.debug(activeCubieIndex);
     this.setActiveCubieAtIndex(activeCubieIndex);
   },
 
@@ -131,5 +125,5 @@ export default Ember.Component.extend({
     navigate: function(data) {
       this.navigate(data);
     }
-  }*/
+  }
 });

@@ -10,7 +10,15 @@ export default Ember.Component.extend({
   _sectionIndex: 1,
 
   classNames: ['cubie'],
-  classNameBindings: ['isActive', 'layer', 'section', 'cubieIndex', 'rotationAxis', 'rotationDirection','rotationSteps'],
+  classNameBindings: [
+    'isActive',
+    'layer',
+    'section',
+    'cubieIndex',
+    'rotationAxis',
+    'rotationDirection',
+    'rotationSteps'
+  ],
 
   //cube
   cube: computed.alias('parentView'),
