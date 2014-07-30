@@ -47,6 +47,7 @@ export default Ember.Component.extend({
       activeSectionIndex = cubie.get('_sectionIndex'),
       activeCubieIndex = cubie.get('_cubieIndex');
 
+
     //save this off for the rerender
     this.set('navigationData', data);
 
@@ -110,7 +111,6 @@ export default Ember.Component.extend({
         }
         break;
     }
-    console.debug(activeCubieIndex);
     this.setActiveCubieAtIndex(activeCubieIndex);
   },
 
