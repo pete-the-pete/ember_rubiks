@@ -42,8 +42,14 @@ export default Ember.Component.extend({
   Navigate around the cube by changing the active cubie, and the adjacent faces
   */
   navigate: function(data) {
-    var max = this.get('childViews').get('length') - 1,
-      activeCubieIndex = this.get('activeCubie').get('index');
+    var min = 1, max = 3,
+      cubie = this.get('activeCubie'),
+      activeLayerIndex = cubie.get('_layerIndex'),
+      activeSectionIndex = cubie.get('_sectionIndex'),
+      activeCubieIndex = cubie.get('_cubieIndex');
+
+    console.debug(activeLayerIndex, activeSectionIndex, activeCubieIndex);
+    debugger;
 
     //save this off for the rerender
     this.set('navigationData', data);
@@ -52,67 +58,61 @@ export default Ember.Component.extend({
     //need to reset everything since the childViews have been destroyed
     //and recreated
     if(!data) {
-      this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
+      this.setActiveCubieAtIndex(activeCubieIndex);
       return;
     }
 
     switch(data.key) {
       case KEYS.UP:
-        //already at the top
-        if(activeCubieIndex < 8) {
-          if(activeCubieIndex > 2) {
+        if(activeLayerIndex === min) {
+          if(activeSectionIndex > 0) {
+            //move towards the back if we are at the top
             activeCubieIndex -= 3;
           }
         } else {
+          //move up a layer otherwise
           activeCubieIndex -= 9;
         }
         break;
       case KEYS.DOWN:
-        if(activeCubieIndex < 8) {
-          if(activeCubieIndex < 6) {
+        if(activeLayerIndex === min) {
+          if(activeSectionIndex < max) {
+            //move toward the front if we are at the top
             activeCubieIndex += 3;
           } else {
+            //move down a layer otherwise
             activeCubieIndex += 9;
           }
-        } else if(activeCubieIndex < 19) {
+        } else if(activeLayerIndex < max) {
+          //move down a layer
           activeCubieIndex += 9;
         }
         break;
       case KEYS.LEFT:
-        if(activeLayerIndex === 0) {
-          if(activeCubieIndex > 0) {
-            activeCubieIndex--;
-          }
-        } else if (activeSectionIndex === max) {
-          if(activeCubieIndex > 0) {
+        if(activeLayerIndex === min || activeSectionIndex === max) {
+          //move left along the top and front
+          if(activeCubieIndex % 3 !== 1) {
             activeCubieIndex--;
           }
         } else {
           if(activeSectionIndex < max) {
-            activeSectionIndex++
+            //move forward along the right
+            activeCubieIndex += 3;
           }
         }
         break;
-      /*case KEYS.RIGHT:
-        //moving on the top or front, just move right
-        if(activeLayerIndex === 0) {
-          if(activeCubieIndex < max) {
+      case KEYS.RIGHT:
+        if(activeLayerIndex === min || activeSectionIndex === max) {
+          //moving right along the top and front
+          if(activeCubieIndex %3 !== 0) {
             activeCubieIndex++;
-          } else {
-            activeLayerIndex++;
-          }
-        } else if(activeSectionIndex === max) {
-          if(activeCubieIndex < max) {
-            activeCubieIndex++;
-          } else {
-            activeSectionIndex--;
           }
         } else {
-          if(activeSectionIndex > 0) {
-            activeSectionIndex--;
+          if(activeSectionIndex > min) {
+            activeCubieIndex -= 3;
           }
         }
-        break;*/
+        break;
     }
     console.debug(activeCubieIndex);
     this.setActiveCubieAtIndex(activeCubieIndex);
