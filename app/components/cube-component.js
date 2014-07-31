@@ -1,4 +1,3 @@
-import { FACES } from '../constants';
 import { KEYS } from '../constants';
 
 var INITIALIZED = false;
@@ -128,7 +127,7 @@ export default Ember.Component.extend({
           }
         } else {
           if(activeSectionIndex < max) {
-            activeSectionIndex++
+            activeSectionIndex++;
           }
         }
         break;
