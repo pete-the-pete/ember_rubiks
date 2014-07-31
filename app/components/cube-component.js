@@ -1,4 +1,3 @@
-import { FACES } from '../constants';
 import { KEYS } from '../constants';
 
 var INITIALIZED = false;
@@ -47,9 +46,6 @@ export default Ember.Component.extend({
       activeLayerIndex = cubie.get('_layerIndex'),
       activeSectionIndex = cubie.get('_sectionIndex'),
       activeCubieIndex = cubie.get('_cubieIndex');
-
-    console.debug(activeLayerIndex, activeSectionIndex, activeCubieIndex);
-    debugger;
 
     //save this off for the rerender
     this.set('navigationData', data);

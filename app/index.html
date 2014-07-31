@@ -9,15 +9,18 @@
 
     {{BASE_TAG}}
 
+    <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/ember-client.css">
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.EmberClientENV = {{ENV}};
+      window.EmberENV = window.EmberClientENV.EmberENV;
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/ember-client.js"></script>
     <script>
-      window.EmberClient = require('ember-client/app')['default'].create(ENV.APP);
+      window.EmberClient = require('ember-client/app')['default'].create(EmberClientENV.APP);
     </script>
   </body>
 </html>
