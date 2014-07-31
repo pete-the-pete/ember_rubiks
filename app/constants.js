@@ -67,7 +67,7 @@ var rotation_axis = {
   X: 'X',
   Y: 'Y',
   Z: 'Z'
-}
+};
 
 export var FACES = faces;
 export var FACE_INDEX = face_index;

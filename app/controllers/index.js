@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { ROTATION_DIRECTIONS, AXES, COLORS, FACE_INDEX } from '../constants';
 
 export default Ember.ArrayController.extend({

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 var computed = Ember.computed;
 
 var LAYER = 1, SECTION = 1, CUBIE = 0;

@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { KEYS } from '../constants';
 
 var INITIALIZED = false;

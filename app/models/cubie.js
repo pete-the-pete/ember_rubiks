@@ -1,3 +1,4 @@
+import DS from 'ember-data';
 import { FACES } from '../constants';
 
 var Cubie = DS.Model.extend({

@@ -1,3 +1,5 @@
+import DS from 'ember-data';
+
 var Cube = DS.Model.extend({
   title: DS.attr('string'),
   cubies: DS.hasMany('cubie', {async: true}),
