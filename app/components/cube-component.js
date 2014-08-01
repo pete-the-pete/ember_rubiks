@@ -46,8 +46,7 @@ export default Ember.Component.extend({
       cubie = this.get('activeCubie'),
       activeLayerIndex = cubie.get('_layerIndex'),
       activeSectionIndex = cubie.get('_sectionIndex'),
-      activeCubieIndex = cubie.get('_cubieIndex');
-
+      activeCubieIndex = cubie.get('index');
 
     //save this off for the rerender
     this.set('navigationData', data);
@@ -63,7 +62,7 @@ export default Ember.Component.extend({
     switch(data.key) {
       case KEYS.UP:
         if(activeLayerIndex === min) {
-          if(activeSectionIndex > 0) {
+          if(activeSectionIndex > min) {
             //move towards the back if we are at the top
             activeCubieIndex -= 3;
           }
@@ -89,7 +88,7 @@ export default Ember.Component.extend({
       case KEYS.LEFT:
         if(activeLayerIndex === min || activeSectionIndex === max) {
           //move left along the top and front
-          if(activeCubieIndex % 3 !== 1) {
+          if((activeCubieIndex+1) % 3 !== 1) {
             activeCubieIndex--;
           }
         } else {
@@ -100,10 +99,19 @@ export default Ember.Component.extend({
         }
         break;
       case KEYS.RIGHT:
-        if(activeLayerIndex === min || activeSectionIndex === max) {
+        if(activeLayerIndex === min) {
           //moving right along the top and front
-          if(activeCubieIndex %3 !== 0) {
+          if((activeCubieIndex+1) % 3 !== 0) {
             activeCubieIndex++;
+          } else {
+            activeCubieIndex += 9;
+          }
+        } else if(activeSectionIndex === max) {
+          //moving right along the front, until the right edge, then move back
+          if((activeCubieIndex+1) % 3 !== 0) {
+            activeCubieIndex++;
+          } else {
+            activeCubieIndex -= 3;
           }
         } else {
           if(activeSectionIndex > min) {
