@@ -20,7 +20,7 @@
     @include transform-origin(
       nth($cubie_positions, $cubie),
       (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-      $cubie_dimension - nth($cubie_positions, $section)
+      (($center - $section)*$cubie_dimension)
     );
   };
 }
@@ -31,10 +31,9 @@
     translateZ(nth($cubie_positions, $section))
   ) {
     @include transform-origin(
-      (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
-      nth($cubie_positions, $layer)
-      (($center - $section)*$cubie_dimension) + $cubie_dimension/2
-      //($N - $cubie) * $cubie_dimension/2
+      (($center - $cubie)*$cubie_dimension)+$cubie_dimension/2,
+      nth($cubie_positions, $layer),
+      (($center - $section)*$cubie_dimension)
     );
   };
 }

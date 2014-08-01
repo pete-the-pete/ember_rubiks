@@ -39,22 +39,6 @@ export default Ember.Component.extend({
   },
 
   getXSiblings: function() {
-    var section = this.get('activeCubie').get('_sectionIndex');
-
-    return this.get('childViews').filter(function(cubie) {
-      return cubie.get('_sectionIndex') === section;
-    });
-  },
-
-  getYSiblings: function() {
-    var layer = this.get('activeCubie').get('_layerIndex');
-
-    return this.get('childViews').filter(function(cubie) {
-      return cubie.get('_layerIndex') === layer;
-    });
-  },
-
-  getZSiblings: function() {
     var index = this.get('activeCubie').get('index');
     return this.get('childViews').filter(function(cubie) {
       var c_index = cubie.get('index');
@@ -67,6 +51,22 @@ export default Ember.Component.extend({
         c_index === index + 15 || c_index === index - 15 || //diagonal
         c_index === index + 18 || c_index === index - 18 || //two above or below
         c_index === index + 21 || c_index === index -21; //diagonal
+    });
+  },
+
+  getYSiblings: function() {
+    var layer = this.get('activeCubie').get('_layerIndex');
+
+    return this.get('childViews').filter(function(cubie) {
+      return cubie.get('_layerIndex') === layer;
+    });
+  },
+
+  getZSiblings: function() {
+    var section = this.get('activeCubie').get('_sectionIndex');
+
+    return this.get('childViews').filter(function(cubie) {
+      return cubie.get('_sectionIndex') === section;
     });
   },
 
