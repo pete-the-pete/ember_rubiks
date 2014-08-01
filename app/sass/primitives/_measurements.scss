@@ -6,4 +6,4 @@ $cubie_dimension: $cubie_sides + (2 * $cubie_border);
 $cubie_positions: (0, $cubie_dimension, 2*$cubie_dimension);
 $side_translation: $cubie_dimension/2;
 $section_translation: 3*$cubie_dimension;
-$cube_translation: 6*$cubie_dimension;
+$cube_translation: 3*$cubie_dimension;

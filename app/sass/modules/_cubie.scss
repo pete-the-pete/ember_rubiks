@@ -1,6 +1,8 @@
 @mixin cubie-rotationZ($layer, $section, $cubie) {
   @include rotationsZ(
       translateX(nth($cubie_positions, $cubie))
+      translateY(nth($cubie_positions, $layer))
+      translateZ(nth($cubie_positions, $section))
   ) {
     @include transform-origin(
       (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
@@ -12,6 +14,8 @@
 @mixin cubie-rotationX($layer, $section, $cubie) {
   @include rotationsX(
       translateX(nth($cubie_positions, $cubie))
+      translateY(nth($cubie_positions, $layer))
+      translateZ(nth($cubie_positions, $section))
   ) {
     @include transform-origin(
       nth($cubie_positions, $cubie),
@@ -22,17 +26,21 @@
 }
 @mixin cubie-rotationY($layer, $section, $cubie) {
   @include rotationsY(
-    translateY(nth($cubie_positions, $cubie))
+    translateX(nth($cubie_positions, $cubie))
+    translateY(nth($cubie_positions, $layer))
+    translateZ(nth($cubie_positions, $section))
   ) {
     @include transform-origin(
-      nth($cubie_positions, $cubie),
-      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-      $cubie_dimension - nth($cubie_positions, $section)
+      (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
+      nth($cubie_positions, $layer)
+      (($center - $section)*$cubie_dimension) + $cubie_dimension/2
+      //($N - $cubie) * $cubie_dimension/2
     );
   };
 }
-@mixin cubie-section-rotations($layer, $section, $cubie) {
+@mixin cubie-rotations($layer, $section, $cubie) {
   @include cubie-rotationX($layer, $section, $cubie);
+  @include cubie-rotationY($layer, $section, $cubie);
   @include cubie-rotationZ($layer, $section, $cubie);
 }
 
@@ -46,7 +54,7 @@
           translateY(nth($cubie_positions, $layer))
           translateZ(nth($cubie_positions, $section))
         );
-        //@include cubie-section-rotations($layer, $section, $cubie);
+        @include cubie-rotations($layer, $section, $cubie);
       }
     }
   }

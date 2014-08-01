@@ -32,6 +32,7 @@ body {
   margin: 50px auto;
   top: 50px;
   @include perspective(3000);
+  @include perspective-origin(-20);
 }
 
 .cube,
@@ -47,15 +48,15 @@ body {
   @include transform-style();
   @include transition(transform $rotation_delay);
   @include backface-visibility(hidden);
-  @include transform-origin(1.5*$cubie_dimension 1.5*$cubie_dimension 1.5*$cubie_dimension);
+  @include transform-origin($cube_translation/2, $cube_translation/2, $cube_translation/2);
   @include transform(
-    translateZ( -$cube_translation )
+    translateZ( -6*$cube_translation )
     rotateY(-35deg)
     rotateX(-20deg)
     rotateZ(15deg)
   );
   @include rotations(
-    translateZ( -$cube_translation )
+    translateZ( -6*$cube_translation )
     rotateY(-35deg)
     rotateX(-20deg)
     rotateZ(15deg)

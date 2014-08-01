@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { KEYS } from '../constants';
+import { KEYS, ROTATION_DIRECTIONS, AXES } from '../constants';
 
 var INITIALIZED = false;
 
@@ -36,6 +36,38 @@ export default Ember.Component.extend({
   setActiveCubieAtIndex: function(index) {
     this.set('activeCubieIndex', index);
     this.set('activeCubie', this.get('childViews').objectAt(index));
+  },
+
+  getXSiblings: function() {
+    var section = this.get('activeCubie').get('_sectionIndex');
+
+    return this.get('childViews').filter(function(cubie) {
+      return cubie.get('_sectionIndex') === section;
+    });
+  },
+
+  getYSiblings: function() {
+    var layer = this.get('activeCubie').get('_layerIndex');
+
+    return this.get('childViews').filter(function(cubie) {
+      return cubie.get('_layerIndex') === layer;
+    });
+  },
+
+  getZSiblings: function() {
+    var index = this.get('activeCubie').get('index');
+    return this.get('childViews').filter(function(cubie) {
+      var c_index = cubie.get('index');
+      //brute force, return the cubie if it matches one of its nine siblings, including itself
+      return c_index === index || //itself
+        c_index === index + 3 || c_index === index - 3 || //next cubie over
+        c_index === index + 6 || c_index === index - 6 || //two cubies over, or the next diagonal
+        c_index === index + 9 || c_index === index - 9 || //one cubie above or below, or the next next diagonal
+        c_index === index + 12 || c_index === index - 12 || //diagonal
+        c_index === index + 15 || c_index === index - 15 || //diagonal
+        c_index === index + 18 || c_index === index - 18 || //two above or below
+        c_index === index + 21 || c_index === index -21; //diagonal
+    });
   },
 
   /**
@@ -129,6 +161,90 @@ export default Ember.Component.extend({
     },
     navigate: function(data) {
       this.navigate(data);
+    }
+  },
+
+  keyDown: function(e) {
+    var axis = null,
+      move = false,
+      direction = null,
+      XCubies = this.getXSiblings(),
+      YCubies = this.getYSiblings(),
+      ZCubies = this.getZSiblings();
+
+    if(e.shiftKey && !e.altKey) {
+      //rotate Y
+      axis = AXES.Y;
+      switch(e.keyCode) {
+        case KEYS.LEFT:
+          move = true;
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.RIGHT:
+          move = true;
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          break;
+      }
+    } else if (!e.shiftKey && e.altKey) {
+      //rotate X & Z
+      switch(e.keyCode) {
+        case KEYS.LEFT:
+          move = true;
+          axis = AXES.Z;
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.RIGHT:
+          move = true;
+          axis = AXES.Z;
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          break;
+        case KEYS.UP:
+          move = true;
+          axis = AXES.X;
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.DOWN:
+          move = true;
+          axis = AXES.X;
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          break;
+      }
+
+    } else if(e.shiftKey && e.altKey) {
+      //rotate cube
+    }
+
+    if(move) {
+      switch(axis) {
+        case AXES.X:
+          XCubies.forEach(function(cubie) {
+            cubie.setProperties({
+              'axis': axis,
+              'direction': direction,
+              'steps':['step']
+            });
+          });
+          break;
+        case AXES.Y:
+          YCubies.forEach(function(cubie) {
+            cubie.setProperties({
+              'axis': axis,
+              'direction': direction,
+              'steps':['step']
+            });
+          });
+          break;
+        case AXES.Z:
+          ZCubies.forEach(function(cubie) {
+            cubie.setProperties({
+              'axis': axis,
+              'direction': direction,
+              'steps':['step']
+            });
+          });
+          break;
+      }
+      //Ember.run.later(this, this.move, 250);
     }
   }
 });
