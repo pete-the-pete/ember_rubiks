@@ -7,8 +7,8 @@ export default Ember.Component.extend({
   axis: null,
   steps: [],
   direction: null,
-  _layerIndex: 1,
-  _sectionIndex: 1,
+  _layerIndex: null,
+  _sectionIndex: null,
 
   classNames: ['cubie'],
   classNameBindings: [
@@ -23,6 +23,18 @@ export default Ember.Component.extend({
 
   //cube
   cube: computed.alias('parentView'),
+
+  willInsertElement: function() {
+    LAYER = SECTION = CUBIE = 1;
+    console.debug('what is happening this time?');
+    this.setProperties({
+      'direction': null,
+      'steps': [],
+      '_layerIndex': null,
+      '_sectionIndex': null,
+      '_cubieIndex': null
+    });
+  },
 
   updateClasses: function() {
     var index = this.get('index');

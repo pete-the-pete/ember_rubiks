@@ -244,7 +244,15 @@ export default Ember.Component.extend({
           });
           break;
       }
-      //Ember.run.later(this, this.move, 250);
+      Ember.run.later(this, function() {
+        this.send('move', {
+          cube: this.cube,
+          cubeView: this,
+          cubieView: this.get('activeCubie'),
+          direction: direction,
+          axis: axis
+        });
+      }, 250);
     }
   }
 });
