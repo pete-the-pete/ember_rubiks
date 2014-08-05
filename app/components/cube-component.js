@@ -1,10 +1,13 @@
 import Ember from 'ember';
-import { KEYS, ROTATION_DIRECTIONS, AXES } from '../constants';
+import { KEYS, ROTATION_DIRECTIONS, ROTATION_TYPES, AXES } from '../constants';
 
 var INITIALIZED = false;
 
+
 export default Ember.Component.extend({
   classNames: ['cube'],
+
+  cubies: Ember.computed.alias('cube.data.cubies'),
 
   navigationData: null,
 
@@ -17,19 +20,23 @@ export default Ember.Component.extend({
 
   didInsertElement: function() {
     //hack to highlight it after everything as loaded (hopefully)
-    if(!INITIALIZED) {
-      INITIALIZED = true;
-      Ember.run.later(this, function() {
+    Ember.run.later(this, function() {
+      if(!INITIALIZED) {
+        INITIALIZED = true;
         //set the middle cubie as active
         this.setActiveCubieAtIndex(this.get('initialCubieIndex'));
-      }, 500);
-    }
+      } else {
+        this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
+      }
+      //reset the cursor
+      this.navigate();
+    }, 500);
   },
 
   setActiveCubie: function(cubie) {
     this.set('activeCubie', cubie);
   },
-
+  
   /**
   Sets the active cubie at the index of the active seciton
   */
@@ -80,6 +87,7 @@ export default Ember.Component.extend({
       activeSectionIndex = cubie.get('_sectionIndex'),
       activeCubieIndex = cubie.get('index');
 
+
     //save this off for the rerender
     this.set('navigationData', data);
 
@@ -87,7 +95,7 @@ export default Ember.Component.extend({
     //need to reset everything since the childViews have been destroyed
     //and recreated
     if(!data) {
-      this.setActiveCubieAtIndex(activeCubieIndex);
+      this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
       return;
     }
 
@@ -168,13 +176,14 @@ export default Ember.Component.extend({
     var axis = null,
       move = false,
       direction = null,
-      XCubies = this.getXSiblings(),
-      YCubies = this.getYSiblings(),
-      ZCubies = this.getZSiblings();
+      XCubies = null,
+      YCubies = null,
+      ZCubies = null;
 
     if(e.shiftKey && !e.altKey) {
       //rotate Y
       axis = AXES.Y;
+      YCubies = this.getYSiblings();
       switch(e.keyCode) {
         case KEYS.LEFT:
           move = true;
@@ -191,21 +200,25 @@ export default Ember.Component.extend({
         case KEYS.LEFT:
           move = true;
           axis = AXES.Z;
+          ZCubies = this.getZSiblings();
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           break;
         case KEYS.RIGHT:
           move = true;
           axis = AXES.Z;
+          ZCubies = this.getZSiblings();
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
           break;
         case KEYS.UP:
           move = true;
           axis = AXES.X;
+          XCubies = this.getXSiblings();
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           break;
         case KEYS.DOWN:
           move = true;
           axis = AXES.X;
+          XCubies = this.getXSiblings();
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
           break;
       }
@@ -247,6 +260,7 @@ export default Ember.Component.extend({
       Ember.run.later(this, function() {
         this.send('move', {
           cube: this.cube,
+          type: ROTATION_TYPES.PARTIAL,
           cubeView: this,
           cubieView: this.get('activeCubie'),
           direction: direction,

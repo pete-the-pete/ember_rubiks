@@ -1,7 +1,7 @@
 import Ember from 'ember';
 var computed = Ember.computed;
 
-var LAYER = 1, SECTION = 1, CUBIE = 0;
+
 
 export default Ember.Component.extend({
   axis: null,
@@ -25,33 +25,25 @@ export default Ember.Component.extend({
   cube: computed.alias('parentView'),
 
   willInsertElement: function() {
-    LAYER = SECTION = CUBIE = 1;
-    console.debug('what is happening this time?');
+    console.debug('called');
+    //clear
     this.setProperties({
       'direction': null,
-      'steps': [],
-      '_layerIndex': null,
-      '_sectionIndex': null,
-      '_cubieIndex': null
+      'steps': []
     });
+    this.updateClasses();
   },
 
   updateClasses: function() {
-    var index = this.get('index');
-    ++CUBIE;
-    if(index > 0 && index % 9 === 0) {
-      LAYER++;
-    }
-    if(index > 0 && index % 3 === 0) {
-      SECTION = ((SECTION + 1) % 4) ? ++SECTION : 1;
-    }
-    if(index > 0 && index % 3 === 0) {
-      CUBIE = 1;
-    }
+    var index = this.get('index'),
+    CUBIE = ((index % 3)+1),
+    LAYER = (Math.floor(index / 9)+1),
+    SECTION = ((Math.floor(index / 3) % 3)+1);
+
     this.set('_layerIndex', LAYER);
     this.set('_sectionIndex', SECTION);
     this.set('_cubieIndex', CUBIE);
-  }.on('didInsertElement'),
+  },
 
   layer: function() {
     return 'layer-'+this.get('_layerIndex');
@@ -98,8 +90,8 @@ export default Ember.Component.extend({
   }.observes('isActive'),
 
   index: function() {
-    return this.get('cube.childViews').indexOf(this);
-  }.property('cube.childViews.@each'),
+    return this.get('cube.cubies').indexOf(this.cubie);
+  }.property(),
 
   /**
   Lets the user navigate around the cube

@@ -9,8 +9,8 @@ var Cube = DS.Model.extend({
 //pre-calc the cubies
 var CUBE_CUBIES = (function() {
   var cubies = [];
-  for(var i=1;i<=27;i++) {
-    cubies.push(i);
+  for(var i=1; i<=27; i++) {
+    cubies.pushObject(i);
   }
   return cubies;
 })();

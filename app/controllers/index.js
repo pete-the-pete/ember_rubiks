@@ -1,11 +1,10 @@
 import Ember from 'ember';
-import { ROTATION_DIRECTIONS, AXES, COLORS, FACE_INDEX } from '../constants';
+import { ROTATION_DIRECTIONS, AXES, FACE_INDEX } from '../constants';
 
 export default Ember.ArrayController.extend({
 
   rotateCubieColors: function(cubie, rotation_data) {
     var tmp_color = null,
-      new_color = null,
       faces = cubie.get('faces');
 
     //the middle cube doesn't have any faces
@@ -101,39 +100,35 @@ export default Ember.ArrayController.extend({
       to_index = (9*layer.to) + (3*section.to) + cubie.to;
 
       if(cubie.from !== null) {
-        //swap the cubie
-        //this is wrong, but something like this, translate from indeces to the single array
+        //swap the cubie with the new one
         from_index = (9*layer.from) + (3*section.from) + cubie.from;
-        cubies.replace(to_index, 1, cubies.objectAt(from_index));
+        cubies.replace(to_index, 1, [cubies.objectAt(from_index)]);
       } else {
+        //swap th ecubie with the passed in object
         cubies.replace(to_index, 1, [cubie]);
       }
-      console.debug(from_index, '->', to_index);
       //update its colors
       this.rotateCubieColors(cubies.objectAt(to_index), rotation_data);
   },
 
   getTempCubie: function(rotation_data, outer_index, inner_index) {
-    var layer = null, 
-      index = null,
+    var index = null,
       activeCubie = rotation_data.cubieView,
+      section = activeCubie.get('_sectionIndex'),
+      layer = activeCubie.get('_layerIndex'),
+      cubie = activeCubie.get('_cubieIndex'),
       cubies = rotation_data.cube.get('data').cubies;
-    if(rotation_data.axis === AXES.X) {      
-      return rotation_data.cube.get('data').layers.objectAt(outer_index)
-                              .get('data').sections.objectAt(inner_index)
-                              .get('data').cubies.objectAt(rotation_data.cubieIndex);
+
+    if(rotation_data.axis === AXES.X) {
+      index = (cubie-1) + (outer_index) + (inner_index*3);
     } else if(rotation_data.axis === AXES.Y) {
-      layer = activeCubie.get('_layerIndex');
       index = ((layer-1)*9) + (outer_index) + (inner_index);
-      return cubies[index];
-      /*return rotation_data.cube.get('data').layers.objectAt(rotation_data.layerIndex)
-                              .get('data').sections.objectAt(outer_index)
-                              .get('data').cubies.objectAt(inner_index);*/
     } else if(rotation_data.axis === AXES.Z) {
       return rotation_data.cube.get('data').layers.objectAt(outer_index)
                               .get('data').sections.objectAt(rotation_data.sectionIndex)
                               .get('data').cubies.objectAt(inner_index);
     }
+    return cubies[index];
   },
 
   performMove: function(rotation_data, outer_index, inner_index) {
@@ -237,14 +232,11 @@ export default Ember.ArrayController.extend({
         this.swapCubies(rotation_data, rotation[0], rotation[1], rotation[2]);
       }.bind(this));
 
-      console.debug(rotation_data.cube.get('data').cubies.length);
-
-      rotation_data.cubeView.rerender();
-
       //reset the cursor
       Ember.run.schedule('afterRender', function() {
         rotation_data.cubeView.navigate();
       });
+
     },
     handleRotation: function(data) {
       console.log(data);

@@ -9,7 +9,7 @@ var Cubie = DS.Model.extend({
 var CUBIES = (function() {
   var cubies = [];
   for(var i=1;i<=27;i++) {
-    cubies.push({
+    cubies.pushObject({
       id: i,
       faces: Ember.copy(FACES, true)
     });
