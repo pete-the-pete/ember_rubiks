@@ -9,8 +9,6 @@ export default Ember.Component.extend({
 
   cubies: Ember.computed.alias('cube.data.cubies'),
 
-  navigationData: null,
-
   activeCubie: null,
 
   activeCubieIndex: null,
@@ -86,10 +84,6 @@ export default Ember.Component.extend({
       activeLayerIndex = cubie.get('_layerIndex'),
       activeSectionIndex = cubie.get('_sectionIndex'),
       activeCubieIndex = cubie.get('index');
-
-
-    //save this off for the rerender
-    this.set('navigationData', data);
 
     //if we don't have the data, just highlight the same cube, but we
     //need to reset everything since the childViews have been destroyed
@@ -257,14 +251,19 @@ export default Ember.Component.extend({
           });
           break;
       }
+      //let the animation happen, then change the cubies
       Ember.run.later(this, function() {
         this.send('move', {
           cube: this.cube,
           type: ROTATION_TYPES.PARTIAL,
-          cubeView: this,
           cubieView: this.get('activeCubie'),
           direction: direction,
           axis: axis
+        });
+
+        //let the model update, then reset the cursor
+        Ember.run.scheduleOnce('afterRender', this, function() {
+          this.navigate();
         });
       }, 250);
     }

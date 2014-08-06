@@ -1,8 +1,6 @@
 import Ember from 'ember';
 var computed = Ember.computed;
 
-
-
 export default Ember.Component.extend({
   axis: null,
   steps: [],
@@ -25,7 +23,6 @@ export default Ember.Component.extend({
   cube: computed.alias('parentView'),
 
   willInsertElement: function() {
-    console.debug('called');
     //clear
     this.setProperties({
       'direction': null,
@@ -87,7 +84,7 @@ export default Ember.Component.extend({
         this.$().focus();
       });
     }
-  }.observes('isActive'),
+  }.observes('cube.activeCubie'),
 
   index: function() {
     return this.get('cube.cubies').indexOf(this.cubie);
@@ -99,8 +96,6 @@ export default Ember.Component.extend({
   keyDown: function(e) {
     if(!e.shiftKey && !e.altKey) {
       this.get('cube').send('navigate', {
-        cubieView: this,
-        cubie: this.cubie,
         key: e.keyCode
       });
     }

@@ -7,10 +7,6 @@ export default Ember.ArrayController.extend({
     var tmp_color = null,
       faces = cubie.get('faces');
 
-    //the middle cube doesn't have any faces
-    if(!faces.length) {
-      return;
-    }
     if(rotation_data.direction === ROTATION_DIRECTIONS.CLOCKWISE) {
       switch(rotation_data.axis) {
         case AXES.X:
@@ -228,12 +224,7 @@ export default Ember.ArrayController.extend({
       //perform the moves
       rotations.forEach(function(rotation) {
         this.swapCubies(rotation_data, rotation[0], rotation[1], rotation[2]);
-      }.bind(this));
-
-      //reset the cursor
-      Ember.run.schedule('afterRender', function() {
-        rotation_data.cubeView.navigate();
-      });
+      }, this);
 
     },
     handleRotation: function(data) {
