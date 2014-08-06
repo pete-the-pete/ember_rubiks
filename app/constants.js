@@ -67,12 +67,18 @@ var rotation_axis = {
   X: 'X',
   Y: 'Y',
   Z: 'Z'
-}
+};
+
+var rotation_types = {
+  partial: 'partial',
+  full: 'full'
+};
 
 export var FACES = faces;
 export var FACE_INDEX = face_index;
 export var KEYS = keys;
 export var ROTATION_DIRECTIONS = rotation_directions;
+export var ROTATION_TYPES = rotation_types;
 export var COLORS_MAP = colors;
 export var COLORS_LIST = Object.keys(colors);
 export var AXES =  rotation_axis;

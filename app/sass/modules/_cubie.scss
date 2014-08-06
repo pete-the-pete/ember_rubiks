@@ -1,6 +1,8 @@
 @mixin cubie-rotationZ($layer, $section, $cubie) {
   @include rotationsZ(
       translateX(nth($cubie_positions, $cubie))
+      translateY(nth($cubie_positions, $layer))
+      translateZ(nth($cubie_positions, $section))
   ) {
     @include transform-origin(
       (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
@@ -12,49 +14,46 @@
 @mixin cubie-rotationX($layer, $section, $cubie) {
   @include rotationsX(
       translateX(nth($cubie_positions, $cubie))
+      translateY(nth($cubie_positions, $layer))
+      translateZ(nth($cubie_positions, $section))
   ) {
     @include transform-origin(
       nth($cubie_positions, $cubie),
       (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-      $cubie_dimension - nth($cubie_positions, $section)
+      (($center - $section)*$cubie_dimension)
     );
   };
 }
-@mixin cubie-section-rotations($layer, $section, $cubie) {
+@mixin cubie-rotationY($layer, $section, $cubie) {
+  @include rotationsY(
+    translateX(nth($cubie_positions, $cubie))
+    translateY(nth($cubie_positions, $layer))
+    translateZ(nth($cubie_positions, $section))
+  ) {
+    @include transform-origin(
+      (($center - $cubie)*$cubie_dimension)+$cubie_dimension/2,
+      nth($cubie_positions, $layer),
+      (($center - $section)*$cubie_dimension)
+    );
+  };
+}
+@mixin cubie-rotations($layer, $section, $cubie) {
   @include cubie-rotationX($layer, $section, $cubie);
+  @include cubie-rotationY($layer, $section, $cubie);
   @include cubie-rotationZ($layer, $section, $cubie);
 }
 
 //n x n x n
 @for $layer from 1 through $N {
-  div#cube div.layer:nth-of-type(#{$layer}) {
-    width: 100%;
-    height: $cubie_dimension;
-    position: absolute;
-    @include backface-visibility(hidden);
-    @include transform-origin(1.5*$cubie_dimension 0 $cubie_dimension);
-    @include transition(transform $rotation_delay);
-    @include transform(
-      translateY(nth($cubie_positions, $layer))
-      translateZ($side_translation)
-    );
-    @include rotationsY(
-      translateY(nth($cubie_positions, $layer))
-      translateZ($side_translation)
-    );
-
-    @for $section from 1 through $N {
-      div.section:nth-of-type(#{$section}) {
-        @include transform(translateZ(nth($cubie_positions, $section)));
-
-        @for $cubie from 1 through $N {
-          div.cubie:nth-of-type(#{$cubie}) {
-            @include transform(
-              translateX(nth($cubie_positions, $cubie))
-            );
-            @include cubie-section-rotations($layer, $section, $cubie);
-          }
-        }
+  @for $section from 1 through $N {
+    @for $cubie from 1 through $N {
+      div.layer-#{$layer}.section-#{$section}.cubie-#{$cubie} {
+        @include transform(
+          translateX(nth($cubie_positions, $cubie))
+          translateY(nth($cubie_positions, $layer))
+          translateZ(nth($cubie_positions, $section))
+        );
+        @include cubie-rotations($layer, $section, $cubie);
       }
     }
   }
@@ -91,7 +90,7 @@
       .sticker {
         background-color: $black !important;
         p {
-          display: none;
+          //display: none;
         }
       }
       &.left,
@@ -121,7 +120,7 @@
       &.black { background-color: $black; }
 
       p {
-        color: transparent;
+        //color: transparent;
       }
     }
   }

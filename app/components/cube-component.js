@@ -1,85 +1,92 @@
-import { KEYS } from '../constants';
+import Ember from 'ember';
+import { KEYS, ROTATION_DIRECTIONS, ROTATION_TYPES, AXES } from '../constants';
 
 var INITIALIZED = false;
 
+
 export default Ember.Component.extend({
+  classNames: ['cube'],
+
+  cubies: Ember.computed.alias('cube.data.cubies'),
 
   navigationData: null,
 
-  activeLayer: null,
-  activeSection: null,
   activeCubie: null,
 
-  activeLayerIndex: null,
-  activeSectionIndex: null,
   activeCubieIndex: null,
 
   //TODO: these should come from the model
-  initialLayerIndex: 0,
-  initialSectionIndex: 1,
-  initialCubieIndex: 1,
+  initialCubieIndex: 4,
 
   didInsertElement: function() {
     //hack to highlight it after everything as loaded (hopefully)
-    if(!INITIALIZED) {
-      INITIALIZED = true;
-      Ember.run.later(this, function() {
+    Ember.run.later(this, function() {
+      if(!INITIALIZED) {
+        INITIALIZED = true;
         //set the middle cubie as active
-        this.setActiveLayerAtIndex(this.get('initialLayerIndex'));
-        this.setActiveSectionAtIndex(this.get('initialSectionIndex'));
         this.setActiveCubieAtIndex(this.get('initialCubieIndex'));
-      }, 1000);
-    }
-  },
-
-  setActiveLayer: function(layer) {
-    this.set('activeLayer', layer);
-  },
-
-  setActiveSection: function(section) {
-    this.set('activeSection', section);
+      } else {
+        this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
+      }
+      //reset the cursor
+      this.navigate();
+    }, 500);
   },
 
   setActiveCubie: function(cubie) {
     this.set('activeCubie', cubie);
   },
-
-  /**
-  Sects the activeLayer
-  */
-  setActiveLayerAtIndex: function(index) {
-    this.set('activeLayerIndex', index);
-    this.set('activeLayer', this.get('childViews').objectAt(index));
-  },
-
-  /**
-  Sets the active section at the index of the active layer.
-  */
-  setActiveSectionAtIndex: function(index) {
-    this.set('activeSectionIndex', index);
-    this.set('activeSection', this.get('activeLayer').get('childViews').objectAt(index));
-  },
-
+  
   /**
   Sets the active cubie at the index of the active seciton
   */
   setActiveCubieAtIndex: function(index) {
     this.set('activeCubieIndex', index);
-    this.set('activeCubie', this.get('activeSection').get('childViews').objectAt(index));
+    this.set('activeCubie', this.get('childViews').objectAt(index));
   },
 
-  updateAdjacentFaces: function() {
+  getXSiblings: function() {
+    var index = this.get('activeCubie').get('index');
+    return this.get('childViews').filter(function(cubie) {
+      var c_index = cubie.get('index');
+      //brute force, return the cubie if it matches one of its nine siblings, including itself
+      return c_index === index || //itself
+        c_index === index + 3 || c_index === index - 3 || //next cubie over
+        c_index === index + 6 || c_index === index - 6 || //two cubies over, or the next diagonal
+        c_index === index + 9 || c_index === index - 9 || //one cubie above or below, or the next next diagonal
+        c_index === index + 12 || c_index === index - 12 || //diagonal
+        c_index === index + 15 || c_index === index - 15 || //diagonal
+        c_index === index + 18 || c_index === index - 18 || //two above or below
+        c_index === index + 21 || c_index === index -21; //diagonal
+    });
+  },
 
+  getYSiblings: function() {
+    var layer = this.get('activeCubie').get('_layerIndex');
+
+    return this.get('childViews').filter(function(cubie) {
+      return cubie.get('_layerIndex') === layer;
+    });
+  },
+
+  getZSiblings: function() {
+    var section = this.get('activeCubie').get('_sectionIndex');
+
+    return this.get('childViews').filter(function(cubie) {
+      return cubie.get('_sectionIndex') === section;
+    });
   },
 
   /**
   Navigate around the cube by changing the active cubie, and the adjacent faces
   */
   navigate: function(data) {
-    var max = this.get('childViews').get('length') - 1,
-      activeLayerIndex = this.get('activeLayer').get('index'),
-      activeSectionIndex = this.get('activeSection').get('index'),
-      activeCubieIndex = this.get('activeCubie').get('index');
+    var min = 1, max = 3,
+      cubie = this.get('activeCubie'),
+      activeLayerIndex = cubie.get('_layerIndex'),
+      activeSectionIndex = cubie.get('_sectionIndex'),
+      activeCubieIndex = cubie.get('index');
+
 
     //save this off for the rerender
     this.set('navigationData', data);
@@ -88,72 +95,71 @@ export default Ember.Component.extend({
     //need to reset everything since the childViews have been destroyed
     //and recreated
     if(!data) {
-      this.setActiveLayerAtIndex(this.get('activeLayerIndex'));
-      this.setActiveSectionAtIndex(this.get('activeSectionIndex'));
       this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
       return;
     }
 
     switch(data.key) {
       case KEYS.UP:
-        //already at the top
-        if(activeLayerIndex === 0) {
-          if(activeSectionIndex > 0) {
-            activeSectionIndex--;
+        if(activeLayerIndex === min) {
+          if(activeSectionIndex > min) {
+            //move towards the back if we are at the top
+            activeCubieIndex -= 3;
           }
         } else {
-          activeLayerIndex--;
+          //move up a layer otherwise
+          activeCubieIndex -= 9;
         }
         break;
       case KEYS.DOWN:
-        if(activeLayerIndex === 0) {
+        if(activeLayerIndex === min) {
           if(activeSectionIndex < max) {
-            ++activeSectionIndex;
+            //move toward the front if we are at the top
+            activeCubieIndex += 3;
           } else {
-            activeLayerIndex++;
+            //move down a layer otherwise
+            activeCubieIndex += 9;
           }
         } else if(activeLayerIndex < max) {
-          activeLayerIndex++;
+          //move down a layer
+          activeCubieIndex += 9;
         }
         break;
       case KEYS.LEFT:
-        if(activeLayerIndex === 0) {
-          if(activeCubieIndex > 0) {
-            activeCubieIndex--;
-          }
-        } else if (activeSectionIndex === max) {
-          if(activeCubieIndex > 0) {
+        if(activeLayerIndex === min || activeSectionIndex === max) {
+          //move left along the top and front
+          if((activeCubieIndex+1) % 3 !== 1) {
             activeCubieIndex--;
           }
         } else {
           if(activeSectionIndex < max) {
-            activeSectionIndex++;
+            //move forward along the right
+            activeCubieIndex += 3;
           }
         }
         break;
       case KEYS.RIGHT:
-        //moving on the top or front, just move right
-        if(activeLayerIndex === 0) {
-          if(activeCubieIndex < max) {
+        if(activeLayerIndex === min) {
+          //moving right along the top and front
+          if((activeCubieIndex+1) % 3 !== 0) {
             activeCubieIndex++;
           } else {
-            activeLayerIndex++;
+            activeCubieIndex += 9;
           }
         } else if(activeSectionIndex === max) {
-          if(activeCubieIndex < max) {
+          //moving right along the front, until the right edge, then move back
+          if((activeCubieIndex+1) % 3 !== 0) {
             activeCubieIndex++;
           } else {
-            activeSectionIndex--;
+            activeCubieIndex -= 3;
           }
         } else {
-          if(activeSectionIndex > 0) {
-            activeSectionIndex--;
+          if(activeSectionIndex > min) {
+            activeCubieIndex -= 3;
           }
         }
         break;
     }
-    this.setActiveLayerAtIndex(activeLayerIndex);
-    this.setActiveSectionAtIndex(activeSectionIndex);
     this.setActiveCubieAtIndex(activeCubieIndex);
   },
 
@@ -163,6 +169,104 @@ export default Ember.Component.extend({
     },
     navigate: function(data) {
       this.navigate(data);
+    }
+  },
+
+  keyDown: function(e) {
+    var axis = null,
+      move = false,
+      direction = null,
+      XCubies = null,
+      YCubies = null,
+      ZCubies = null;
+
+    if(e.shiftKey && !e.altKey) {
+      //rotate Y
+      axis = AXES.Y;
+      YCubies = this.getYSiblings();
+      switch(e.keyCode) {
+        case KEYS.LEFT:
+          move = true;
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.RIGHT:
+          move = true;
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          break;
+      }
+    } else if (!e.shiftKey && e.altKey) {
+      //rotate X & Z
+      switch(e.keyCode) {
+        case KEYS.LEFT:
+          move = true;
+          axis = AXES.Z;
+          ZCubies = this.getZSiblings();
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.RIGHT:
+          move = true;
+          axis = AXES.Z;
+          ZCubies = this.getZSiblings();
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          break;
+        case KEYS.UP:
+          move = true;
+          axis = AXES.X;
+          XCubies = this.getXSiblings();
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.DOWN:
+          move = true;
+          axis = AXES.X;
+          XCubies = this.getXSiblings();
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          break;
+      }
+
+    } else if(e.shiftKey && e.altKey) {
+      //rotate cube
+    }
+
+    if(move) {
+      switch(axis) {
+        case AXES.X:
+          XCubies.forEach(function(cubie) {
+            cubie.setProperties({
+              'axis': axis,
+              'direction': direction,
+              'steps':['step']
+            });
+          });
+          break;
+        case AXES.Y:
+          YCubies.forEach(function(cubie) {
+            cubie.setProperties({
+              'axis': axis,
+              'direction': direction,
+              'steps':['step']
+            });
+          });
+          break;
+        case AXES.Z:
+          ZCubies.forEach(function(cubie) {
+            cubie.setProperties({
+              'axis': axis,
+              'direction': direction,
+              'steps':['step']
+            });
+          });
+          break;
+      }
+      Ember.run.later(this, function() {
+        this.send('move', {
+          cube: this.cube,
+          type: ROTATION_TYPES.PARTIAL,
+          cubeView: this,
+          cubieView: this.get('activeCubie'),
+          direction: direction,
+          axis: axis
+        });
+      }, 250);
     }
   }
 });

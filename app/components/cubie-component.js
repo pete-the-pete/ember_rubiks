@@ -1,21 +1,61 @@
+import Ember from 'ember';
 var computed = Ember.computed;
 
-var CubieComponent = Ember.Component.extend({
+
+
+export default Ember.Component.extend({
   axis: null,
   steps: [],
   direction: null,
+  _layerIndex: null,
+  _sectionIndex: null,
 
   classNames: ['cubie'],
-  classNameBindings: ['isActive', 'rotationAxis', 'rotationDirection','rotationSteps'],
+  classNameBindings: [
+    'isActive',
+    'layer',
+    'section',
+    'cubieIndex',
+    'rotationAxis',
+    'rotationDirection',
+    'rotationSteps'
+  ],
 
-  //cube (probably kind of hacky)
-  cube: computed.alias('parentView.parentView.parentView'),
+  //cube
+  cube: computed.alias('parentView'),
 
-  //the layer
-  layer: computed.alias('parentView.parentView'),
+  willInsertElement: function() {
+    console.debug('called');
+    //clear
+    this.setProperties({
+      'direction': null,
+      'steps': []
+    });
+    this.updateClasses();
+  },
 
-  //the secion
-  section: computed.alias('parentView'),
+  updateClasses: function() {
+    var index = this.get('index'),
+    CUBIE = ((index % 3)+1),
+    LAYER = (Math.floor(index / 9)+1),
+    SECTION = ((Math.floor(index / 3) % 3)+1);
+
+    this.set('_layerIndex', LAYER);
+    this.set('_sectionIndex', SECTION);
+    this.set('_cubieIndex', CUBIE);
+  },
+
+  layer: function() {
+    return 'layer-'+this.get('_layerIndex');
+  }.property('_layerIndex'),
+
+  section: function() {
+    return 'section-'+this.get('_sectionIndex');
+  }.property('_sectionIndex'),
+
+  cubieIndex: function() {
+    return 'cubie-'+this.get('_cubieIndex');
+  }.property('_cubieIndex'),
 
   rotationAxis: function() {
     return 'rotate'+this.get('axis');
@@ -50,8 +90,8 @@ var CubieComponent = Ember.Component.extend({
   }.observes('isActive'),
 
   index: function() {
-    return this.get('section.childViews').indexOf(this);
-  }.property('section.childViews.@each'),
+    return this.get('cube.cubies').indexOf(this.cubie);
+  }.property(),
 
   /**
   Lets the user navigate around the cube
@@ -65,7 +105,4 @@ var CubieComponent = Ember.Component.extend({
       });
     }
   }
-
 });
-
-export default CubieComponent;
