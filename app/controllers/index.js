@@ -120,13 +120,11 @@ export default Ember.ArrayController.extend({
       cubies = rotation_data.cube.get('data').cubies;
 
     if(rotation_data.axis === AXES.X) {
-      index = (cubie-1) + (outer_index) + (inner_index*3);
+      index = (cubie-1) + outer_index + (inner_index*3);
     } else if(rotation_data.axis === AXES.Y) {
-      index = ((layer-1)*9) + (outer_index) + (inner_index);
+      index = ((layer-1)*9) + outer_index + inner_index;
     } else if(rotation_data.axis === AXES.Z) {
-      return rotation_data.cube.get('data').layers.objectAt(outer_index)
-                              .get('data').sections.objectAt(rotation_data.sectionIndex)
-                              .get('data').cubies.objectAt(inner_index);
+      index = ((section-1)*3) + outer_index + inner_index;
     }
     return cubies[index];
   },
