@@ -79,12 +79,12 @@ export default Ember.Component.extend({
   Navigate around the cube by changing the active cubie, and the adjacent faces
   */
   navigate: function(data) {
-    var min = 1, max = 3,
+    var min = 0, max = 2,
       cubie = this.get('activeCubie'),
       positionData = cubie.get('positionData'),
       activeLayerIndex = positionData.layer,
       activeSectionIndex = positionData.section,
-      activeCubieIndex = positionData.cubie;
+      activeCubieIndex = positionData.index;
 
     //if we don't have the data, just highlight the same cube, but we
     //need to reset everything since the childViews have been destroyed
