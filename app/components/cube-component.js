@@ -176,7 +176,6 @@ export default Ember.Component.extend({
       direction = null,
       rotatingCubies = null;
 
-
     if(e.shiftKey && e.altKey) {
       //rotate cube
     } else {
