@@ -10,6 +10,7 @@
 @import "partials/animations";
 
 @import "modules/cubie";
+@import "modules/cubie_interactive";
 
 html {
   height: 100%;
@@ -25,26 +26,16 @@ body {
   font-size: 275%;
 }
 
-.container {
-  width: ($N * $cubie_dimension);
-  height: ($N * $cubie_dimension);
+.interactive-container {
   position: relative;
   margin: 50px auto;
-  top: 50px;
+  width: ($N * $cubie_dimension);
+  height: ($N * $cubie_dimension);
   @include perspective(3000);
   @include perspective-origin(-20);
 }
 
-.cube,
-.cubie {
-  @include transform-style();
-  @include backface-visibility(hidden);
-}
-
-.cube {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+.cube.interactive {
   @include transform-style();
   @include transition(transform $rotation_delay);
   @include backface-visibility(hidden);
@@ -60,5 +51,10 @@ body {
     rotateY(-35deg)
     rotateX(-20deg)
     rotateZ(15deg)
-  )
+  );
+
+  .cubie {
+    @include transform-style();
+    @include backface-visibility(hidden);
+  }
 }

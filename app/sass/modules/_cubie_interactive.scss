@@ -1,0 +1,77 @@
+@mixin cubie-rotationZ($layer, $section, $cubie) {
+  @include rotationsZ(
+      translateX(nth($cubie_positions, $cubie))
+      translateY(nth($cubie_positions, $layer))
+      translateZ(nth($cubie_positions, $section))
+  ) {
+    @include transform-origin(
+      (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
+      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
+      nth($cubie_positions, $section)
+    );
+  };
+}
+@mixin cubie-rotationX($layer, $section, $cubie) {
+  @include rotationsX(
+      translateX(nth($cubie_positions, $cubie))
+      translateY(nth($cubie_positions, $layer))
+      translateZ(nth($cubie_positions, $section))
+  ) {
+    @include transform-origin(
+      nth($cubie_positions, $cubie),
+      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
+      (($center - $section)*$cubie_dimension)
+    );
+  };
+}
+@mixin cubie-rotationY($layer, $section, $cubie) {
+  @include rotationsY(
+    translateX(nth($cubie_positions, $cubie))
+    translateY(nth($cubie_positions, $layer))
+    translateZ(nth($cubie_positions, $section))
+  ) {
+    @include transform-origin(
+      (($center - $cubie)*$cubie_dimension)+$cubie_dimension/2,
+      nth($cubie_positions, $layer),
+      (($center - $section)*$cubie_dimension)
+    );
+  };
+}
+@mixin cubie-rotations($layer, $section, $cubie) {
+  @include cubie-rotationX($layer, $section, $cubie);
+  @include cubie-rotationY($layer, $section, $cubie);
+  @include cubie-rotationZ($layer, $section, $cubie);
+}
+
+//n x n x n
+@for $layer from 1 through $N {
+  @for $section from 1 through $N {
+    @for $cubie from 1 through $N {
+      div.layer-#{$layer}.section-#{$section}.cubie-#{$cubie} {
+        @include transform(
+          translateX(nth($cubie_positions, $cubie))
+          translateY(nth($cubie_positions, $layer))
+          translateZ(nth($cubie_positions, $section))
+        );
+        @include cubie-rotations($layer, $section, $cubie);
+      }
+    }
+  }
+}
+
+
+.cube.interactive .cubie {
+  position: absolute;
+  @include transition(transform $rotation_delay);
+  //the sides of a cubie
+  .side {
+    position: absolute;
+    /* placement */
+    &.front  { @include front(); }
+    &.left   { @include left(); }
+    &.back   { @include back(); }
+    &.right  { @include right(); }
+    &.top    { @include top(); }
+    &.bottom { @include bottom(); }
+  }
+}

@@ -1,103 +1,14 @@
-@mixin cubie-rotationZ($layer, $section, $cubie) {
-  @include rotationsZ(
-      translateX(nth($cubie_positions, $cubie))
-      translateY(nth($cubie_positions, $layer))
-      translateZ(nth($cubie_positions, $section))
-  ) {
-    @include transform-origin(
-      (($center - $cubie)*$cubie_dimension) + $cubie_dimension/2,
-      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-      nth($cubie_positions, $section)
-    );
-  };
-}
-@mixin cubie-rotationX($layer, $section, $cubie) {
-  @include rotationsX(
-      translateX(nth($cubie_positions, $cubie))
-      translateY(nth($cubie_positions, $layer))
-      translateZ(nth($cubie_positions, $section))
-  ) {
-    @include transform-origin(
-      nth($cubie_positions, $cubie),
-      (($center - $layer)*$cubie_dimension) + $cubie_dimension/2,
-      (($center - $section)*$cubie_dimension)
-    );
-  };
-}
-@mixin cubie-rotationY($layer, $section, $cubie) {
-  @include rotationsY(
-    translateX(nth($cubie_positions, $cubie))
-    translateY(nth($cubie_positions, $layer))
-    translateZ(nth($cubie_positions, $section))
-  ) {
-    @include transform-origin(
-      (($center - $cubie)*$cubie_dimension)+$cubie_dimension/2,
-      nth($cubie_positions, $layer),
-      (($center - $section)*$cubie_dimension)
-    );
-  };
-}
-@mixin cubie-rotations($layer, $section, $cubie) {
-  @include cubie-rotationX($layer, $section, $cubie);
-  @include cubie-rotationY($layer, $section, $cubie);
-  @include cubie-rotationZ($layer, $section, $cubie);
-}
-
-//n x n x n
-@for $layer from 1 through $N {
-  @for $section from 1 through $N {
-    @for $cubie from 1 through $N {
-      div.layer-#{$layer}.section-#{$section}.cubie-#{$cubie} {
-        @include transform(
-          translateX(nth($cubie_positions, $cubie))
-          translateY(nth($cubie_positions, $layer))
-          translateZ(nth($cubie_positions, $section))
-        );
-        @include cubie-rotations($layer, $section, $cubie);
-      }
-    }
-  }
-}
-
-
 .cubie {
   width: $cubie_dimension;
   height: $cubie_dimension;
-  position: absolute;
-  @include transition(transform $rotation_delay);
   //the sides of a cubie
   .side {
     width: $cubie_dimension;
     height: $cubie_dimension;
     background-color: $black;
     display: block;
-    position: absolute;
     border: $cubie_border solid black;
     @include backface-visibility(hidden);
-
-    /* placement */
-    &.front  { @include front(); }
-    &.left   { @include left(); }
-    &.back   { @include back(); }
-    &.right  { @include right(); }
-    &.top    { @include top(); }
-    &.bottom { @include bottom(); }
-
-    &:not(.internal) {
-    }
-
-    &.internal {
-      .sticker {
-        background-color: $black !important;
-        p {
-          //display: none;
-        }
-      }
-      &.left,
-      &.right {
-        display: none;
-      }
-    }
 
     .sticker {
       width: $cubie_sides;
