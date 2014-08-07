@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { ROTATION_DIRECTIONS, AXES } from '../constants';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
 
   swapCubies: function(rotation_data, layer, section, cubie) {
     var to_index = null,
