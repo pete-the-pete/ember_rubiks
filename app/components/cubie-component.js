@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   direction: null,
   _layerIndex: null,
   _sectionIndex: null,
+  _cubieIndex: null,
 
   classNames: ['cubie'],
   classNameBindings: [
@@ -74,6 +75,10 @@ export default Ember.Component.extend({
     return this.get('cube.activeCubie') === this;
   }.property('cube.activeCubie'),
 
+  index: function() {
+    return this.get('cube.cubies').indexOf(this.cubie);
+  }.property(),
+
   /**
   A single cubie can be active at a time, so this checks
   the cube to see if it is the active cubie.
@@ -86,10 +91,6 @@ export default Ember.Component.extend({
       });
     }
   }.observes('cube.activeCubie'),
-
-  index: function() {
-    return this.get('cube.cubies').indexOf(this.cubie);
-  }.property(),
 
   /**
   Lets the user navigate around the cube
