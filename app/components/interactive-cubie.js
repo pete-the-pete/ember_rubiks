@@ -1,7 +1,7 @@
 import Ember from 'ember';
-var computed = Ember.computed;
+import CubieComponent from './cubie';
 
-export default Ember.Component.extend({
+export default CubieComponent.extend({
   axis: null,
   steps: [],
   direction: null,
@@ -9,7 +9,6 @@ export default Ember.Component.extend({
   _sectionIndex: null,
   _cubieIndex: null,
 
-  classNames: ['cubie'],
   classNameBindings: [
     'isActive',
     'positionClass',
@@ -17,9 +16,6 @@ export default Ember.Component.extend({
     'rotationDirection',
     'rotationSteps'
   ],
-
-  //cube
-  cube: computed.alias('parentView'),
 
   willInsertElement: function() {
     //clear
@@ -67,17 +63,6 @@ export default Ember.Component.extend({
   rotationSteps: function() {
     return this.get('steps').join('');
   }.property('steps.[]'),
-
-  /*
-  Set the class based on the active state.
-  */
-  isActive: function() {
-    return this.get('cube.activeCubie') === this;
-  }.property('cube.activeCubie'),
-
-  index: function() {
-    return this.get('cube.cubies').indexOf(this.cubie);
-  }.property(),
 
   /**
   A single cubie can be active at a time, so this checks
