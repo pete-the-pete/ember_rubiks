@@ -44,9 +44,9 @@ export default Ember.Component.extend({
   },
 
   getXSiblings: function() {
-    var index = this.get('activeCubie').get('index');
+    var index = this.get('activeCubie').get('positionData').cubie;
     return this.get('childViews').filter(function(cubie) {
-      var c_index = cubie.get('index');
+      var c_index = cubie.get('positionData').cubie;
       //brute force, return the cubie if it matches one of its nine siblings, including itself
       return c_index === index || //itself
         c_index === index + 3 || c_index === index - 3 || //next cubie over
@@ -55,23 +55,23 @@ export default Ember.Component.extend({
         c_index === index + 12 || c_index === index - 12 || //diagonal
         c_index === index + 15 || c_index === index - 15 || //diagonal
         c_index === index + 18 || c_index === index - 18 || //two above or below
-        c_index === index + 21 || c_index === index -21; //diagonal
+        c_index === index + 21 || c_index === index - 21; //diagonal
     });
   },
 
   getYSiblings: function() {
-    var layer = this.get('activeCubie').get('_layerIndex');
+    var layer = this.get('activeCubie').get('positionData').layer;
 
     return this.get('childViews').filter(function(cubie) {
-      return cubie.get('_layerIndex') === layer;
+      return cubie.get('positionData').layer === layer;
     });
   },
 
   getZSiblings: function() {
-    var section = this.get('activeCubie').get('_sectionIndex');
+    var section = this.get('activeCubie').get('positionData').section;
 
     return this.get('childViews').filter(function(cubie) {
-      return cubie.get('_sectionIndex') === section;
+      return cubie.get('positionData').section === section;
     });
   },
 
@@ -81,9 +81,10 @@ export default Ember.Component.extend({
   navigate: function(data) {
     var min = 1, max = 3,
       cubie = this.get('activeCubie'),
-      activeLayerIndex = cubie.get('_layerIndex'),
-      activeSectionIndex = cubie.get('_sectionIndex'),
-      activeCubieIndex = cubie.get('index');
+      positionData = cubie.get('positionData'),
+      activeLayerIndex = positionData.layer,
+      activeSectionIndex = positionData.section,
+      activeCubieIndex = positionData.cubie;
 
     //if we don't have the data, just highlight the same cube, but we
     //need to reset everything since the childViews have been destroyed
@@ -256,7 +257,7 @@ export default Ember.Component.extend({
         this.send('move', {
           cube: this.cube,
           type: ROTATION_TYPES.PARTIAL,
-          cubieView: this.get('activeCubie'),
+          positionData: this.get('activeCubie').get('positionData'),
           direction: direction,
           axis: axis
         });

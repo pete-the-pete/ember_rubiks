@@ -11,9 +11,7 @@ export default Ember.Component.extend({
   classNames: ['cubie'],
   classNameBindings: [
     'isActive',
-    'layer',
-    'section',
-    'cubieIndex',
+    'positionClass',
     'rotationAxis',
     'rotationDirection',
     'rotationSteps'
@@ -42,17 +40,20 @@ export default Ember.Component.extend({
     this.set('_cubieIndex', CUBIE);
   },
 
-  layer: function() {
-    return 'layer-'+this.get('_layerIndex');
-  }.property('_layerIndex'),
-
-  section: function() {
-    return 'section-'+this.get('_sectionIndex');
-  }.property('_sectionIndex'),
-
-  cubieIndex: function() {
-    return 'cubie-'+this.get('_cubieIndex');
+  positionClass: function() {
+    return ('layer-'+this.get('_layerIndex')) + ' ' +
+           ('section-'+this.get('_sectionIndex')) + ' ' +
+           ('cubie-'+this.get('_cubieIndex'));
   }.property('_cubieIndex'),
+
+  positionData: function() {
+    return {
+      index: this.get('index'),
+      layer: this.get('_layerIndex')-1,
+      section: this.get('_sectionIndex')-1,
+      cubie: this.get('_cubieIndex')-1
+    };
+  }.property(),
 
   rotationAxis: function() {
     return 'rotate'+this.get('axis');

@@ -22,104 +22,97 @@ export default Ember.ArrayController.extend({
       (cubies.objectAt(to_index)).rotateFaceColors(rotation_data);
   },
 
-  getTempCubie: function(rotation_data, outer_index, inner_index) {
-    var index = null,
-      activeCubie = rotation_data.cubieView,
-      section = activeCubie.get('_sectionIndex'),
-      layer = activeCubie.get('_layerIndex'),
-      cubie = activeCubie.get('_cubieIndex'),
-      cubies = rotation_data.cube.get('data').cubies;
+  getTempCubieIndex: function(positionData, axis, outer_index, inner_index) {
+    var index;
 
-    if(rotation_data.axis === AXES.X) {
-      index = (cubie-1) + outer_index + (inner_index*3);
-    } else if(rotation_data.axis === AXES.Y) {
-      index = ((layer-1)*9) + outer_index + inner_index;
-    } else if(rotation_data.axis === AXES.Z) {
-      index = ((section-1)*3) + outer_index + inner_index;
+    if(axis === AXES.X) {
+      index = positionData.cubie + outer_index + (inner_index*3);
+    } else if(axis === AXES.Y) {
+      index = (positionData.layer*9) + outer_index + inner_index;
+    } else if(axis === AXES.Z) {
+      index = (positionData.section*3) + outer_index + inner_index;
     }
-    return cubies[index];
+    return index;
   },
 
-  performMove: function(rotation_data, outer_index, inner_index) {
+  calculateSwaps: function(rotation_data, outer_index, inner_index) {
     var tempCubie = null,
-      activeCubie = rotation_data.cubieView,
+      cubies = rotation_data.cube.get('data').cubies,
+      positionData = rotation_data.positionData,
+      axis = rotation_data.axis,
       rotations = [],
       layer_moves = null,
       section_moves = null,
-      cubie_moves = {},
+      cubie_moves = null,
       sidesLength = 3; //hardcode for now
 
-    if(rotation_data.axis === AXES.Y) {
-      layer_moves = {
-        from: activeCubie.get('_layerIndex')-1,
-        to: activeCubie.get('_layerIndex')-1
-      };
-    } else if(rotation_data.axis === AXES.X) {
+    if(axis === AXES.X) {
       cubie_moves = {
-        from: activeCubie.get('_cubieIndex')-1,
-        to: activeCubie.get('_cubieIndex')-1
+        from: positionData.cubie,
+        to: positionData.cubie
+      };
+    } else if(axis === AXES.Y) {
+      layer_moves = {
+        from: positionData.layer,
+        to: positionData.layer
       };
     } else {
       section_moves = {
-        from: activeCubie.get('_sectionIndex')-1,
-        to: activeCubie.get('_sectionIndex')-1
+        from: positionData.section,
+        to: positionData.section
       };
     }
 
-    if(outer_index < sidesLength/2) {
-      if(inner_index >= outer_index && inner_index < (sidesLength - outer_index - 1)) {
-        if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
-          //pull out the first cubie
-          tempCubie = this.getTempCubie(rotation_data, outer_index, inner_index);
+    if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
+      //pull out the first cubie
+      tempCubie = cubies[this.getTempCubieIndex(positionData, axis, outer_index, inner_index)];
 
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: inner_index, to: outer_index };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: sidesLength-outer_index-1, to: inner_index } : { from: inner_index, to: outer_index };
-          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: inner_index };
-          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: inner_index, to: outer_index };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-outer_index-1, to: inner_index } : { from: inner_index, to: outer_index };
+      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: inner_index };
+      rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: inner_index };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 } : { from: sidesLength-outer_index-1, to: inner_index };
-          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
-          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: inner_index };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 } : { from: sidesLength-outer_index-1, to: inner_index };
+      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
+      rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: outer_index, to: sidesLength-inner_index-1 } : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
-          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: outer_index, to: sidesLength-inner_index-1 };
-          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: outer_index, to: sidesLength-inner_index-1 } : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
+      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: outer_index, to: sidesLength-inner_index-1 };
+      rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
-          //special case, the temp cubie is passed in directly
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: sidesLength-inner_index-1 };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? {from: null, to: outer_index} : { from: null, to: sidesLength-inner_index-1 };
-          tempCubie.to = (rotation_data.axis === AXES.X) ? cubie_moves.to : outer_index;
-          tempCubie.from = null;
-          rotations.push([ layer_moves, section_moves, tempCubie ]);
+      //special case, the temp cubie is passed in directly
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: null, to: sidesLength-inner_index-1 };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? {from: null, to: outer_index} : { from: null, to: sidesLength-inner_index-1 };
+      tempCubie.to = (axis === AXES.X) ? cubie_moves.to : outer_index;
+      tempCubie.from = null;
+      rotations.push([ layer_moves, section_moves, tempCubie ]);
 
-        } else {
-          tempCubie = this.getTempCubie(rotation_data, outer_index, inner_index);
+    } else {
+      tempCubie = cubies[this.getTempCubieIndex(positionData, axis, outer_index, inner_index)];
 
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: outer_index };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: outer_index, to: inner_index } : { from: sidesLength-inner_index-1, to: outer_index };
-          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: outer_index, to: inner_index };
-          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: outer_index };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: outer_index, to: inner_index } : { from: sidesLength-inner_index-1, to: outer_index };
+      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: outer_index, to: inner_index };
+      rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: sidesLength-inner_index-1, to: outer_index } : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: outer_index };
-          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-inner_index-1, to: outer_index } : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: outer_index };
+      rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: inner_index, to: sidesLength-outer_index-1 };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 } : { from: inner_index, to: sidesLength-outer_index-1 };
-          cubie_moves = (rotation_data.axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-          rotations.push([ layer_moves, section_moves, cubie_moves ]);
+      layer_moves = (axis === AXES.Y) ? layer_moves : { from: inner_index, to: sidesLength-outer_index-1 };
+      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 } : { from: inner_index, to: sidesLength-outer_index-1 };
+      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
+      rotations.push([ layer_moves, section_moves, cubie_moves ]);
 
-          //special case, the temp cubie is passed in directly
-          layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: inner_index };
-          section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: null, to: sidesLength-outer_index-1 } : { from: null, to: inner_index };
-          tempCubie.to = (rotation_data.axis === AXES.X) ? cubie_moves.to : sidesLength-outer_index-1;
-          tempCubie.from = null;
-          rotations.push([ layer_moves, section_moves, tempCubie ]);
-        }
-      }
+      //special case, the temp cubie is passed in directly
+      layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: inner_index };
+      section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: null, to: sidesLength-outer_index-1 } : { from: null, to: inner_index };
+      tempCubie.to = (rotation_data.axis === AXES.X) ? cubie_moves.to : sidesLength-outer_index-1;
+      tempCubie.from = null;
+      rotations.push([ layer_moves, section_moves, tempCubie ]);
     }
     return rotations;
   },
@@ -127,12 +120,13 @@ export default Ember.ArrayController.extend({
   actions: {
     handleMove: function(rotation_data) {
 
-      var rotations = [];
+      var sidesLength = 3, //hardcoded for now
+        rotations = [];
 
       //just loop, and we can sort it out in the actual swap
-      for(var outer_index=0; outer_index < 3; outer_index++) {
-        for(var inner_index=0; inner_index <3; inner_index++) {
-          rotations = rotations.concat(this.performMove(rotation_data, outer_index, inner_index));
+      for(var outer_index=0; outer_index < sidesLength/2; outer_index++) {
+        for(var inner_index=outer_index; inner_index < (sidesLength - outer_index - 1); inner_index++) {
+          rotations = rotations.concat(this.calculateSwaps(rotation_data, outer_index, inner_index));
         }
       }
 
