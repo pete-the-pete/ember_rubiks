@@ -159,9 +159,6 @@ export default Ember.Component.extend({
   },
 
   actions: {
-    move: function(data) {
-      this.sendAction('move', data);
-    },
     navigate: function(data) {
       this.navigate(data);
     }
@@ -254,7 +251,7 @@ export default Ember.Component.extend({
       }
       //let the animation happen, then change the cubies
       Ember.run.later(this, function() {
-        this.send('move', {
+        this.sendAction('move', {
           cube: this.cube,
           type: ROTATION_TYPES.PARTIAL,
           positionData: this.get('activeCubie').get('positionData'),
