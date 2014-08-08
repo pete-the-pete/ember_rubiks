@@ -1,0 +1,23 @@
+.cube.interactive {
+  @include transform-style();
+  @include transition(transform $rotation_delay);
+  @include backface-visibility(hidden);
+  @include transform-origin($cube_translation/2, $cube_translation/2, $cube_translation/2);
+  @include transform(
+    translateZ( -6*$cube_translation )
+    rotateY(-35deg)
+    rotateX(-20deg)
+    rotateZ(15deg)
+  );
+  @include rotations(
+    translateZ( -6*$cube_translation )
+    rotateY(-35deg)
+    rotateX(-20deg)
+    rotateZ(15deg)
+  );
+
+  .cubie {
+    @include transform-style();
+    @include backface-visibility(hidden);
+  }
+}

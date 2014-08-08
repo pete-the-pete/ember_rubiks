@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import FACES from '../constants';
 
 export default Ember.Component.extend({
+  ALL_FACES: FACES,
 
   classNames: ['cubie'],
 

@@ -1,0 +1,47 @@
+<table>
+  <tr>
+    <td></td>
+    <td>
+      {{#each cubie in topCubies}}
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.TOP}}
+      {{/each}}
+    </td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>
+      {{#each cubie in leftCubies}}
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.LEFT}}
+      {{/each}}
+    </td>
+    <td>
+      {{#each cubie in backCubies}}
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.BACK}}
+      {{/each}}
+    </td>
+    <td>
+      {{#each cubie in rightCubies}}
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.RIGHT}}
+      {{/each}}
+    </td>
+    <td>
+      {{#each cubie in frontCubies}}
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.FRONT}}
+      {{/each}}
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      {{#each cubie in bottomCubies}}
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.BOTTOM}}
+      {{/each}}
+    </td>
+    <td colspan="2"></td>
+  </tr>
+</table>
+
+
+{{!-- {{#each cubie in cube.cubies}}
+  {{flat-cubie cubie=cubie}}
+{{/each}} --}}

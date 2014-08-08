@@ -9,8 +9,11 @@
 @import "partials/rotations";
 @import "partials/animations";
 
+@import "modules/cube_interactive";
+
 @import "modules/cubie";
 @import "modules/cubie_interactive";
+
 
 html {
   height: 100%;
@@ -35,26 +38,14 @@ body {
   @include perspective-origin(-20);
 }
 
-.cube.interactive {
-  @include transform-style();
-  @include transition(transform $rotation_delay);
-  @include backface-visibility(hidden);
-  @include transform-origin($cube_translation/2, $cube_translation/2, $cube_translation/2);
-  @include transform(
-    translateZ( -6*$cube_translation )
-    rotateY(-35deg)
-    rotateX(-20deg)
-    rotateZ(15deg)
-  );
-  @include rotations(
-    translateZ( -6*$cube_translation )
-    rotateY(-35deg)
-    rotateX(-20deg)
-    rotateZ(15deg)
-  );
-
-  .cubie {
-    @include transform-style();
-    @include backface-visibility(hidden);
-  }
+.map-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: ($cubie_dimension);
+  background-color: darken($white, 15%);
+  border-top: solid 2px $black;
+  overflow: scroll;
 }
+
