@@ -1,0 +1,9 @@
+.cube.interactive {
+	width: $cubie_dimension;
+	margin: 10px auto;
+
+	td table td {
+		width: 5px;
+		border: solid $1px $black;
+	}
+}

@@ -1,47 +1,30 @@
 <table>
   <tr>
     <td></td>
-    <td>
-      {{#each cubie in topCubies}}
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.TOP}}
-      {{/each}}
+    <td class="top">
+      {{flat-cube-slice cubies=topCubies face=cube.ALL_FACES.TOP}}
     </td>
     <td colspan="2"></td>
   </tr>
   <tr>
-    <td>
-      {{#each cubie in leftCubies}}
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.LEFT}}
-      {{/each}}
+    <td class="left">
+      {{flat-cube-slice cubies=leftCubies face=cube.ALL_FACES.LEFT}}
     </td>
-    <td>
-      {{#each cubie in backCubies}}
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.BACK}}
-      {{/each}}
+    <td class="back">
+      {{flat-cube-slice cubies=backCubies face=cube.ALL_FACES.BACK}}
     </td>
-    <td>
-      {{#each cubie in rightCubies}}
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.RIGHT}}
-      {{/each}}
+    <td class="right">
+      {{flat-cube-slice cubies=rightCubies face=cube.ALL_FACES.RIGHT}}
     </td>
-    <td>
-      {{#each cubie in frontCubies}}
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.FRONT}}
-      {{/each}}
+    <td class="front">
+      {{flat-cube-slice cubies=frontCubies face=cube.ALL_FACES.FRONT}}
     </td>
   </tr>
   <tr>
     <td></td>
-    <td>
-      {{#each cubie in bottomCubies}}
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.BOTTOM}}
-      {{/each}}
+    <td class="bottom">
+      {{flat-cube-slice cubies=bottomCubies face=cube.ALL_FACES.BOTTOM}}
     </td>
     <td colspan="2"></td>
   </tr>
 </table>
-
-
-{{!-- {{#each cubie in cube.cubies}}
-  {{flat-cubie cubie=cubie}}
-{{/each}} --}}

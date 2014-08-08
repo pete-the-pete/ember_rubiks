@@ -1,0 +1,13 @@
+<table>
+  <tbody>
+  {{#each row in cubies}}
+    <tr>
+      {{#each cubie in row}}
+        <td>
+        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.LEFT}}
+        </td>
+      {{/each}}
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

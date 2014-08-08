@@ -5,9 +5,6 @@ export default CubieComponent.extend({
   axis: null,
   steps: [],
   direction: null,
-  _layerIndex: null,
-  _sectionIndex: null,
-  _cubieIndex: null,
 
   classNameBindings: [
     'isActive',
@@ -18,23 +15,12 @@ export default CubieComponent.extend({
   ],
 
   willInsertElement: function() {
+    this._super();
     //clear
     this.setProperties({
       'direction': null,
       'steps': []
     });
-    this.updateClasses();
-  },
-
-  updateClasses: function() {
-    var index = this.get('index'),
-    CUBIE = ((index % 3)+1),
-    LAYER = (Math.floor(index / 9)+1),
-    SECTION = ((Math.floor(index / 3) % 3)+1);
-
-    this.set('_layerIndex', LAYER);
-    this.set('_sectionIndex', SECTION);
-    this.set('_cubieIndex', CUBIE);
   },
 
   positionClass: function() {

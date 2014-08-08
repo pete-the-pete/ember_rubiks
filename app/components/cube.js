@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import FACES from '../constants';
 
 export default Ember.Component.extend({
+  ALL_FACES: FACES,
   classNames: ['cube'],
 
   cubies: Ember.computed.alias('cube.data.cubies'),
@@ -22,6 +24,18 @@ export default Ember.Component.extend({
   setActiveCubieAtIndex: function(index) {
     this.set('activeCubieIndex', index);
     this.set('activeCubie', this.get('childViews').objectAt(index));
+  },
+
+  layerFromIndex: function(index) {
+    return (Math.floor(index / 9)+1);
+  },
+
+  sectionFromIndex: function(index) {
+    return ((Math.floor(index / 3) % 3)+1);
+  },
+
+  cubieFromIndex: function(index) {
+    return ((index % 3)+1);
   },
 
   getXSiblings: function() {

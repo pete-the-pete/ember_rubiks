@@ -43,7 +43,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: ($cubie_dimension);
+  height: $cubie_dimension;
   background-color: darken($white, 15%);
   border-top: solid 2px $black;
   overflow: scroll;
