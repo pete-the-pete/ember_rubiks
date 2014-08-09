@@ -1,10 +1,10 @@
-<table>
+<table {{bind-attr class="face"}}>
   <tbody>
   {{#each row in cubies}}
     <tr>
       {{#each cubie in row}}
         <td>
-        {{flat-cubie cubie=cubie face=cubie.ALL_FACES.LEFT}}
+        {{flat-cubie cubie=cubie face=face}}
         </td>
       {{/each}}
     </tr>
