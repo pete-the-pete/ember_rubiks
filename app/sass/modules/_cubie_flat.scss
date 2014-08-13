@@ -1,0 +1,15 @@
+.cube.flat .cubie {
+  width: 15px;
+  height: 15px;
+  //the sides of a cubie
+  .side {
+    //hide the non-visible sides
+    height: 15px;
+    .sticker {
+      @include border-radius(1px);
+      p {
+        display: none;
+      }
+    }
+  }
+}

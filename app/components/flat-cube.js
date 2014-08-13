@@ -22,7 +22,7 @@ export default CubeComponent.extend({
     return this.get('cubies').filter(function(cubie, index) { 
       return this.layerFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies[]'),
+  }.property('cubies.@each'),
 
   leftCubies: function() {
     return this.get('cubies').filter(function(cubie, index) { 

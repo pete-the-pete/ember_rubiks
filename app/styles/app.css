@@ -352,6 +352,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   backface-visibility: hidden;
 }
 
+/* line 1, ../sass/modules/_cube_flat.scss */
+.cube.flat {
+  width: 200px;
+  margin: 10px auto;
+}
+
 /* line 1, ../sass/modules/_cubie.scss */
 .cubie {
   width: 150px;
@@ -359,8 +365,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 5, ../sass/modules/_cubie.scss */
 .cubie .side {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   background-color: black;
   display: block;
   border: 1px solid black;
@@ -372,8 +378,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 13, ../sass/modules/_cubie.scss */
 .cubie .side .sticker {
-  width: 148px;
-  height: 148px;
+  width: 100%;
+  height: 100%;
   margin: auto;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7202,12 +7208,34 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   transform: rotateX(-90deg) translateZ(75px);
 }
 
-/* line 18, ../sass/app.scss */
+/* line 1, ../sass/modules/_cubie_flat.scss */
+.cube.flat .cubie {
+  width: 15px;
+  height: 15px;
+}
+/* line 5, ../sass/modules/_cubie_flat.scss */
+.cube.flat .cubie .side {
+  height: 15px;
+}
+/* line 8, ../sass/modules/_cubie_flat.scss */
+.cube.flat .cubie .side .sticker {
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
+}
+/* line 10, ../sass/modules/_cubie_flat.scss */
+.cube.flat .cubie .side .sticker p {
+  display: none;
+}
+
+/* line 20, ../sass/app.scss */
 html {
   height: 100%;
 }
 
-/* line 22, ../sass/app.scss */
+/* line 24, ../sass/app.scss */
 body {
   height: 100%;
   margin: 0;
@@ -7221,7 +7249,7 @@ body {
   font-size: 275%;
 }
 
-/* line 32, ../sass/app.scss */
+/* line 34, ../sass/app.scss */
 .interactive-container {
   position: relative;
   margin: 50px auto;
@@ -7239,13 +7267,13 @@ body {
   perspective-origin: -20;
 }
 
-/* line 41, ../sass/app.scss */
+/* line 43, ../sass/app.scss */
 .map-container {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 150px;
+  height: 175px;
   background-color: #d9d9d9;
   border-top: solid 2px black;
   overflow: scroll;
