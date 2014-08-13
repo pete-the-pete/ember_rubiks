@@ -75,7 +75,7 @@ var rotation_types = {
 };
 
 export var FACES = faces;
-export var FACE_INDEX = face_index;
+export var FACES_INDECES = face_index;
 export var KEYS = keys;
 export var ROTATION_DIRECTIONS = rotation_directions;
 export var ROTATION_TYPES = rotation_types;

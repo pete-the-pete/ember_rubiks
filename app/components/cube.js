@@ -1,8 +1,9 @@
 import Ember from 'ember';
-import FACES from '../constants';
+import { FACES, FACES_INDECES } from '../constants';
 
 export default Ember.Component.extend({
   ALL_FACES: FACES,
+  FACES_INDECES: FACES_INDECES,
   classNames: ['cube'],
 
   cubies: Ember.computed.alias('cube.data.cubies'),
@@ -13,6 +14,31 @@ export default Ember.Component.extend({
 
   //TODO: these should come from the model
   initialCubieIndex: 4,
+
+  //There's probably a better way to do this
+  topFace: function() {
+    return FACES[FACES_INDECES.TOP];
+  }.property(),
+
+  leftFace: function() {
+    return FACES[FACES_INDECES.LEFT];
+  }.property(),
+
+  backFace: function() {
+    return FACES[FACES_INDECES.BACK];
+  }.property(),
+
+  rightFace: function() {
+    return FACES[FACES_INDECES.RIGHT];
+  }.property(),
+
+  frontFace: function() {
+    return FACES[FACES_INDECES.FRONT];
+  }.property(),
+
+  bottomFace: function() {
+    return FACES[FACES_INDECES.BOTTOM];
+  }.property(),
 
   setActiveCubie: function(cubie) {
     this.set('activeCubie', cubie);
