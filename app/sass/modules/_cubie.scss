@@ -29,9 +29,8 @@
       &.white { background-color: $white; }
       &.blue { background-color: $blue; }
       &.black { background-color: $black; }
-
       p {
-        //color: transparent;
+        display: none;
       }
     }
   }

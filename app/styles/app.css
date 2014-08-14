@@ -422,6 +422,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .cubie .side .sticker.black {
   background-color: black;
 }
+/* line 32, ../sass/modules/_cubie.scss */
+.cubie .side .sticker p {
+  display: none;
+}
 
 /* line 50, ../sass/modules/_cubie_interactive.scss */
 div.layer-1.section-1.cubie-1 {
@@ -7225,11 +7229,6 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   -ms-border-radius: 1px;
   -o-border-radius: 1px;
   border-radius: 1px;
-}
-/* line 11, ../sass/modules/_cubie_flat.scss */
-.cube.flat .cubie .side .sticker p {
-  /* display: none; */
-  font-size: small;
 }
 
 /* line 20, ../sass/app.scss */
