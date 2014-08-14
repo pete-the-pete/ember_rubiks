@@ -6,9 +6,11 @@
     //hide the non-visible sides
     height: 15px;
     .sticker {
+      line-height: 5px;
       @include border-radius(1px);
       p {
-        display: none;
+        /* display: none; */
+        font-size: small;
       }
     }
   }

@@ -7219,15 +7219,17 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
 }
 /* line 8, ../sass/modules/_cubie_flat.scss */
 .cube.flat .cubie .side .sticker {
+  line-height: 5px;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
   -ms-border-radius: 1px;
   -o-border-radius: 1px;
   border-radius: 1px;
 }
-/* line 10, ../sass/modules/_cubie_flat.scss */
+/* line 11, ../sass/modules/_cubie_flat.scss */
 .cube.flat .cubie .side .sticker p {
-  display: none;
+  /* display: none; */
+  font-size: small;
 }
 
 /* line 20, ../sass/app.scss */
