@@ -28,29 +28,29 @@ export default CubeComponent.extend({
     return this.get('cubies').filter(function(cubie, index) { 
       return this.cubieFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies[]'),
+  }.property('cubies.@each'),
 
   backCubies: function() {
     return this.get('cubies').filter(function(cubie, index) { 
       return this.sectionFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies[]'),
+  }.property('cubies.@each'),
 
   rightCubies: function() {
     return this.get('cubies').filter(function(cubie, index) { 
       return this.cubieFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies[]'),
+  }.property('cubies.@each'),
 
   frontCubies: function() {
     return this.get('cubies').filter(function(cubie, index) { 
       return this.sectionFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies[]'),
+  }.property('cubies.@each'),
 
   bottomCubies: function() {
     return this.get('cubies').filter(function(cubie, index) { 
       return this.layerFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies[]')
+  }.property('cubies.@each')
 });
