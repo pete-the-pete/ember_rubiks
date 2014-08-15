@@ -38,6 +38,7 @@ export default CubeComponent.extend({
     //and recreated
     if(!data) {
       this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
+      this.get('activeCubie').setFocus();
       return;
     }
 
@@ -180,6 +181,7 @@ export default CubeComponent.extend({
         });
         //let the animation happen, then change the cubies
         Ember.run.later(this, function() {
+          this.get('activeCubie').rerender();
           this.sendAction('move', {
             cube: this.cube,
             type: ROTATION_TYPES.PARTIAL,
