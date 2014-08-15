@@ -33,7 +33,9 @@ body {
 
 .interactive-container {
   position: relative;
-  margin: 50px auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
   width: ($N * $cubie_dimension);
   height: ($N * $cubie_dimension);
   @include perspective(3000);
@@ -45,7 +47,6 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 175px;
   background-color: darken($white, 15%);
   border-top: solid 2px $black;
   overflow: scroll;

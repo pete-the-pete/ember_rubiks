@@ -7260,7 +7260,9 @@ body {
 /* line 34, ../sass/app.scss */
 .interactive-container {
   position: relative;
-  margin: 50px auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
   width: 450px;
   height: 450px;
   -webkit-perspective: 3000;
@@ -7275,13 +7277,12 @@ body {
   perspective-origin: -20;
 }
 
-/* line 43, ../sass/app.scss */
+/* line 45, ../sass/app.scss */
 .map-container {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 175px;
   background-color: #d9d9d9;
   border-top: solid 2px black;
   overflow: scroll;
