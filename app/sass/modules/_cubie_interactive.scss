@@ -64,14 +64,17 @@
   position: absolute;
   @include transition(transform $rotation_delay);
   //the sides of a cubie
+  &:not(.step) .side {
+    display: none;
+  }
   .side {
     position: absolute;
     /* placement */
-    &.front  { @include front(); }
+    &.front  { @include front(); display: block; }
     &.left   { @include left(); }
     &.back   { @include back(); }
-    &.right  { @include right(); }
-    &.top    { @include top(); }
+    &.right  { @include right(); display: block; }
+    &.top    { @include top(); display: block; }
     &.bottom { @include bottom(); }
   }
 }
