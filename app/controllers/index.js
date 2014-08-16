@@ -117,24 +117,26 @@ export default Ember.Controller.extend({
     return rotations;
   },
 
-  actions: {
-    handleMove: function(rotation_data) {
-
-      var sidesLength = 3, //hardcoded for now
+  rotateSlice: function(rotation_data) {
+    var sidesLength = 3, //hardcoded for now
         rotations = [];
 
-      //just loop, and we can sort it out in the actual swap
-      for(var outer_index=0; outer_index < sidesLength/2; outer_index++) {
-        for(var inner_index=outer_index; inner_index < (sidesLength - outer_index - 1); inner_index++) {
-          rotations = rotations.concat(this.calculateSwaps(rotation_data, outer_index, inner_index));
-        }
+    //just loop, and we can sort it out in the actual swap
+    for(var outer_index=0; outer_index < sidesLength/2; outer_index++) {
+      for(var inner_index=outer_index; inner_index < (sidesLength - outer_index - 1); inner_index++) {
+        rotations = rotations.concat(this.calculateSwaps(rotation_data, outer_index, inner_index));
       }
+    }
 
-      //perform the moves
-      rotations.forEach(function(rotation) {
-        this.swapCubies(rotation_data, rotation[0], rotation[1], rotation[2]);
-      }, this);
+    //perform the moves
+    rotations.forEach(function(rotation) {
+      this.swapCubies(rotation_data, rotation[0], rotation[1], rotation[2]);
+    }, this);
+  },
 
+  actions: {
+    handleMove: function(rotation_data) {
+      this.rotateSlice(rotation_data);
     },
     handleRotation: function(data) {
       console.log(data);
