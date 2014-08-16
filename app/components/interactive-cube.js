@@ -126,21 +126,35 @@ export default CubeComponent.extend({
 
     if(e.shiftKey && e.altKey) {
       //rotate cube
-    } else {
-      if(e.shiftKey && !e.altKey) {
-      //rotate Y
-      axis = AXES.Y;
-      rotatingCubies = this.getYSiblings();
       switch(e.keyCode) {
         case KEYS.LEFT:
-          move = true;
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           break;
         case KEYS.RIGHT:
-          move = true;
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
           break;
+        case KEYS.UP:
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
+        case KEYS.DOWN:
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          break;
       }
+    } else {
+      if(e.shiftKey && !e.altKey) {
+        //rotate Y
+        axis = AXES.Y;
+        rotatingCubies = this.getYSiblings();
+        switch(e.keyCode) {
+          case KEYS.LEFT:
+            move = true;
+            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+            break;
+          case KEYS.RIGHT:
+            move = true;
+            direction = ROTATION_DIRECTIONS.CLOCKWISE;
+            break;
+        }
       } else if (!e.shiftKey && e.altKey) {
         //rotate X & Z
         switch(e.keyCode) {
