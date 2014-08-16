@@ -122,7 +122,8 @@ export default CubeComponent.extend({
     var axis = null,
       move = false,
       direction = null,
-      rotatingCubies = null;
+      rotatingCubies = null,
+      aCubie = null;
 
     if(e.shiftKey && e.altKey) {
       //rotate cube
@@ -141,6 +142,7 @@ export default CubeComponent.extend({
           break;
       }
     } else {
+      aCubie = this.get('activeCubie');
       if(e.shiftKey && !e.altKey) {
         //rotate Y
         axis = AXES.Y;
