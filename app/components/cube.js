@@ -5,6 +5,9 @@ export default Ember.Component.extend({
   ALL_FACES: FACES,
   FACES_INDECES: FACES_INDECES,
   classNames: ['cube'],
+  axis: null,
+  steps: [],
+  direction: null,
 
   cubies: Ember.computed.alias('cube.data.cubies'),
 
@@ -14,6 +17,25 @@ export default Ember.Component.extend({
 
   //TODO: these should come from the model
   initialCubieIndex: 4,
+
+  classNameBindings: [
+    'positionClass',
+    'rotationAxis',
+    'rotationDirection',
+    'rotationSteps'
+  ],
+
+  rotationAxis: function() {
+    return 'rotate'+this.get('axis');
+  }.property('axis'),
+
+  rotationDirection: function() {
+    return this.get('direction');
+  }.property('direction'),
+
+  rotationSteps: function() {
+    return this.get('steps').join('');
+  }.property('steps.[]'),
 
   //There's probably a better way to do this
   topFace: function() {
@@ -52,6 +74,10 @@ export default Ember.Component.extend({
     this.set('activeCubie', this.get('childViews').objectAt(index));
   },
 
+  getCubieAtIndex: function(index) {
+    return this.get('childViews').objectAt(index);
+  },
+
   layerFromIndex: function(index) {
     return (Math.floor(index / 9)+1);
   },
@@ -64,8 +90,8 @@ export default Ember.Component.extend({
     return ((index % 3)+1);
   },
 
-  getXSiblings: function() {
-    var index = this.get('activeCubie').get('positionData').cubie;
+  getXSiblings: function(aCubie) {
+    var index = aCubie.get('positionData').cubie;
     return this.get('childViews').filter(function(cubie) {
       var c_index = cubie.get('positionData').cubie;
       //brute force, return the cubie if it matches one of its nine siblings, including itself
@@ -80,16 +106,16 @@ export default Ember.Component.extend({
     });
   },
 
-  getYSiblings: function() {
-    var layer = this.get('activeCubie').get('positionData').layer;
+  getYSiblings: function(aCubie) {
+    var layer = aCubie.get('positionData').layer;
 
     return this.get('childViews').filter(function(cubie) {
       return cubie.get('positionData').layer === layer;
     });
   },
 
-  getZSiblings: function() {
-    var section = this.get('activeCubie').get('positionData').section;
+  getZSiblings: function(aCubie) {
+    var section = aCubie.get('positionData').section;
 
     return this.get('childViews').filter(function(cubie) {
       return cubie.get('positionData').section === section;

@@ -70,8 +70,8 @@ var rotation_axis = {
 };
 
 var rotation_types = {
-  partial: 'partial',
-  full: 'full'
+  PARTIAL: 'partial',
+  FULL: 'full'
 };
 
 export var FACES = faces;

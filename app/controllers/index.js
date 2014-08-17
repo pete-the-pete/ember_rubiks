@@ -136,10 +136,17 @@ export default Ember.Controller.extend({
 
   actions: {
     handleMove: function(rotation_data) {
+      //save move data
+      //do the rotation
       this.rotateSlice(rotation_data);
     },
-    handleRotation: function(data) {
-      console.log(data);
+    handleRotation: function(rotation_data) {
+      console.debug(rotation_data);
+      var rotation_data_copy = Ember.copy(rotation_data);
+      rotation_data.positionData.forEach(function(rData) {
+        rotation_data_copy.positionData = rData;
+        this.rotateSlice(rotation_data_copy);
+      }.bind(this));
     }
   }
 });

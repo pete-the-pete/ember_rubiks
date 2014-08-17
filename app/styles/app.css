@@ -424,7 +424,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 32, ../sass/modules/_cubie.scss */
 .cubie .side .sticker p {
-  display: none;
+  /* display: none; */
 }
 
 /* line 50, ../sass/modules/_cubie_interactive.scss */
@@ -7158,16 +7158,12 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   -o-transition: -o-transform 0.25s;
   transition: transform 0.25s;
 }
-/* line 67, ../sass/modules/_cubie_interactive.scss */
-.cube.interactive .cubie:not(.step) .side {
-  display: none;
-}
-/* line 70, ../sass/modules/_cubie_interactive.scss */
+/* line 68, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side {
   position: absolute;
   /* placement */
 }
-/* line 73, ../sass/modules/_cubie_interactive.scss */
+/* line 71, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side.front {
   -webkit-transform: rotateY(0deg) translateZ(75px);
   -moz-transform: rotateY(0deg) translateZ(75px);
@@ -7176,7 +7172,7 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   transform: rotateY(0deg) translateZ(75px);
   display: block;
 }
-/* line 74, ../sass/modules/_cubie_interactive.scss */
+/* line 72, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side.left {
   -webkit-transform: rotateY(-90deg) translateZ(75px);
   -moz-transform: rotateY(-90deg) translateZ(75px);
@@ -7184,7 +7180,7 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   -o-transform: rotateY(-90deg) translateZ(75px);
   transform: rotateY(-90deg) translateZ(75px);
 }
-/* line 75, ../sass/modules/_cubie_interactive.scss */
+/* line 73, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side.back {
   -webkit-transform: rotateX(180deg) translateZ(75px);
   -moz-transform: rotateX(180deg) translateZ(75px);
@@ -7192,7 +7188,7 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   -o-transform: rotateX(180deg) translateZ(75px);
   transform: rotateX(180deg) translateZ(75px);
 }
-/* line 76, ../sass/modules/_cubie_interactive.scss */
+/* line 74, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side.right {
   -webkit-transform: rotateY(90deg) translateZ(75px);
   -moz-transform: rotateY(90deg) translateZ(75px);
@@ -7201,7 +7197,7 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   transform: rotateY(90deg) translateZ(75px);
   display: block;
 }
-/* line 77, ../sass/modules/_cubie_interactive.scss */
+/* line 75, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side.top {
   -webkit-transform: rotateX(90deg) translateZ(75px);
   -moz-transform: rotateX(90deg) translateZ(75px);
@@ -7210,13 +7206,18 @@ div.layer-3.section-3.cubie-3.rotateZ.anticlockwise.stepstepstepstep {
   transform: rotateX(90deg) translateZ(75px);
   display: block;
 }
-/* line 78, ../sass/modules/_cubie_interactive.scss */
+/* line 76, ../sass/modules/_cubie_interactive.scss */
 .cube.interactive .cubie .side.bottom {
   -webkit-transform: rotateX(-90deg) translateZ(75px);
   -moz-transform: rotateX(-90deg) translateZ(75px);
   -ms-transform: rotateX(-90deg) translateZ(75px);
   -o-transform: rotateX(-90deg) translateZ(75px);
   transform: rotateX(-90deg) translateZ(75px);
+}
+
+/* line 79, ../sass/modules/_cubie_interactive.scss */
+.cube:not(.step) .side {
+  display: none;
 }
 
 /* line 1, ../sass/modules/_cubie_flat.scss */
