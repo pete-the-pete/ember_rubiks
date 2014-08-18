@@ -63,7 +63,10 @@
 .cube.interactive .cubie {
   position: absolute;
   @include transition(transform $rotation_delay);
-  //the sides of a cubie
+
+  &:not(.step) .side {
+    display: none;
+  }
   
   .side {
     position: absolute;
@@ -76,6 +79,6 @@
     &.bottom { @include bottom(); }
   }
 }
-.cube:not(.step) .side {
-  display: none;
+.cube.interactive.step .side {
+  display: block !important;
 }
