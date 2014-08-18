@@ -1,5 +1,6 @@
+@import "normalize";
 @import "compass";
-@import "compass/reset";
+@import "susy";
 
 @import "primitives/measurements";
 @import "primitives/colors";
@@ -24,29 +25,49 @@ html {
 body {
   height: 100%;
   margin:0;
+  text-align: center;
   background-color: rgba(147,206,222,1);
   @include background-image(radial-gradient( center, ellipse cover, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%));
+  @include container;
+  @include clearfix;
 
-  text-align: center;
-  font-size: 275%;
+  &>.ember-view {
+    height: 100%;
+  }
+}
+
+.game {
+  height: 100%;
+}
+.game-board {
+  position: relative;
+  height: 100%;
+  @include span(7 wide of 10);
+  @include gutter(0);
+  @include clearfix;
+}
+.game-history {
+  height: 100%;
+  position: relative;
+  @include span(3 of 10 last);
+  border-left: solid 2px black;
+  background-color: $white;
 }
 
 .interactive-container {
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin: auto;
-  width: ($N * $cubie_dimension);
-  height: ($N * $cubie_dimension);
+  height: 50%;
   @include perspective(3000);
   @include perspective-origin(-20);
 }
 
 .map-container {
   position: absolute;
+  @include span(full);
   left: 0;
   bottom: 0;
-  width: 100%;
   background-color: darken($white, 15%);
   border-top: solid 2px $black;
   overflow: scroll;
