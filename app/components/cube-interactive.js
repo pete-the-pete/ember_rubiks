@@ -186,7 +186,7 @@ export default CubeComponent.extend({
         Ember.run.later(this, function() {
           this.get('activeCubie').rerender();
           this.sendAction('rotate', {
-            cube: this.cube,
+            cube: this.cube.get('id'),
             type: ROTATION_TYPES.FULL,
             positionData: aCubie,
             direction: direction,
@@ -258,7 +258,7 @@ export default CubeComponent.extend({
         Ember.run.later(this, function() {
           this.get('activeCubie').rerender();
           this.sendAction('move', {
-            cube: this.cube,
+            cube: this.cube.get('id'),
             type: ROTATION_TYPES.PARTIAL,
             positionData: aCubie.get('positionData'),
             direction: direction,

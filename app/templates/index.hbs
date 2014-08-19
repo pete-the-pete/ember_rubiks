@@ -10,6 +10,12 @@
   </div>
   <div class="game-history">
     <section class="moves-container">
+      <h2>Game History</h2>
+      <ol>
+        {{#each move in moves}}
+          <li>{{move}}<li>
+        {{/each}}
+      </ol>
     </section>
   </div>
 </section>

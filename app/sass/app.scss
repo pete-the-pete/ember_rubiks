@@ -42,15 +42,15 @@ body {
 .game-board {
   position: relative;
   height: 100%;
-  @include span(7 wide of 10);
+  @include span(8 wide of 10);
   @include gutter(0);
   @include clearfix;
 }
 .game-history {
   height: 100%;
   position: relative;
-  @include span(3 of 10 last);
-  border-left: solid 2px black;
+  @include span(2 of 10 last);
+  border-left: solid 2px $black;
   background-color: $white;
 }
 

@@ -3,10 +3,14 @@ import { ROTATION_DIRECTIONS, AXES } from '../constants';
 
 export default Ember.Controller.extend({
 
+  getCubies: function(cube_id) {
+    return this.content.get('data').cubies;
+  },
+
   swapCubies: function(rotation_data, layer, section, cubie) {
     var to_index = null,
       from_index = null,
-      cubies = rotation_data.cube.get('data').cubies;
+      cubies = this.getCubies(rotation_data.cube);
 
       to_index = (9*layer.to) + (3*section.to) + cubie.to;
 
@@ -37,7 +41,7 @@ export default Ember.Controller.extend({
 
   calculateSwaps: function(rotation_data, outer_index, inner_index) {
     var tempCubie = null,
-      cubies = rotation_data.cube.get('data').cubies,
+      cubies = this.getCubies(rotation_data.cube),
       positionData = rotation_data.positionData,
       axis = rotation_data.axis,
       rotations = [],
