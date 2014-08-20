@@ -2,8 +2,10 @@ import DS from 'ember-data';
 
 var Cube = DS.Model.extend({
   title: DS.attr('string'),
+  game: DS.belongsTo('game'),
   cubies: DS.hasMany('cubie', {async: true}),
-  isSolved: DS.attr('boolean', {defaultValue: false})
+  isSolved: DS.attr('boolean', {defaultValue: false}),
+  moves: DS.attr()
 });
 
 //pre-calc the cubies
@@ -20,7 +22,8 @@ Cube.reopenClass({
       {
         id: 1,
         isSolved: false,
-        cubies: CUBE_CUBIES
+        cubies: CUBE_CUBIES,
+        moves: []
       }
     ]
   });

@@ -4,6 +4,7 @@ import { FACES, ROTATION_DIRECTIONS, AXES, FACES_INDECES } from '../constants';
 
 var Cubie = DS.Model.extend({
   faces: DS.attr(),
+  cube: DS.belongsTo('cube', {async:true}),
   rotateFaceColors: function(rotation_data) {
     var tmp_color = null,
       faces = this.get('faces');

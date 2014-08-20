@@ -139,13 +139,29 @@ export default Ember.Controller.extend({
   },
 
   actions: {
+    /**
+     * Moving a single slice counts towards solving the cube.  The individual
+     * slice is rotated and the model is updated.  The move and updated
+     * state are saved into the moves history.
+     */
     handleMove: function(rotation_data) {
-      //save move data
       //do the rotation
       this.rotateSlice(rotation_data);
+      //save move data
+      this.store.createRecord('move', {
+        timestamp: (new Date()).getTime(),
+        direction: rotation_data.direction,
+        axis: rotation_data.axis,
+        type: rotation_data.type,
+        cubies: this.getCubies(),
+        positionData: rotation_data.positionData,
+        parentMove: null,
+        game: null
+      });
+        //create a move
+        //add it to the moves data
     },
     handleRotation: function(rotation_data) {
-      console.debug(rotation_data);
       var rotation_data_copy = Ember.copy(rotation_data);
       rotation_data.positionData.forEach(function(rData) {
         rotation_data_copy.positionData = rData;
