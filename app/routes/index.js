@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.find('cube', 1)
+    try {
+      console.debug(this.store.find('game', 1));
+    } catch(e) {
+      console.debug('yep');
+      return Ember.Object();
+    }
   }
 });

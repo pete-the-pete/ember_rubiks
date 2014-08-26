@@ -148,7 +148,8 @@ export default Ember.Controller.extend({
       //do the rotation
       this.rotateSlice(rotation_data);
       //save move data
-      this.store.createRecord('move', {
+      console.debug(this.get('model'));
+      var move = this.store.createRecord('move', {
         timestamp: (new Date()).getTime(),
         direction: rotation_data.direction,
         axis: rotation_data.axis,
@@ -156,10 +157,9 @@ export default Ember.Controller.extend({
         cubies: this.getCubies(),
         positionData: rotation_data.positionData,
         parentMove: null,
-        game: null
+        game: this.get('model')
       });
-        //create a move
-        //add it to the moves data
+      move.save();
     },
     handleRotation: function(rotation_data) {
       var rotation_data_copy = Ember.copy(rotation_data);
