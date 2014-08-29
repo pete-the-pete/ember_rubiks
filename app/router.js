@@ -13,13 +13,16 @@ var Router = Ember.Router.extend({
 * http://hashrocket.com/blog/posts/ember-routing-the-when-and-why-of-nesting
 */
 Router.map(function() {
+  this.resource('guest', { path: 'guest/'}, function() {
+    this.route('new')
+  });
   this.resource('player', { path: 'players/:player_id' }, function() {
     this.resource('games');
     this.resource('game', function() {
       this.route('new')
     });
   });
-  
+
 });
 
 export default Router;

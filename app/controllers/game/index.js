@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { ROTATION_DIRECTIONS, AXES } from '../constants';
+import { ROTATION_DIRECTIONS, AXES } from '../../constants';
 
 export default Ember.Controller.extend({
 
