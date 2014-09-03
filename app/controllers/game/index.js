@@ -160,6 +160,7 @@ export default Ember.Controller.extend({
         game: this.get('model')
       });
       move.save();
+      return false;
     },
     handleRotation: function(rotation_data) {
       var rotation_data_copy = Ember.copy(rotation_data);
@@ -167,6 +168,7 @@ export default Ember.Controller.extend({
         rotation_data_copy.positionData = rData;
         this.rotateSlice(rotation_data_copy);
       }.bind(this));
+      return false;
     }
   }
 });

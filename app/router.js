@@ -14,12 +14,12 @@ var Router = Ember.Router.extend({
 */
 Router.map(function() {
   this.resource('guest', { path: 'guest/'}, function() {
-    this.route('new')
+    this.route('new');
   });
   this.resource('player', { path: 'players/:player_id' }, function() {
     this.resource('games');
     this.resource('game', function() {
-      this.route('new')
+      this.route('new');
     });
   });
 

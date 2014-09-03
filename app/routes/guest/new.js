@@ -5,6 +5,11 @@ export default Ember.Route.extend({
     return this.store.find('cube', 1);
   },
   renderTemplate: function(controller, model) {
-    this.render('game', {controller:controller});
+    console.debug('renderTemplate');
+    console.debug(controller);
+    this.render('game', {controller:this.controllerFor('game.index')});
+  },
+  setupController: function(controller, model) {
+    this.controllerFor('game.index').set('model', model);
   }
 });
