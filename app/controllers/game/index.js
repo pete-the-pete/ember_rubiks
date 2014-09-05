@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import Move from '../../models/move';
+import DS from 'ember-data';
 import { ROTATION_DIRECTIONS, AXES } from '../../constants';
 
 export default Ember.Controller.extend({
@@ -138,6 +140,26 @@ export default Ember.Controller.extend({
     }, this);
   },
 
+ saveMove: function(rotation_data) {
+    var lastMoveId = parseInt(this.content.get('moves').get('lastObject.id'), 10);
+    lastMoveId = isNaN(lastMoveId) ? 0 : lastMoveId;
+
+    var move = this.store.createRecord('move', {
+      id: lastMoveId+1,
+      timestamp: (new Date()).getTime(),
+      direction: rotation_data.direction,
+      axis: rotation_data.axis,
+      type: rotation_data.type,
+      cubies: this.getCubies(),
+      positionData: rotation_data.positionData,
+      parentMove: null,
+      move: this.get('content')
+    });
+
+    this.content.get('moves').pushObject(move);
+    move.save();
+  },
+
   actions: {
     /**
      * Moving a single slice counts towards solving the cube.  The individual
@@ -145,30 +167,21 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
+      console.debug(rotation_data);
       //do the rotation
       this.rotateSlice(rotation_data);
       //save move data
-      console.debug(this.get('model'));
-      var move = this.store.createRecord('move', {
-        timestamp: (new Date()).getTime(),
-        direction: rotation_data.direction,
-        axis: rotation_data.axis,
-        type: rotation_data.type,
-        cubies: this.getCubies(),
-        positionData: rotation_data.positionData,
-        parentMove: null,
-        game: this.get('model')
-      });
-      move.save();
-      return false;
+      this.saveMove(rotation_data);
     },
     handleRotation: function(rotation_data) {
+      //do the rotations by doing the individual slices
       var rotation_data_copy = Ember.copy(rotation_data);
       rotation_data.positionData.forEach(function(rData) {
         rotation_data_copy.positionData = rData;
         this.rotateSlice(rotation_data_copy);
       }.bind(this));
-      return false;
+      //save the 'move'
+      this.saveMove(rotation_data);
     }
   }
 });

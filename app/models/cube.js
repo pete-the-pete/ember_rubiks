@@ -5,7 +5,7 @@ var Cube = DS.Model.extend({
   game: DS.belongsTo('game'),
   cubies: DS.hasMany('cubie', {async: true}),
   isSolved: DS.attr('boolean', {defaultValue: false}),
-  moves: DS.attr()
+  moves: DS.hasMany('move')
 });
 
 //pre-calc the cubies
