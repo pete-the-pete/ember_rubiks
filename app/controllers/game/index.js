@@ -167,7 +167,6 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
-      console.debug(rotation_data);
       //do the rotation
       this.rotateSlice(rotation_data);
       //save move data

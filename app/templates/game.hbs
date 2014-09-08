@@ -12,8 +12,10 @@
     <section class="moves-container">
       <h2>Game History</h2>
       <ol>
-        {{#each move in moves}}
-          <li>{{move}}<li>
+        {{#each move in content.moves}}
+          <li>
+            {{move-detail move=move}}
+          </li>
         {{/each}}
       </ol>
     </section>
