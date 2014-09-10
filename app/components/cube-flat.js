@@ -19,7 +19,6 @@ export default CubeComponent.extend({
 
   //TODO: these could be curried (or something)
   topCubies: function() {
-    console.debug(this.get('cubies')[0]);
     return this.get('cubies').filter(function(cubie, index) {
       return this.layerFromIndex(index) === 1; 
     }, this).reduce(this.unflattenCubies,[]);
