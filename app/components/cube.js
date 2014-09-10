@@ -9,8 +9,6 @@ export default Ember.Component.extend({
   steps: [],
   direction: null,
 
-  cubies: Ember.computed.alias('cube.data.cubies'),
-
   activeCubie: null,
 
   activeCubieIndex: null,

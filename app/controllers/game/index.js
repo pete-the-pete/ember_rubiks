@@ -9,6 +9,17 @@ export default Ember.Controller.extend({
     return this.content.get('data').cubies;
   },
 
+  copyCubies: function(cube_id) {
+    var store = this.store;
+    return this.getCubies(cube_id).map(function(cubie) {
+      //copy the cubie and its faces so that we break
+      //the link with the actual model reference
+      cubie = cubie.toJSON();
+      cubie.faces = Ember.copy(cubie.faces, true);
+      return cubie;
+    });
+  },
+
   swapCubies: function(rotation_data, layer, section, cubie) {
     var to_index = null,
       from_index = null,
@@ -150,7 +161,8 @@ export default Ember.Controller.extend({
       direction: rotation_data.direction,
       axis: rotation_data.axis,
       type: rotation_data.type,
-      cubies: this.getCubies(),
+      oldCubies: rotation_data.oldCubies,
+      cubies: this.copyCubies(),
       positionData: rotation_data.positionData,
       parentMove: null,
       move: this.get('content')
@@ -167,12 +179,14 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
+      rotation_data.oldCubies = this.copyCubies();
       //do the rotation
       this.rotateSlice(rotation_data);
       //save move data
       this.saveMove(rotation_data);
     },
     handleRotation: function(rotation_data) {
+      rotation_data.oldCubies = this.copyCubies();
       //do the rotations by doing the individual slices
       var rotation_data_copy = Ember.copy(rotation_data);
       rotation_data.positionData.forEach(function(rData) {

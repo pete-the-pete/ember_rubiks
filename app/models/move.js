@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 /**
@@ -15,8 +16,9 @@ export default DS.Model.extend({
   direction: DS.attr('string'),
   axis: DS.attr('string'),
   type: DS.attr('string'),
+  oldCubies: DS.attr(),
   cubies: DS.attr(),
   positionData: DS.attr(),
-  parentMove: DS.attr(),
+  parentMove: DS.belongsTo('move'),
   cube: DS.belongsTo('cube')
 });
