@@ -1,5 +1,6 @@
-<table {{bind-attr class="face.side"}}>
+<table class="{{unbound face.side}}">
   <tbody>
+  {{#group}}
   {{#each row in cubies}}
     <tr>
       {{#each cubie in row}}
@@ -9,5 +10,6 @@
       {{/each}}
     </tr>
   {{/each}}
+  {{/group}}
   </tbody>
 </table>

@@ -14,9 +14,10 @@ export default Ember.Controller.extend({
     return this.getCubies(cube_id).map(function(cubie) {
       //copy the cubie and its faces so that we break
       //the link with the actual model reference
-      cubie = cubie.toJSON();
-      cubie.faces = Ember.copy(cubie.faces, true);
-      return cubie;
+      var copy = cubie.toJSON();
+      copy.id = cubie.id;
+      copy.faces = Ember.copy(cubie.faces, true);
+      return copy;
     });
   },
 
