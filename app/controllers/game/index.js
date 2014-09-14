@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
       //the link with the actual model reference
       var copy = cubie.toJSON();
       copy.id = cubie.id;
-      copy.faces = Ember.copy(cubie.faces, true);
+      copy.faces = Ember.copy(cubie.get('faces'), true);
       return copy;
     });
   },
