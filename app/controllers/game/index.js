@@ -6,7 +6,7 @@ import { ROTATION_DIRECTIONS, AXES } from '../../constants';
 export default Ember.Controller.extend({
 
   getCubies: function(cube_id) {
-    return this.content.get('data').cubies;
+    return this.get('model').get('data').cubies;
   },
 
   copyCubies: function(cube_id) {
@@ -152,8 +152,9 @@ export default Ember.Controller.extend({
     }, this);
   },
 
- saveMove: function(rotation_data) {
-    var lastMoveId = parseInt(this.content.get('moves').get('lastObject.id'), 10);
+  saveMove: function(rotation_data) {
+    var moves = this.get('model').get('data').moves;
+    var lastMoveId = parseInt(moves.get('lastObject.id'), 10);
     lastMoveId = isNaN(lastMoveId) ? 0 : lastMoveId;
 
     var move = this.store.createRecord('move', {
@@ -166,10 +167,10 @@ export default Ember.Controller.extend({
       cubies: this.copyCubies(),
       positionData: rotation_data.positionData,
       parentMove: null,
-      move: this.get('content')
+      cube: this.model
     });
 
-    this.content.get('moves').pushObject(move);
+    moves.pushObject(move);
     move.save();
   },
 
