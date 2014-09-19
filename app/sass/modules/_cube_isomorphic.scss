@@ -1,0 +1,38 @@
+.cube.isomorphic {
+  margin: 0 15px;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  @include transform-style();
+  @include transform(
+    rotateY(-35deg)
+    rotateX(-20deg)
+    rotateZ(15deg)
+  );
+
+  td {
+    padding: 0;
+    position: relative;
+    &>div {
+      position: absolute;
+      table {
+        height: 45px;
+        width: 45px;
+      }
+    }
+  }
+
+  td.front > div {
+    @include front(22px);
+  }
+
+  td.top > div {
+    left: 5px;
+    //Why 19?
+    @include top(19px);
+  }
+
+  td.right > div {
+    @include right(22px);
+  }
+}

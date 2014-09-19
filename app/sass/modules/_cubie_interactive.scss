@@ -71,12 +71,12 @@
   .side {
     position: absolute;
     /* placement */
-    &.front  { @include front(); display: block; }
-    &.left   { @include left(); }
-    &.back   { @include back(); }
-    &.right  { @include right(); display: block; }
-    &.top    { @include top(); display: block; }
-    &.bottom { @include bottom(); }
+    &.front  { @include front($side_translation); display: block; }
+    &.left   { @include left($side_translation); }
+    &.back   { @include back($side_translation); }
+    &.right  { @include right($side_translation); display: block; }
+    &.top    { @include top($side_translation); display: block; }
+    &.bottom { @include bottom($side_translation); }
   }
 }
 .cube.interactive.step .side {

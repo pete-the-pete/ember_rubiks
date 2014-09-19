@@ -1,6 +1,6 @@
-@mixin front() { @include transform(rotateY( 0deg ) translateZ( $side_translation )); }
-@mixin left() { @include transform(rotateY( -90deg ) translateZ( $side_translation )); }
-@mixin back() { @include transform(rotateX( 180deg ) translateZ( $side_translation )); }
-@mixin right() { @include transform(rotateY(  90deg ) translateZ( $side_translation )); }
-@mixin top() { @include transform(rotateX(  90deg ) translateZ( $side_translation )); }
-@mixin bottom() { @include transform(rotateX( -90deg ) translateZ( $side_translation )); }
+@mixin front($translation) { @include transform(rotateY( 0deg ) translateZ( $translation )); }
+@mixin left($translation) { @include transform(rotateY( -90deg ) translateZ( $translation )); }
+@mixin back($translation) { @include transform(rotateX( 180deg ) translateZ( $translation )); }
+@mixin right($translation) { @include transform(rotateY(  90deg ) translateZ( $translation )); }
+@mixin top($translation) { @include transform(rotateX(  90deg ) translateZ( $translation )); }
+@mixin bottom($translation) { @include transform(rotateX( -90deg ) translateZ( $translation )); }
