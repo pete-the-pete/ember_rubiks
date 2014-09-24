@@ -1,0 +1,29 @@
+8/19/14
+I lost/forgot all my notes on my old laptop.....
+Next step is creating and displaying the moves made for a game.  This entails creating a 'game' concept
+with a specific cube and list of moves.  When the moves are made, the transition (direction,axis,reference)
+data and the resulting cubies should be serialized and saved off.  This will allow that configuration to
+be created from scratch or transitioned to from an existing configuration.
+NOTE: The cube shouldn't ever be saved, just the list of cubies.
+
+Plan:
+ - skip the game object id for now
+ - create the moves and 'save' them to the list of moves
+ - create a minimal display of the transition data (text only)
+ - add some interaction (click/enter) that will set the cube into that configuration
+
+8/20/14
+I don't think I can skip the game object for now.  Moving the moves to be their own top level entity in the store
+would require....
+Wrong again, i think to actual save and read the data in the way i want to i'm just going to have to do it.
+
+8/25/14
+Unrelated Context: there is a guy getting lots of texts, and he loves it. i could dowithout the notifications
+Using different adapters (REST by default, fixture for others) seems to be loading, but i'm uncertain how actually look for the game or create one (or if something else is broken)
+
+I need to create a new Game 'resource' (route and controllers) that will have the necessary urls and behavior.  I should also look into how to use an ENV type variable to change the store and/or use a proxy to work online and offline.  That will be easy.
+
+8/26/14
+Resources resources resources!  Actually used ember-cli to generate resources.  This is a circuitous path towards saving moves, but whatever.  I am going go to FIRST have a 'Just play' button that creates a game as a guest and doesn't save.  Then i'll turn up the pressure on the firehose, and create a user (maybe hardcoded with fixture data) that creates a new game and saves the moves.
+
+I should also create a nested/remote/whatever it is repo (or at least look into it) for the notes of various proejcts.
