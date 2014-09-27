@@ -8,7 +8,6 @@ export default Ember.Route.extend({
     this.render('game', {controller:this.controllerFor('game.index')});
   },
   setupController: function(controller, model) {
-    console.debug(model);
     this.controllerFor('game.index').set('model', model);
   }
 });

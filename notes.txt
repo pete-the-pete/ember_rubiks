@@ -27,3 +27,24 @@ I need to create a new Game 'resource' (route and controllers) that will have th
 Resources resources resources!  Actually used ember-cli to generate resources.  This is a circuitous path towards saving moves, but whatever.  I am going go to FIRST have a 'Just play' button that creates a game as a guest and doesn't save.  Then i'll turn up the pressure on the firehose, and create a user (maybe hardcoded with fixture data) that creates a new game and saves the moves.
 
 I should also create a nested/remote/whatever it is repo (or at least look into it) for the notes of various proejcts.
+
+
+9/24/14
+Been a while....
+Lots of stuff has happened.  The moves are 'done'.  I forgot any restraint, and started trying to incorporate firebase.  So far I wasted ~6 hrs trying to update ember-cli and unfuck node.  Now...I guess its time to start with some actual routes and models and all that jazz.
+
+I really don't know where to start, but I think probably i need to figure out the guest and game models, and how they get saved.
+
+
+Unrelated-ish: For the write up
+  - include issues: npm, bower, ember-cli, SO post about removing npm, 1.6->1.7 and metaphor tags
+  - rousources that helped (ember docs, stephan petter, emberwatch, http://www.toptal.com/emberjs/a-thorough-guide-to-ember-data, etc, etc, etc)
+  - sections:
+    - routes
+    - models
+    - firebase
+    - templates
+    - components
+    - expanding
+      - solver
+      - cube model/make moves
