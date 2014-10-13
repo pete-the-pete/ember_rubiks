@@ -2,12 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.find('cube', 1);
+    var guestPlayer = this.store.createRecord('player').save();
+    return guestPlayer;
   },
-  renderTemplate: function(controller, model) {
-    this.render('game', {controller:this.controllerFor('game.index')});
-  },
-  setupController: function(controller, model) {
-    this.controllerFor('game.index').set('model', model);
+  afterModel: function(guest, transition) {
+    //create the new game since we need to pass it along
+    this.store.createRecord('game').save().then(function(game) {
+      this.transitionTo('game', guest, game);
+    }.bind(this));
   }
 });
