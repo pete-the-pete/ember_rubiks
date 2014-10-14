@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import { FACES, FACES_INDECES } from '../constants';
 
 export default Ember.Component.extend({
   moveDescription: function() {

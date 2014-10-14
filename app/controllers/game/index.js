@@ -1,16 +1,13 @@
 import Ember from 'ember';
-import Move from '../../models/move';
-import DS from 'ember-data';
 import { ROTATION_DIRECTIONS, AXES } from '../../constants';
 
 export default Ember.Controller.extend({
 
-  getCubies: function(cube_id) {
+  getCubies: function() {
     return this.get('model').get('data').cubies;
   },
 
   copyCubies: function(cube_id) {
-    var store = this.store;
     return this.getCubies(cube_id).map(function(cubie) {
       //copy the cubie and its faces so that we break
       //the link with the actual model reference
