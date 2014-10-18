@@ -48,3 +48,15 @@ Unrelated-ish: For the write up
     - expanding
       - solver
       - cube model/make moves
+
+10/14/14
+Emberfire is 'working'.  I need to revisit the way the cubes are generated.  For now i'll focus on guests.  I will go:
+   -> new guest
+    -> create player, save, redirect to the new game
+   -> new game
+    -> programmatically create what is NOW the fixture data
+    -> scramble the cube (later, or maybe after they click 'play')
+    -> save the cube to the user, save, redirect to the game
+   -> redirect to the game
+
+How can I redirect without adding to the history? replaceWith, instead of transitionTo

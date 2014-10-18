@@ -1,19 +1,18 @@
 <section class="game">
   <div class="game-board">
     <section class="interactive-container">
-      {{cube-interactive cube=content cubies=content.cubies move="handleMove" rotate="handleRotation"}}
+      {{cube-interactive cube=content.cube cubies=content.cube.cubies move="handleMove" rotate="handleRotation"}}
     </section>
 
-
     <section class="map-container">
-     {{cube-flat cube=content cubies=content.cubies}}
+     {{cube-flat cube=content.cube cubies=content.cube.cubies}}
     </section>
   </div>
   <div class="game-history">
     <section class="moves-container" style="height:100%;overflow:scroll;">
       <h2>Game History</h2>
       <ol>
-        {{#each m in content.moves}}
+        {{#each m in content.cube.moves}}
           <li>
             {{move-detail move=m}}
           </li>

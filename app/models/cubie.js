@@ -4,7 +4,7 @@ import { FACES, ROTATION_DIRECTIONS, AXES, FACES_INDECES } from '../constants';
 
 var Cubie = DS.Model.extend({
   faces: DS.attr(),
-  cube: DS.belongsTo('cube', {async:true}),
+  cube: DS.belongsTo('cube'),
   rotateFaceColors: function(rotation_data) {
     var tmp_color = null,
       faces = this.get('faces');
@@ -91,7 +91,7 @@ var Cubie = DS.Model.extend({
   }
 });
 
-var CUBIES = (function() {
+/*var CUBIES = (function() {
   var cubies = [];
   for(var i=1;i<=27;i++) {
     cubies.pushObject({
@@ -104,6 +104,6 @@ var CUBIES = (function() {
 
 Cubie.reopenClass({
   FIXTURES: CUBIES
-});
+});*/
 
 export default Cubie;

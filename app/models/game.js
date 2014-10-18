@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var Game = DS.Model.extend({
   title: DS.attr('string'),
-  moves: DS.hasMany('move'),
+  cube: DS.belongsTo('cube'),
   player: DS.belongsTo('player')
 });
 
