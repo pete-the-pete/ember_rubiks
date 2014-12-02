@@ -184,7 +184,6 @@ export default CubeComponent.extend({
         });
         //let the animation happen, then change the cubies
         Ember.run.later(this, function() {
-          this.get('activeCubie').rerender();
           this.sendAction('rotate', {
             cube: this.cube.get('id'),
             type: ROTATION_TYPES.FULL,
@@ -256,7 +255,6 @@ export default CubeComponent.extend({
         });
         //let the animation happen, then change the cubies
         Ember.run.later(this, function() {
-          this.get('activeCubie').rerender();
           this.sendAction('move', {
             cube: this.cube.get('id'),
             type: ROTATION_TYPES.PARTIAL,
@@ -264,6 +262,7 @@ export default CubeComponent.extend({
             direction: direction,
             axis: axis
           });
+          this.rerender();
 
           //let the model update, then reset the cursor
           Ember.run.scheduleOnce('afterRender', this, function() {

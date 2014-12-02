@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { ROTATION_DIRECTIONS, AXES } from '../../constants';
 
-export default Ember.Controller.extend({
+export default Ember.ObjectController.extend({
 
   getCubies: function() {
     return this.get('model').get('data').cubies;
