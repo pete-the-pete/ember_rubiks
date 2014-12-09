@@ -18,6 +18,6 @@ export default DS.Model.extend({
   oldCubies: DS.attr(),
   cubies: DS.attr(),
   positionData: DS.attr(),
-  parentMove: DS.belongsTo('move'),
-  cube: DS.belongsTo('cube')
+  parentMove: DS.belongsTo('move', {async: true}),
+  cube: DS.belongsTo('cube', {async: true})
 });

@@ -6,5 +6,5 @@ export default DS.Model.extend({
   lastLogin: DS.attr('date'),
   email: DS.attr('string'),
   isGuest: DS.attr(),
-  games: DS.hasMany('game')
+  games: DS.hasMany('game', {async: true})
 });

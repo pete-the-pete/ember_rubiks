@@ -9,32 +9,26 @@ var colors = {
 
 var faces = [
   {
-    id:1,
     side:'left',
     color: colors.orange
   },
   {
-    id:2,
     side:'back',
     color: colors.green
   },
   {
-    id:3,
     side:'right',
     color: colors.red
   },
   {
-    id:4,
     side:'front',
     color: colors.yellow
   },
   {
-    id:5,
     side:'top',
     color: colors.white
   },
   {
-    id:6,
     side:'bottom',
     color: colors.blue
   }
@@ -75,6 +69,7 @@ var rotation_types = {
 };
 
 export var FACES = faces;
+export var FACES_TOO = faces;
 export var FACES_INDECES = face_index;
 export var KEYS = keys;
 export var ROTATION_DIRECTIONS = rotation_directions;
