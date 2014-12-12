@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   generateCube: function() {
     var cubie,
       cubies = [];
-    for(var i=1; i<=9; i++) {
+    for(var i=1; i<=27; i++) {
       cubie = this.store.createRecord('cubie', {
         faces: Ember.copy(FACES, true)
       });

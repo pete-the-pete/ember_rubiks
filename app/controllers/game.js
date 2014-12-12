@@ -3,9 +3,8 @@ import { ROTATION_DIRECTIONS, AXES, FACES_INDECES } from '../constants';
 
 export default Ember.Controller.extend({
 
-  //return just the content for the cubies, not the ManyArray
   getCubies: function() {
-    return this.get('model').get('cube').get('cubies').toArray();
+    return this.get('model').get('cube').get('cubies').get('content');
   },
 
   /**
@@ -15,17 +14,34 @@ export default Ember.Controller.extend({
   * save cubies
   */
   copyCubies: function(cube_id) {
-    return this.getCubies(cube_id).map(function(cubie) {
+    //return this.getCubies(cube_id)
+    var copy = this.get('model').get('cube').get('cubies').map(function(cubie) {
       var copy = cubie.toJSON();
       copy.id = cubie.id;
       copy.faces = Ember.copy(cubie.get('faces'), true);
       return copy;
     });
+    //one weird trick that makes this work!
+    delete copy['[]'];
+    return copy;
+  },
+
+  getTempCubieIndex: function(positionData, axis, outer_index, inner_index) {
+    var index;
+
+    if(axis === AXES.X) {
+      index = positionData.cubie + outer_index + (inner_index*3);
+    } else if(axis === AXES.Y) {
+      index = (positionData.layer*9) + outer_index + inner_index;
+    } else if(axis === AXES.Z) {
+      index = (positionData.section*3) + outer_index + inner_index;
+    }
+    return index;
   },
 
   rotateFaceColors: function(rotation_data, cubie) {
     var tmp_color = null,
-      faces = Ember.copy(Ember.get(cubie, 'faces'), true);
+        faces = cubie.get('faces');
 
     if(rotation_data.direction === ROTATION_DIRECTIONS.CLOCKWISE) {
       switch(rotation_data.axis) {
@@ -106,7 +122,6 @@ export default Ember.Controller.extend({
           break;
       }
     }
-    return faces;
   },
 
   /**
@@ -114,45 +129,29 @@ export default Ember.Controller.extend({
   * so that the model isn't automatically updated when the items are
   * removed/inserted into the model.
   */
-  swapCubies: function(rotation_data, layer, section, cubie) {
-    var c,
-        new_faces,
-        to_index = null,
-        from_index = null,
-        cubies = rotation_data.cubies;
+  swapCubies: function(cubies, rotation_data, layer, section, cubie) {
+    var to_index = null,
+        from_index = null;
 
       to_index = (9*layer.to) + (3*section.to) + cubie.to;
 
       if(cubie.from !== null) {
         //swap the cubie with the new one
         from_index = (9*layer.from) + (3*section.from) + cubie.from;
-        cubies.splice(to_index, 1, cubies.objectAt(from_index));
+        cubies.get('content').splice(to_index, 1, cubies.objectAt(from_index));
       } else {
         //swap the cubie with the passed in object
-        cubies.splice(to_index, 1, cubie);
+        delete cubie.to;
+        delete cubie.from;
+        cubies.get('content').splice(to_index, 1, cubie);
       }
       //update its colors
-      c = (cubies.objectAt(to_index));
-      new_faces = this.rotateFaceColors(rotation_data, c);
-      Ember.set(c, 'faces', new_faces);
-  },
-
-  getTempCubieIndex: function(positionData, axis, outer_index, inner_index) {
-    var index;
-
-    if(axis === AXES.X) {
-      index = positionData.cubie + outer_index + (inner_index*3);
-    } else if(axis === AXES.Y) {
-      index = (positionData.layer*9) + outer_index + inner_index;
-    } else if(axis === AXES.Z) {
-      index = (positionData.section*3) + outer_index + inner_index;
-    }
-    return index;
+      this.rotateFaceColors(rotation_data, cubies.objectAt(to_index));
   },
 
   calculateSwaps: function(rotation_data, outer_index, inner_index) {
     var tempCubie = null,
-      cubies = rotation_data.cubies,//this.getCubies(rotation_data.cube),
+      cubies = this.getCubies(rotation_data.cube),
       positionData = rotation_data.positionData,
       axis = rotation_data.axis,
       rotations = [],
@@ -179,7 +178,7 @@ export default Ember.Controller.extend({
     }
 
     //pull out the first cubie
-    tempCubie = Ember.copy(cubies.objectAt(this.getTempCubieIndex(positionData, axis, outer_index, inner_index)), true);
+    tempCubie = cubies.objectAt(this.getTempCubieIndex(positionData, axis, outer_index, inner_index));
 
     if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
 
@@ -234,7 +233,8 @@ export default Ember.Controller.extend({
 
   rotateSlice: function(rotation_data) {
     var sidesLength = 3, //hardcoded for now
-        rotations = [];
+        rotations = [],
+        cubies = this.getCubies();
 
     //just loop, and we can sort it out in the actual swap
     for(var outer_index=0; outer_index < sidesLength/2; outer_index++) {
@@ -245,8 +245,7 @@ export default Ember.Controller.extend({
 
     //perform the moves
     rotations.forEach(function(rotation) {
-      //this.swapCubies(cubies, rotation_data, rotation[0], rotation[1], rotation[2]);
-      this.swapCubies(rotation_data, rotation[0], rotation[1], rotation[2]);
+      this.swapCubies(cubies, rotation_data, rotation[0], rotation[1], rotation[2]);
     }, this);
 
   },
@@ -267,6 +266,17 @@ export default Ember.Controller.extend({
       parentMove: null
     });
 
+
+    /*Object.defineProperty(rotation_data.oldCubies, "[]", {
+      get: function() {return 1;},
+      set: function() {debugger;}
+    });*/
+
+    window.r_data = rotation_data.oldCubies;
+    Object.observe(rotation_data.oldCubies, function(x) {
+      console.debug(x);
+    });
+
     move.save();
     this.get('model').get('cube').get('moves').then(function(moves) {
       moves.pushObject(move);
@@ -281,50 +291,20 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
-      rotation_data.cubies = this.copyCubies();
       rotation_data.oldCubies = this.copyCubies();
       //do the rotation
       this.rotateSlice(rotation_data);
       //save move data
       this.saveMove(rotation_data);
-      //rotation_data.cubies.save();
-      /*this.get('model').get('cube').get('cubies').then(function(cubies) {
-        cubies.content.forEach(function(c, idx) {
-          var update_cubie_faces = Ember.get(rotation_data.cubies.objectAt(idx), 'faces');
-          c.get('faces').forEach(function(f, f_idx) {
-            var temp_f = update_cubie_faces.objectAt(f_idx);
-            Ember.set(f, 'color', Ember.get(temp_f, 'color'));
-            Ember.set(f, 'side', Ember.get(temp_f, 'side'));
-          });
+      this.get('model').get('cube').get('cubies').then(function(cubies) {
+        cubies.forEach(function(c) {
+          delete c.get('faces').__nextSuper;
         });
-        cubies.objectAt(0).save();
-        //cubies.save();
-      })*/;
-      //save the updated cubies
-      /*this.get('model').get('cube').then(function(cube) {
-        cube.set('cubies', rotation_data.cubies);
-        cube.get('cubies').then(function(cubies) {
-          cubies.save();
-        });
-        cube.save();
-      });*/
-      /*this.get('model').get('cube').get('cubies').then(function(cubies) {
-        cubies.save().then(function() {
-          // SUCCESS
-          debugger;
-          console.debug('cubies saved');
-        }, function(error) {
-          // FAILURE
-          console.debug(error.stack);
-        });
+        cubies.save();
       });
       this.get('model').get('cube').then(function(cube) {
-        cube.save().then(function() {
-          console.debug('cube saved');
-        }, function() {
-          debugger;
-        });
-      });*/
+        cube.save();
+      });
     },
     handleRotation: function(rotation_data) {
       rotation_data.oldCubies = this.copyCubies();

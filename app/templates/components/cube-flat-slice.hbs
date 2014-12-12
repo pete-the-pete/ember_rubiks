@@ -1,15 +1,13 @@
 <table class="{{unbound face.side}}" cellspacing="0">
   <tbody>
-  {{#group}}
   {{#each row in cubies}}
     <tr>
       {{#each cubie in row}}
         <td>
-        {{cubie-flat cubie=cubie face=face}}
+        {{cubie-flat cubie=cubie faces=cubie.faces face_id=face.id}}
         </td>
       {{/each}}
     </tr>
   {{/each}}
-  {{/group}}
   </tbody>
 </table>

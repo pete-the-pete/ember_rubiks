@@ -9,26 +9,32 @@ var colors = {
 
 var faces = [
   {
+    id: 1,
     side:'left',
     color: colors.orange
   },
   {
+    id: 2,
     side:'back',
     color: colors.green
   },
   {
+    id: 3,
     side:'right',
     color: colors.red
   },
   {
+    id: 4,
     side:'front',
     color: colors.yellow
   },
   {
+    id: 5,
     side:'top',
     color: colors.white
   },
   {
+    id: 6,
     side:'bottom',
     color: colors.blue
   }

@@ -9,7 +9,7 @@ export default Ember.Component.extend({
       cubie_slices = ['Left', 'Middle', 'Right'],
       section_slices = ['Back', 'Standing', 'Front'],
       layer_slices = ['Upper', 'Equator', 'Down'],
-      move = this.move,
+      move = this.get('move'),
       axis = move.get('axis'),
       type = move.get('type'),
       positionData = move.get('positionData');
@@ -32,6 +32,11 @@ export default Ember.Component.extend({
     } else {
       slice = axis;
     }
-    return slice + ' ' + move.get('direction');
-  }.property()
+
+    if(slice) {
+      return slice + ' ' + move.get('direction');
+    } else {
+      return '';
+    }
+  }.property('move.axis')
 });

@@ -1,5 +1,5 @@
 import CubeComponent from './cube';
-
+  
 export default CubeComponent.extend({
   classNames: ['flat'],
 
@@ -19,38 +19,44 @@ export default CubeComponent.extend({
 
   //TODO: these could be curried (or something)
   topCubies: function() {
-    return this.get('cubies').filter(function(cubie, index) {
+    var _cubies = this.get('cubies') || [];
+    return _cubies.filter(function(cubie, index) {
       return this.layerFromIndex(index) === 1; 
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies.@each'),
+  }.property('cubies'),
 
   leftCubies: function() {
-    return this.get('cubies').filter(function(cubie, index) {
+    var _cubies = this.get('cubies') || [];
+    return _cubies.filter(function(cubie, index) {
       return this.cubieFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies.@each'),
+  }.property('cubies'),
 
   backCubies: function() {
-    return this.get('cubies').filter(function(cubie, index) {
+    var _cubies = this.get('cubies') || [];
+    return _cubies.filter(function(cubie, index) {
       return this.sectionFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies.@each'),
+  }.property('cubies'),
 
   rightCubies: function() {
-    return this.get('cubies').filter(function(cubie, index) {
+    var _cubies = this.get('cubies') || [];
+    return _cubies.filter(function(cubie, index) {
       return this.cubieFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies.@each'),
+  }.property('cubies'),
 
   frontCubies: function() {
-    return this.get('cubies').filter(function(cubie, index) {
+    var _cubies = this.get('cubies') || [];
+    return _cubies.filter(function(cubie, index) {
       return this.sectionFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies.@each'),
+  }.property('cubies'),
 
   bottomCubies: function() {
-    return this.get('cubies').filter(function(cubie, index) {
+    var _cubies = this.get('cubies') || [];
+    return _cubies.filter(function(cubie, index) {
       return this.layerFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies.@each')
+  }.property('cubies')
 });

@@ -17,8 +17,11 @@ export default CubeComponent.extend({
   },
 
   didInsertElement: function() {
-    //hack to highlight it after everything as loaded (hopefully)
-    Ember.run.later(this, function() {
+    function init() {
+      if(!this.get('initialCubieIndex')) {
+        Ember.run.later(this, init, 500);
+        return;
+      }
       if(!INITIALIZED) {
         INITIALIZED = true;
         //set the middle cubie as active
@@ -28,7 +31,9 @@ export default CubeComponent.extend({
       }
       //reset the cursor
       this.navigate();
-    }, 500);
+    }
+    //hack to highlight it after everything as loaded (hopefully)
+    Ember.run.later(this, init, 500);
   },
 
   /**
@@ -36,11 +41,17 @@ export default CubeComponent.extend({
   */
   navigate: function(data) {
     var min = 0, max = 2,
-      cubie = this.get('activeCubie'),
-      positionData = cubie.get('positionData'),
-      activeLayerIndex = positionData.layer,
-      activeSectionIndex = positionData.section,
-      activeCubieIndex = positionData.index;
+      cubie,
+      positionData,
+      activeLayerIndex,
+      activeSectionIndex,
+      activeCubieIndex;
+  
+    cubie = this.get('activeCubie');
+    positionData = cubie.get('positionData');
+    activeLayerIndex = positionData.layer;
+    activeSectionIndex = positionData.section;
+    activeCubieIndex = positionData.index;
 
     //if we don't have the data, just highlight the same cube, but we
     //need to reset everything since the childViews have been destroyed
@@ -129,7 +140,8 @@ export default CubeComponent.extend({
   TODO: clean this thing up, it seems the opposite of DRY
   */
   keyDown: function(e) {
-    var axis = null,
+    var i=0,
+      axis = null,
       move = false,
       direction = null,
       rotatingCubies = null,
@@ -145,7 +157,7 @@ export default CubeComponent.extend({
           axis = AXES.Z;
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           //get the first cubie of each section
-          for(var i=0;i<3;i++) {
+          for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex((i*3)+1).get('positionData'));
           }
           break;
@@ -153,7 +165,7 @@ export default CubeComponent.extend({
           move = true;
           axis = AXES.Z;
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
-          for(var i=0;i<3;i++) {
+          for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex((i*3)+1).get('positionData'));
           }
           break;
@@ -161,7 +173,7 @@ export default CubeComponent.extend({
           move = true;
           axis = AXES.X;
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
-          for(var i=0;i<3;i++) {
+          for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex(i+1).get('positionData'));
           }
           break;
@@ -169,7 +181,7 @@ export default CubeComponent.extend({
           move = true;
           axis = AXES.X;
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
-          for(var i=0;i<3;i++) {
+          for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex(i+1).get('positionData'));
           }
           break;
