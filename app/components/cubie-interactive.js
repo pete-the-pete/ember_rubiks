@@ -56,9 +56,11 @@ export default CubieComponent.extend({
   */
   setFocus: function() {
     if(this.get('cube.activeCubie') === this) {
-      Ember.run.schedule('afterRender', this, function() {
-        this.$().attr({ tabindex: 1 });
-        this.$().focus();
+      Ember.run.scheduleOnce('afterRender', this, function() {
+        if(this.$() && this.$().attr) {
+          this.$().attr({ tabindex: 1 });
+          this.$().focus();
+        }
       });
     }
   }.observes('cube.activeCubie'),

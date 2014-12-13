@@ -21,8 +21,6 @@ export default Ember.Controller.extend({
       copy.faces = Ember.copy(cubie.get('faces'), true);
       return copy;
     });
-    //one weird trick that makes this work!
-    delete copy['[]'];
     return copy;
   },
 
@@ -251,11 +249,15 @@ export default Ember.Controller.extend({
   },
 
   saveMove: function(rotation_data) {
-    var moves = this.get('model').get('cube').get('moves');
+    //for branching moves later
+    /*var moves = this.get('model').get('cube').get('moves');
     var lastMoveId = parseInt(moves.get('lastObject.id'), 10);
-    lastMoveId = isNaN(lastMoveId) ? 0 : lastMoveId;
+    lastMoveId = isNaN(lastMoveId) ? 0 : lastMoveId;*/
 
-    var move = this.store.createRecord('move', {
+    var move,
+      cube = this.get('model').get('cube');
+
+    move = this.store.createRecord('move', {
       timestamp: (new Date()).getTime(),
       direction: rotation_data.direction,
       axis: rotation_data.axis,
@@ -266,22 +268,12 @@ export default Ember.Controller.extend({
       parentMove: null
     });
 
-
-    /*Object.defineProperty(rotation_data.oldCubies, "[]", {
-      get: function() {return 1;},
-      set: function() {debugger;}
-    });*/
-
-    window.r_data = rotation_data.oldCubies;
-    Object.observe(rotation_data.oldCubies, function(x) {
-      console.debug(x);
-    });
-
     move.save();
-    this.get('model').get('cube').get('moves').then(function(moves) {
+    cube.get('moves').then(function(moves) {
       moves.pushObject(move);
       moves.save();
     });
+    cube.incrementProperty('moveCount');
   },
 
   actions: {

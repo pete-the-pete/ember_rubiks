@@ -23,40 +23,40 @@ export default CubeComponent.extend({
     return _cubies.filter(function(cubie, index) {
       return this.layerFromIndex(index) === 1; 
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies'),
+  }.property('cube.cubies'),
 
   leftCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.cubieFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies'),
+  }.property('cube.cubies'),
 
   backCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.sectionFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies'),
+  }.property('cube.cubies'),
 
   rightCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.cubieFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies'),
+  }.property('cube.cubies'),
 
   frontCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.sectionFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies'),
+  }.property('cube.cubies'),
 
   bottomCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.layerFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cubies')
+  }.property('cube.cubies')
 });

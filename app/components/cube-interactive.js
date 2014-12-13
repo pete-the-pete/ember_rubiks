@@ -58,7 +58,6 @@ export default CubeComponent.extend({
     //and recreated
     if(!data) {
       this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
-      this.get('activeCubie').setFocus();
       return;
     }
 
@@ -203,12 +202,12 @@ export default CubeComponent.extend({
             direction: direction,
             axis: axis
           });
-          this.rerender();
+          //this.rerender();
 
           //let the model update, then reset the cursor
-          Ember.run.scheduleOnce('afterRender', this, function() {
+          /*Ember.run.scheduleOnce('afterRender', this, function() {
             this.navigate();
-          });
+          });*/
         }, 250);
       }
     } else {
