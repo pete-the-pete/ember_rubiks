@@ -142,11 +142,13 @@ export default CubeComponent.extend({
     var i=0,
       axis = null,
       move = false,
+      type = null,
       direction = null,
       rotatingCubies = null,
       aCubie = null;
 
     if(e.shiftKey && e.altKey) {
+      type = ROTATION_TYPES.FULL;
       rotatingCubies = [];
       aCubie = [];
       //rotate cube
@@ -154,7 +156,7 @@ export default CubeComponent.extend({
         case KEYS.LEFT:
           move = true;
           axis = AXES.Z;
-          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
           //get the first cubie of each section
           for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex((i*3)+1).get('positionData'));
@@ -163,7 +165,7 @@ export default CubeComponent.extend({
         case KEYS.RIGHT:
           move = true;
           axis = AXES.Z;
-          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex((i*3)+1).get('positionData'));
           }
@@ -171,7 +173,7 @@ export default CubeComponent.extend({
         case KEYS.UP:
           move = true;
           axis = AXES.X;
-          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+          direction = ROTATION_DIRECTIONS.CLOCKWISE;
           for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex(i+1).get('positionData'));
           }
@@ -179,39 +181,15 @@ export default CubeComponent.extend({
         case KEYS.DOWN:
           move = true;
           axis = AXES.X;
-          direction = ROTATION_DIRECTIONS.CLOCKWISE;
+          direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           for(i=0;i<3;i++) {
             aCubie.push(this.getCubieAtIndex(i+1).get('positionData'));
           }
           break;
       }
-
-      //perform the rotation
-      if(move) {
-        this.setProperties({
-          'axis': axis,
-          'direction': direction,
-          'steps':['step']
-        });
-        //let the animation happen, then change the cubies
-        Ember.run.later(this, function() {
-          this.sendAction('rotate', {
-            cube: this.cube.get('id'),
-            type: ROTATION_TYPES.FULL,
-            positionData: aCubie,
-            direction: direction,
-            axis: axis
-          });
-          //this.rerender();
-
-          //let the model update, then reset the cursor
-          /*Ember.run.scheduleOnce('afterRender', this, function() {
-            this.navigate();
-          });*/
-        }, 250);
-      }
     } else {
       aCubie = this.get('activeCubie');
+      type = ROTATION_TYPES.PARTIAL;
       if(e.shiftKey && !e.altKey) {
         //rotate Y
         axis = AXES.Y;
@@ -219,11 +197,11 @@ export default CubeComponent.extend({
         switch(e.keyCode) {
           case KEYS.LEFT:
             move = true;
-            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+            direction = ROTATION_DIRECTIONS.CLOCKWISE;
             break;
           case KEYS.RIGHT:
             move = true;
-            direction = ROTATION_DIRECTIONS.CLOCKWISE;
+            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
             break;
         }
       } else if (!e.shiftKey && e.altKey) {
@@ -233,54 +211,54 @@ export default CubeComponent.extend({
             move = true;
             axis = AXES.Z;
             rotatingCubies = this.getZSiblings(aCubie);
-            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+            direction = ROTATION_DIRECTIONS.CLOCKWISE;
             break;
           case KEYS.RIGHT:
             move = true;
             axis = AXES.Z;
             rotatingCubies = this.getZSiblings(aCubie);
-            direction = ROTATION_DIRECTIONS.CLOCKWISE;
+            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
             break;
           case KEYS.UP:
             move = true;
             axis = AXES.X;
             rotatingCubies = this.getXSiblings(aCubie);
-            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
+            direction = ROTATION_DIRECTIONS.CLOCKWISE;
             break;
           case KEYS.DOWN:
             move = true;
             axis = AXES.X;
             rotatingCubies = this.getXSiblings(aCubie);
-            direction = ROTATION_DIRECTIONS.CLOCKWISE;
+            direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
             break;
         }
       }
+    }
 
-      if(move) {
-        rotatingCubies.forEach(function(cubie) {
-          cubie.setProperties({
-            'axis': axis,
-            'direction': direction,
-            'steps':['step']
-          });
+    if(move) {
+      rotatingCubies.forEach(function(cubie) {
+        cubie.setProperties({
+          'axis': axis,
+          'direction': direction,
+          'steps':['step']
         });
-        //let the animation happen, then change the cubies
-        Ember.run.later(this, function() {
-          this.sendAction('move', {
-            cube: this.cube.get('id'),
-            type: ROTATION_TYPES.PARTIAL,
-            positionData: aCubie.get('positionData'),
-            direction: direction,
-            axis: axis
-          });
-          this.rerender();
+      });
+      //let the animation happen, then change the cubies
+      Ember.run.later(this, function() {
+        this.sendAction('move', {
+          cube: this.cube.get('id'),
+          type: type,//ROTATION_TYPES.PARTIAL,
+          positionData: aCubie.get('positionData'),
+          direction: direction,
+          axis: axis
+        });
+        //this.rerender();
 
-          //let the model update, then reset the cursor
-          Ember.run.scheduleOnce('afterRender', this, function() {
-            this.navigate();
-          });
-        }, 250);
-      }
+        //let the model update, then reset the cursor
+        Ember.run.scheduleOnce('afterRender', this, function() {
+          this.navigate();
+        });
+      }, 550);
     }
   }
 });
