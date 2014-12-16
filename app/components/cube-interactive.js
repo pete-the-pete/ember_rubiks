@@ -2,7 +2,8 @@ import Ember from 'ember';
 import CubeComponent from './cube';
 import { KEYS, ROTATION_DIRECTIONS, ROTATION_TYPES, AXES } from '../constants';
 
-var INITIALIZED = false;
+var INITIALIZED = false,
+  ANIMATION_PASSTHROUGH = true;
 
 export default CubeComponent.extend({
   classNames: ['interactive'],
@@ -123,6 +124,10 @@ export default CubeComponent.extend({
         break;
     }
     this.setActiveCubieAtIndex(activeCubieIndex);
+    //let the model update, then reset the cursor
+    Ember.run.schedule('afterRender', this, function() {
+      this.navigate();
+    });
   },
 
   /**
@@ -145,7 +150,8 @@ export default CubeComponent.extend({
       type = null,
       direction = null,
       rotatingCubies = null,
-      aCubie = null;
+      aCubie = null,
+      self = this;
 
     if(e.shiftKey && e.altKey) {
       type = ROTATION_TYPES.FULL;
@@ -243,22 +249,26 @@ export default CubeComponent.extend({
           'steps':['step']
         });
       });
-      //let the animation happen, then change the cubies
-      Ember.run.later(this, function() {
-        this.sendAction('move', {
-          cube: this.cube.get('id'),
-          type: type,//ROTATION_TYPES.PARTIAL,
-          positionData: aCubie.get('positionData'),
-          direction: direction,
-          axis: axis
+      
+      this.$().one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+        Ember.run(function() {
+          if(ANIMATION_PASSTHROUGH) {
+            ANIMATION_PASSTHROUGH = false;
+            self.sendAction('move', {
+              cube: self.cube.get('id'),
+              type: type,
+              positionData: aCubie.get('positionData'),
+              direction: direction,
+              axis: axis
+            });
+            //rerender the cube since it won't rerender when just
+            //the children change
+            self.rerender();
+          } else {
+            ANIMATION_PASSTHROUGH = true;
+          }
         });
-        //this.rerender();
-
-        //let the model update, then reset the cursor
-        Ember.run.scheduleOnce('afterRender', this, function() {
-          this.navigate();
-        });
-      }, 550);
+      });
     }
   }
 });

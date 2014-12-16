@@ -1,12 +1,14 @@
 import { FACES } from '../../constants';
 
+var CUBIES = 27;
+
 export default Ember.Route.extend({
   //TODO: this should be moved somewhere else, maybe a
   //utils, or as part of one of the cube model
   generateCube: function() {
     var cubie,
       cubies = [];
-    for(var i=1; i<=27; i++) {
+    for(var i=1; i<=CUBIES; i++) {
       cubie = this.store.createRecord('cubie', {
         faces: Ember.copy(FACES, true)
       });

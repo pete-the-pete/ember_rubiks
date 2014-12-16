@@ -268,10 +268,10 @@ export default Ember.Controller.extend({
       parentMove: null
     });
 
-    move.save();
+    //move.save();
     cube.get('moves').then(function(moves) {
       moves.pushObject(move);
-      moves.save();
+      //moves.save();
     });
     cube.incrementProperty('moveCount');
   },
@@ -283,19 +283,20 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
+      var cube = this.get('model').get('cube');
       rotation_data.oldCubies = this.copyCubies();
       //do the rotation
       this.rotateSlice(rotation_data);
       //save move data
       this.saveMove(rotation_data);
-      this.get('model').get('cube').get('cubies').then(function(cubies) {
+      cube.get('cubies').then(function(cubies) {
         cubies.forEach(function(c) {
           delete c.get('faces').__nextSuper;
         });
-        cubies.save();
+        //cubies.save();
       });
       this.get('model').get('cube').then(function(cube) {
-        cube.save();
+        //cube.save();
       });
     },
     handleRotation: function(rotation_data) {
