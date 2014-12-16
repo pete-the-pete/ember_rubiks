@@ -14,7 +14,6 @@ export default Ember.Controller.extend({
   * save cubies
   */
   copyCubies: function() {
-    //return this.getCubies(cube_id)
     var copy = this.get('model').get('cube').get('cubies').map(function(cubie) {
       var copy = cubie.toJSON();
       copy.id = cubie.id;

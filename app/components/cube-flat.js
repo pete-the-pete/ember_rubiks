@@ -23,40 +23,40 @@ export default CubeComponent.extend({
     return _cubies.filter(function(cubie, index) {
       return this.layerFromIndex(index) === 1; 
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cube.cubies'),
+  }.property('cube.moveCount'),
 
   leftCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.cubieFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cube.cubies'),
+  }.property('cube.moveCount'),
 
   backCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.sectionFromIndex(index) === 1;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cube.cubies'),
+  }.property('cube.moveCount'),
 
   rightCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.cubieFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cube.cubies'),
+  }.property('cube.moveCount'),
 
   frontCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.sectionFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cube.cubies'),
+  }.property('cube.moveCount'),
 
   bottomCubies: function() {
     var _cubies = this.get('cubies') || [];
     return _cubies.filter(function(cubie, index) {
       return this.layerFromIndex(index) === 3;
     }, this).reduce(this.unflattenCubies,[]);
-  }.property('cube.cubies')
+  }.property('cube.moveCount')
 });
