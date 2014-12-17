@@ -1,6 +1,9 @@
 import Ember from 'ember';
 import { ROTATION_DIRECTIONS, AXES, FACES_INDECES } from '../constants';
 
+var _set = Ember.set,
+    _get = Ember.get;
+
 export default Ember.Controller.extend({
 
   getCubies: function() {
@@ -23,6 +26,91 @@ export default Ember.Controller.extend({
     return copy;
   },
 
+  rotateFaceColors: function(rotation_data, cubie) {
+    var tmp_color = null,
+        faces = cubie.get('faces');
+
+    if(rotation_data.direction === ROTATION_DIRECTIONS.CLOCKWISE) {
+      switch(rotation_data.axis) {
+        case AXES.X:
+          //save off back
+          tmp_color = _get(faces.objectAt(FACES_INDECES.BACK), 'color');
+          //back <- bottom
+          _set(faces.objectAt(FACES_INDECES.BACK), 'color', _get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
+          //bottom <- front
+          _set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', _get(faces.objectAt(FACES_INDECES.FRONT), 'color'));
+          //front <- top
+          _set(faces.objectAt(FACES_INDECES.FRONT), 'color', _get(faces.objectAt(FACES_INDECES.TOP), 'color'));
+          //top <- back
+          _set(faces.objectAt(FACES_INDECES.TOP), 'color', tmp_color);
+          break;
+        case AXES.Y:
+          //safe off back
+          tmp_color = _get(faces.objectAt(FACES_INDECES.BACK), 'color');
+          //back <- left
+          _set(faces.objectAt(FACES_INDECES.BACK), 'color', _get(faces.objectAt(FACES_INDECES.LEFT) ,'color'));
+          //left <- front
+          _set(faces.objectAt(FACES_INDECES.LEFT), 'color', _get(faces.objectAt(FACES_INDECES.FRONT) ,'color'));
+          //front <- right
+          _set(faces.objectAt(FACES_INDECES.FRONT), 'color', _get(faces.objectAt(FACES_INDECES.RIGHT) ,'color'));
+          //right <- back
+          _set(faces.objectAt(FACES_INDECES.RIGHT), 'color', tmp_color);
+          break;
+        case AXES.Z:
+          //save off left
+          tmp_color = _get(faces.objectAt(FACES_INDECES.LEFT), 'color');
+          //left <- bottom
+          _set(faces.objectAt(FACES_INDECES.LEFT), 'color', _get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
+          //bottom <- right
+          _set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', _get(faces.objectAt(FACES_INDECES.RIGHT), 'color'));
+          //right <- top
+          _set(faces.objectAt(FACES_INDECES.RIGHT), 'color', _get(faces.objectAt(FACES_INDECES.TOP), 'color'));
+          //top <- left
+          _set(faces.objectAt(FACES_INDECES.TOP), 'color', tmp_color);
+          break;
+      }
+    } else if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
+      switch(rotation_data.axis) {
+        case AXES.X:
+          //save off back
+          tmp_color = _get(faces.objectAt(FACES_INDECES.BACK), 'color');
+          //back <- top
+          _set(faces.objectAt(FACES_INDECES.BACK), 'color', _get(faces.objectAt(FACES_INDECES.TOP), 'color'));
+          //top <- front
+          _set(faces.objectAt(FACES_INDECES.TOP), 'color', _get(faces.objectAt(FACES_INDECES.FRONT), 'color'));
+          //front <- bottom
+          _set(faces.objectAt(FACES_INDECES.FRONT), 'color', _get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
+          //bottom <- back
+          _set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', tmp_color);
+          break;
+        case AXES.Y:
+          //safe off back
+          tmp_color = _get(faces.objectAt(FACES_INDECES.BACK), 'color');
+          //back <- right
+          _set(faces.objectAt(FACES_INDECES.BACK), 'color', _get(faces.objectAt(FACES_INDECES.RIGHT), 'color'));
+          //right <- front
+          _set(faces.objectAt(FACES_INDECES.RIGHT), 'color', _get(faces.objectAt(FACES_INDECES.FRONT), 'color'));
+          //front <- left
+          _set(faces.objectAt(FACES_INDECES.FRONT), 'color', _get(faces.objectAt(FACES_INDECES.LEFT), 'color'));
+          //left <- back
+          _set(faces.objectAt(FACES_INDECES.LEFT), 'color', tmp_color);
+          break;
+        case AXES.Z:
+          //save off left
+          tmp_color = _get(faces.objectAt(FACES_INDECES.LEFT), 'color');
+          //left <- top
+          _set(faces.objectAt(FACES_INDECES.LEFT), 'color', _get(faces.objectAt(FACES_INDECES.TOP), 'color'));
+          //top <- right
+          _set(faces.objectAt(FACES_INDECES.TOP), 'color', _get(faces.objectAt(FACES_INDECES.RIGHT), 'color'));
+          //right <- bottom
+          _set(faces.objectAt(FACES_INDECES.RIGHT), 'color', _get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
+          //bottom <- left
+          _set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', tmp_color);
+          break;
+      }
+    }
+  },
+
   getTempCubieIndex: function(positionData, axis, outer_index, inner_index) {
     var index;
 
@@ -34,91 +122,6 @@ export default Ember.Controller.extend({
       index = (positionData.section*3) + outer_index + inner_index;
     }
     return index;
-  },
-
-  rotateFaceColors: function(rotation_data, cubie) {
-    var tmp_color = null,
-        faces = cubie.get('faces');
-
-    if(rotation_data.direction === ROTATION_DIRECTIONS.CLOCKWISE) {
-      switch(rotation_data.axis) {
-        case AXES.X:
-          //save off back
-          tmp_color = Ember.get(faces.objectAt(FACES_INDECES.BACK), 'color');
-          //back <- bottom
-          Ember.set(faces.objectAt(FACES_INDECES.BACK), 'color', Ember.get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
-          //bottom <- front
-          Ember.set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', Ember.get(faces.objectAt(FACES_INDECES.FRONT), 'color'));
-          //front <- top
-          Ember.set(faces.objectAt(FACES_INDECES.FRONT), 'color', Ember.get(faces.objectAt(FACES_INDECES.TOP), 'color'));
-          //top <- back
-          Ember.set(faces.objectAt(FACES_INDECES.TOP), 'color', tmp_color);
-          break;
-        case AXES.Y:
-          //safe off back
-          tmp_color = Ember.get(faces.objectAt(FACES_INDECES.BACK), 'color');
-          //back <- left
-          Ember.set(faces.objectAt(FACES_INDECES.BACK), 'color', Ember.get(faces.objectAt(FACES_INDECES.LEFT) ,'color'));
-          //left <- front
-          Ember.set(faces.objectAt(FACES_INDECES.LEFT), 'color', Ember.get(faces.objectAt(FACES_INDECES.FRONT) ,'color'));
-          //front <- right
-          Ember.set(faces.objectAt(FACES_INDECES.FRONT), 'color', Ember.get(faces.objectAt(FACES_INDECES.RIGHT) ,'color'));
-          //right <- back
-          Ember.set(faces.objectAt(FACES_INDECES.RIGHT), 'color', tmp_color);
-          break;
-        case AXES.Z:
-          //save off left
-          tmp_color = Ember.get(faces.objectAt(FACES_INDECES.LEFT), 'color');
-          //left <- bottom
-          Ember.set(faces.objectAt(FACES_INDECES.LEFT), 'color', Ember.get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
-          //bottom <- right
-          Ember.set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', Ember.get(faces.objectAt(FACES_INDECES.RIGHT), 'color'));
-          //right <- top
-          Ember.set(faces.objectAt(FACES_INDECES.RIGHT), 'color', Ember.get(faces.objectAt(FACES_INDECES.TOP), 'color'));
-          //top <- left
-          Ember.set(faces.objectAt(FACES_INDECES.TOP), 'color', tmp_color);
-          break;
-      }
-    } else if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
-      switch(rotation_data.axis) {
-        case AXES.X:
-          //save off back
-          tmp_color = Ember.get(faces.objectAt(FACES_INDECES.BACK), 'color');
-          //back <- top
-          Ember.set(faces.objectAt(FACES_INDECES.BACK), 'color', Ember.get(faces.objectAt(FACES_INDECES.TOP), 'color'));
-          //top <- front
-          Ember.set(faces.objectAt(FACES_INDECES.TOP), 'color', Ember.get(faces.objectAt(FACES_INDECES.FRONT), 'color'));
-          //front <- bottom
-          Ember.set(faces.objectAt(FACES_INDECES.FRONT), 'color', Ember.get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
-          //bottom <- back
-          Ember.set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', tmp_color);
-          break;
-        case AXES.Y:
-          //safe off back
-          tmp_color = Ember.get(faces.objectAt(FACES_INDECES.BACK), 'color');
-          //back <- right
-          Ember.set(faces.objectAt(FACES_INDECES.BACK), 'color', Ember.get(faces.objectAt(FACES_INDECES.RIGHT), 'color'));
-          //right <- front
-          Ember.set(faces.objectAt(FACES_INDECES.RIGHT), 'color', Ember.get(faces.objectAt(FACES_INDECES.FRONT), 'color'));
-          //front <- left
-          Ember.set(faces.objectAt(FACES_INDECES.FRONT), 'color', Ember.get(faces.objectAt(FACES_INDECES.LEFT), 'color'));
-          //left <- back
-          Ember.set(faces.objectAt(FACES_INDECES.LEFT), 'color', tmp_color);
-          break;
-        case AXES.Z:
-          //save off left
-          tmp_color = Ember.get(faces.objectAt(FACES_INDECES.LEFT), 'color');
-          //left <- top
-          Ember.set(faces.objectAt(FACES_INDECES.LEFT), 'color', Ember.get(faces.objectAt(FACES_INDECES.TOP), 'color'));
-          //top <- right
-          Ember.set(faces.objectAt(FACES_INDECES.TOP), 'color', Ember.get(faces.objectAt(FACES_INDECES.RIGHT), 'color'));
-          //right <- bottom
-          Ember.set(faces.objectAt(FACES_INDECES.RIGHT), 'color', Ember.get(faces.objectAt(FACES_INDECES.BOTTOM), 'color'));
-          //bottom <- left
-          Ember.set(faces.objectAt(FACES_INDECES.BOTTOM), 'color', tmp_color);
-          break;
-      }
-    }
   },
 
   /**
@@ -227,7 +230,6 @@ export default Ember.Controller.extend({
     }
     return rotations;
   },
-
   rotateSlice: function(rotation_data) {
     var sidesLength = 3, //hardcoded for now
         rotations = [],
@@ -247,7 +249,7 @@ export default Ember.Controller.extend({
 
   },
 
-  saveMove: function(rotation_data) {
+  createMove: function(rotation_data) {
     //for branching moves later
     /*var moves = this.get('model').get('cube').get('moves');
     var lastMoveId = parseInt(moves.get('lastObject.id'), 10);
@@ -267,10 +269,8 @@ export default Ember.Controller.extend({
       parentMove: null
     });
 
-    //move.save();
     cube.get('moves').then(function(moves) {
       moves.pushObject(move);
-      //moves.save();
     });
     cube.incrementProperty('moveCount');
   },
@@ -282,21 +282,23 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
-      var cube = this.get('model').get('cube');
+      var cube = this.get('model').get('cube'),
+        rotatingCubies = rotation_data.rotatingCubies;
+
       rotation_data.oldCubies = this.copyCubies();
       //do the rotation
       this.rotateSlice(rotation_data);
-      //save move data
-      this.saveMove(rotation_data);
-      cube.get('cubies').then(function(cubies) {
-        cubies.forEach(function(c) {
-          delete c.get('faces').__nextSuper;
-        });
-        //cubies.save();
+      //create move
+      Ember.run.next(this, this.createMove, rotation_data);
+
+      //save everything
+      /*rotatingCubies.forEach(function(c) {
+        delete c.get('faces').__nextSuper;
+        c.save();
       });
       this.get('model').get('cube').then(function(cube) {
-        //cube.save();
-      });
+        cube.save();
+      });*/
     },
     handleRotation: function(rotation_data) {
       rotation_data.oldCubies = this.copyCubies();
@@ -307,7 +309,7 @@ export default Ember.Controller.extend({
         this.rotateSlice(rotation_data_copy);
       }.bind(this));
       //save the 'move'
-      this.saveMove(rotation_data);
+      this.createMove(rotation_data);
     }
   }
 });

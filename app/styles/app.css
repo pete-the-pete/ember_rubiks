@@ -581,8 +581,11 @@ th {
 .cubie {
   width: 150px;
   height: 150px;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
-/* line 5, ../sass/modules/_cubie.scss */
+/* line 6, ../sass/modules/_cubie.scss */
 .cubie .side {
   width: 100%;
   height: 100%;
@@ -593,7 +596,7 @@ th {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 13, ../sass/modules/_cubie.scss */
+/* line 14, ../sass/modules/_cubie.scss */
 .cubie .side .sticker {
   width: 100%;
   height: 100%;
@@ -609,35 +612,35 @@ th {
   opacity: inherit;
   /* background-color */
 }
-/* line 25, ../sass/modules/_cubie.scss */
+/* line 26, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.orange {
   background-color: orange;
 }
-/* line 26, ../sass/modules/_cubie.scss */
+/* line 27, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.green {
   background-color: green;
 }
-/* line 27, ../sass/modules/_cubie.scss */
+/* line 28, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.red {
   background-color: red;
 }
-/* line 28, ../sass/modules/_cubie.scss */
+/* line 29, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.yellow {
   background-color: yellow;
 }
-/* line 29, ../sass/modules/_cubie.scss */
+/* line 30, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.white {
   background-color: white;
 }
-/* line 30, ../sass/modules/_cubie.scss */
+/* line 31, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.blue {
   background-color: blue;
 }
-/* line 31, ../sass/modules/_cubie.scss */
+/* line 32, ../sass/modules/_cubie.scss */
 .cubie .side .sticker.black {
   background-color: black;
 }
-/* line 32, ../sass/modules/_cubie.scss */
+/* line 33, ../sass/modules/_cubie.scss */
 .cubie .side .sticker p {
   /* display: none; */
 }

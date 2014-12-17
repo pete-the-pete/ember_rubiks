@@ -1,6 +1,7 @@
 .cubie {
   width: $cubie_dimension;
   height: $cubie_dimension;
+  @include translateZ(0);
   //the sides of a cubie
   .side {
     width: 100%;

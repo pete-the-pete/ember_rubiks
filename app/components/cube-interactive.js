@@ -258,12 +258,11 @@ export default CubeComponent.extend({
               cube: self.cube.get('id'),
               type: type,
               positionData: aCubie.get('positionData'),
+              rotatingCubies: rotatingCubies,
               direction: direction,
               axis: axis
             });
-            //rerender the cube since it won't rerender when just
-            //the children change
-            self.rerender();
+            Ember.run.schedule('afterRender', self, 'rerender');
           } else {
             ANIMATION_PASSTHROUGH = true;
           }
