@@ -289,9 +289,13 @@ export default Ember.Controller.extend({
       this.rotateSlice(rotation_data);
       //create move
       //this.createMove(rotation_data);
-      Ember.run.schedule('afterRender', this, 'createMove', rotation_data);
+      
       //Ember.run.next(this, this.createMove, rotation_data);
-      Ember.run.schedule('afterRender', cube, 'incrementProperty', 'moveCount');
+      Ember.run.next(this, function() {
+        cube.incrementProperty('moveCount');
+        Ember.run.next(this, 'createMove', rotation_data);
+      });
+
       //Ember.run.next(cube, cube.incrementProperty, 'moveCount');
       //cube.incrementProperty('moveCount');
 
