@@ -24,6 +24,10 @@ export default Ember.Component.extend({
     this.set('_cubieIndex', CUBIE);
   },
 
+  didInsertElement: function() {
+    this.incrementProperty('cube.insertedChildView');
+  },
+
   /*
   Set the class based on the active state.
   */

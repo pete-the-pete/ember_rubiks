@@ -15,14 +15,11 @@ export default CubeComponent.extend({
       'direction': null,
       'steps': []
     });
+    this.set('insertedChildView', 0);
   },
 
-  didInsertElement: function() {
-    function init() {
-      if(!this.get('initialCubieIndex')) {
-        Ember.run.schedule(this, init, 500);
-        return;
-      }
+  didRender: function() {
+    if(this.get('insertedChildView') === 27) {
       if(!INITIALIZED) {
         INITIALIZED = true;
         //set the middle cubie as active
@@ -30,12 +27,8 @@ export default CubeComponent.extend({
       } else {
         this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
       }
-      //reset the cursor
-      this.navigate();
     }
-    //hack to highlight it after everything as loaded (hopefully)
-    Ember.run.later(this, init, 2500);
-  },
+  }.observes('insertedChildView'),
 
   /**
   Navigate around the cube by changing the active cubie, and the adjacent faces
@@ -47,7 +40,7 @@ export default CubeComponent.extend({
       activeLayerIndex,
       activeSectionIndex,
       activeCubieIndex;
-  
+
     cubie = this.get('activeCubie');
     positionData = cubie.get('positionData');
     activeLayerIndex = positionData.layer;
@@ -125,10 +118,8 @@ export default CubeComponent.extend({
     }
     this.setActiveCubieAtIndex(activeCubieIndex);
     //let the model update, then reset the cursor
-    Ember.run.schedule('afterRender', this, function() {
-      this.navigate();
-    });
-  },
+    Ember.run.schedule('afterRender', this, this.navigate);
+  }.observes('activeCubie'),
 
   /**
   * Actions to capture events from sub-components

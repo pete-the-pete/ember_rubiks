@@ -9,6 +9,8 @@ export default Ember.Component.extend({
   steps: [],
   direction: null,
 
+  insertedChildView: 0,
+
   activeCubie: null,
 
   activeCubieIndex: null,
