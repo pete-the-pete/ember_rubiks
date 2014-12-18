@@ -12,7 +12,7 @@
     <section class="moves-container" style="height:100%;overflow:scroll;">
       <h2>Game History</h2>
       <ol>
-        {{#each m in content.cube.moves}}
+        {{#each m in content.cube.moves.content}}
           <li>
             {{move-detail move=m}}
           </li>

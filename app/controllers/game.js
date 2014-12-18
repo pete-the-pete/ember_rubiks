@@ -6,6 +6,8 @@ var _set = Ember.set,
 
 export default Ember.Controller.extend({
 
+  movesList: Ember.computed.alias('model.cube.moves.content'),
+
   getCubies: function() {
     return this.get('model').get('cube').get('cubies').get('content');
   },
@@ -251,7 +253,8 @@ export default Ember.Controller.extend({
 
   createMove: function(rotation_data) {
     var move,
-      cube = this.get('model').get('cube');
+      cube = this.get('model').get('cube'),
+      moves = cube.get('moves');
 
     move = this.store.createRecord('move', {
       timestamp: (new Date()).getTime(),
@@ -263,11 +266,13 @@ export default Ember.Controller.extend({
       positionData: rotation_data.positionData,
       parentMove: null
     });
+    //the moves ref on the cube object is changing, and causing
+    //the entire game history to be rewritten
 
-    cube.get('moves').then(function(moves) {
-      moves.pushObject(move);
-    });
-    
+    moves.get('content').pushObject(move);
+    /*moves.then(function(moves) {
+      moves.get(pushObject(move);
+    });*/
   },
 
   actions: {

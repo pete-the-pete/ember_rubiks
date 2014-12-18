@@ -20,7 +20,7 @@ export default CubeComponent.extend({
   didInsertElement: function() {
     function init() {
       if(!this.get('initialCubieIndex')) {
-        Ember.run.later(this, init, 500);
+        Ember.run.schedule(this, init, 500);
         return;
       }
       if(!INITIALIZED) {
@@ -34,7 +34,7 @@ export default CubeComponent.extend({
       this.navigate();
     }
     //hack to highlight it after everything as loaded (hopefully)
-    Ember.run.later(this, init, 500);
+    Ember.run.later(this, init, 2500);
   },
 
   /**
@@ -250,7 +250,7 @@ export default CubeComponent.extend({
         });
       });
       
-      this.$().one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+      this.$().one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
         Ember.run(function() {
           if(ANIMATION_PASSTHROUGH) {
             ANIMATION_PASSTHROUGH = false;
