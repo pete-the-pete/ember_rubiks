@@ -250,11 +250,6 @@ export default Ember.Controller.extend({
   },
 
   createMove: function(rotation_data) {
-    //for branching moves later
-    /*var moves = this.get('model').get('cube').get('moves');
-    var lastMoveId = parseInt(moves.get('lastObject.id'), 10);
-    lastMoveId = isNaN(lastMoveId) ? 0 : lastMoveId;*/
-
     var move,
       cube = this.get('model').get('cube');
 
@@ -272,7 +267,7 @@ export default Ember.Controller.extend({
     cube.get('moves').then(function(moves) {
       moves.pushObject(move);
     });
-    cube.incrementProperty('moveCount');
+    
   },
 
   actions: {
@@ -282,14 +277,18 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
-      var cube = this.get('model').get('cube'),
-        rotatingCubies = rotation_data.rotatingCubies;
+      var cube = this.get('model').get('cube');
 
       rotation_data.oldCubies = this.copyCubies();
       //do the rotation
       this.rotateSlice(rotation_data);
       //create move
-      Ember.run.next(this, this.createMove, rotation_data);
+      //this.createMove(rotation_data);
+      Ember.run.schedule('afterRender', this, 'createMove', rotation_data);
+      //Ember.run.next(this, this.createMove, rotation_data);
+      Ember.run.schedule('afterRender', cube, 'incrementProperty', 'moveCount');
+      //Ember.run.next(cube, cube.incrementProperty, 'moveCount');
+      //cube.incrementProperty('moveCount');
 
       //save everything
       /*rotatingCubies.forEach(function(c) {
