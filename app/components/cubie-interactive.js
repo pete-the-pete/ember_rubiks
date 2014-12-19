@@ -23,6 +23,13 @@ export default CubieComponent.extend({
     });
   },
 
+  reset: function() {
+    this.setProperties({
+      'direction': null,
+      'steps': []
+    });
+  },
+
   positionClass: function() {
     return ('layer-'+this.get('_layerIndex')) + ' ' +
            ('section-'+this.get('_sectionIndex')) + ' ' +

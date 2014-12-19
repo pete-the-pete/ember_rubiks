@@ -72,6 +72,7 @@ export default Ember.Component.extend({
   setActiveCubieAtIndex: function(index) {
     this.set('activeCubieIndex', index);
     this.set('activeCubie', this.get('childViews').objectAt(index));
+    this.get('activeCubie').setFocus();
   },
 
   getCubieAtIndex: function(index) {

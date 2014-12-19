@@ -232,8 +232,74 @@ export default Ember.Controller.extend({
     }
     return rotations;
   },
+
+  rotateCubies: function(rotation_data) {
+    var tmpCubie = null,
+      cubies = rotation_data.rotatingCubies;
+
+    if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
+      //tmpCubie = cubies.objectAt(0);
+      tmpCubie = cubies.objectAt(0).get('cubie');
+      //6 => 0
+      //cubies.splice(0, 1, cubies.objectAt(2));
+      cubies.objectAt(0).set('cubie', cubies.objectAt(2).get('cubie'));
+      //8 => 6
+      //cubies.splice(2, 1, cubies.objectAt(8));
+      cubies.objectAt(2).set('cubie', cubies.objectAt(8).get('cubie'));
+      //2 => 8
+      //cubies.splice(8, 1, cubies.objectAt(6));
+      cubies.objectAt(8).set('cubie', cubies.objectAt(6).get('cubie'));
+      //0 => 2
+      //cubies.splice(6, 1, tmpCubie);
+      cubies.objectAt(6).set('cubie', tmpCubie);
+
+      //tmpCubie = cubies.objectAt(1);
+      tmpCubie = cubies.objectAt(1).get('cubie');
+      //1 => 5
+      //cubies.splice(1, 1, cubies.objectAt(5));
+      cubies.objectAt(1).set('cubie', cubies.objectAt(5).get('cubie'));
+      //5 => 7
+      //cubies.splice(5, 1, cubies.objectAt(7));
+      cubies.objectAt(5).set('cubie', cubies.objectAt(7).get('cubie'));
+      //7 => 3
+      //cubies.splice(7, 1, cubies.objectAt(3));
+      cubies.objectAt(7).set('cubie', cubies.objectAt(3).get('cubie'));
+      //3 => 1
+      //cubies.splice(1, 1, tmpCubie);
+      cubies.objectAt(3).set('cubie', tmpCubie);
+    } else {
+      tmpCubie = cubies.objectAt(0);
+      //6 => 0
+      cubies.splice(0, 1, cubies.objectAt(6));
+      //8 => 6
+      cubies.splice(6, 1, cubies.objectAt(8));
+      //2 => 8
+      cubies.splice(8, 1, cubies.objectAt(2));
+      //0 => 2
+      cubies.splice(2, 1, tmpCubie);
+
+      tmpCubie = cubies.objectAt(1);
+      //1 => 5
+      cubies.splice(1, 1, cubies.objectAt(3));
+      //5 => 7
+      cubies.splice(3, 1, cubies.objectAt(7));
+      //7 => 3
+      cubies.splice(7, 1, cubies.objectAt(5));
+      //3 => 1
+      cubies.splice(5, 1, tmpCubie);
+    }
+  },
+
   rotateSlice: function(rotation_data) {
-    var sidesLength = 3, //hardcoded for now
+    var sidesLength = 3;
+    //just loop, and we can sort it out in the actual swap
+      /*if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
+
+      } else {
+        
+      }*/
+    //this.swapCubies(rotation_data);
+    /*var sidesLength = 3, //hardcoded for now
         rotations = [],
         cubies = this.getCubies();
 
@@ -247,7 +313,14 @@ export default Ember.Controller.extend({
     //perform the moves
     rotations.forEach(function(rotation) {
       this.swapCubies(cubies, rotation_data, rotation[0], rotation[1], rotation[2]);
+    }, this);*/
+    this.rotateCubies(rotation_data);
+
+    rotation_data.rotatingCubies.forEach(function(cubie) {
+      this.rotateFaceColors(rotation_data, cubie.get('cubie'));
+      Ember.run.next(cubie, cubie.rerender);
     }, this);
+
 
   },
 
@@ -291,10 +364,10 @@ export default Ember.Controller.extend({
       //this.createMove(rotation_data);
       
       //Ember.run.next(this, this.createMove, rotation_data);
-      Ember.run.next(this, function() {
+      /*Ember.run.next(this, function() {
         cube.incrementProperty('moveCount');
         Ember.run.next(this, 'createMove', rotation_data);
-      });
+      });*/
 
       //Ember.run.next(cube, cube.incrementProperty, 'moveCount');
       //cube.incrementProperty('moveCount');

@@ -19,7 +19,14 @@ export default CubeComponent.extend({
   },
 
   didRender: function() {
-    if(this.get('insertedChildView') === 27) {
+    var total = 9;//27;
+
+    if(!INITIALIZED) {
+      total = 27;
+    }
+
+    if(this.get('insertedChildView') === total) {
+      this.set('insertedChildView', 0);
       if(!INITIALIZED) {
         INITIALIZED = true;
         //set the middle cubie as active
@@ -27,6 +34,7 @@ export default CubeComponent.extend({
       } else {
         this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
       }
+      console.groupEnd();
     }
   }.observes('insertedChildView'),
 
@@ -119,7 +127,7 @@ export default CubeComponent.extend({
     this.setActiveCubieAtIndex(activeCubieIndex);
     //let the model update, then reset the cursor
     Ember.run.schedule('afterRender', this, this.navigate);
-  }.observes('activeCubie'),
+  },
 
   /**
   * Actions to capture events from sub-components
@@ -253,7 +261,7 @@ export default CubeComponent.extend({
               direction: direction,
               axis: axis
             });
-            Ember.run.schedule('afterRender', self, 'rerender');
+            //Ember.run.schedule('afterRender', self, 'rerender');
           } else {
             ANIMATION_PASSTHROUGH = true;
           }
