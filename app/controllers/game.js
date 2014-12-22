@@ -9,7 +9,8 @@ export default Ember.Controller.extend({
   movesList: Ember.computed.alias('model.cube.moves.content'),
 
   getCubies: function() {
-    return this.get('model').get('cube').get('cubies').get('content');
+    return this.get('model').get('cube').get('cubies').get('content').get('content');
+    //return this.get('model').get('cube').get('cubies');
   },
 
   /**
@@ -235,93 +236,59 @@ export default Ember.Controller.extend({
 
   rotateCubies: function(rotation_data) {
     var tmpCubie = null,
+      _cubies = this.get('model').get('cube').get('cubies').get('content').get('content'),
       cubies = rotation_data.rotatingCubies;
 
     if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
-      //tmpCubie = cubies.objectAt(0);
       tmpCubie = cubies.objectAt(0).get('cubie');
       //6 => 0
-      //cubies.splice(0, 1, cubies.objectAt(2));
-      cubies.objectAt(0).set('cubie', cubies.objectAt(2).get('cubie'));
+      _cubies.replace(cubies.objectAt(0).get('index'), 1, [cubies.objectAt(2).get('cubie')]);
       //8 => 6
-      //cubies.splice(2, 1, cubies.objectAt(8));
-      cubies.objectAt(2).set('cubie', cubies.objectAt(8).get('cubie'));
+      _cubies.replace(cubies.objectAt(2).get('index'), 1, [cubies.objectAt(8).get('cubie')]);
       //2 => 8
-      //cubies.splice(8, 1, cubies.objectAt(6));
-      cubies.objectAt(8).set('cubie', cubies.objectAt(6).get('cubie'));
+      _cubies.replace(cubies.objectAt(8).get('index'), 1, [cubies.objectAt(6).get('cubie')]);
       //0 => 2
-      //cubies.splice(6, 1, tmpCubie);
-      cubies.objectAt(6).set('cubie', tmpCubie);
+      _cubies.replace(cubies.objectAt(6).get('index'), 1, [tmpCubie]);
 
-      //tmpCubie = cubies.objectAt(1);
       tmpCubie = cubies.objectAt(1).get('cubie');
       //1 => 5
-      //cubies.splice(1, 1, cubies.objectAt(5));
-      cubies.objectAt(1).set('cubie', cubies.objectAt(5).get('cubie'));
+      _cubies.replace(cubies.objectAt(1).get('index'), 1, [cubies.objectAt(5).get('cubie')]);
       //5 => 7
-      //cubies.splice(5, 1, cubies.objectAt(7));
-      cubies.objectAt(5).set('cubie', cubies.objectAt(7).get('cubie'));
+      _cubies.replace(cubies.objectAt(5).get('index'), 1, [cubies.objectAt(7).get('cubie')]);
       //7 => 3
-      //cubies.splice(7, 1, cubies.objectAt(3));
-      cubies.objectAt(7).set('cubie', cubies.objectAt(3).get('cubie'));
+      _cubies.replace(cubies.objectAt(7).get('index'), 1, [cubies.objectAt(3).get('cubie')]);
       //3 => 1
-      //cubies.splice(1, 1, tmpCubie);
-      cubies.objectAt(3).set('cubie', tmpCubie);
-    } else {
-      tmpCubie = cubies.objectAt(0);
-      //6 => 0
-      cubies.splice(0, 1, cubies.objectAt(6));
-      //8 => 6
-      cubies.splice(6, 1, cubies.objectAt(8));
-      //2 => 8
-      cubies.splice(8, 1, cubies.objectAt(2));
-      //0 => 2
-      cubies.splice(2, 1, tmpCubie);
+      _cubies.replace(cubies.objectAt(3).get('index'), 1, [tmpCubie]);
 
-      tmpCubie = cubies.objectAt(1);
+    } else {
+      tmpCubie = cubies.objectAt(0).get('cubie');
+      //6 => 0
+      _cubies.replace(cubies.objectAt(0).get('index'), 1, [cubies.objectAt(6).get('cubie')]);
+      //8 => 6
+      _cubies.replace(cubies.objectAt(6).get('index'), 1, [cubies.objectAt(8).get('cubie')]);
+      //2 => 8
+      _cubies.replace(cubies.objectAt(8).get('index'), 1, [cubies.objectAt(2).get('cubie')]);
+      //0 => 2
+      _cubies.replace(cubies.objectAt(2).get('index'), 1, [tmpCubie]);
+
+      tmpCubie = cubies.objectAt(1).get('cubie');
       //1 => 5
-      cubies.splice(1, 1, cubies.objectAt(3));
+      _cubies.replace(cubies.objectAt(1).get('index'), 1, [cubies.objectAt(3).get('cubie')]);
       //5 => 7
-      cubies.splice(3, 1, cubies.objectAt(7));
+      _cubies.replace(cubies.objectAt(3).get('index'), 1, [cubies.objectAt(7).get('cubie')]);
       //7 => 3
-      cubies.splice(7, 1, cubies.objectAt(5));
+      _cubies.replace(cubies.objectAt(7).get('index'), 1, [cubies.objectAt(5).get('cubie')]);
       //3 => 1
-      cubies.splice(5, 1, tmpCubie);
+      _cubies.replace(cubies.objectAt(5).get('index'), 1, [tmpCubie]);
     }
+    _cubies.replace(cubies.objectAt(4).get('index'), 1, [cubies.objectAt(4).get('cubie')]);
   },
 
   rotateSlice: function(rotation_data) {
-    var sidesLength = 3;
-    //just loop, and we can sort it out in the actual swap
-      /*if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
-
-      } else {
-        
-      }*/
-    //this.swapCubies(rotation_data);
-    /*var sidesLength = 3, //hardcoded for now
-        rotations = [],
-        cubies = this.getCubies();
-
-    //just loop, and we can sort it out in the actual swap
-    for(var outer_index=0; outer_index < sidesLength/2; outer_index++) {
-      for(var inner_index=outer_index; inner_index < (sidesLength - outer_index - 1); inner_index++) {
-        rotations = rotations.concat(this.calculateSwaps(rotation_data, outer_index, inner_index));
-      }
-    }
-
-    //perform the moves
-    rotations.forEach(function(rotation) {
-      this.swapCubies(cubies, rotation_data, rotation[0], rotation[1], rotation[2]);
-    }, this);*/
-    this.rotateCubies(rotation_data);
-
     rotation_data.rotatingCubies.forEach(function(cubie) {
       this.rotateFaceColors(rotation_data, cubie.get('cubie'));
-      Ember.run.next(cubie, cubie.rerender);
     }, this);
-
-
+    Ember.run.next(this, this.rotateCubies, rotation_data);
   },
 
   createMove: function(rotation_data) {
@@ -361,16 +328,11 @@ export default Ember.Controller.extend({
       //do the rotation
       this.rotateSlice(rotation_data);
       //create move
-      //this.createMove(rotation_data);
-      
-      //Ember.run.next(this, this.createMove, rotation_data);
-      /*Ember.run.next(this, function() {
+      Ember.run.next(this, function() {
         cube.incrementProperty('moveCount');
         Ember.run.next(this, 'createMove', rotation_data);
-      });*/
+      });
 
-      //Ember.run.next(cube, cube.incrementProperty, 'moveCount');
-      //cube.incrementProperty('moveCount');
 
       //save everything
       /*rotatingCubies.forEach(function(c) {

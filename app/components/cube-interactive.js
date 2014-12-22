@@ -19,7 +19,7 @@ export default CubeComponent.extend({
   },
 
   didRender: function() {
-    var total = 9;//27;
+    var total = 9;
 
     if(!INITIALIZED) {
       total = 27;
@@ -34,7 +34,6 @@ export default CubeComponent.extend({
       } else {
         this.setActiveCubieAtIndex(this.get('activeCubieIndex'));
       }
-      console.groupEnd();
     }
   }.observes('insertedChildView'),
 
