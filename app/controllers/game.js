@@ -10,7 +10,6 @@ export default Ember.Controller.extend({
 
   getCubies: function() {
     return this.get('model').get('cube').get('cubies').get('content').get('content');
-    //return this.get('model').get('cube').get('cubies');
   },
 
   /**
@@ -114,126 +113,6 @@ export default Ember.Controller.extend({
     }
   },
 
-  getTempCubieIndex: function(positionData, axis, outer_index, inner_index) {
-    var index;
-
-    if(axis === AXES.X) {
-      index = positionData.cubie + outer_index + (inner_index*3);
-    } else if(axis === AXES.Y) {
-      index = (positionData.layer*9) + outer_index + inner_index;
-    } else if(axis === AXES.Z) {
-      index = (positionData.section*3) + outer_index + inner_index;
-    }
-    return index;
-  },
-
-  /**
-  * Swap the cubies using the native splice method on the content array
-  * so that the model isn't automatically updated when the items are
-  * removed/inserted into the model.
-  */
-  swapCubies: function(cubies, rotation_data, layer, section, cubie) {
-    var to_index = null,
-        from_index = null;
-
-      to_index = (9*layer.to) + (3*section.to) + cubie.to;
-
-      if(cubie.from !== null) {
-        //swap the cubie with the new one
-        from_index = (9*layer.from) + (3*section.from) + cubie.from;
-        cubies.get('content').splice(to_index, 1, cubies.objectAt(from_index));
-      } else {
-        //swap the cubie with the passed in object
-        delete cubie.to;
-        delete cubie.from;
-        cubies.get('content').splice(to_index, 1, cubie);
-      }
-      //update its colors
-      this.rotateFaceColors(rotation_data, cubies.objectAt(to_index));
-  },
-
-  calculateSwaps: function(rotation_data, outer_index, inner_index) {
-    var tempCubie = null,
-      cubies = this.getCubies(rotation_data.cube),
-      positionData = rotation_data.positionData,
-      axis = rotation_data.axis,
-      rotations = [],
-      layer_moves = null,
-      section_moves = null,
-      cubie_moves = null,
-      sidesLength = 3; //hardcode for now
-
-    if(axis === AXES.X) {
-      cubie_moves = {
-        from: positionData.cubie,
-        to: positionData.cubie
-      };
-    } else if(axis === AXES.Y) {
-      layer_moves = {
-        from: positionData.layer,
-        to: positionData.layer
-      };
-    } else {
-      section_moves = {
-        from: positionData.section,
-        to: positionData.section
-      };
-    }
-
-    //pull out the first cubie
-    tempCubie = cubies.objectAt(this.getTempCubieIndex(positionData, axis, outer_index, inner_index));
-
-    if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
-
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: inner_index, to: outer_index };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-outer_index-1, to: inner_index } : { from: inner_index, to: outer_index };
-      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: inner_index };
-      rotations.push([ layer_moves, section_moves, cubie_moves ]);
-
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: inner_index };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 } : { from: sidesLength-outer_index-1, to: inner_index };
-      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
-      rotations.push([ layer_moves, section_moves, cubie_moves ]);
-
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: outer_index, to: sidesLength-inner_index-1 } : { from: sidesLength-inner_index-1, to: sidesLength-outer_index-1 };
-      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: outer_index, to: sidesLength-inner_index-1 };
-      rotations.push([ layer_moves, section_moves, cubie_moves ]);
-
-      //special case, the temp cubie is passed in directly
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: null, to: sidesLength-inner_index-1 };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? {from: null, to: outer_index} : { from: null, to: sidesLength-inner_index-1 };
-      tempCubie.to = (axis === AXES.X) ? cubie_moves.to : outer_index;
-      tempCubie.from = null;
-      rotations.push([ layer_moves, section_moves, tempCubie ]);
-
-    } else {
-
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-inner_index-1, to: outer_index };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: outer_index, to: inner_index } : { from: sidesLength-inner_index-1, to: outer_index };
-      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: outer_index, to: inner_index };
-      rotations.push([ layer_moves, section_moves, cubie_moves ]);
-
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-inner_index-1, to: outer_index } : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-inner_index-1, to: outer_index };
-      rotations.push([ layer_moves, section_moves, cubie_moves ]);
-
-      layer_moves = (axis === AXES.Y) ? layer_moves : { from: inner_index, to: sidesLength-outer_index-1 };
-      section_moves = (axis === AXES.Z) ? section_moves : (axis === AXES.X) ? { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 } : { from: inner_index, to: sidesLength-outer_index-1 };
-      cubie_moves = (axis === AXES.X) ? cubie_moves : { from: sidesLength-outer_index-1, to: sidesLength-inner_index-1 };
-      rotations.push([ layer_moves, section_moves, cubie_moves ]);
-
-      //special case, the temp cubie is passed in directly
-      layer_moves = (rotation_data.axis === AXES.Y) ? layer_moves : { from: null, to: inner_index };
-      section_moves = (rotation_data.axis === AXES.Z) ? section_moves : (rotation_data.axis === AXES.X) ? { from: null, to: sidesLength-outer_index-1 } : { from: null, to: inner_index };
-      tempCubie.to = (rotation_data.axis === AXES.X) ? cubie_moves.to : sidesLength-outer_index-1;
-      tempCubie.from = null;
-      rotations.push([ layer_moves, section_moves, tempCubie ]);
-    }
-    return rotations;
-  },
-
   rotateCubies: function(rotation_data) {
     var tmpCubie = null,
       _cubies = this.get('model').get('cube').get('cubies').get('content').get('content'),
@@ -243,51 +122,65 @@ export default Ember.Controller.extend({
       tmpCubie = cubies.objectAt(0).get('cubie');
       //6 => 0
       _cubies.replace(cubies.objectAt(0).get('index'), 1, [cubies.objectAt(2).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(0).get('index')));
       //8 => 6
       _cubies.replace(cubies.objectAt(2).get('index'), 1, [cubies.objectAt(8).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(2).get('index')));
       //2 => 8
       _cubies.replace(cubies.objectAt(8).get('index'), 1, [cubies.objectAt(6).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(8).get('index')));
       //0 => 2
       _cubies.replace(cubies.objectAt(6).get('index'), 1, [tmpCubie]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(6).get('index')));
 
       tmpCubie = cubies.objectAt(1).get('cubie');
       //1 => 5
       _cubies.replace(cubies.objectAt(1).get('index'), 1, [cubies.objectAt(5).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(1).get('index')));
       //5 => 7
       _cubies.replace(cubies.objectAt(5).get('index'), 1, [cubies.objectAt(7).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(5).get('index')));
       //7 => 3
       _cubies.replace(cubies.objectAt(7).get('index'), 1, [cubies.objectAt(3).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(7).get('index')));
       //3 => 1
       _cubies.replace(cubies.objectAt(3).get('index'), 1, [tmpCubie]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(3).get('index')));
 
     } else {
       tmpCubie = cubies.objectAt(0).get('cubie');
       //6 => 0
       _cubies.replace(cubies.objectAt(0).get('index'), 1, [cubies.objectAt(6).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(0).get('index')));
       //8 => 6
       _cubies.replace(cubies.objectAt(6).get('index'), 1, [cubies.objectAt(8).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(6).get('index')));
       //2 => 8
       _cubies.replace(cubies.objectAt(8).get('index'), 1, [cubies.objectAt(2).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(8).get('index')));
       //0 => 2
       _cubies.replace(cubies.objectAt(2).get('index'), 1, [tmpCubie]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(2).get('index')));
 
       tmpCubie = cubies.objectAt(1).get('cubie');
       //1 => 5
       _cubies.replace(cubies.objectAt(1).get('index'), 1, [cubies.objectAt(3).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(1).get('index')));
       //5 => 7
       _cubies.replace(cubies.objectAt(3).get('index'), 1, [cubies.objectAt(7).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(3).get('index')));
       //7 => 3
       _cubies.replace(cubies.objectAt(7).get('index'), 1, [cubies.objectAt(5).get('cubie')]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(7).get('index')));
       //3 => 1
       _cubies.replace(cubies.objectAt(5).get('index'), 1, [tmpCubie]);
+      this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(5).get('index')));
     }
     _cubies.replace(cubies.objectAt(4).get('index'), 1, [cubies.objectAt(4).get('cubie')]);
+    this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(4).get('index')));
   },
 
   rotateSlice: function(rotation_data) {
-    rotation_data.rotatingCubies.forEach(function(cubie) {
-      this.rotateFaceColors(rotation_data, cubie.get('cubie'));
-    }, this);
     Ember.run.next(this, this.rotateCubies, rotation_data);
   },
 
@@ -296,20 +189,26 @@ export default Ember.Controller.extend({
       cube = this.get('model').get('cube'),
       moves = cube.get('moves');
 
-    move = this.store.createRecord('move', {
-      timestamp: (new Date()).getTime(),
-      direction: rotation_data.direction,
-      axis: rotation_data.axis,
-      type: rotation_data.type,
-      oldCubies: rotation_data.oldCubies,
-      cubies: this.copyCubies(),
-      positionData: rotation_data.positionData,
-      parentMove: null
-    });
-    //the moves ref on the cube object is changing, and causing
-    //the entire game history to be rewritten
+    cube.incrementProperty('moveCount');
 
-    moves.get('content').pushObject(move);
+    Ember.run.next(this, function() {
+      move = this.store.createRecord('move', {
+        timestamp: (new Date()).getTime(),
+        direction: rotation_data.direction,
+        axis: rotation_data.axis,
+        type: rotation_data.type,
+        oldCubies: rotation_data.oldCubies,
+        cubies: this.copyCubies(),
+        positionData: rotation_data.positionData,
+        parentMove: null
+      });
+      //the moves ref on the cube object is changing, and causing
+      //the entire game history to be rewritten
+
+      moves.get('content').pushObject(move);
+    });
+
+    
     /*moves.then(function(moves) {
       moves.get(pushObject(move);
     });*/
@@ -322,18 +221,11 @@ export default Ember.Controller.extend({
      * state are saved into the moves history.
      */
     handleMove: function(rotation_data) {
-      var cube = this.get('model').get('cube');
-
       rotation_data.oldCubies = this.copyCubies();
       //do the rotation
       this.rotateSlice(rotation_data);
       //create move
-      Ember.run.next(this, function() {
-        cube.incrementProperty('moveCount');
-        Ember.run.next(this, 'createMove', rotation_data);
-      });
-
-
+      Ember.run.schedule('afterRender', this, this.createMove, rotation_data);
       //save everything
       /*rotatingCubies.forEach(function(c) {
         delete c.get('faces').__nextSuper;
@@ -350,9 +242,9 @@ export default Ember.Controller.extend({
       rotation_data.positionData.forEach(function(rData) {
         rotation_data_copy.positionData = rData;
         this.rotateSlice(rotation_data_copy);
-      }.bind(this));
-      //save the 'move'
-      this.createMove(rotation_data);
+        //create move
+        Ember.run.next(this, 'createMove', rotation_data_copy);
+      }, this);
     }
   }
 });

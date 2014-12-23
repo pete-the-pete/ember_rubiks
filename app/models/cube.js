@@ -6,7 +6,7 @@ var Cube = DS.Model.extend({
   isSolved: DS.attr('boolean', {defaultValue: false}),
   cubies: DS.hasMany('cubie', {inverse: 'cube', async: true}),
   moves: DS.hasMany('move', {inverse: 'cube', async: true}),
-  moveCount: DS.attr('number')
+  moveCount: DS.attr('number', {defaultValue: 0})
 });
 
 export default Cube;

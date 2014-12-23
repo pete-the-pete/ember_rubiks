@@ -146,6 +146,7 @@ export default CubeComponent.extend({
       axis = null,
       move = false,
       type = null,
+      action = null,
       direction = null,
       rotatingCubies = null,
       aCubie = null,
@@ -240,6 +241,8 @@ export default CubeComponent.extend({
     }
 
     if(move) {
+      action = (type === ROTATION_TYPES.PARTIAL) ? 'move' : 'rotate';
+      console.debug(action);
       rotatingCubies.forEach(function(cubie) {
         cubie.setProperties({
           'axis': axis,
@@ -252,7 +255,7 @@ export default CubeComponent.extend({
         Ember.run(function() {
           if(ANIMATION_PASSTHROUGH) {
             ANIMATION_PASSTHROUGH = false;
-            self.sendAction('move', {
+            self.sendAction(action, {
               cube: self.cube.get('id'),
               type: type,
               positionData: aCubie.get('positionData'),

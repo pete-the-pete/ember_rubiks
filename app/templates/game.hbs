@@ -5,14 +5,15 @@
     </section>
 
     <section class="map-container">
-     {{cube-flat cube=content.cube cubies=content.cube.cubies}}
+      {{cube.moveCount}}
+      {{cube-flat cube=content.cube cubies=content.cube.cubies}}
     </section>
   </div>
   <div class="game-history">
     <section class="moves-container" style="height:100%;overflow:scroll;">
       <h2>Game History</h2>
       <ol>
-        {{#each m in content.cube.moves.content}}
+        {{#each m in content.cube.moves.content.content}}
           <li>
             {{move-detail move=m}}
           </li>
