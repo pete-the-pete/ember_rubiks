@@ -238,13 +238,27 @@ export default Ember.Controller.extend({
     handleRotation: function(rotation_data) {
       rotation_data.oldCubies = this.copyCubies();
       //do the rotations by doing the individual slices
-      var rotation_data_copy = Ember.copy(rotation_data);
-      rotation_data.positionData.forEach(function(rData) {
-        rotation_data_copy.positionData = rData;
+      console.debug(rotation_data.rotatingCubies[0] === rotation_data.rotatingCubies[1]);
+      console.debug(rotation_data.rotatingCubies[0].objectAt(0).toString());
+      console.debug(rotation_data.rotatingCubies[1].objectAt(0).toString());
+      for(var i=0;i<3;i++) {
+        console.debug(rotation_data.rotatingCubies[i]);
+        this.rotateSlice({
+          cube: rotation_data.cube,
+          type: rotation_data.type,
+          positionData: rotation_data.positionData,
+          rotatingCubies: rotation_data.rotatingCubies[i],
+          direction: rotation_data.direction,
+          axis: rotation_data.axis
+        });
+      }
+      /*rotation_data.rotatingCubies.forEach(function(rData, index, list) {
+        rotation_data_copy.rotatingCubies = list[index];//rData;
+        console.debug(rotation_data_copy.rotatingCubies.objectAt(0).toString());
         this.rotateSlice(rotation_data_copy);
         //create move
-        Ember.run.next(this, 'createMove', rotation_data_copy);
-      }, this);
+        //Ember.run.next(this, 'createMove', rotation_data_copy);
+      }, this);*/
     }
   }
 });

@@ -7,6 +7,7 @@ var INITIALIZED = false,
 
 export default CubeComponent.extend({
   classNames: ['interactive'],
+  expectedRerenderedChildren: 27,
 
   willInsertElement: function() {
     this._super();
@@ -19,13 +20,10 @@ export default CubeComponent.extend({
   },
 
   didRender: function() {
-    var total = 9;
+    var insertedChildren = this.get('insertedChildView'),
+      expectedChildren = this.get('expectedRerenderedChildren');
 
-    if(!INITIALIZED) {
-      total = 27;
-    }
-
-    if(this.get('insertedChildView') === total) {
+    if(insertedChildren === expectedChildren) {
       this.set('insertedChildView', 0);
       if(!INITIALIZED) {
         INITIALIZED = true;
@@ -149,6 +147,7 @@ export default CubeComponent.extend({
       action = null,
       direction = null,
       rotatingCubies = null,
+      c_cubie = null,
       aCubie = null,
       self = this;
 
@@ -164,7 +163,9 @@ export default CubeComponent.extend({
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
           //get the first cubie of each section
           for(i=0;i<3;i++) {
-            aCubie.push(this.getCubieAtIndex((i*3)+1).get('positionData'));
+            c_cubie = this.getCubieAtIndex((i*3));
+            rotatingCubies.push(this.getZSiblings(c_cubie));
+            aCubie.push(c_cubie.get('positionData'));
           }
           break;
         case KEYS.RIGHT:
@@ -172,7 +173,9 @@ export default CubeComponent.extend({
           axis = AXES.Z;
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           for(i=0;i<3;i++) {
-            aCubie.push(this.getCubieAtIndex((i*3)+1).get('positionData'));
+            c_cubie = this.getCubieAtIndex((i*3));
+            rotatingCubies.push(this.getZSiblings(c_cubie));
+            aCubie.push(c_cubie.get('positionData'));
           }
           break;
         case KEYS.UP:
@@ -180,7 +183,9 @@ export default CubeComponent.extend({
           axis = AXES.X;
           direction = ROTATION_DIRECTIONS.CLOCKWISE;
           for(i=0;i<3;i++) {
-            aCubie.push(this.getCubieAtIndex(i+1).get('positionData'));
+            c_cubie = this.getCubieAtIndex((i*3));
+            rotatingCubies.push(this.getXSiblings(c_cubie));
+            aCubie.push(c_cubie.get('positionData'));
           }
           break;
         case KEYS.DOWN:
@@ -188,7 +193,9 @@ export default CubeComponent.extend({
           axis = AXES.X;
           direction = ROTATION_DIRECTIONS.ANTICLOCKWISE;
           for(i=0;i<3;i++) {
-            aCubie.push(this.getCubieAtIndex(i+1).get('positionData'));
+            c_cubie = this.getCubieAtIndex((i*3));
+            rotatingCubies.push(this.getXSiblings(c_cubie));
+            aCubie.push(c_cubie.get('positionData'));
           }
           break;
       }
@@ -241,15 +248,25 @@ export default CubeComponent.extend({
     }
 
     if(move) {
-      action = (type === ROTATION_TYPES.PARTIAL) ? 'move' : 'rotate';
-      console.debug(action);
-      rotatingCubies.forEach(function(cubie) {
-        cubie.setProperties({
+      if(type === ROTATION_TYPES.PARTIAL) {
+        action = 'move';
+        self.set('expectedRerenderedChildren', 9);
+        rotatingCubies.forEach(function(cubie) {
+          cubie.setProperties({
+            'axis': axis,
+            'direction': direction,
+            'steps':['step']
+          });
+        });
+      } else {
+        action = 'rotate';
+        self.set('expectedRerenderedChildren', 27);
+        this.setProperties({
           'axis': axis,
           'direction': direction,
           'steps':['step']
         });
-      });
+      }
       
       this.$().one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
         Ember.run(function() {
@@ -263,7 +280,6 @@ export default CubeComponent.extend({
               direction: direction,
               axis: axis
             });
-            //Ember.run.schedule('afterRender', self, 'rerender');
           } else {
             ANIMATION_PASSTHROUGH = true;
           }
