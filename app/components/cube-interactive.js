@@ -280,6 +280,9 @@ export default CubeComponent.extend({
               direction: direction,
               axis: axis
             });
+            if(type === ROTATION_TYPES.FULL) {
+              Ember.run.next(self, self.rerender);
+            }
           } else {
             ANIMATION_PASSTHROUGH = true;
           }

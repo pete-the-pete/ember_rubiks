@@ -180,9 +180,6 @@ export default Ember.Controller.extend({
     this.rotateFaceColors(rotation_data, _cubies.objectAt(cubies.objectAt(4).get('index')));
   },
 
-  rotateSlice: function(rotation_data) {
-    Ember.run.next(this, this.rotateCubies, rotation_data);
-  },
 
   createMove: function(rotation_data) {
     var move,
@@ -214,6 +211,10 @@ export default Ember.Controller.extend({
     });*/
   },
 
+  rotateSlice: function(rotation_data) {
+    this.rotateCubies(rotation_data);
+  },
+
   actions: {
     /**
      * Moving a single slice counts towards solving the cube.  The individual
@@ -223,7 +224,7 @@ export default Ember.Controller.extend({
     handleMove: function(rotation_data) {
       rotation_data.oldCubies = this.copyCubies();
       //do the rotation
-      this.rotateSlice(rotation_data);
+      Ember.run.next(this, this.rotateSlice, rotation_data);
       //create move
       Ember.run.schedule('afterRender', this, this.createMove, rotation_data);
       //save everything
@@ -238,9 +239,6 @@ export default Ember.Controller.extend({
     handleRotation: function(rotation_data) {
       rotation_data.oldCubies = this.copyCubies();
       //do the rotations by doing the individual slices
-      console.debug(rotation_data.rotatingCubies[0] === rotation_data.rotatingCubies[1]);
-      console.debug(rotation_data.rotatingCubies[0].objectAt(0).toString());
-      console.debug(rotation_data.rotatingCubies[1].objectAt(0).toString());
       for(var i=0;i<3;i++) {
         console.debug(rotation_data.rotatingCubies[i]);
         this.rotateSlice({
