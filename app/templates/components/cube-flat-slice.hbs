@@ -1,8 +1,8 @@
 <table class="{{unbound face.side}}" cellspacing="0">
   <tbody>
-  {{#each row in cubies}}
+  {{#each cubies as |row|}}
     <tr>
-      {{#each cubie in row}}
+      {{#each row as |cubie|}}
         <td>
         {{cubie-flat cubie=cubie faces=cubie.faces face_id=face.id}}
         </td>

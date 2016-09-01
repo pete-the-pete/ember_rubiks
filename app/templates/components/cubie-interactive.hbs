@@ -1,4 +1,4 @@
-{{#each face in faces}}
+{{#each faces as |face|}}
   <div {{bind-attr class=":side face.side"}}>
     <div {{bind-attr class=":sticker face.color"}}>
       <p>{{index}}</p>
