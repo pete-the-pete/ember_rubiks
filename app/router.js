@@ -15,13 +15,13 @@ const Router = Ember.Router.extend({
 * http://hashrocket.com/blog/posts/ember-routing-the-when-and-why-of-nesting
 */
 Router.map(function() {
-  this.resource('guest', function() {
+  this.route('guest', function() {
     this.route('new');
   });
-  this.resource('player', { path: 'players/:player_id' }, function() {
-    this.resource('games', function() {
+  this.route('players', { path: 'players/:player_id' }, function() {
+    this.route('games', function() {
       this.route('new');
-      this.resource('game', { path: ':game_id' });
+      this.route('game', { path: ':game_id' });
     });
 
   });

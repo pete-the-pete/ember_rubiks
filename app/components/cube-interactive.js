@@ -267,7 +267,7 @@ export default CubeComponent.extend({
           'steps':['step']
         });
       }
-      
+
       this.$().one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
         Ember.run(function() {
           if(ANIMATION_PASSTHROUGH) {

@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
   movesList: Ember.computed.alias('model.cube.moves.content'),
 
   getCubies: function() {
-    return this.get('model').get('cube').get('cubies').get('content').get('content');
+    return this.get('model').get('cube.cubies').get('content').get('content');
   },
 
   /**
@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
   * save cubies
   */
   copyCubies: function() {
-    var copy = this.get('model').get('cube').get('cubies').map(function(cubie) {
+    var copy = this.get('model').get('cube.cubies').map(function(cubie) {
       var copy = cubie.toJSON();
       copy.id = cubie.id;
       copy.faces = Ember.copy(cubie.get('faces'), true);
@@ -115,7 +115,7 @@ export default Ember.Controller.extend({
 
   rotateCubies: function(rotation_data) {
     var tmpCubie = null,
-      _cubies = this.get('model').get('cube').get('cubies').get('content').get('content'),
+      _cubies = this.get('model').get('cube.cubies.content').toArray(),//.get('content'),
       cubies = rotation_data.rotatingCubies;
 
     if(rotation_data.direction === ROTATION_DIRECTIONS.ANTICLOCKWISE) {
@@ -205,7 +205,7 @@ export default Ember.Controller.extend({
       moves.get('content').pushObject(move);
     });
 
-    
+
     /*moves.then(function(moves) {
       moves.get(pushObject(move);
     });*/

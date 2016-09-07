@@ -1,4 +1,4 @@
-import { FACES } from '../../constants';
+import { FACES } from '../../../constants';
 
 var CUBIES = 27;
 
@@ -15,7 +15,7 @@ export default Ember.Route.extend({
       cubies.pushObject(cubie);
       cubie.save();
     }
-    
+
     var Cube = this.store.createRecord('cube', {
       isSolved: false
     });
@@ -26,7 +26,7 @@ export default Ember.Route.extend({
 
   model: function(params, transition) {
     //Create a new cube for the new game, and set it to the player
-    var player = this.store.all('player').findBy('id', transition.params.player.player_id);
+    var player = this.store.findRecord('player', transition.params.players.player_id);
     var cube = this.generateCube();
     var game = this.store.createRecord('game', {
       cube: cube,
@@ -36,6 +36,6 @@ export default Ember.Route.extend({
 
   },
   afterModel: function(game, transition) {
-    this.replaceWith('game', game);
+    this.replaceWith('players.games.game', game);
   }
 });

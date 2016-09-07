@@ -10,6 +10,6 @@ export default Ember.Route.extend({
     return guestPlayer;
   },
   afterModel: function(player, transition) {
-    this.replaceWith('games.new', player);
+    this.replaceWith('players.games.new', player);
   }
 });
